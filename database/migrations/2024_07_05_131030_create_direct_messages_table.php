@@ -13,14 +13,16 @@ return new class extends Migration
     {
         Schema::create('direct_messages', function (Blueprint $table) {
             $table->id();
-            $table->varchar('text');
+            $table->string('text');
+            $table->unsignedBigInteger('donation_item_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('destination_user_id');
+            $table->boolean('seen')->default(false);
             $table->timestamps();
 
             $table->foreign('donation_item_id')->references('id')->on('donation_items');
-
-            $table->foreign('user_id')->references('id')->on('users');
-
-            $table->foreign('destination_user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('destination_user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

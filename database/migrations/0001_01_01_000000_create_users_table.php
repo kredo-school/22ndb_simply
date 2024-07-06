@@ -16,7 +16,7 @@ return new class extends Migration
             $table->longText('avatar');
             $table->string('username')->unique(50);
             $table->string('email')->unique();
-            $table->varchar('address');
+            $table->string('address');
             $table->string('introduction', 100)->nullable();
             $table->string('password');
             $table->timestamps();
