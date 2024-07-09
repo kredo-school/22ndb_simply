@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name') }} | @yield('title')</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -40,15 +40,22 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto  mb-2">
                         <!-- Authentication Links -->
                         @guest
-                            @if (Route::has('register'))
+                            @if (Route::currentRouteName() == 'login')
                                 <li class="nav-item">
                                     <a class="nav-link me-4" href="#"  style="color: #060505; font-size: 28px;">User Guide</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}"  style="color: #060505; font-size: 28px;">{{ __('Register') }}</a>
+                                </li>
+                            @else (Route::currentRouteName() == 'register')
+                                <li class="nav-item">
+                                    <a class="nav-link me-4" href="#"  style="color: #060505; font-size: 28px;">User Guide</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}"  style="color: #060505; font-size: 28px;">{{ __('Login') }}</a>
                                 </li>
                             @endif
                         @else
