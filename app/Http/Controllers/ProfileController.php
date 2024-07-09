@@ -1,12 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\User;
 
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    public function show(){
-        return view('profile.show');
+    private $user;
+
+    public function __construct(User $user){
+        $this->user = $user;
+    }
+
+    public function show($id){
+        $user  =$this->user->findOrFail($id);
+
+        return view('profile.show')
+            ->with('user', $user);
     }
 }

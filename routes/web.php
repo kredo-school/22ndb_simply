@@ -12,4 +12,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('profile/show', [ProfileController::class, 'show'])->name('profile.show');
+// Route::group(['middleware' => 'auth'], function(){
+    Route::get('profile/{id}/show', [ProfileController::class, 'show'])->name('profile.show');
+
+// });
