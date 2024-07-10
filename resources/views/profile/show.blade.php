@@ -3,13 +3,13 @@
 @section('title', 'Show Profile')
 
 @section('content')
-<div class="col-md-8 mx-auto">
+<div class="col-md-8 mx-auto regular">
     <div class="container my-5">
         <p class='text-secondary'>Profile</p>
         {{-- Left side --}}
         <div class="row">
             <div class="col-md-6 d-flex align-items-center flex-column my-auto">
-                <div>
+                <div class="mb-5">
                     @if($user->avatar)
                         <img src="{{$user->avatar}}" alt="{{$user->name}}" class="rounded-circle avatar-lg">
                     @else
@@ -18,8 +18,8 @@
                 </div>
                 <div>
                     <div>
-                        <a href="" class='text-dark text-decoration-none'>
-                            <i class="fa-solid fa-envelope me-2"></i> Direct message
+                        <a href="" class='text-dark text-decoration-none mb-3'>
+                            <i class="fa-solid fa-envelope me-2 mb-3"></i> Direct message
                         </a> 
                     </div>
                     <div>
@@ -65,7 +65,7 @@
                         </tr>
                         <tr>
                             <td>Introduction</td>
-                            <td>{{$user->introduction}}</td>
+                            <td class="small">{{$user->introduction}}</td>
                         </tr>
                     </tbody>
                 </table>
