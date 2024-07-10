@@ -1,6 +1,6 @@
 body{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
 }
 .icon-sm{
     font-size: 2rem;
@@ -51,6 +51,6 @@ body{
     border-bottom: 2px solid slategray !important;
 }
 
-/* .xsmall{
+.xsmall{
     font-size: 0.65rem;
-} */
+}

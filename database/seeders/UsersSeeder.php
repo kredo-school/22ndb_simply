@@ -16,7 +16,7 @@ class UsersSeeder extends Seeder
     public function run(): void
     {
         DB::table('users')->insert([
-            'avatar'=>'images/avatar1.jpg',
+            'avatar'=>'/images/avatar1.jpg',
             'username'=>'Ami',
             'email'=>'ami@gmail.com',
             'address'=>'Nagoya',
