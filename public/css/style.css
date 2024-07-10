@@ -40,6 +40,9 @@
     height: 9rem;
     object-fit: cover;
 }
+.bordered-table td{
+    border-bottom: 2px solid slategray !important;
+}
 
 /* .xsmall{
     font-size: 0.65rem;
