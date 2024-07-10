@@ -10,7 +10,7 @@
     <title>{{ config('app.name') }} | @yield('title')</title>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 
 
     <!-- Font Awesome -->
