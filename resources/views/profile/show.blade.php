@@ -7,15 +7,15 @@
     <p class='text-secondary'>Profile</p>
     {{-- Left side --}}
     <div class="row">
-        <div class="col-6 p-3 border">
-            <div class='text-center'>
-                @if($user->avatar)
+        <div class="col-md-6 py-5 border">
+            <div class='text-center mb-5'>
+                {{-- @if($user->avatar) --}}
                     <img src="{{$user->avatar}}" alt="{{$user->name}}" class="rounded-circle avatar-lg">
-                @else
+                {{-- @else
                     <i class="fa-solid fa-circle-user icon-lg"></i>
-                @endif
+                @endif --}}
             </div>
-            <div class='border ms-5'>
+            <div class='ms-5 border'>
                 <div>
                     <a href="" class='text-dark text-decoration-none'>
                         <i class="fa-solid fa-envelope"></i> Direct message

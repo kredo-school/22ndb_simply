@@ -1,4 +1,7 @@
-
+body{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
 .icon-sm{
     font-size: 2rem;
 }
@@ -39,6 +42,10 @@
     width: 9rem;
     height: 9rem;
     object-fit: cover;
+}
+.bordered-table{
+    border-collapse: separate;
+    border-spacing: 0 15px;
 }
 .bordered-table td{
     border-bottom: 2px solid slategray !important;
