@@ -1,5 +1,5 @@
 *{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif !important;
 }
 
 .logo{
@@ -27,6 +27,12 @@ footer {
     background: linear-gradient(to bottom, #ffffff, #7A95B4);
     font-size: 30px;
 }
+
+.title {
+    font-size: 40px !important;
+    font-weight: bold !important;
+}
+
 
 /* 
 *SMALL

@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 mt-5">          
-        <div class="text-center fw-bold" style="font-size: 48px;">{{ __('R E S E T')}}&nbsp;&nbsp;&nbsp;&nbsp;{{__('P A S S W O R D')}}</div>
+        <div class="text-center fw-bold title">{{ __('R E S E T')}}&nbsp;&nbsp;&nbsp;&nbsp;{{__('P A S S W O R D')}}</div>
 
 
             <div class="mt-4">

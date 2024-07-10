@@ -7,8 +7,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 mt-5">         
-            <div class="text-center fw-bold" style="font-size: 48px;">{{ __('R e s e t')}}&nbsp;&nbsp;&nbsp;&nbsp;{{__('P a s s w o r d')}}
-                
+            <div class="text-center fw-bold title">{{ __('R E S E T')}}&nbsp;&nbsp;&nbsp;&nbsp;{{__('P A S S W O R D')}}   
             </div>
 
             <div class="mt-4">
@@ -45,7 +44,7 @@
                         </div>
                     </div>
 
-                    <div class="row mb-3">
+                    <div class="row mb-5">
                         <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
 
                         <div class="col-md-5">
@@ -59,7 +58,7 @@
                 <div class="row mb-4">
                     <div class="col-md-4 mx-auto">
                         <button type="submit" class="btn btn-dark btn-lg w-100" style="border-radius: 45px;">
-                            {{ __('Reset Password') }}
+                            {{ __('Reset') }}
                         </button>
                     </div>
                 </div>

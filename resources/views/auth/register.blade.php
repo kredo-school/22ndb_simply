@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 mt-5">
-            <div class="text-center fw-bold" style="font-size: 48px;">{{ __('R E G I S T E R') }}</div>
+            <div class="text-center fw-bold title">{{ __('R E G I S T E R') }}</div>
 
             <div class="mt-4">
                 <form method="POST" action="{{ route('register') }}">
