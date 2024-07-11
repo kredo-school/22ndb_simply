@@ -60,7 +60,7 @@
                         </label>
 
                         <div class="col-md-5">
-                            <input id="address" type="address" class="form-control" name="address" required autocomplete="address">
+                            <input id="address" type="text" class="form-control" name="address" required autocomplete="address">
                         </div>
                     </div>
             </div>
