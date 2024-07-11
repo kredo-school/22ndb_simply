@@ -3,7 +3,7 @@
 @section('title', 'Show Profile')
 
 @section('content')
-<div class="col-md-8 mx-auto regular">
+<div class="col-md-8 mx-auto h4">
     <div class="container my-5">
         <p class='text-secondary'>Profile</p>
         {{-- Left side --}}
@@ -60,12 +60,12 @@
                         </tr>
                         {{-- @endif --}}
                         <tr>
-                            <td>Address</td>
+                            <td >Address</td>
                             <td>{{$user->address}}</td>
                         </tr>
                         <tr>
-                            <td>Introduction</td>
-                            <td class="small">{{$user->introduction}}</td>
+                            <td class>Introduction</td>
+                            <td class="h5">{{$user->introduction}}</td>
                         </tr>
                     </tbody>
                 </table>

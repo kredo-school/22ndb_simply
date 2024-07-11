@@ -50,12 +50,3 @@ body{
 .bordered-table td{
     border-bottom: 2px solid slategray !important;
 }
-.regular{
-    font-size: 20px;
-}
-.small{
-    font-size: 15px;
-}
-.xsmall{
-    font-size: 0.65rem;
-}
