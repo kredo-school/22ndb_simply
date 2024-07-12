@@ -25,4 +25,9 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function resetSuccess()
+    {
+        return view('auth.passwords.password_reset_success');
+    }
 }
