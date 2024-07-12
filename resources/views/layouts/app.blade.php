@@ -6,8 +6,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name') }} | @yield('title')</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -15,18 +14,19 @@
 
     {{-- Fontawsome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     {{-- Custom CSS --}}
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-<body>
+<body class="bg-white">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <img src="{{ asset('/images/appicon.png') }}" alt="icon" class="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -39,18 +39,22 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto  mb-2">
                         <!-- Authentication Links -->
                         @guest
-                            @if (Route::has('login'))
+                            @if (Route::currentRouteName() == 'login')
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link me-4" href="#"  style="color: #060505; font-size: 28px;">User Guide</a>
                                 </li>
-                            @endif
-
-                            @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}"  style="color: #060505; font-size: 28px;">{{ __('Register') }}</a>
+                                </li>
+                            @else (Route::currentRouteName() == 'register')
+                                <li class="nav-item">
+                                    <a class="nav-link me-4" href="#"  style="color: #060505; font-size: 28px;">User Guide</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}"  style="color: #060505; font-size: 28px;">{{ __('Login') }}</a>
                                 </li>
                             @endif
                         @else
@@ -60,9 +64,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -81,5 +83,15 @@
             @yield('content')
         </main>
     </div>
+
+    <footer>
+        @guest
+            <li class="footer-item" style="list-style: none;">
+                <a class="footer-link text-decoration-none text-white me-5" href="#">Contact Us</a>
+            </li>
+        @endguest
+    </footer>
+
+    <script src="path/to/bootstrap.js"></script>
 </body>
 </html>

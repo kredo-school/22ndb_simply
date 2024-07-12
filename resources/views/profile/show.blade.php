@@ -19,7 +19,7 @@
                 <div>
                     <div>
                         <a href="" class='text-dark text-decoration-none mb-3'>
-                            <i class="fa-solid fa-envelope me-2 mb-3"></i> Direct message
+                            <i class="fa-solid fa-envelope me-2 mb-3 fa"></i> Direct message
                         </a> 
                     </div>
                     <div>
