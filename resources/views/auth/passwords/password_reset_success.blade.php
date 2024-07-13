@@ -8,7 +8,7 @@
         <div class="col-md-8" style="margin-top: 100px;">         
             <div class="mt-4 text-center">
                 <div class="row mb-5">
-                    <p class="h1"><i class="fa-solid fa-circle-check"></i>Success</p>
+                    <p class="h1"><i class="fa-solid fa-circle-check"></i>    Success</p>
                 </div>
                 <div class="row mb-5">
                     <p class="h2" style="color: #7B7A7A;">Your password has been changed successfully!</p>

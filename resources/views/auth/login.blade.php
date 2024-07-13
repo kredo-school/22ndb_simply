@@ -6,9 +6,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 mt-5">
-            <div class="text-center fw-bold title">{{ __('L O G I N') }}</div>
+            <div class="text-center fw-bold h1">{{ __('L O G I N') }}</div>
 
-                <div class="mt-4">
+                <div class="mt-5">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -43,7 +43,7 @@
                 
                         <div class="row mb-4 mt-5">
                             <div class="col-md-4 mx-auto ">
-                                <button type="submit" class="btn btn-dark btn-lg w-100" style="border-radius: 45px;">
+                                <button type="submit" class="btn btn-dark btn-lg w-100 button" style="border-radius: 40px;">
                                     {{ __('Login') }}
                                 </button>
                             </div>

@@ -1,0 +1,110 @@
+@extends('layouts.app')
+
+@section('title', 'Contact Us')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-7">         
+            <div class="mt-4 text-center">
+                <div class="row">
+                    <p class="h1">Contact Us</p>
+                </div>
+
+                <div class="m-5">
+                    <form method="POST" action="#">
+                        @csrf
+
+                        <div class="row mb-4 align-items-center">
+                            <div class="col-md-3 d-flex align-items-center">
+                                <label for="firstname" class="form-label h4">{{ __('First name') }}</label>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="flex-grow-1">
+                                    <input id="firstname" type="text" class="form-control @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" required autocomplete="firstname" autofocus>
+                                    @error('firstname')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 d-flex align-items-center">
+                                <label for="lastname" class="form-label h4">{{ __('Last name') }}</label>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="flex-grow-1">
+                                    <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus>
+                                    @error('lastname')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4 align-items-center">
+                            <div class="col-md-3 d-flex align-items-center ">
+                                <label for="email" class="form-label h4">{{ __('Email') }}</label>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="flex-grow-1">
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row mb-4 align-items-center">
+                            <div class="col-md-3 d-flex align-items-center">
+                                <label for="subject" class="form-label h4">{{ __('Subject') }}</label>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="flex-grow-1">
+                                    <input id="subject" type="text" class="form-control @error('subject') is-invalid @enderror" name="subject" value="{{ old('subject') }}" required autocomplete="subject" autofocus>
+                                    @error('subject')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row align-items-start">
+                            <div class="col-md-3 d-flex align-items-center">
+                                <label for="message" class="form-label h4 mb-0">{{ __('Message') }}</label>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="flex-grow-1">
+                                    <textarea id="message" class="form-control @error('message') is-invalid @enderror" name="message" required autocomplete="message" autofocus rows="6">{{ old('message') }}</textarea>
+                                    @error('message')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+            </div>
+                
+                <div class="row mt-5">
+                    <div class="col-md-4 mx-auto ">
+                        <button type="submit" class="btn btn-dark btn-lg w-100 button" style="border-radius: 45px;">
+                            {{ __('Confirm') }}
+                        </button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

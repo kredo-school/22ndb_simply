@@ -44,17 +44,27 @@
                         @guest
                             @if (Route::currentRouteName() == 'login')
                                 <li class="nav-item">
-                                    <a class="nav-link me-4" href="#"  style="color: #060505; font-size: 28px;">User Guide</a>
+                                    <a class="nav-link me-4" href="#">User Guide</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}"  style="color: #060505; font-size: 28px;">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                            @else (Route::currentRouteName() == 'register')
+                            @elseif (Route::currentRouteName() == 'register' || Route::currentRouteName() == 'password.request' || Route::currentRouteName() == 'password.reset')
                                 <li class="nav-item">
-                                    <a class="nav-link me-4" href="#"  style="color: #060505; font-size: 28px;">User Guide</a>
+                                    <a class="nav-link me-4" href="#">User Guide</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}"  style="color: #060505; font-size: 28px;">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @elseif (Route::currentRouteName() == 'contact')
+                                <li class="nav-item">
+                                    <a class="nav-link me-4" href="#">User Guide</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link me-4" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -86,13 +96,18 @@
         </main>
     </div>
 
-    <footer>
-        @guest
-            <li class="footer-item" style="list-style: none;">
-                <a class="footer-link text-decoration-none text-white me-5" href="#">Contact Us</a>
-            </li>
-        @endguest
-    </footer>
+    @if (Route::currentRouteName() != 'contact')
+        <footer>
+            <ul class="footer-menu">
+                @guest
+                    <li class="footer-item">
+                        <a class="footer-link text-decoration-none text-white me-5" href="{{ route('contact') }}">Contact Us</a>
+                    </li>
+                @endguest
+            </ul>
+        </footer>
+    @endif
+
 
     <script src="path/to/bootstrap.js"></script>
 </body>
