@@ -10,17 +10,7 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::group(["prefix" => "item", "as" => "item."], function(){
-    Route::get('/show', [ItemController::class, 'show'])->name('show');
-    Route::get('/add', [ItemController::class, 'add'])->name('add');
-    Route::get('/edit', [ItemController::class, 'edit'])->name('edit');
-});
+// Route::group(['middleware' => 'auth'], function(){
+    Route::get('profile/{id}/show', [ProfileController::class, 'show'])->name('profile.show');
 
-Route::group(["prefix" => "profile", "as" => "profile."], function(){
-    Route::get('/dm/show', [ProfileController::class, 'showDirectMessage'])->name('showDM');
-});
-
-Route::group(["prefix" => "donation", "as" => "donation."], function(){
-    Route::get('/show', [DonationController::class, 'show'])->name('show');
-});
-
+// });
