@@ -271,11 +271,30 @@ h2.text-center {
     object-fit: cover;
 }
 
+/*
+*MIDIUM
+*/
+
+
+.icon-md{
+    font-size: 3.5rem;
+}
+
 .avatar-md{
     width: 3.5rem;
     height: 3.5rem;
     object-fit: cover;
 }
+
+/*
+*LARGE
+*/
+
+
+.icon-lg{
+    font-size: 9rem;
+}
+
 .avatar-lg{
     width: 12rem ;
     height: 12rem ;
@@ -319,6 +338,7 @@ h2.text-center {
     height: 300px;
     object-fit: cover;
 }
+
 .fa {
     font-family: 'Font Awesome 5 Free' !important;
     font-weight: 900 !important;

@@ -20,6 +20,10 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
 </head>
 <body class="bg-white">
     <div id="app">
@@ -58,9 +62,25 @@
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <p class="mt-3 text-dark">+ Add item</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <p class="mt-3 text-dark">Donation</p>
+                                </a>
+                            </li>
+
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                <a id="navbarDropdown" class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    @if (Auth::user()->avatar)
+                                        <img src="#" alt="" class="rounded-circle">
+                                    @else
+                                        <i class="fa-solid fa-circle-user text-dark mt-3 icon"></i>
+                                    @endif
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
