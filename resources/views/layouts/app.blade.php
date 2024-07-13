@@ -116,15 +116,15 @@
     </div>
 
     @if (Route::currentRouteName() != 'contact')
-        <footer>
-            <ul class="footer-menu">
-                @guest
-                    <li class="footer-item">
+        @guest
+            <footer>
+                <ul class="footer-menu">
+                    <li class="footer-item list-unstyled">
                         <a class="footer-link text-decoration-none text-white me-5" href="{{ route('contact') }}">Contact Us</a>
                     </li>
-                @endguest
-            </ul>
-        </footer>
+                </ul>
+            </footer>
+        @endguest
     @endif
 
 
