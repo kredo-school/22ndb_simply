@@ -40,7 +40,7 @@
                             </div>
                         </div>
                 </div>
-                
+
                         <div class="row mb-4 mt-5">
                             <div class="col-md-4 mx-auto ">
                                 <button type="submit" class="btn btn-dark btn-lg w-100 button" style="border-radius: 40px;">
@@ -60,7 +60,7 @@
                         <div class="row mb-0">
                             @if (Route::has('register'))
                                 <p class="text-center" style="color: #9EA6A6;">
-                                    Don't have an account? 
+                                    Don't have an account?
                                     <a class="btn btn-link" href="{{ route('register') }}"  style="color: #9EA6A6;">
                                    {{ __('Register') }}</a>
                                 </p>
@@ -68,7 +68,7 @@
                         </div>
 
                     </form>
-            
+
         </div>
     </div>
 </div>
