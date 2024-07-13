@@ -1,15 +1,18 @@
 @extends('layouts.app')
 
 @section('title', 'Show Profile')
+@section('css')
+    <link rel="stylesheet" href="{{asset('css/profile.css')}}">
+@endsection
 
 @section('content')
-<div class="col-md-8 mx-auto h4">
+<div class="col-md-8 mx-auto h4 border">
     <div class="container my-5">
         <p class='text-secondary'>Profile</p>
         {{-- Left side --}}
         <div class="row">
-            <div class="col-md-6 d-flex align-items-center flex-column my-auto">
-                <div class="mb-5">
+            <div class="col-md-6 d-flex align-items-center flex-column my-auto border">
+                <div class="mb-5 border">
                     @if($user->avatar)
                         <img src="{{$user->avatar}}" alt="{{$user->name}}" class="rounded-circle avatar-lg">
                     @else
@@ -34,10 +37,10 @@
             </div>
 
             {{-- Right side --}}
-            <div class="col p-5">
+            <div class="col p-5 border">
                 {{--If ur the profile owner, can see edit delete icons --}}
                 {{-- @if(Auth::user()->id === $user->id)  --}}
-                    <div class="d-flex justify-content-end">
+                    <div class="d-flex justify-content-end border">
                         <a href="">
                             <i class="fa-solid fa-pen text-secondary"></i>
                         </a>
@@ -47,7 +50,7 @@
                     </div>
                 {{-- @endif --}}
 
-                <table class='table text-start bordered-table'>
+                <table class='table text-start bordered-table border'>
                     <tbody>
                         <tr>
                             <td>Username</td>

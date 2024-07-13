@@ -12,4 +12,6 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 // Route::group(['middleware' => 'auth'], function(){
     Route::get('profile/{id}/show', [ProfileController::class, 'show'])->name('profile.show');
 
+    Route::get('profile/{id}/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+
 // });

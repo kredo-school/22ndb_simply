@@ -1,0 +1,12 @@
+.bordered-table{
+    border-collapse: separate;
+    border-spacing: 0 30px;
+}
+.bordered-table td{
+    border-bottom: 2px solid slategray !important;
+    background-color: white !important;
+}
+
+.xsmall{
+    font-size: 0.65rem !important;
+}
