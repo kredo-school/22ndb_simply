@@ -38,7 +38,7 @@
                                 <option>Closet</option>
                                 <option>Garage</option>
                             </select>
-                            <a href="#" class="add-category-link">+ Add category</a>
+                            <a href="#" class="add-category-link text-muted">+ Add category</a>
                         </div>
                     </div>
 

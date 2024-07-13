@@ -38,7 +38,7 @@
                                 <option>Closet</option>
                                 <option>Garage</option>
                             </select>
-                            <a href="#" class="add-category-link">+ Add category</a>
+                            <a href="#" class="add-category-link text-muted">+ Add category</a>
                         </div>
                     </div>
 
@@ -104,7 +104,6 @@
                             You can see your checked item at Donation page.
                         </p>
                     </div>
-
                 </div>
 
                 <div class="row">
