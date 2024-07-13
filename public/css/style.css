@@ -21,9 +21,42 @@
     font-weight: 600 !important;
 }
 
+nav {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 28px;
+}
+
+.nav-link {
+    color: #050606 !important;
+}
+
+.nav-link:hover {
+    color: #9EA6A6 !important;
+}
+
+footer {
+    font-family: 'Poppins', sans-serif !important;
+    background-color: #7A95B4;
+    height: 150px;
+    line-height: 130px;
+    text-align: right;
+    padding: 20px;
+    background: linear-gradient(to bottom, #ffffff, #7A95B4);
+    font-size: 30px;
+}
+
+.footer-link:hover {
+    color: #050606 !important;
+}
+
+
 body {
     font-family: 'Poppins', sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
 .title{
     font-size: 40px !important;
     font-weight: bold !important;
@@ -175,6 +208,7 @@ h2.text-center {
 }
 
 .btn-danger:hover {
+    font-family: 'Poppins', sans-serif !important;
     background-color: transparent;
     color: red;
     border-color: red;
@@ -265,34 +299,29 @@ h2.text-center {
     margin-bottom: 20px;
 }
 
+.title {
+    font-size: 40px !important;
+}
+
+.button{
+    letter-spacing: 3px;
+}
+
+.custom-modal .modal-content {
+    border-radius: 30px;
+    overflow: hidden;
+}
+
 .avatar-sm{
     width: 2rem;
     height: 2rem;
     object-fit: cover;
 }
 
-/*
-*MIDIUM
-*/
-
-
-.icon-md{
-    font-size: 3.5rem;
-}
-
 .avatar-md{
     width: 3.5rem;
     height: 3.5rem;
     object-fit: cover;
-}
-
-/*
-*LARGE
-*/
-
-
-.icon-lg{
-    font-size: 9rem;
 }
 
 .avatar-lg{
@@ -325,10 +354,6 @@ h2.text-center {
     background-color: white !important;
 }
 
-.fa-heart{
-    font-size: 1.5rem;
-}
-
 .xsmall{
     font-size: 0.65rem;
 }
@@ -343,6 +368,7 @@ h2.text-center {
     font-family: 'Font Awesome 5 Free' !important;
     font-weight: 900 !important;
 }
+
 .chat-message .message {
     display: inline-block;
     padding: 10px 15px;

@@ -6,19 +6,19 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 mt-5">
-            <div class="text-center fw-bold title">{{ __('L O G I N') }}</div>
+            <div class="text-center fw-bold h1">{{ __('L O G I N') }}</div>
 
-                <div class="mt-4">
+                <div class="mt-5">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
+                            <label for="username" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
 
                             <div class="col-md-5">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
 
-                                @error('email')
+                                @error('username')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -43,7 +43,7 @@
 
                         <div class="row mb-4 mt-5">
                             <div class="col-md-4 mx-auto ">
-                                <button type="submit" class="btn btn-dark btn-lg w-100" style="border-radius: 45px;">
+                                <button type="submit" class="btn btn-dark btn-lg w-100 button" style="border-radius: 40px;">
                                     {{ __('Login') }}
                                 </button>
                             </div>
