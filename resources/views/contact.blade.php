@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="m-5">
-                    <form method="POST" action="#">
+                    <form method="POST" action="#" >
                         @csrf
 
                         <div class="row mb-4 align-items-center">
@@ -97,10 +97,11 @@
                 
                 <div class="row mt-5">
                     <div class="col-md-4 mx-auto ">
-                        <button type="submit" class="btn btn-dark btn-lg w-100 button" style="border-radius: 45px;">
+                        <button type="button" class="btn btn-dark btn-lg w-100 button" style="border-radius: 45px;" data-bs-toggle="modal" data-bs-target="#contactConfirmationModal">
                             {{ __('Confirm') }}
                         </button>
                     </div>
+                    @include('modal.contact_confirm')
                     </form>
                 </div>
             </div>
