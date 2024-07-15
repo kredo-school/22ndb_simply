@@ -6,6 +6,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DonationController;
+use App\Http\Controllers\ContactController;
+
 
 Auth::routes();
 
@@ -13,7 +15,8 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 Route::get('/reset-successful', [HomeController::class, 'resetSuccess'])->name('password.reset.success');
 
-Route::get('/contact-us', [HomeController::class, 'contact'])->name('contact');
+Route::get('/contact-us', [ContactController::class, 'contact'])->name('contact');
+Route::post('/contact-us/store', [ContactController::class, 'store'])->name('contact.store');
 
 
 
@@ -21,3 +24,4 @@ Route::get('/contact-us', [HomeController::class, 'contact'])->name('contact');
     Route::get('profile/{id}/show', [ProfileController::class, 'show'])->name('profile.show');
 
 // });
+

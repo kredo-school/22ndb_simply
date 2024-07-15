@@ -30,9 +30,4 @@ class HomeController extends Controller
     {
         return view('auth.passwords.password_reset_success');
     }
-
-    public function contact()
-    {
-        return view('contact');
-    }
 }
