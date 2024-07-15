@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\DonatedItemController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -14,5 +15,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //comment Yuuki
 
-Route::delete('/comments/{id}', [CommentController::class, 'destroy'])->name('comments.destroy');
-Route::get('/donatiion-item', [DonationController::class, 'showDonationItem']);
+
+Route::get('/donated-items', [DonatedItemController::class, 'index']);
+
+
