@@ -35,6 +35,12 @@ class CategorySeeder extends Seeder
                 "name" => "Garage",
                 "created_at" => NOW(),
                 "updated_at" => NOW(),
+            ],
+
+            [
+                "name" => "Hobby",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
             ]
             
         ];
