@@ -21,3 +21,5 @@ Route::get('/contact-us', [HomeController::class, 'contact'])->name('contact');
     Route::get('profile/{id}/show', [ProfileController::class, 'show'])->name('profile.show');
 
 // });
+
+Route::get('/donated-items/show', [DonationController::class, 'showDonatedItem'])->name('donated.item.show');

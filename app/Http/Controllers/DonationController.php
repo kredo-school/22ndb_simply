@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class DonationController extends Controller
 {
-    public function show()
+    public function showDonatedItem()
     {
-        return view('users.donations.show');
+        return view('donated_item');
     }
 }
