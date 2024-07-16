@@ -12,7 +12,7 @@
                             <p style="color: #9EA6A6;">First Name</p>
                         </div>
                         <div class="col text-start">
-                            <p>Maiko</p>
+                            <p id="confirmFirstname">{{ old('hiddenFirstname') }}</p>
                         </div>
                     </div>
                     <div class="row">
@@ -20,7 +20,7 @@
                             <p style="color: #9EA6A6;">Last Name</p>
                         </div>
                         <div class="col text-start">
-                            <p>Yasukcohi</p>
+                            <p id="confirmLastname">{{ old('hiddenLastname') }}</p>
                         </div>
                     </div>
 
@@ -29,7 +29,7 @@
                             <p style="color: #9EA6A6;">Email</p>
                         </div>
                         <div class="col text-start">
-                            <p>sample@email.com</p>
+                            <p id="confirmEmail">{{ old('hiddenEmail') }}</p>
                         </div>
                     </div>
 
@@ -38,7 +38,7 @@
                             <p style="color: #9EA6A6;">Subject</p>
                         </div>
                         <div class="col text-start">
-                            <p>Forget mail address</p>
+                            <p id="confirmSubject">{{ old('hiddenSubject') }}</p>
                         </div>
                     </div>
 
@@ -47,8 +47,7 @@
                             <p style="color: #9EA6A6;">Message</p>
                         </div>
                         <div class="col text-start">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti a, tenetur mollitia sint facilis iure asperiores fugit, repellat ullam soluta esse repellendus. Enim, repellendus sapiente blanditiis, sunt autem adipisci eius dolores natus sed aut ullam. Ratione iure dolorem id harum ut nam magni, ab voluptatum perspiciatis ipsum molestias minima atque quos necessitatibus quasi. Harum atque assumenda tempora rerum id, incidunt cumque beatae inventore dolores voluptatum recusandae modi numquam dignissimos quos eaque quae? Quos excepturi voluptatem voluptatibus ipsum dolor, eveniet non aliquam iure commodi quasi eius deserunt est cumque distinctio nulla esse atque eos eligendi minus possimus? Veritatis iure laboriosam provident?
-                            </p>
+                            <p id="confirmMessage">{{ old('hiddenMessage') }}</p>
                         </div>
                     </div>
                 </div>
@@ -65,41 +64,3 @@
     </div>
 </div>
 
-
-
-
-{{-- style.css --}}
-
-{{-- .custom-modal .modal-content {
-    border-radius: 30px;
-    overflow: hidden;
-}
-
-.custom-modal .modal-content::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    pointer-events: none;
-    border-radius: 50px;
-}
-
-.letter-size {
-    font-size: 1rem;
-}
-
-.btn-rounded {
-    border-radius: 50px;
-    padding: 5px;
-    font-weight: bold;
-    font-size: 1rem;
-}
-
-.btn-danger:hover {
-    background-color: transparent;
-    color: red;
-    border-color: red;
-    border: 2px solid red;
-} --}}
