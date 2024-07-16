@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="m-5">
-                    <form method="POST" action="#" >
+                    <form method="POST" action="{{ route('contact.store') }}" id="contactForm" >
                         @csrf
 
                         <div class="row mb-4 align-items-center">
@@ -101,6 +101,12 @@
                             {{ __('Confirm') }}
                         </button>
                     </div>
+
+                        <input type="hidden" id="hiddenFirstname" name="hiddenFirstname">
+                        <input type="hidden" id="hiddenLastname" name="hiddenLastname">
+                        <input type="hidden" id="hiddenEmail" name="hiddenEmail">
+                        <input type="hidden" id="hiddenSubject" name="hiddenSubject">
+                        <input type="hidden" id="hiddenMessage" name="hiddenMessage">
                     @include('modal.contact_confirm')
                     </form>
                 </div>
@@ -109,3 +115,28 @@
     </div>
 </div>
 @endsection
+
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    const confirmButton = document.querySelector('.btn[data-bs-toggle="modal"]');
+    confirmButton.addEventListener('click', function() {
+        // Populate hidden inputs with form data
+        document.getElementById('hiddenFirstname').value = document.getElementById('firstname').value;
+        document.getElementById('hiddenLastname').value = document.getElementById('lastname').value;
+        document.getElementById('hiddenEmail').value = document.getElementById('email').value;
+        document.getElementById('hiddenSubject').value = document.getElementById('subject').value;
+        document.getElementById('hiddenMessage').value = document.getElementById('message').value;
+
+        // Populate modal fields with the same data
+        document.getElementById('confirmFirstname').textContent = document.getElementById('firstname').value;
+        document.getElementById('confirmLastname').textContent = document.getElementById('lastname').value;
+        document.getElementById('confirmEmail').textContent = document.getElementById('email').value;
+        document.getElementById('confirmSubject').textContent = document.getElementById('subject').value;
+        document.getElementById('confirmMessage').textContent = document.getElementById('message').value;
+    });
+});
+
+function submitForm() {
+    document.getElementById('contactForm').submit();
+}
+</script>
