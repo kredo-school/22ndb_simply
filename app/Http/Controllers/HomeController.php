@@ -11,10 +11,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth')->except('contact');
-    }
+    //public function __construct()
+   // {
+   //     $this->middleware('auth')->except('contact');
+   // }
 
     /**
      * Show the application dashboard.

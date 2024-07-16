@@ -404,9 +404,7 @@ h2.text-center {
 .input-group .fa-image {
     font-size: 1.5rem;
 }
-body {
-    font-family: Arial, sans-serif;
-}
+
 .container {
     width: 80%;
     margin: 0 auto;
@@ -426,4 +424,28 @@ body {
 .grid-item img {
     max-width: 100%;
     height: auto;
+}
+
+
+.image-container {
+    position: relative;
+}
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+.bookmark {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #000;
+}
+
+.grid-item p {
+    margin: 5px 0;
 }

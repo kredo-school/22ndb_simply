@@ -1,23 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Donated Items</title>
-</head>
-<body>
-    <div class="container">
-        <h1>Donated Items</h1>
+@extends('layouts.app')
+
+@section('title', 'Donated Items')
+
+@section('content')
+<div class="container">
+    <div class="col-md-7 mx-auto">
+        <h1 class="text-center">Donated Items</h1>
         <div class="grid">
-            @foreach($donatedItems as $item)
-                <div class="grid-item">
-                    <img src="{{ asset('storage/' . $item->image_path) }}" alt="Item Image">
-                    <p>{{ $item->donation_date->format('Y/m/d') }}</p>
-                    <p>{{ $item->location }}</p>
-                </div>
-            @endforeach
+            <div class="grid-item">
+                <img src="{{ asset('images/donation-items closet.jpg') }}" alt="Donated Item">
+                <p>2023/02/02</p>
+                <p>Nagoya</p>
+                <button class="bookmark"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
+            <div class="grid-item">
+                <img src="{{ asset('images/donation-items closet.jpg') }}" alt="Donated Item">
+                <p>2023/02/02</p>
+                <p>Nagoya</p>
+                <button class="bookmark"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
+            <div class="grid-item">
+                <img src="{{ asset('images/donation-items closet.jpg') }}" alt="Donated Item">
+                <p>2023/02/02</p>
+                <p>Nagoya</p>
+                <button class="bookmark"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
+            <div class="grid-item">
+                <img src="{{ asset('images/donation-items closet.jpg') }}" alt="Donated Item">
+                <p>2023/02/02</p>
+                <p>Nagoya</p>
+                <button class="bookmark"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
+            <div class="grid-item">
+                <img src="{{ asset('images/donation-items closet.jpg') }}" alt="Donated Item">
+                <p>2024/03/04</p>
+                <p>Tokyo</p>
+                <button class="bookmark"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
+            <div class="grid-item">
+                <img src="{{ asset('images/donation-items jaket.jpg') }}" alt="Donated Item">
+                <p>2024/03/04</p>
+                <p>Tokyo</p>
+                <button class="bookmark"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
+            <div class="grid-item">
+                <img src="{{ asset('images/donation-items jaket.jpg') }}" alt="Donated Item">
+                <p>2024/03/04</p>
+                <p>Tokyo</p>
+                <button class="bookmark"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
+            <div class="grid-item">
+                <img src="{{ asset('images/donation-items jaket.jpg') }}" alt="Donated Item">
+                <p>2024/03/04</p>
+                <p>Tokyo</p>
+                <button class="bookmark"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
+            <div class="grid-item">
+                <img src="{{ asset('images/donation-items jaket.jpg') }}" alt="Donated Item">
+                <p>2024/03/04</p>
+                <p>Tokyo</p>
+                <button class="bookmark"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
+            <div class="grid-item">
+                <img src="{{ asset('images/donation-items jaket.jpg') }}" alt="Donated Item">
+                <p>2024/03/04</p>
+                <p>Tokyo</p>
+                <button class="bookmark"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
+            <div class="grid-item">
+                <img src="{{ asset('images/donation-items jaket.jpg') }}" alt="Donated Item">
+                <p>2024/03/04</p>
+                <p>Tokyo</p>
+                <button class="bookmark"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
+            <div class="grid-item">
+                <img src="{{ asset('images/donation-items jaket.jpg') }}" alt="Donated Item">
+                <p>2024/03/04</p>
+                <p>Tokyo</p>
+                <button class="bookmark"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
+            <div class="grid-item">
+                <img src="{{ asset('images/donation-items jaket.jpg') }}" alt="Donated Item">
+                <p>2024/03/04</p>
+                <p>Tokyo</p>
+                <button class="bookmark"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
+            <div class="grid-item">
+                <img src="{{ asset('images/donation-items jaket.jpg') }}" alt="Donated Item">
+                <p>2024/03/04</p>
+                <p>Tokyo</p>
+                <button class="bookmark"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
+            <div class="grid-item">
+                <img src="{{ asset('images/donation-items jaket.jpg') }}" alt="Donated Item">
+                <p>2024/03/04</p>
+                <p>Tokyo</p>
+                <button class="bookmark"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
         </div>
     </div>
-</body>
-</html>
+</div>
+@endsection
+
+

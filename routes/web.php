@@ -23,10 +23,5 @@ Route::get('/contact-us', [HomeController::class, 'contact'])->name('contact');
 
 // });
 
-
-//comment Yuuki
-
-
-Route::get('/donated-items', [DonatedItemController::class, 'index']);
-
-
+Route::get('/donated-items/show', [DonationController::class, 'showDonatedItem'])->name('donated.item.show');
+Route::get('/donated-items', [DonationController::class, 'indexDonatedItems'])->name('donated.items.index');
