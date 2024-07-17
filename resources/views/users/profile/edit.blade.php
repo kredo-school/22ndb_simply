@@ -13,22 +13,19 @@
         @method('PATCH')
 
         <div class="container my-5">
-            <p class='text-secondary'>Edit Profile</p>
+            <p class="gray">Edit Profile</p>
             {{-- Left side --}}
             <div class="row">
                 <div class="col-md-6 d-flex align-items-center flex-column my-auto border">
                     <div class="border">
-                        @if($user->avatar)
-                            <img src="{{$user->avatar}}" alt="{{$user->name}}" class="rounded-circle avatar-lg">
-                        @else
-                            <i class="fa-solid fa-circle-user icon-lg"></i>
-                        @endif
+                        <label for="avatar" class="form-label fw-bold"></label>
+                        <img src="{{$user->avatar}}" alt="{{$user->name}}" class="rounded-circle avatar-lg">
                     </div>
                     <div class="col-auto border">
                         <input type="file" name="avatar" id="avatar" value="" class="form-control form-control-sm mt-1" aria-describedby="avatar-info">
-                        <div id="avatar-info" class="form-text xsmall">
-                            Accetable formats are jpeg, jpg, png, and,gif only. <br>
-                            max file size is 1048kb.
+                        <div id="avatar-info" class="form-text xsmall gray">
+                            <p class="mb-0">Acceptable formats are jpeg, jpg, png and gif only.</p>
+                            <p class="mt-0">Maximum file size is 1048kb.</p>
                         </div>
                         <!-- Error -->
                         @error('avatar')
@@ -39,19 +36,54 @@
                 
 
                 {{-- Right side --}}
-                <div class="col p-5 border">
+                <div class="col-md border">
                     <div class="mb-3">
                         <label for="username" class="form-label h6">Username</label>
-                        <input type="text" name="username" id="username"class="form-control" value="{{ old('username', $user->username) }}" autofocus>
+                        <textarea name="username" id="username" class="form-control">{{ old('username', $user->username) }}</textarea>
+
                         <!-- Error -->
                         @error('username')
-                            <div class="text-danger small">{{ $message }}</div>
+                        <p class="text-danger small">{{ $message }}</p>
                         @enderror
-                        
-    
-                    </div> 
+                    </div>
 
-                    
+                    <div class="mb-3">
+                        <label for="email" class="form-label h6">Email</label>
+                        <textarea name="email" id="email" class="form-control">{{ old('email', $user->email) }}</textarea>
+
+                        <!-- Error -->
+                        @error('email')
+                        <p class="text-danger small">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label h6">Address</label>
+                        <textarea name="address" id="address" class="form-control">{{ old('address', $user->address) }}</textarea>
+
+                        <!-- Error -->
+                        @error('address')
+                        <p class="text-danger small">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="introduction" class="form-label h6">Description</label>
+                        <textarea name="introduction" id="introduction" class="form-control text-intro">{{ old('introduction', $user->introduction) }}</textarea>
+
+                        <!-- Error -->
+                        @error('introduction')
+                        <p class="text-danger small">{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    {{-- Btn  modify add @include --}}
+                    <div class="row mb-3 d-flex justify-content-center ">
+                        <div class="col-6 ">
+                            <a href="" class="btn btn-outline-dark w-100 rounded-pill">Cancel</a>
+                        </div>
+                        <div class="col-6 ">
+                            <button type="submit" class="btn btn-dark btn-sm rounded-pill w-100 h-100">Update</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

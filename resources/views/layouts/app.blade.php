@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     @yield('css')
 
-
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>

@@ -8,7 +8,7 @@
 @section('content')
 <div class="col-md-8 mx-auto h4 border">
     <div class="container my-5">
-        <p class='text-secondary'>Profile</p>
+        <p class='gray'>Profile</p>
         {{-- Left side --}}
         <div class="row">
             <div class="col-md-6 d-flex align-items-center flex-column my-auto border">
@@ -19,7 +19,7 @@
                         <i class="fa-solid fa-circle-user icon-lg"></i>
                     @endif
                 </div>
-                <div>
+                <div class="col-auto">
                     <div>
                         <a href="" class='text-dark text-decoration-none mb-3'>
                             <i class="fa-solid fa-envelope me-2 mb-3 fa"></i> Direct message
@@ -42,10 +42,10 @@
                 {{-- @if(Auth::user()->id === $user->id)  --}}
                     <div class="d-flex justify-content-end border">
                         <a href="">
-                            <i class="fa-solid fa-pen text-secondary"></i>
+                            <i class="fa-solid fa-pen gray"></i>
                         </a>
                         <a href="">
-                            <i class="fa-solid fa-trash-can ms-2 text-secondary"></i>
+                            <i class="fa-solid fa-trash-can ms-2 gray"></i>
                         </a>
                     </div>
                 {{-- @endif --}}
