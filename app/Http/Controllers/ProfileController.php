@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\User;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
@@ -16,10 +16,7 @@ class ProfileController extends Controller
     public function show($id){
         $user  =$this->user->findOrFail($id);
 
-        return view('profile.show')
+        return view('users.profile.show')
             ->with('user', $user);
     }
 }
-
-
-
