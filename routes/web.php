@@ -26,6 +26,5 @@ Route::post('/contact-us/store', [ContactController::class, 'store'])->name('con
 
 // });
 
-
-Route::get('/donated-items/show', [DonationController::class, 'showDonatedItem'])->name('donated.item.show');
 Route::get('/donated-items', [DonationController::class, 'indexDonatedItems'])->name('donated.items.index');
+Route::get('/donated-items/show', [DonationController::class, 'showDonatedItem'])->name('donated.item.show');
