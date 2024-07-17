@@ -27,3 +27,12 @@ Route::post('/contact-us/store', [ContactController::class, 'store'])->name('con
 
 // });
 
+Route::group(["prefix" => "item", "as" => "item."], function(){
+    Route::get('/show', [ItemController::class, 'show'])->name('show');
+    Route::get('/add', [ItemController::class, 'add'])->name('add');
+    Route::get('/edit', [ItemController::class, 'edit'])->name('edit');
+ });
+
+ Route::group(["prefix" => "donation", "as" => "donation."], function(){
+    Route::get('/show', [DonationController::class, 'show'])->name('show');
+ });
