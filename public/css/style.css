@@ -405,6 +405,8 @@ h2.text-center {
     font-size: 1.5rem;
 }
 
+
+
 .container {
     width: 80%;
     margin: 0 auto;
@@ -413,6 +415,7 @@ h2.text-center {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+   
 }
 .grid-item {
     width: calc(20% - 10px);
@@ -430,6 +433,11 @@ h2.text-center {
 .grid-item img {
     max-width: 100%;
     height: auto;
+    border-radius: 10px;
+}
+
+.grid-text{
+    font-size: 13px;
 }
 
 
@@ -440,11 +448,12 @@ h2.text-center {
     max-width: 100%;
     height: auto;
     border-bottom: 1px solid #ddd;
+    object-fit: cover;
 }
 .bookmark {
-    position: absolute;
+    /* position: absolute;
     top: 10px;
-    right: 10px;
+    right: 10px; */
     background: none;
     border: none;
     font-size: 1.5em;
