@@ -16,10 +16,11 @@ return new class extends Migration
             $table->longText('avatar')->nullable();
             $table->string('username')->unique(50);
             $table->string('email')->unique();
-            $table->string('address');
+            $table->string('address')->nullable();
             $table->string('introduction', 100)->nullable();
             $table->string('password');
             $table->timestamps();
+            $table->rememberToken(); 
             $table->softDeletes();
         });
 

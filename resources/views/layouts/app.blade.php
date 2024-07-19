@@ -12,7 +12,7 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 
-    {{-- Fontawsome --}}
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     {{-- Custom CSS --}}
@@ -21,6 +21,7 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
 </head>
 <body class="bg-white">
     <div id="app">
@@ -45,23 +46,49 @@
                         @guest
                             @if (Route::currentRouteName() == 'login')
                                 <li class="nav-item">
-                                    <a class="nav-link me-4" href="#"  style="color: #060505; font-size: 28px;">User Guide</a>
+                                    <a class="nav-link me-4" href="#">User Guide</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}"  style="color: #060505; font-size: 28px;">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                            @else (Route::currentRouteName() == 'register')
+                            @elseif (Route::currentRouteName() == 'register' || Route::currentRouteName() == 'password.request' || Route::currentRouteName() == 'password.reset' || Route::currentRouteName() == 'password.reset.success')
                                 <li class="nav-item">
-                                    <a class="nav-link me-4" href="#"  style="color: #060505; font-size: 28px;">User Guide</a>
+                                    <a class="nav-link me-4" href="#">User Guide</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}"  style="color: #060505; font-size: 28px;">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @elseif (Route::currentRouteName() == 'contact')
+                                <li class="nav-item">
+                                    <a class="nav-link me-4" href="#">User Guide</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link me-4" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <p class="mt-3 text-dark">+ Add item</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <p class="mt-3 text-dark">Donation</p>
+                                </a>
+                            </li>
+
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                <a id="navbarDropdown" class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    @if (Auth::user()->avatar)
+                                        <img src="#" alt="" class="rounded-circle">
+                                    @else
+                                        <i class="fa-solid fa-circle-user text-dark mt-3 icon"></i>
+                                    @endif
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -85,13 +112,18 @@
         </main>
     </div>
 
-    <footer>
+    @if (Route::currentRouteName() != 'contact')
         @guest
-            <li class="footer-item" style="list-style: none;">
-                <a class="footer-link text-decoration-none text-white me-5" href="#">Contact Us</a>
-            </li>
+            <footer>
+                <ul class="footer-menu">
+                    <li class="footer-item list-unstyled">
+                        <a class="footer-link text-decoration-none text-white me-5" href="{{ route('contact') }}">Contact Us</a>
+                    </li>
+                </ul>
+            </footer>
         @endguest
-    </footer>
+    @endif
+
 
     <script src="path/to/bootstrap.js"></script>
 </body>

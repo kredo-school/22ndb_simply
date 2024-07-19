@@ -75,14 +75,13 @@
                         @enderror
                     </div>
 
-                    {{-- Btn  modify add @include --}}
+                    {{-- Btn --}}
                     <div class="row mb-3 d-flex justify-content-center ">
-                        <div class="col-6 ">
-                            <a href="" class="btn btn-outline-dark w-100 rounded-pill">Cancel</a>
-                        </div>
-                        <div class="col-6 ">
-                            <button type="submit" class="btn btn-dark btn-sm rounded-pill w-100 h-100">Update</button>
-                        </div>
+                        @include('users.components.btn', [
+                            'r' => route('home'),
+                            'color' => 'dark', 
+                            'name' => 'Update'
+                        ])
                     </div>
                 </div>
             </div>

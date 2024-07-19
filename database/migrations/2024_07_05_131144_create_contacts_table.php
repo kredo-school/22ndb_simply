@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('first_name', 50);
             $table->string('last_name', 50);
-            $table->string('email', 255)->unique();
+            $table->string('email', 255);
             $table->string('subject', 50);
             $table->string('message');
             $table->timestamps();
