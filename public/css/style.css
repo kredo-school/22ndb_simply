@@ -408,17 +408,18 @@ h2.text-center {
 
 
 .container {
-    width: 80%;
+    width: 120%;
     margin: 0 auto;
 }
 .grid {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    width: 900px;
    
 }
 .grid-item {
-    width: calc(20% - 10px);
+    /* width: calc(20% - 10px); */
     /* border: 1px solid #ccc; */
     padding: 10px;
     box-sizing: border-box;
@@ -428,10 +429,11 @@ h2.text-center {
     border: 1px solid black;
     border-radius: 10px;
     padding: 8px;
-
+    width: 160px;
 }
 .grid-item img {
-    max-width: 100%;
+    max-width: 300%;
+    width: 140px;
     height: auto;
     border-radius: 10px;
 }
@@ -456,7 +458,7 @@ h2.text-center {
     right: 10px; */
     background: none;
     border: none;
-    font-size: 1.5em;
+    font-size: 2em;
     cursor: pointer;
     color: #000;
 }
