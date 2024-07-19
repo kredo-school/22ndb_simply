@@ -12,6 +12,7 @@ use App\Http\Controllers\ContactController;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/user-guide', [App\Http\Controllers\HomeController::class, 'guide1'])->name('guide1');
 
 Route::get('/reset-successful', [HomeController::class, 'resetSuccess'])->name('password.reset.success');
 

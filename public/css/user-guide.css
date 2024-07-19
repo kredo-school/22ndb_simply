@@ -1,0 +1,30 @@
+
+.menu-item {
+    margin: 10px 0;
+    padding: 5px;
+    color: #050606;
+}
+
+.border-bottom {
+    border-bottom: solid #050606 !important;
+}
+
+
+.border-menu-table {
+    width: 100%;
+    border-spacing: 0;
+    border-radius: 15px;
+    border: solid;
+    margin-bottom: 20px;
+    border-collapse: separate;
+
+}
+
+.border{
+    border-radius: 15px;
+    border: solid 1px #050606 !important;
+    height: 470px;
+    margin-left: 100px;
+}
+
+
