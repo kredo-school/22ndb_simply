@@ -9,6 +9,40 @@
     font-size: 9rem;
 }
 
+.avatar-sm{
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+}
+
+.avatar-md{
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: cover;
+}
+
+.avatar-lg{
+    width: 12rem ;
+    height: 12rem ;
+    object-fit: cover ;
+}
+
+.image-sm{
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+}
+.image-md{
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: cover;
+}
+.image-lg{
+    width: 9rem;
+    height: 9rem;
+    object-fit: cover;
+}
+
 .logo{
     width: 55px !important;
     height: auto !important;
@@ -313,51 +347,6 @@ h2.text-center {
     overflow: hidden;
 }
 
-.avatar-sm{
-    width: 2rem;
-    height: 2rem;
-    object-fit: cover;
-}
-
-.avatar-md{
-    width: 3.5rem;
-    height: 3.5rem;
-    object-fit: cover;
-}
-
-.avatar-lg{
-    width: 12rem ;
-    height: 12rem ;
-    object-fit: cover ;
-}
-
-.image-sm{
-    width: 2rem;
-    height: 2rem;
-    object-fit: cover;
-}
-.image-md{
-    width: 3.5rem;
-    height: 3.5rem;
-    object-fit: cover;
-}
-.image-lg{
-    width: 9rem;
-    height: 9rem;
-    object-fit: cover;
-}
-.bordered-table{
-    border-collapse: separate;
-    border-spacing: 0 30px;
-}
-.bordered-table td{
-    border-bottom: 2px solid slategray !important;
-    background-color: white !important;
-}
-
-.xsmall{
-    font-size: 0.65rem;
-}
 
 .grid-img{
     width: 100%;
