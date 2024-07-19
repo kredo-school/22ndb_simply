@@ -1,3 +1,5 @@
+<link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
 <div class="modal fade" id="contactConfirmationModal" tabindex="-1" aria-labelledby="contactConfirmationModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable custom-modal" role="document">
         <div class="modal-content">
@@ -9,7 +11,7 @@
                 <div class="mt-4 col-md-10">
                     <div class="row">
                         <div class="col text-end me-3">
-                            <p style="color: #9EA6A6;">First Name</p>
+                            <p class="color-gray-1">First Name</p>
                         </div>
                         <div class="col text-start">
                             <p id="confirmFirstname">{{ old('hiddenFirstname') }}</p>
@@ -17,7 +19,7 @@
                     </div>
                     <div class="row">
                         <div class="col text-end me-3">
-                            <p style="color: #9EA6A6;">Last Name</p>
+                            <p class="color-gray-1">Last Name</p>
                         </div>
                         <div class="col text-start">
                             <p id="confirmLastname">{{ old('hiddenLastname') }}</p>
@@ -26,7 +28,7 @@
 
                     <div class="row">
                         <div class="col text-end me-3">
-                            <p style="color: #9EA6A6;">Email</p>
+                            <p class="color-gray-1">Email</p>
                         </div>
                         <div class="col text-start">
                             <p id="confirmEmail">{{ old('hiddenEmail') }}</p>
@@ -35,7 +37,7 @@
 
                     <div class="row">
                         <div class="col text-end me-3">
-                            <p style="color: #9EA6A6;">Subject</p>
+                            <p class="color-gray-1">Subject</p>
                         </div>
                         <div class="col text-start">
                             <p id="confirmSubject">{{ old('hiddenSubject') }}</p>
@@ -44,7 +46,7 @@
 
                     <div class="row">
                         <div class="col text-end me-3">
-                            <p style="color: #9EA6A6;">Message</p>
+                            <p class="color-gray-1">Message</p>
                         </div>
                         <div class="col text-start">
                             <p id="confirmMessage">{{ old('hiddenMessage') }}</p>
@@ -53,10 +55,10 @@
                 </div>
             </div>
             <div class="modal-footer border-0 d-flex justify-content-center mb-5">
-                <button type="button" class="btn btn-outline-dark w-25" data-bs-dismiss="modal" style="border-radius: 40px;" >
+                <button type="button" class="btn btn-outline-dark w-25 button-modal" data-bs-dismiss="modal">
                     Cancel
                 </button>
-                <button type="submit" class="btn btn-dark w-25" style="border-radius: 40px;">
+                <button type="submit" class="btn btn-dark w-25 button-modal">
                     Send
                 </button>
             </div>

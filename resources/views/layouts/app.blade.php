@@ -57,7 +57,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
-                            @elseif (Route::currentRouteName() == 'contact')
+                            @elseif (Route::currentRouteName() == 'contact' || Route::currentRouteName() == 'index')
                                 <li class="nav-item">
                                     <a class="nav-link me-4" href="#">User Guide</a>
                                 </li>

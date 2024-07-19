@@ -8,11 +8,14 @@ class HomeController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except('contact', 'resetSuccess','guide1');
+        $this->middleware('auth')->except('contact', 'resetSuccess','index','guide1');
     }
 
-    public function index()
-    {
+    public function index(){
+        return view('index');
+    }
+
+    public function home(){
         return view('home');
     }
 
