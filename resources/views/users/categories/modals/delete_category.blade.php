@@ -13,11 +13,8 @@
             <div class="modal-footer border-0 m-auto p-4">
                 <form method="POST" action="#">
                     @csrf
-                
-                <!-- Cancel Button -->
-                <button type="submit" class="cancel_btn btn btn-sm p-2 px-5 rounded-5 me-1">Cancel</button>
-                <!-- Update Button -->
-                <a href="#" class="delete_btn btn btn-sm p-2 px-5 rounded-5 ms-1" id="deleteBtn{{ $category['id'] }}">Delete</a>
+                <button type="button" class="sbm_btn btn btn-outline-danger p-2 px-5 rounded-5 me-1">Cancel</button>
+                <button type="submit" class="sbm_btn btn btn-danger p-2 px-5 rounded-5 ms-1" id="deleteBtn{{ $category['id'] }}">Delete</button>
                 </form>
             </div>
         </div>

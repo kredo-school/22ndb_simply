@@ -13,18 +13,9 @@
     color: #DA0000;
 }
 
-.cancel_btn {
-    width: 180px;
-    border: 3px solid ;
-    color: #DA0000;
-    font-weight: 600;
-}
-
+.cancel_btn, 
 .delete_btn {
     width: 180px;
-    border: 3px solid #DA0000;
-    background-color: #DA0000;
-    color: white;
     font-weight: 600;
 }
 
