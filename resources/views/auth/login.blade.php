@@ -42,8 +42,8 @@
                 </div>
 
                         <div class="row mb-4 mt-5">
-                            <div class="col-md-4 mx-auto ">
-                                <button type="submit" class="btn btn-dark btn-lg w-100 button" style="border-radius: 40px;">
+                            <div class="col-md-4 mx-auto">
+                                <button type="submit" class="btn btn-dark btn-lg w-100 button">
                                     {{ __('Login') }}
                                 </button>
                             </div>
@@ -51,7 +51,7 @@
 
                         <div class="row mb-0 mt-4">
                             @if (Route::has('password.request'))
-                                <a class="btn btn-link" href="{{ route('password.request') }}" style="color: #9EA6A6;">
+                                <a class="btn btn-link color-gray-1" href="{{ route('password.request') }}">
                                     {{ __('Forgot Password?') }}
                                 </a>
                             @endif
@@ -59,9 +59,9 @@
 
                         <div class="row mb-0">
                             @if (Route::has('register'))
-                                <p class="text-center" style="color: #9EA6A6;">
+                                <p class="text-center color-gray-1">
                                     Don't have an account?
-                                    <a class="btn btn-link" href="{{ route('register') }}"  style="color: #9EA6A6;">
+                                    <a class="btn btn-link color-gray-1" href="{{ route('register') }}">
                                    {{ __('Register') }}</a>
                                 </p>
                             @endif
