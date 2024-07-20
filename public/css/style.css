@@ -16,40 +16,6 @@
     font-size: 9rem;
 }
 
-.avatar-sm{
-    width: 2rem;
-    height: 2rem;
-    object-fit: cover;
-}
-
-.avatar-md{
-    width: 3.5rem;
-    height: 3.5rem;
-    object-fit: cover;
-}
-
-.avatar-lg{
-    width: 12rem ;
-    height: 12rem ;
-    object-fit: cover ;
-}
-
-.image-sm{
-    width: 2rem;
-    height: 2rem;
-    object-fit: cover;
-}
-.image-md{
-    width: 3.5rem;
-    height: 3.5rem;
-    object-fit: cover;
-}
-.image-lg{
-    width: 9rem;
-    height: 9rem;
-    object-fit: cover;
-}
-
 .logo{
     width: 55px !important;
     height: auto !important;
@@ -354,6 +320,17 @@ h2.text-center {
 
 .button{
     letter-spacing: 3px;
+    border-radius: 40px !important;
+}
+
+.button2{
+    letter-spacing: 1px;
+    border-radius: 5px !important;
+}
+
+.button-modal{
+    letter-spacing: 1px;
+    border-radius: 40px !important;
 }
 
 .custom-modal .modal-content {
@@ -361,6 +338,51 @@ h2.text-center {
     overflow: hidden;
 }
 
+.avatar-sm{
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+}
+
+.avatar-md{
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: cover;
+}
+
+.avatar-lg{
+    width: 12rem ;
+    height: 12rem ;
+    object-fit: cover ;
+}
+
+.image-sm{
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+}
+.image-md{
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: cover;
+}
+.image-lg{
+    width: 9rem;
+    height: 9rem;
+    object-fit: cover;
+}
+.bordered-table{
+    border-collapse: separate;
+    border-spacing: 0 30px;
+}
+.bordered-table td{
+    border-bottom: 2px solid slategray !important;
+    background-color: white !important;
+}
+
+.xsmall{
+    font-size: 0.65rem;
+}
 
 .grid-img{
     width: 100%;
@@ -409,3 +431,18 @@ h2.text-center {
     font-size: 1.5rem;
 }
 
+.letter-color{
+    color: #050606;
+}
+
+.muted-color{
+    color: #D9D9D9;
+}
+
+.color-gray-1{
+    color: #9EA6A6 !important;
+}
+
+.color-gray-2{
+    color: #CDCECE;
+}
