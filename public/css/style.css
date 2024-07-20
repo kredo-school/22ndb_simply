@@ -1,4 +1,11 @@
 /* common part */
+.btn-custom{
+    width: 200px;
+    height: 40px;
+    display: inline-block;
+    outline-width: thick !important;
+}
+
 .icon-sm{
     font-size: 2rem;
 }
@@ -54,6 +61,7 @@
 
 *{
     font-weight: 600 !important;
+    color: #050606;
 }
 
 nav {
@@ -214,7 +222,7 @@ h2.text-center {
 /* modal */
 .custom-modal .modal-content {
     border-radius: 30px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .custom-modal .modal-content::before {
@@ -232,24 +240,25 @@ h2.text-center {
     font-size: 1rem;
 }
 
+/* Ami:: Sorry, I commented out those cuz they affected my REUSABLE MODAL part */
+
 /* button for modal */
-.btn-rounded {
+/* .btn-rounded {
     border-radius: 50px;
     padding: 5px;
     font-weight: bold;
     font-size: 1rem;
-}
+} */
 
-.btn-danger:hover {
+/* .btn-danger:hover {
     font-family: 'Poppins', sans-serif !important;
     background-color: transparent;
     color: red;
     border-color: red;
     border: 2px solid red;
-}
+} */
 
 /* donation item info page */
-
 .input-size {
     width: auto;
 }
@@ -261,27 +270,27 @@ h2.text-center {
 }
 
 /* button */
-.btn-rounded {
+/* .btn-rounded {
     border-radius: 50px;
     padding: 5px;
     font-weight: bold;
     font-size: 1rem;
-}
+} */
 
-.btn-outline-dark {
+/* .btn-outline-dark {
     border: 2px solid #000;
-}
+} */
 
-.btn-outline-danger {
+/* .btn-outline-danger {
     border: 2px solid red;
     width: 40%;
     height: 40%;
-}
+} */
 
-.btn-danger {
+/* .btn-danger {
     width: 40%;
     height: 40%;
-}
+} */
 
 .pen-icon {
     font-size: 25px;
@@ -399,3 +408,4 @@ h2.text-center {
 .input-group .fa-image {
     font-size: 1.5rem;
 }
+
