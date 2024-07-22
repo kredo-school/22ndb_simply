@@ -25,6 +25,8 @@ Route::post('/contact-us/store', [ContactController::class, 'store'])->name('con
 // Route::group(['middleware' => 'auth'], function(){
     Route::get('profile/{id}/show', [ProfileController::class, 'show'])->name('profile.show');
 
+    Route::get('profile/{id}/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+
 // });
 
 Route::group(["prefix" => "item", "as" => "item."], function(){
