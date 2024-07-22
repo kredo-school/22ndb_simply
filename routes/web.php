@@ -7,6 +7,8 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\CategoryController;
 
 
 Auth::routes();
@@ -33,8 +35,21 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
     Route::get('/show', [ItemController::class, 'show'])->name('show');
     Route::get('/add', [ItemController::class, 'add'])->name('add');
     Route::get('/edit', [ItemController::class, 'edit'])->name('edit');
+    
  });
 
  Route::group(["prefix" => "donation", "as" => "donation."], function(){
     Route::get('/show', [DonationController::class, 'show'])->name('show');
  });
+
+ Route::get('homepage/{id}', [HomepageController::class, 'homepage'])->name('homepage');
+
+    Route::get('each_category/{id}', [CategoryController::class, 'eachCategory'])->name('each_category');
+
+    Route::get('my_item/{id}', [ItemController::class, 'myItemPage'])->name('my_item');
+
+    Route::patch('/edit/category/{id}', [CategoryController::class, 'editCategory'])->name('edit.category');
+
+    Route::post('/create/category', [CategoryController::class, 'createCategory'])->name('create.category');
+
+

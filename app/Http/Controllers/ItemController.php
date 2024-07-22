@@ -20,4 +20,9 @@ class ItemController extends Controller
     {
         return view('users.items.edit');
     }
+
+    public function myItemPage()
+    {
+        return view('users.items.my_item');
+    }
 }

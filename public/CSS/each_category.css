@@ -1,0 +1,43 @@
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    width: 900px;
+    max-width: 100%;
+    height: auto;
+}
+
+.container-small {
+    width: 100%;
+    height: 550px;
+}
+
+.pagename {
+    font-weight: 800;
+    font-size: 35px;
+}
+
+.img-item {
+    width: 150px;
+    height: 150px;
+    border: solid 1px #050606;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: #9EA6A6;
+    margin: 0px 10px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.pagination a:hover {
+    color: #050606;
+}
+
+.item-box {
+    text-align: center;
+}
