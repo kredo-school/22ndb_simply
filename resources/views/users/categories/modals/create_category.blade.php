@@ -14,9 +14,9 @@
                 <input type="text" name="category_name" id="category_name" class="form-control" placeholder="Add category name">
             </div>
             <div class="modal-footer border-0 m-auto p-4">
-                <form action="{{ route('create.category') }}" method="post">
+                <form action="#" method="post">
                     @csrf
-                    <button class="sbm_btn btn btn-outline-dark p-2 px-5 rounded-5 me-1" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="sbm_btn btn btn-outline-dark p-2 px-5 rounded-5 me-1">Cancel</button>
                     <button type="submit" class="sbm_btn btn btn-dark p-2 px-5 rounded-5 ms-1">Save</button>
                 </form>
             </div>
