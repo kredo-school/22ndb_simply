@@ -54,7 +54,7 @@
 .add {
     color: #050606;
     font-size: 24px;
-    font-weight: 600!important;
+    font-weight: 600;
 }
 
 
@@ -81,11 +81,11 @@
 .add-item {
      color: #9EA6A6;
      font-size: 40px;
-     font-weight: 600!important;
+     font-weight: 600;
 }
 
 .see-all {
-    font-weight: 600!important;
+    font-weight: 600;
     color: #9EA6A6;
     font-size: 32px;
 }
@@ -95,6 +95,8 @@
     width: 150px; 
     height: 150px;
     font-size: 25px;
+    font-weight: 600;
+
 }
 
 .item-btn {
@@ -102,6 +104,7 @@
     width: 860px;
     height: 150px;
     font-size: 25px;
+    font-weight: 600;
 }
 
 i:hover,

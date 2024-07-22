@@ -4,107 +4,67 @@
 
 @section('content')
 
-<style>
+<link rel="stylesheet" href="{{ asset('/css/homepage.css') }}">
 
-.container-box {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  
-}
-
-.home{
-  color: #9EA6A6;
-  font-weight: 600;
-  font-size: 32;
-}
-
-.category-name{
-    font-weight: 800;
-    font-size: 48;
-}
-
-.number-item{
-    font-weight: 600;
-    font-size: 24;
-}
-
-.icon{
-    color: #9EA6A6;
-    width: 28px;
-    height: 30px;
-}
-
-.img-item{
-    width: 175px;
-    height: 180px;
-    object-fit: cover;
-}
-
-.row-eq-height {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-
-
-
-
-</style>
-<div>
-    <div class="float-start">
-        <p class="home">Home</p>
+<div class="body">
+    <div class="float-start ms-4">
+       <h2 class="pagename">Home</h2>
     </div>
-    
-    <div class="container-box m-0">
+
+    <div class="container d-flex justify-content-start">
+        <div class="container-box pt-5">
         @foreach($categories as $category)
-            <div class="row row-eq-height">
-                <div class="col-sm-1 text-center">
-                    <p class="category-name">{{ $category->name }}</p>
-                    <span class="number-item">{{ $category->item->count()}}</span><span>items</span>
-                    <br>
-                    <span class="icon"><i class="fa-solid fa-pen"></i></span>
-                    <span class="icon"><i class="fa-solid fa-trash-can"></i></span>
-                </div>
+            <div class="d-flex flex-row">
+                <div class="category-box my-3 mx-5 text-center">
+                    <h1 class="category-name">{{ $category->name }}</h1>
+                    <h4 class="number-item">{{ $category->item->count()}}items</h4>
+                    <a data-bs-toggle="modal" data-bs-target="#edit_category-{{ $category['id'] }}" class="btn text-decoration-none"><i class="icon fa-solid fa-pen"></i></a>
+                    
+                    <a data-bs-toggle="modal" data-bs-target="#delete_category-{{ $category['id'] }}" class="btn text-decoration-none"><i class="icon fa-solid fa-trash-can"></i></a>
         
+                </div>
                 
                 @forelse($category->item->take(4) as $item)
-                    <div class="col-sm-2">
-                    <a href="{{ $item->image }}"><img style="height: 180px width: 175px" class="img-thumbnail border border-2 rounded-3 img-item" src="{{ asset($item->image) }}" /></a>
+                    <div class="item-box rounded-4 me-3">
+                        <a href="">
+                            <img class="img-item" src="{{ $item->image }}" />
+                            </a>
                     </div>
                 @empty
-                    <div class="col-sm-8" style="border: 1px dashed">
-                        <p class="text-center">No item</p>
+                    <div class="no-item-box ms-2 me-3 rounded-3">
+                        <h1 class="no-item text-center my-5">No item</h1>
                     </div>                    
                 @endforelse
                 
-                <div class="col-sm-2 border border-1 rounded-3 p-3">
-                <a href="#"><p class="text-center">+</p></a>
+                <div class="item-box rounded-3 p-3">
+                    <a href="#" class="add-item text-decoration-none text-center my-4 me-0">+</a>
                 </div>
-                @if($category->item)
-                <div class="col-sm-1">
-                    <a href="#"><p>>></p></a>
-                </div>
-                @endif
-        
-                
-        @endforeach      
-                
-            
-    </div>
-         
-</div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-2 border border-1 rounded-3">
-                <a href="#"><p>+ Add category</p></a>
+                @if($category->item->isNotEmpty())
+                    <div class="my-5">
+                        <a href="#" class="see-all text-decoration-none text-center ms-2">>></a>
+                    </div> 
+                @endif 
             </div>
+            @include('users.categories.modals.edit_category')
+            @include('users.categories.modals.delete_category') 
+        @endforeach
+        </div>  
+    </div>
 
-            <div class="col-sm-10 border border-1 rounded-3">
-                <a href="#"><p>+ Add item</p></a>
+    <div>
+            <div class="d-flex flex-row justify-content-center me-4 mt-0">
+                <div class="rounded-3 me-4 add-category">
+                    <button data-bs-toggle="modal" data-bs-target="#create-category" class="btn category-btn text-center my-4 ms-2">+ Add category</button>
+
+                    <button data-bs-toggle="modal" data-bs-target="#"class="btn item-btn ms-5">+ Add item</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+@include('users.categories.modals.create_category') 
+
 @endsection
+
+   
