@@ -87,10 +87,9 @@
             </div>
             <div class="comment">
                 <div class="d-flex align-items-start mb-3">
-                    <p>When did you buy it?</p>
+                    <p class="ms-3">When did you buy it?</p>
                 </div>
             </div>
         </div>
-
 @include('users.donations.modal.delete')
 @endsection

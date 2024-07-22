@@ -6,9 +6,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 mt-5">
-            <div class="text-center fw-bold title">{{ __('R E G I S T E R') }}</div>
+            <div class="text-center fw-bold h1">{{ __('R E G I S T E R') }}</div>
 
-            <div class="mt-4">
+            <div class="mt-5">
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
 
@@ -60,14 +60,14 @@
                         </label>
 
                         <div class="col-md-5">
-                            <input id="address" type="address" class="form-control" name="address" required autocomplete="address">
+                            <input id="address" type="text" class="form-control" name="address" required autocomplete="address">
                         </div>
                     </div>
             </div>
 
             <div class="row mb-4">
                         <div class="col-md-4 mx-auto">
-                            <button type="submit" class="btn btn-dark btn-lg w-100" style="border-radius: 45px;">
+                            <button type="submit" class="btn btn-dark btn-lg w-100 button">
                                 {{ __('Register') }}
                             </button>
                         </div>

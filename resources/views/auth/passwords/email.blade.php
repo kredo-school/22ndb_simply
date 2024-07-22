@@ -6,10 +6,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 mt-5">          
-        <div class="text-center fw-bold title">{{ __('R E S E T')}}&nbsp;&nbsp;&nbsp;&nbsp;{{__('P A S S W O R D')}}</div>
+        <div class="text-center fw-bold h1 mt-5">{{ __('R E S E T')}}&nbsp;&nbsp;&nbsp;&nbsp;{{__('P A S S W O R D')}}</div>
 
 
-            <div class="mt-4">
+            <div class="mt-5">
                 @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
@@ -38,7 +38,7 @@
 
                     <div class="row">
                         <div class="col-md-6 mx-auto">
-                            <button type="submit" class="btn btn-dark btn-lg w-100" style="border-radius: 45px;">
+                            <button type="submit" class="btn btn-dark btn-lg w-100 button">
                                 {{ __('Send Reset Link') }}
                             </button>
                         </div>

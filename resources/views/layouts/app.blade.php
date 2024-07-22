@@ -12,17 +12,15 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 
-    {{-- Fontawsome --}}
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     {{-- Custom CSS --}}
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    @yield('css')
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
-    <!-- Style -->
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 </head>
 <body class="bg-white">
@@ -48,17 +46,27 @@
                         @guest
                             @if (Route::currentRouteName() == 'login')
                                 <li class="nav-item">
-                                    <a class="nav-link me-4" href="#"  style="color: #060505; font-size: 28px;">User Guide</a>
+                                    <a class="nav-link me-4" href="#">User Guide</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}"  style="color: #060505; font-size: 28px;">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                            @else (Route::currentRouteName() == 'register')
+                            @elseif (Route::currentRouteName() == 'register' || Route::currentRouteName() == 'password.request' || Route::currentRouteName() == 'password.reset' || Route::currentRouteName() == 'password.reset.success')
                                 <li class="nav-item">
-                                    <a class="nav-link me-4" href="#"  style="color: #060505; font-size: 28px;">User Guide</a>
+                                    <a class="nav-link me-4" href="#">User Guide</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}"  style="color: #060505; font-size: 28px;">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @elseif (Route::currentRouteName() == 'contact' || Route::currentRouteName() == 'index')
+                                <li class="nav-item">
+                                    <a class="nav-link me-4" href="#">User Guide</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link me-4" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -104,13 +112,18 @@
         </main>
     </div>
 
-    <footer>
+    @if (Route::currentRouteName() != 'contact')
         @guest
-            <li class="footer-item" style="list-style: none;">
-                <a class="footer-link text-decoration-none text-white me-5" href="#">Contact Us</a>
-            </li>
+            <footer>
+                <ul class="footer-menu">
+                    <li class="footer-item list-unstyled">
+                        <a class="footer-link text-decoration-none text-white me-5" href="{{ route('contact') }}">Contact Us</a>
+                    </li>
+                </ul>
+            </footer>
         @endguest
-    </footer>
+    @endif
+
 
     <script src="path/to/bootstrap.js"></script>
 </body>

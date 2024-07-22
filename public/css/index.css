@@ -1,0 +1,34 @@
+.image1{
+    object-fit: cover;
+    border: none;
+    width: 95%;
+    height: auto;
+    margin-top: 50px;
+}
+
+.image2{
+    object-fit: cover;
+    border: none;
+    width: 85%;
+    height: auto;
+    margin-top: 200px;
+}
+
+.color-black{
+    color: #050606;
+}
+
+.color-dark-gray{
+    color: #7B7A7A;;
+}
+
+.under-line{
+    text-decoration: underline;
+}
+
+.button{
+    margin-top: 70px;
+    border-radius: 5px !important;
+    font-family: 'Poppins', sans-serif !important;
+    letter-spacing: 1px;
+}
