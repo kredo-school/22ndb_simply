@@ -1,3 +1,11 @@
+/* common part */
+.btn-custom{
+    width: 200px;
+    height: 40px;
+    display: inline-block;
+    outline-width: thick !important;
+}
+
 .icon-sm{
     font-size: 2rem;
 }
@@ -19,6 +27,7 @@
 
 *{
     font-weight: 600 !important;
+    color: #050606;
 }
 
 nav {
@@ -61,10 +70,8 @@ body {
     font-size: 40px !important;
     font-weight: bold !important;
 }
-
-/* Page for "Add item" "Edit item" */
-.icon {
-    font-size: 25px;
+nav{
+    color: #9EA6A6 !important;
 }
 
 .icon-md {
@@ -181,7 +188,7 @@ h2.text-center {
 /* modal */
 .custom-modal .modal-content {
     border-radius: 30px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .custom-modal .modal-content::before {
@@ -199,24 +206,25 @@ h2.text-center {
     font-size: 1rem;
 }
 
+/* Ami:: Sorry, I commented out those cuz they affected my REUSABLE MODAL part */
+
 /* button for modal */
-.btn-rounded {
+/* .btn-rounded {
     border-radius: 50px;
     padding: 5px;
     font-weight: bold;
     font-size: 1rem;
-}
+} */
 
-.btn-danger:hover {
+/* .btn-danger:hover {
     font-family: 'Poppins', sans-serif !important;
     background-color: transparent;
     color: red;
     border-color: red;
     border: 2px solid red;
-}
+} */
 
 /* donation item info page */
-
 .input-size {
     width: auto;
 }
@@ -228,27 +236,27 @@ h2.text-center {
 }
 
 /* button */
-.btn-rounded {
+/* .btn-rounded {
     border-radius: 50px;
     padding: 5px;
     font-weight: bold;
     font-size: 1rem;
-}
+} */
 
-.btn-outline-dark {
+/* .btn-outline-dark {
     border: 2px solid #000;
-}
+} */
 
-.btn-outline-danger {
+/* .btn-outline-danger {
     border: 2px solid red;
     width: 40%;
     height: 40%;
-}
+} */
 
-.btn-danger {
+/* .btn-danger {
     width: 40%;
     height: 40%;
-}
+} */
 
 .pen-icon {
     font-size: 25px;
@@ -290,13 +298,20 @@ h2.text-center {
     max-width: 600px;
     margin: auto;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background-color: #fff;
+    background: linear-gradient(to bottom, #ffffff, #7A95B4);
+    font-size: 30px;
 }
-
-.chat-message {
-    margin-bottom: 20px;
+.footer-link:hover{
+    color: #050606 !important;
+}
+.icon-sm{
+    font-size: 2rem;
+}
+.icon-md{
+    font-size: 3.5rem;
+}
+.icon-lg{
+    font-size: 9rem;
 }
 
 .title {
@@ -305,6 +320,17 @@ h2.text-center {
 
 .button{
     letter-spacing: 3px;
+    border-radius: 40px !important;
+}
+
+.button2{
+    letter-spacing: 1px;
+    border-radius: 5px !important;
+}
+
+.button-modal{
+    letter-spacing: 1px;
+    border-radius: 40px !important;
 }
 
 .custom-modal .modal-content {
@@ -403,4 +429,20 @@ h2.text-center {
 
 .input-group .fa-image {
     font-size: 1.5rem;
+}
+
+.letter-color{
+    color: #050606;
+}
+
+.muted-color{
+    color: #D9D9D9;
+}
+
+.color-gray-1{
+    color: #9EA6A6 !important;
+}
+
+.color-gray-2{
+    color: #CDCECE;
 }
