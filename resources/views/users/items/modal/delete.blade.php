@@ -10,6 +10,7 @@
                 <p class="text-center letter-size">Are you sure to delete your item?</p>
             </div>
             <div class="modal-footer border-0 d-flex justify-content-center">
+                
                 <button type="button" class="btn btn-outline-danger btn-rounded" data-bs-dismiss="modal">
                     Cancel
                 </button>
