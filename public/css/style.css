@@ -340,6 +340,21 @@ h2.text-center {
     height: 3.5rem;
     object-fit: cover;
 }
+.image-md-lg{
+    /* width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 8px;
+    line-height: 1.0em; */
+     width: 100%;
+    height: auto;
+    border: solid 1px #050606;
+    border-radius: 20px;
+    padding: 10px;
+    object-fit: cover;
+}
 .image-lg{
     width: 9rem;
     height: 9rem;
@@ -407,6 +422,7 @@ h2.text-center {
 
 
 
+/* donated-items.css */
 .container {
     width: 120%;
     margin: 0 auto;
@@ -414,55 +430,52 @@ h2.text-center {
 .grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 5px;
     width: 900px;
    
 }
 .grid-item {
     /* width: calc(20% - 10px); */
     /* border: 1px solid #ccc; */
-    padding: 10px;
+    padding: 5px;
     box-sizing: border-box;
-    text-align: center;
+    /* text-align: right; */
+    position: relative;
 }
 .grid-photo{
     border: 1px solid black;
     border-radius: 10px;
     padding: 8px;
     width: 160px;
+    line-height: 1.0em;
 }
 .grid-item img {
     max-width: 300%;
     width: 140px;
     height: auto;
     border-radius: 10px;
+    
 }
 
 .grid-text{
-    font-size: 13px;
-}
-
-
-.image-container {
-    position: relative;
-}
-.image-container img {
-    max-width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ddd;
-    object-fit: cover;
+    font-size: 13px; 
+    text-align: left;
 }
 .bookmark {
-    /* position: absolute;
-    top: 10px;
-    right: 10px; */
+   
+    /* top: 10px; */
+    /* right: 60px; */
+    text-align: right;
     background: none;
     border: none;
     font-size: 2em;
     cursor: pointer;
     color: #000;
+    
+  
 }
-
-.grid-item p {
-    margin: 5px 0;
-} 
+.title-donation{
+    margin: 20px 0px;
+    font-size: 36px; 
+    font-weight: bold; 
+}
