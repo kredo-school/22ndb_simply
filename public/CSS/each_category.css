@@ -2,10 +2,11 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
-.container {
+.main {
     width: 900px;
     max-width: 100%;
     height: auto;
+    margin: auto;
 }
 
 .container-small {
@@ -26,12 +27,16 @@ body {
     padding: 10px;
 }
 
-.pagination a {
-    text-decoration: none;
-    color: #9EA6A6;
+.pagination p, 
+.pagination span {
+    color: #9EA6A6 !important;
     margin: 0px 10px;
     font-weight: 600;
     font-size: 18px;
+}
+
+.pagination a {
+    text-decoration: none;
 }
 
 .pagination a:hover {
