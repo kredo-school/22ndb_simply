@@ -446,3 +446,19 @@ h2.text-center {
 .color-gray-2{
     color: #CDCECE;
 }
+
+.navbar-list a,
+.dropdown-item {
+    text-decoration: none;
+    background-color: #050606 !important;
+    color: white;
+}
+
+.dropdown-menu {
+    background-color: #050606 !important;
+    border-radius: 0% !important;
+}
+
+.navbar-list a:hover {
+    color: #9EA6A6 !important;
+}
