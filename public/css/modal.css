@@ -12,10 +12,6 @@
     color: #050606;
 }
 
-::placeholder {
-    font-weight: 600;
-    color: #9EA6A6;
-}
 
 .sbm_btn {
     width: 180px;
@@ -27,8 +23,9 @@ i {
     color: #050606;
 }
 
-.form-label {
-    color: #9EA6A6;
+::placeholder {
+    opacity: 0.7;
+    font-weight: 500;
 }
 
 .form-control {
