@@ -15,7 +15,7 @@ body {
 }
 
 .pagename {
-    font-weight: 800;
+    font-weight: 800 !important;
     font-size: 35px;
 }
 
@@ -31,7 +31,7 @@ body {
 .pagination span {
     color: #9EA6A6 !important;
     margin: 0px 10px;
-    font-weight: 600;
+    font-weight: 600 !important;
     font-size: 18px;
 }
 
@@ -39,8 +39,12 @@ body {
     text-decoration: none;
 }
 
-.pagination a:hover {
-    color: #050606;
+p:hover {
+    color: #050606 !important;
+}
+
+span:hover {
+    color: #050606 !important;
 }
 
 .item-box {
