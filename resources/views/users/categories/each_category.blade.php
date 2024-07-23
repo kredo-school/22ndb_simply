@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="{{ asset('/css/each_category.css') }}">
 
 <div class="body">
-    <div class="container mt-3">
+    <div class="main mt-3">
             <div class="row">
                 <div class="col-sm-6">
                     <h2 class="pagename ps-2 pb-2">Closet</h2>
