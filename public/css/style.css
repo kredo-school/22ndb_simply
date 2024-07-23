@@ -341,13 +341,6 @@ h2.text-center {
     object-fit: cover;
 }
 .image-md-lg{
-    /* width: 100%;
-    height: auto;
-    object-fit: cover;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 8px;
-    line-height: 1.0em; */
      width: 100%;
     height: auto;
     border: solid 1px #050606;
@@ -475,7 +468,7 @@ h2.text-center {
   
 }
 .title-donation{
-    margin: 20px 0px;
+    margin: 20px 0px 10px 190px;
     font-size: 36px; 
     font-weight: bold; 
 }
