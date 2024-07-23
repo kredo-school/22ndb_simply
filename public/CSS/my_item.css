@@ -1,0 +1,56 @@
+/*  
+    #9EA6A6 
+    #D9D9D9 (muted)
+    #050606 (black)
+
+    
+    font-family: "Poppins", sans-serif;
+ */
+.container {
+    font-family: "Poppins", sans-serif;
+}
+
+
+.e-d-icon {
+    color: #9EA6A6;
+    font-size: 1.5rem;
+
+}
+
+.item-img-box {
+    border-radius: 30px; 
+    height: 300px; 
+    width: 300px;
+}
+
+.item-img {
+    width: 300px; 
+    height: 300px; 
+    object-fit:cover; 
+    padding: 10px; 
+    border-radius: 30px;
+}
+
+.r-date {
+    color: #9EA6A6;
+}
+
+.category-name {
+    color: #9EA6A6;
+}
+
+.item-name {
+    color: #9EA6A6;
+}
+
+.description {
+    color: #9EA6A6;
+}
+
+.donation {
+    color: #9EA6A6;
+}
+
+.e-d-icon:hover {
+    color: #050606;
+}

@@ -1,0 +1,37 @@
+/*  
+    #9EA6A6 
+    #D9D9D9 (muted)
+    #050606 (black)
+    #DA0000 (for delete)
+
+    
+    font-family: "Poppins", sans-serif;
+*/
+
+.delete-modal-title {
+    font-family: "Poppins", sans-serif;
+    color: #DA0000;
+}
+
+.cancel_btn, 
+.delete_btn {
+    width: 180px;
+    font-weight: 600;
+}
+
+.trash-icon {
+    font-size: 1.5rem; 
+    color: #DA0000;
+}
+
+.delete-text {
+     color: #9E9E9E;
+}
+
+.delete_btn:hover {
+    opacity: 0.8;
+    background-color: #DA0000;
+    color: white;
+}
+
+
