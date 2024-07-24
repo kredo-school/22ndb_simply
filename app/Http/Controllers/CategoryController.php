@@ -25,18 +25,20 @@ class CategoryController extends Controller
     }
 
     public function createCategory(Request $request)
-    {
-        // 1. Validate new category name
+    {  
+       
+         // 1. Validate new category name
         $request->validate([
-            'name' => 'required|array|max:255'
+            'name' => 'required|max:255|unique:categories,name'
         ]);
 
         // 2. Save new category name
         
-        $this->category->name = $request->category_name;
-        $this->category->save();
+        $category = new Category;
+        $category->name = $request->input('name');
+        $category->save();
 
-        return redirect()->route('homepage');
+        return redirect()->route('homepage', ['id' => $user->id]);
     }
 
     public function editCategory(Request $request, $id)
