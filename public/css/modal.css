@@ -1,13 +1,13 @@
-/*  
-    #9EA6A6 
+/*
+    #9EA6A6
     #D9D9D9 (muted)
     #050606 (black)
 
-    
+
     font-family: "Poppins", sans-serif;
 */
 
-.modal {
+.modal{
     font-family: "Poppins", sans-serif;
     color: #050606;
 }
@@ -23,14 +23,11 @@ i {
     color: #050606;
 }
 
-.form-control::placeholder {
-    color: #D9D9D9 !important;
-    font-weight: 800 !important;
-
+::placeholder {
+    opacity: 0.7;
+    font-weight: 500;
 }
 
 .form-control {
     border: 1px solid #050606;
-
 }
-
