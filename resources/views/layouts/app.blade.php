@@ -12,18 +12,15 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 
-    <!-- Font Awesome -->
-    {{-- Fontawsome --}}
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     {{-- Custom CSS --}}
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    @yield('css')
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
-    <!-- Style -->
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 </head>
 <body class="bg-white">
@@ -61,7 +58,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
-                            @elseif (Route::currentRouteName() == 'contact')
+                            @elseif (Route::currentRouteName() == 'contact' || Route::currentRouteName() == 'index')
                                 <li class="nav-item">
                                     <a class="nav-link me-4" href="#">User Guide</a>
                                 </li>
@@ -94,15 +91,19 @@
                                     @endif
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end text-center navbar-list" aria-labelledby="navbarDropdown">
+                                        <li><a href="#">Profile</a></li>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        <li><a href="#">User Guide</a></li>
+
+                                        <li><a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
-                                    </form>
-                                </div>
+                                        </form>
+                                        </li>
+                                    </ul>
                             </li>
                         @endguest
                     </ul>

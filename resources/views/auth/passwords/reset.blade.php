@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 mt-5">         
-            <div class="text-center fw-bold h1">{{ __('R E S E T')}}&nbsp;&nbsp;&nbsp;&nbsp;{{__('P A S S W O R D')}}   
+            <div class="text-center fw-bold h1 mt-5">{{ __('R E S E T')}}&nbsp;&nbsp;&nbsp;&nbsp;{{__('P A S S W O R D')}}   
             </div>
 
             <div class="mt-5">
@@ -57,7 +57,7 @@
 
                 <div class="row mb-4">
                     <div class="col-md-4 mx-auto">
-                        <button type="submit" class="btn btn-dark btn-lg w-100 button" style="border-radius: 45px;">
+                        <button type="submit" class="btn btn-dark btn-lg w-100 button">
                             {{ __('Reset') }}
                         </button>
                     </div>

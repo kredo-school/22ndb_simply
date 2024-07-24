@@ -1,0 +1,27 @@
+.bordered-table{
+    border-collapse: separate;
+    border-spacing: 0 30px;
+}
+.bordered-table td{
+    border-bottom: 2px solid !important;
+    background-color: white !important;
+}
+
+.xsmall{
+    font-size: 0.65rem !important;
+}
+
+textarea{
+    resize: none !important;
+    height: 30px;
+    font-size: 20px !important;
+    color: #9ea6a6 !important;
+}
+
+.text-intro{
+    height: 150px !important;
+}
+.gray{
+    color: #9ea6a6 !important;
+}
+
