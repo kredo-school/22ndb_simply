@@ -7,7 +7,7 @@
     font-family: "Poppins", sans-serif;
 */
 
-.modal{
+.modal {
     font-family: "Poppins", sans-serif;
     color: #050606;
 }
@@ -19,15 +19,18 @@
 }
 
 i {
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
     color: #050606;
 }
 
-::placeholder {
-    opacity: 0.7;
-    font-weight: 500;
+.form-control::placeholder {
+    color: #D9D9D9 !important;
+    font-weight: 800 !important;
+
 }
 
 .form-control {
     border: 1px solid #050606;
+
 }
+
