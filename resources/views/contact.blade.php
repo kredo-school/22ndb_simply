@@ -8,7 +8,7 @@
         <div class="col-md-7">         
             <div class="mt-4 text-center">
                 <div class="row">
-                    <p class="h1">Contact Us</p>
+                    <p class="title">CONTACT US</p>
                 </div>
 
                 <div class="m-5">
