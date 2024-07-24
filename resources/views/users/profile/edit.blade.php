@@ -17,9 +17,12 @@
             {{-- Left side --}}
             <div class="row">
                 <div class="col-md-6 d-flex align-items-center flex-column my-auto ">
-                    <div class="">
-                        <label for="avatar" class="form-label fw-bold"></label>
-                        <img src="{{$user->avatar}}" alt="{{$user->name}}" class="rounded-circle avatar-lg">
+                    <div class="mb-5">
+                        @if($user->avatar)
+                            <img src="{{$user->avatar}}" alt="{{$user->name}}" class="rounded-circle avatar-lg">
+                        @else
+                            <i class="fa-solid fa-circle-user icon-lg"></i>
+                        @endif
                     </div>
                     <div class="col-auto">
                         <input type="file" name="avatar" id="avatar" value="" class="form-control form-control-sm mt-1" aria-describedby="avatar-info">

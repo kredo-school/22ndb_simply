@@ -20,10 +20,34 @@ class ProfileController extends Controller
             ->with('user', $user);
     }
 
-// Later need to edit (Auth::user()->id);
-    public function edit($id){
-        $user = $this->user->findOrFail($id);
+    public function edit(){
+        $user = $this->user->findOrFail(Auth::user()->id);
 
         return view('users.profile.edit')->with('user', $user);
     }
+
+    public function update(Request $request){
+        #Validation
+        $request->validate([
+            'username' => 'required|max:50|unique:users,username',
+            'email' => 'required|email|unique:users,email,'. Auth::user()->id,
+            'avatar' => 'mimes:jpeg,jpg,png,gif|max:1048',
+            'introduction' => 'max:100'
+        ]);
+
+        #2: Update
+        $user  = $this->user->findOrFail(Auth::user()->id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->introduction = $request->introduction;
+
+            if($request->avatar){
+                $user->avatar  = 'data:image/'. $request->avatar->extension(). ';base64,'.base64_encode(file_get_contents($request->avatar));
+            }
+
+        #3: Save 
+        $user->save();
+        return redirect()->route('profile.show',Auth::user()->id);
+    }
+
 }

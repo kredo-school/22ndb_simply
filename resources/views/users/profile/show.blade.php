@@ -42,7 +42,7 @@
 
                     {{-- @if(Auth::user()->id === $user->id)  --}}
                         <div class="d-flex justify-content-end">
-                            <a href="" class="btn btn-lg">
+                            <a href="{{route('profile.edit')}}" class="btn btn-lg">
                                 <i class="fa-solid fa-pen gray"></i>
                             </a>
                             
