@@ -133,35 +133,6 @@ body {
     overflow: hidden;
 }
 
-.chat-message.me .message {
-    background-color: #e1f5fe;
-}
-
-
-/* modal */
-.custom-modal .modal-content {
-    border-radius: 30px;
-    overflow: hidden;
-}
-
-
-/* navbar after logged */
-.navbar-list a,
-.dropdown-item {
-    text-decoration: none;
-    background-color: #050606 !important;
-    color: white;
-}
-
-.dropdown-menu {
-    background-color: #050606 !important;
-    border-radius: 0% !important;
-}
-
-.navbar-list a:hover {
-    color: #9EA6A6 !important;
-}
-
 /* footer before logged*/
 
 footer {
@@ -185,54 +156,19 @@ footer {
     font-weight: 900 !important;
 }
 
-
-
-.letter-color{
-    color: #050606;
+/* navbar before logged */
+nav {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 28px;
+    text-align: center;
+    margin-top: auto;
 }
-
 .nav-link {
     color: #050606 !important;
 }
-
 .nav-link:hover {
     color: #9EA6A6 !important;
 }
-
-
-/* navbar after logged */
-.navbar-list a,
-.dropdown-item {
-    text-decoration: none;
-    background-color: #050606 !important;
-    color: white;
-}
-
-.dropdown-menu {
-    background-color: #050606 !important;
-    border-radius: 0% !important;
-}
-
-.navbar-list a:hover {
-    color: #9EA6A6 !important;
-}
-
-.letter-color{
-    color: #050606;
-}
-
-.muted-color{
-    color: #D9D9D9;
-}
-
-.color-gray-1{
-    color: #9EA6A6 !important;
-}
-
-.color-gray-2{
-    color: #CDCECE;
-}
-
 
 /* navbar after logged */
 .navbar-list a,

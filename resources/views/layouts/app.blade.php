@@ -116,7 +116,7 @@
         </main>
     </div>
 
-    {{-- @if (Route::currentRouteName() != 'contact')
+    @if (Route::currentRouteName() != 'contact')
         @guest
             <footer>
                 <ul class="footer-menu">
@@ -126,7 +126,7 @@
                 </ul>
             </footer>
         @endguest
-    @endif --}}
+    @endif
 
 
     <script src="path/to/bootstrap.js"></script>
