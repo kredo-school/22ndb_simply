@@ -1,7 +1,7 @@
 <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 <div class="modal fade" id="contactConfirmationModal" tabindex="-1" aria-labelledby="contactConfirmationModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable custom-modal" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable custom-modal" role="document">
         <div class="modal-content">
             <div class="modal-body">
                 <h5 class="modal-title mt-5 h1" id="contactConfirmationModalLabel">
