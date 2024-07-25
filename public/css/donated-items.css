@@ -1,8 +1,11 @@
 /* donated-items.css */
-.container {
+/* .container {
     width: 120%;
     margin: 0 auto;
-}
+} */
+
+
+
 .grid {
     display: flex;
     flex-wrap: wrap;
@@ -10,68 +13,91 @@
     width: 900px;
    
 }
-.grid-item {
-    /* width: calc(20% - 10px); */
-    /* border: 1px solid #ccc; */
-    padding: 5px;
-    box-sizing: border-box;
-    text-align: center;
-    position: relative;
-}
-.grid-photo{
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 8px;
-    width: 160px;
-    line-height: 1.0em;
-}
+    @media screen and (min-width: 1025px) {
+        .grid-item {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+         }
+       } @media screen and (min-width: 600px) {
+         .grid-item {
+           width: 20%;
+           border-radius: 10px;
+    overflow: hidden;
+           
+         }
+       }
+
+     
 .grid-item img {
     max-width: 300%;
-    width: 140px;
     height: auto;
     border-radius: 10px;
-    
-}
+    overflow: hidden;
+} @media screen and (min-width: 1025px) {
+    .grid-item img {
+        width: 140px;
+     }
+   } @media screen and (min-width: 600px) {
+     .grid-item img {
+       width: 135px;
+     }
+   }
 
 .grid-text{
-    font-size: 13px;
-    margin-left: 55px;
-}
-
-
-.image-container {
-    position: relative;
-}
-.image-container img {
-    max-width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ddd;
-    object-fit: cover;
-    float: left;
-    display: block;
+    font-size: 13px; 
+    text-align: left;
 }
 .bookmark {
-    position: absolute;
-    /* top: 10px; */
-    right: 60px;
+    text-align: right;
     background: none;
     border: none;
-    font-size: 2em;
+ 
     cursor: pointer;
     color: #000;
-    
-  
-}
-
-.grid-item p {
-    margin: 5px 0;
-} 
-
-.title{
-    text-align: left;
-    margin-bottom: 60px;
+} @media screen and (min-width: 1025px) {
+    .bookmark {
+        margin-right: 10px;
+        margin-top: 8px;
+        font-size: 2em;
+     }
+   } @media screen and (min-width: 600px) {
+     .bookmark {
+       margin-right: 60px;
+       margin-top: 8px;
+       font-size: 2em;
+     }
+   }
+.title-donation{
     font-size: 36px; 
     font-weight: bold; 
-    margin-left: 500px; 
-    
-}
+} @media screen and (min-width: 1025px) {
+    .title-donation {
+        font-size: 36px;
+     }
+   } @media screen and (min-width: 600px) {
+     .title-donation {
+       font-size: 25px;
+       /* margin-left: 18%; */
+     }
+   }
+
+
+   
+
+.image-md-lg{
+   height: auto;
+   border: solid 1px #050606;
+   border-radius: 10px;
+   padding: 10px;
+   object-fit: cover;
+}  
+   @media screen and (min-width: 1025px) {
+    .row {
+        font-size: 15px
+     }
+   } @media screen and (min-width: 600px) {
+     .row {
+       font-size: 10px
+     }
+   }
