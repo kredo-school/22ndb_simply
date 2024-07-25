@@ -11,27 +11,26 @@ class HomepageController extends Controller
 {
     
     private $category;
+    private $user;
 
-    public function __construct(Category $category){
+    public function __construct(Category $category, User $user){
         $this->category = $category;
+        $this->user = $user;
     }
 
 
-    public function homepage()
+    public function homepage($id)
     {
 
         $categories = Category::all();
-        // $user = User::findOrFail($id);
+        $user = User::findOrFail($id);
 
         return view('users.homepage', [
             'categories' => $categories,
-            // 'user' => $user
-
+            'user' => $user
         ]);
-
-    
-
-    
     }
+
+
 
 }

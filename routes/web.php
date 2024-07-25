@@ -11,11 +11,12 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\CategoryController;
 
 
+
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
-Route::get('/homepage', [App\Http\Controllers\HomepageController::class, 'homepage'])->name('homepage');
+Route::get('/homepage/{id}', [App\Http\Controllers\HomepageController::class, 'homepage'])->name('homepage');
 
 Route::get('/reset-successful', [HomeController::class, 'resetSuccess'])->name('password.reset.success');
 
@@ -43,7 +44,7 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
  });
 
 //  homepage
- Route::get('homepage/{id}', [HomepageController::class, 'homepage'])->name('homepage');
+//  Route::get('homepage/{id}', [HomepageController::class, 'homepage'])->name('homepage');
 
 //  category
  Route::get('each_category/{id}', [CategoryController::class, 'eachCategory'])->name('each_category');
