@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="col-6">
-                    <p class="text-center display-6">Let's simplify your item!</p>
+                    <p class="text-center display-6 fw-bold">Let's simplify your item!</p>
 
                     <p class="text-start h3 mt-5 color-dark-gray under-line">Organize your items</p>
                     <p class="text-start h5 mt-3 mb-5 color-dark-gray">You can register your items with pictures in each category.</p>
