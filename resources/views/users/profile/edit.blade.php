@@ -8,7 +8,7 @@
 
 @section('content')
 <div class="col-md-8 mx-auto h4 ">
-    <form action="" method="post" class="" enctype="multipart/form-data">
+    <form action="{{route('profile.update')}}" method="post" class="" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
 
@@ -81,7 +81,7 @@
                     {{-- Btn --}}
                     <div class="mb-3 d-flex justify-content-center">
                         @include('users.components.btn', [
-                            'r' => route('home'),
+                            'r' => route('profile.show', $user->id),
                             'color' => 'dark', 
                             'name' => 'Update'
                         ])
