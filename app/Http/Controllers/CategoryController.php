@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Item;
+use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
 {
@@ -41,22 +42,20 @@ class CategoryController extends Controller
         return redirect()->route('homepage', ['id' => Auth::user()->id]);
     }
 
-    public function editCategory(Request $request, $id)
+    public function editCategory(Request $request)
     {
-        // 1. Validate the data from the form
+        
+       // Validate the request data
         $request->validate([
-            'name' => 'required|array|max:255'
-        ]);
+        'edit_category_name' => 'required|max:255',
+    ]);
 
-        // 2. Update the category name
-        $category = $this->category->findOrFail($id);
-        $category->name = $request->edit_category_name;
+        $category = $this->category->findOrFail($request->id);  
+        $category->name = $request->input('edit_category_name');
+        $category->save();
 
-        // 3. Save the new category name
-            $category->save();
-
-        // 4. Redirect to homepage
-        return redirect()->route('homepage');
+        // Redirect to homepage
+        return redirect()->route('homepage', ['id' => Auth::user()->id]);
     }
     
 }
