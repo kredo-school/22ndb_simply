@@ -11,11 +11,12 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\CategoryController;
 
 
+
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
-
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
+Route::get('/homepage/{id}', [App\Http\Controllers\HomepageController::class, 'homepage'])->name('homepage');
 
 Route::get('/reset-successful', [HomeController::class, 'resetSuccess'])->name('password.reset.success');
 
@@ -42,14 +43,16 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
     Route::get('/show', [DonationController::class, 'show'])->name('show');
  });
 
- Route::get('homepage/{id}', [HomepageController::class, 'homepage'])->name('homepage');
+//  homepage
+//  Route::get('homepage/{id}', [HomepageController::class, 'homepage'])->name('homepage');
 
-    Route::get('each_category/{id}', [CategoryController::class, 'eachCategory'])->name('each_category');
+//  category
+ Route::get('each_category/{id}', [CategoryController::class, 'eachCategory'])->name('each_category');
 
-    Route::get('my_item/{id}', [ItemController::class, 'myItemPage'])->name('my_item');
+ Route::get('my_item/{id}', [ItemController::class, 'myItemPage'])->name('my_item');
 
-    Route::patch('/edit/category/{id}', [CategoryController::class, 'editCategory'])->name('edit.category');
+ Route::patch('/edit/category/{id}', [CategoryController::class, 'editCategory'])->name('edit.category');
 
-    Route::post('/create/category', [CategoryController::class, 'createCategory'])->name('create.category');
+ Route::post('/create/category', [CategoryController::class, 'createCategory'])->name('create.category');
 
 
