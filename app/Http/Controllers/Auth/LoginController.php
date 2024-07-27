@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class LoginController extends Controller
 {
     /*
@@ -27,7 +28,12 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/homepage/{id}';
+
+    protected function redirectTo() {
+       
+        return route('homepage', ['id' => Auth::user()->id]);
+     }
 
     /**
      * Create a new controller instance.
