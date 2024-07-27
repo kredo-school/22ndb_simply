@@ -67,8 +67,9 @@
                         </div>
                     </div>
                 </div>
-            </div>   
+            </div>
         </div>
     </div>
+    @include('users.items.modal.delete')
 </div>
 @endsection

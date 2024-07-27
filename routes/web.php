@@ -34,8 +34,10 @@ Route::post('/contact-us/store', [ContactController::class, 'store'])->name('con
 Route::group(["prefix" => "item", "as" => "item."], function(){
     Route::get('/show', [ItemController::class, 'show'])->name('show');
     Route::get('/add', [ItemController::class, 'add'])->name('add');
-    Route::get('/edit', [ItemController::class, 'edit'])->name('edit');
-    
+    Route::post('/store', [ItemController::class, 'store'])->name('store');
+    Route::get('/{id}/edit', [ItemController::class, 'edit'])->name('edit');
+    Route::patch('/{id}/update', [ItemController::class, 'update'])->name('update');
+
  });
 
  Route::group(["prefix" => "donation", "as" => "donation."], function(){

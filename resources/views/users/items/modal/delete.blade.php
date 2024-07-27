@@ -1,4 +1,6 @@
-<div class="modal fade" id="delete-item">
+
+
+{{-- <div class="modal fade" id="delete-item">
     <div class="modal-dialog modal-dialog-scrollable custom-modal" role="document">
         <div class="modal-content">
             <div class="modal-header border-0">
@@ -10,7 +12,7 @@
                 <p class="text-center letter-size">Are you sure to delete your item?</p>
             </div>
             <div class="modal-footer border-0 d-flex justify-content-center">
-                
+
                 <button type="button" class="btn btn-outline-danger btn-rounded" data-bs-dismiss="modal">
                     Cancel
                 </button>
@@ -18,4 +20,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}

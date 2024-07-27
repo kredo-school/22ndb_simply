@@ -1,4 +1,12 @@
-<div class="modal fade" id="delete-item">
+@include('users.components.deletemodal', [
+    'id' => 'delete-comment',
+    'title' => 'danger',
+    'body' => 'Delete',
+    'r' => route('donation.destroy', $item->id)
+])
+
+
+{{-- <div class="modal fade" id="delete-item">
     <div class="modal-dialog modal-dialog-scrollable custom-modal" role="document">
         <div class="modal-content">
             <div class="modal-header border-0">
@@ -18,4 +26,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}

@@ -9,6 +9,7 @@ use App\Models\Item;
 class CategoryController extends Controller
 {
     private $category;
+    private $item;
 
     public function __construct(Category $category, Item $item){
         $this->category = $category;
@@ -19,9 +20,9 @@ class CategoryController extends Controller
     {
 
         $categories = Category::all();
-       
+
         return view('users.categories.each_category', ['categories' => $categories]);
-    
+
     }
 
     public function createCategory(Request $request)
@@ -32,7 +33,7 @@ class CategoryController extends Controller
         ]);
 
         // 2. Save new category name
-        
+
         $this->category->name = $request->category_name;
         $this->category->save();
 
@@ -56,5 +57,5 @@ class CategoryController extends Controller
         // 4. Redirect to homepage
         return redirect()->route('homepage');
     }
-    
+
 }
