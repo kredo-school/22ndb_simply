@@ -9,18 +9,18 @@
     @section('content')
     <div class="col-md-8 mx-auto h4 ">
         <div class="container my-5">
-            {{-- Frash message --}}
-            @if(session('success'))
+    {{-- Frash message --}}
+        @if(session('success'))
             <div class="alert alert-dark">
                 {{session('success')}}
             </div>
-            @endif
+        @endif
 
-            @if(session('error'))
+        @if(session('error'))
             <div class="alert alert-danger">
                 {{session('error')}}
             </div>
-            @endif
+        @endif
 
             <p class='gray'>Profile</p>
             {{-- Left side --}}
