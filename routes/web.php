@@ -55,4 +55,6 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
 
  Route::post('/create/category', [CategoryController::class, 'createCategory'])->name('create.category');
 
+ Route::delete('/delete/category/{id}', [CategoryController::class, 'deleteCategory'])->name('delete.category');
+
 

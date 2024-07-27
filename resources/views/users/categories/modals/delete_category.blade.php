@@ -11,7 +11,7 @@
                 <h5 class="delete-text">The items in “Kitchen” will go into “Others”.</h5>
             </div>
             <div class="modal-footer border-0 m-auto p-4">
-                <form method="POST" action="#">
+                <form method="POST" action="{{ route('delete.category', $category->id) }}">
                     @csrf
                     @method('DELETE')
                 <button type="button" class="cancel_btn btn btn-outline-danger p-2 px-5 rounded-5 me-1"  data-bs-dismiss="modal">Cancel</button>

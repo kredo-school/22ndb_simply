@@ -58,4 +58,11 @@ class CategoryController extends Controller
         return redirect()->route('homepage', ['id' => Auth::user()->id]);
     }
     
+    public function deleteCategory($id)
+    {
+       $category = Category::findOrFail($id);
+       $category->delete();
+
+        return redirect()->back();
+    }
 }
