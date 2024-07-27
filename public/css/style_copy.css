@@ -130,6 +130,7 @@ body {
 /* modal */
 .custom-modal .modal-content {
     border-radius: 30px;
+    overflow: hidden;
 }
 
 .custom-modal .modal-content::before {

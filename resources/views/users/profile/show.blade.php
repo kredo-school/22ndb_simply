@@ -1,3 +1,4 @@
+    {{-- Need to change extends blade  later...--}}
     @extends('layouts.app')
 
     @section('title', 'Show Profile')
@@ -8,6 +9,19 @@
     @section('content')
     <div class="col-md-8 mx-auto h4 ">
         <div class="container my-5">
+    {{-- Frash message --}}
+        @if(session('success'))
+            <div class="alert alert-dark">
+                {{session('success')}}
+            </div>
+        @endif
+
+        @if(session('error'))
+            <div class="alert alert-danger">
+                {{session('error')}}
+            </div>
+        @endif
+
             <p class='gray'>Profile</p>
             {{-- Left side --}}
             <div class="row">
@@ -40,9 +54,9 @@
                 <div class="col p-5">
                     {{--If ur the profile owner, can see edit delete icons --}}
 
-                    {{-- @if(Auth::user()->id === $user->id)  --}}
+                    @if(Auth::user()->id === $user->id) 
                         <div class="d-flex justify-content-end">
-                            <a href="" class="btn btn-lg">
+                            <a href="{{route('profile.edit')}}" class="btn btn-lg">
                                 <i class="fa-solid fa-pen gray"></i>
                             </a>
                             
@@ -54,7 +68,7 @@
                             @component('users.components.deletemodal', [
                                 'id' => 'delete-modal',
                                 'title' => 'Delete Account',
-                                'r2' => '#'             
+                                'r2' => route('profile.destroy', $user->id)         
                                 ])
                                 @slot('body')
                                     <p class="h5 mb-2">Are you sure you want to delete this account?</p>
@@ -63,7 +77,7 @@
                                 @endslot
                             @endcomponent
                         </div>
-                    {{-- @endif --}}
+                    @endif
 
                     <table class='table text-start bordered-table'>
                         <tbody>
@@ -71,12 +85,12 @@
                                 <td>Username</td>
                                 <td>{{$user->username}}</td>
                             </tr>
-                            {{-- @if(Auth::user()->id === $user->id)  --}}
+                        @if(Auth::user()->id === $user->id) 
                             <tr>
                                 <td>Email</td>
                                 <td>{{$user->email}}</td>
                             </tr>
-                            {{-- @endif --}}
+                        @endif
                             <tr>
                                 <td >Address</td>
                                 <td>{{$user->address}}</td>
