@@ -25,4 +25,15 @@ class ItemController extends Controller
     {
         return view('users.items.my_item');
     }
+
+    // Profile items
+    public function myitems(){
+        return view('users.profile.myitems.myitems');
+    }
+    public function favorites(){
+        return view('users.profile.myitems.favorites');
+    }
+    public function donated(){
+        return view('users.profile.myitems.donated');
+    }
 }

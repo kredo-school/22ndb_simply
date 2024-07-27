@@ -24,15 +24,19 @@ Route::get('/contact-us', [ContactController::class, 'contact'])->name('contact'
 Route::post('/contact-us/store', [ContactController::class, 'store'])->name('contact.store');
 
 
-// ＃Profile
+// Profile
 Route::group(['middleware' => 'auth'], function(){
     Route::get('profile/{id}/show', [ProfileController::class, 'show'])->name('profile.show');
     Route::get('profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('profile/update', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('users/{id}', [UserController::class, 'destroy'])->name('profile.destroy');
-
-
 });
+
+    // Myitems
+        Route::get('profile/myitems', [ItemController::class, 'myitems'])->name('profile.myitems');
+        Route::get('profile/favorites', [ItemController::class, 'favorites'])->name('profile.favorites');
+        Route::get('profile/donated', [ItemController::class, 'donated'])->name('profile.donated');
+
 
 Route::group(["prefix" => "item", "as" => "item."], function(){
     Route::get('/show', [ItemController::class, 'show'])->name('show');
