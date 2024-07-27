@@ -39,7 +39,7 @@
                 </div>
                 @if($category->item->isNotEmpty())
                     <div class="my-5">
-                        <a href="#" class="see-all text-decoration-none text-center ms-2">>></a>
+                        <a href="{{ route('each_category', $category->id) }}" class="see-all text-decoration-none text-center ms-2">>></a>
                     </div> 
                 @endif 
             </div>

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class CategoryController extends Controller
 {
     private $category;
+    private $item;
 
     public function __construct(Category $category, Item $item){
         $this->category = $category;
@@ -65,4 +66,17 @@ class CategoryController extends Controller
 
         return redirect()->back();
     }
+
+    public function showCategoryItem($id)
+    {
+        $category_items = Category::find($id)->item;
+        $category = Category::find($id);
+    
+        return view('users.categories.each_category')
+                ->with('category_items', $category_items)
+                ->with('category', $category);
+    
+    }
+
+
 }

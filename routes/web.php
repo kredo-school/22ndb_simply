@@ -47,7 +47,7 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
 //  Route::get('homepage/{id}', [HomepageController::class, 'homepage'])->name('homepage');
 
 //  category
- Route::get('each_category/{id}', [CategoryController::class, 'eachCategory'])->name('each_category');
+ Route::get('each_category/{id}', [CategoryController::class, 'showCategoryItem'])->name('each_category');
 
  Route::get('my_item/{id}', [ItemController::class, 'myItemPage'])->name('my_item');
 
