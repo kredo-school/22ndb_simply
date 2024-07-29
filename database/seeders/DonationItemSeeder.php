@@ -25,31 +25,31 @@ class DonationItemSeeder extends Seeder
         $donation_item = [
             [
                 'user_id' => '1',
-                'item_id' => '1',
+                'item_id' => '11',
                 'created_at' => NOW(),
                 'updated_at' => NOW(),
             ],
             [
                 'user_id' => '2',
-                'item_id' => '2',
+                'item_id' => '12',
                 'created_at' => NOW(),
                 'updated_at' => NOW(),
             ],
             [
                 'user_id' => '3',
-                'item_id' => '3',
+                'item_id' => '13',
                 'created_at' => NOW(),
                 'updated_at' => NOW(),
             ],
             [
                 'user_id' => '1',
-                'item_id' => '4',
+                'item_id' => '14',
                 'created_at' => NOW(),
                 'updated_at' => NOW(),
             ],
             [
                 'user_id' => '2',
-                'item_id' => '5',
+                'item_id' => '15',
                 'created_at' => NOW(),
                 'updated_at' => NOW(),
             ]

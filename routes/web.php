@@ -33,7 +33,6 @@ Route::post('/contact-us/store', [ContactController::class, 'store'])->name('con
 
 // });
 
-Route::get('/donated-items/show', [DonationController::class, 'showDonatedItem'])->name('donated.item.show');
 
 Route::group(["prefix" => "item", "as" => "item."], function(){
     Route::get('/show', [ItemController::class, 'show'])->name('show');
@@ -82,4 +81,4 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
 
 
 Route::get('/donated-items', [DonationController::class, 'indexDonatedItems'])->name('donated.items.index');
-Route::get('/donated-items/show', [DonationController::class, 'showDonatedItem'])->name('donated.item.show');
+Route::get('/donated-items/{id}', [DonationController::class, 'showDonatedItem'])->name('donated.item.show');

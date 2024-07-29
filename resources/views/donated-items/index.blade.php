@@ -7,12 +7,12 @@
 
 @section('content')
 
-<div class="container-fluid" style="width: 1000px;">
-    <h1 class="title-donation mb-3" style="margin">Donated Items</h1>
+<div class="container-fluid" style="width: 950px;">
+    <h1 class="title-donation mb-3">Donated Items</h1>
         <div class="row-cols-5 d-flex justify-content-center">
             <div class="col  grid-item" >
                 <a href="#">
-                    <img class="image-md-lg" src="{{ asset('images/donation-items closet.jpg') }}" style="border-radius: 10px; overflow: hidden;"/>
+                <img class="image-md-lg" src="{{ asset('images/donation-items closet.jpg') }}" style="border-radius:10px; overflow: hidden;"/>
                 </a>
                     <div class="row">
                         <div class="col">

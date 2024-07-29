@@ -102,25 +102,37 @@
      }
    }
 
-   .image-md-ss{
-    height: auto;
-   border: solid 1px #050606;
-   border-radius: 10px;
-   padding: 10px;
-   object-fit: cover;
-   width: 100%;
+.image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    overflow: hidden;
+    border: solid 1px #050606;
+    border-radius: 40px;
+}
+
+.image-md-ss {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+    padding: 10px;
+
+}
 
 
-
-   }
 
    .font-big{
     font-size: 24px;
     color: #9EA6A6;
+    margin-bottom: 14px;
    }
 
    .font-small{
-    font-size: 20px;
+    font-size: 18px;
     color: #9EA6A6;
     
 
@@ -137,4 +149,14 @@
    .fa-trash-can{
     font-size: 40px;
     color: #9EA6A6;
+   }
+
+   .scrollable{
+    overflow-y: auto;
+    max-height: 400px;
+   }
+
+   .info-icon{
+    height: 70px;
+    width: 70px;
    }

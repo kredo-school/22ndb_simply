@@ -16,4 +16,13 @@ class Category extends Model
         return $this->hasMany(Item::class);
     }
 
+    public function items()
+    {
+        return $this->hasMany(Item::class);
+    }
+
+    public function donationItems()
+    {
+        return $this->hasMany(DonationItem::class);
+    }
 }

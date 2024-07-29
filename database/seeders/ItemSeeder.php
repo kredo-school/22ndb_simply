@@ -22,7 +22,7 @@ class ItemSeeder extends Seeder
         $item = [
             [
                 'name' => 'perfume',
-                'description' => 'Category1',
+                'description' => 'I just used one time. So it is almost new!',
                 'image' => 'images/perfume.jpg',
                 'user_id' => '1',
                 'category_id' => '1',
@@ -31,7 +31,7 @@ class ItemSeeder extends Seeder
             ],
             [
                 'name' => 'cup',
-                'description' => 'Category1',
+                'description' => 'I bought it in Spain.',
                 'image' => 'images/cup.jpg',
                 'user_id' => '2',
                 'category_id' => '2',
@@ -40,7 +40,7 @@ class ItemSeeder extends Seeder
             ],
             [
                 'name' => 'shoes',
-                'description' => 'Category1',
+                'description' => 'I got but it is a bit small for me.',
                 'image' => 'images/shoes.jpg',
                 'user_id' => '3',
                 'category_id' => '3',
@@ -49,7 +49,7 @@ class ItemSeeder extends Seeder
             ],
             [
                 'name' => 'skateboard',
-                'description' => 'Category1',
+                'description' => 'My son used this but he does not need anymore.',
                 'image' => 'images/skateboard.jpg',
                 'user_id' => '1',
                 'category_id' => '4',
@@ -58,7 +58,7 @@ class ItemSeeder extends Seeder
             ],
             [
                 'name' => 'winter coat',
-                'description' => 'Category1',
+                'description' => 'I got from my sister but it is not my style.',
                 'image' => 'images/cloth.jpg',
                 'user_id' => '2',
                 'category_id' => '3',
