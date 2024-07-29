@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\DonatedItemController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProfileController;
@@ -58,3 +59,27 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
  Route::post('/create/category', [CategoryController::class, 'createCategory'])->name('create.category');
 
 
+Route::group(["prefix" => "item", "as" => "item."], function(){
+    Route::get('/show', [ItemController::class, 'show'])->name('show');
+    Route::get('/add', [ItemController::class, 'add'])->name('add');
+    Route::get('/edit', [ItemController::class, 'edit'])->name('edit');
+    
+ });
+
+ Route::group(["prefix" => "donation", "as" => "donation."], function(){
+    Route::get('/show', [DonationController::class, 'show'])->name('show');
+ });
+
+ Route::get('homepage/{id}', [HomepageController::class, 'homepage'])->name('homepage');
+
+    Route::get('each_category/{id}', [CategoryController::class, 'eachCategory'])->name('each_category');
+
+    Route::get('my_item/{id}', [ItemController::class, 'myItemPage'])->name('my_item');
+
+    Route::patch('/edit/category/{id}', [CategoryController::class, 'editCategory'])->name('edit.category');
+
+    Route::post('/create/category', [CategoryController::class, 'createCategory'])->name('create.category');
+
+
+Route::get('/donated-items', [DonationController::class, 'indexDonatedItems'])->name('donated.items.index');
+Route::get('/donated-items/show', [DonationController::class, 'showDonatedItem'])->name('donated.item.show');
