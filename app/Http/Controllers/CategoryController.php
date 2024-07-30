@@ -38,6 +38,7 @@ class CategoryController extends Controller
         
         $category = new Category;
         $category->name = $request->input('name');
+        $category->user_id = Auth::user()->id;
         $category->save();
 
         return redirect()->route('homepage', ['id' => Auth::user()->id]);
