@@ -9,7 +9,7 @@ use App\Http\Controllers\DonationController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\CategoryController;
-
+use App\Http\Controllers\UserController;
 
 
 Auth::routes();
@@ -24,13 +24,15 @@ Route::get('/contact-us', [ContactController::class, 'contact'])->name('contact'
 Route::post('/contact-us/store', [ContactController::class, 'store'])->name('contact.store');
 
 
-
-// Route::group(['middleware' => 'auth'], function(){
+// ＃Profile
+Route::group(['middleware' => 'auth'], function(){
     Route::get('profile/{id}/show', [ProfileController::class, 'show'])->name('profile.show');
+    Route::get('profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('profile/update', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('users/{id}', [UserController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('profile/{id}/edit', [ProfileController::class, 'edit'])->name('profile.edit');
 
-// });
+});
 
 Route::group(["prefix" => "item", "as" => "item."], function(){
     Route::get('/show', [ItemController::class, 'show'])->name('show');
