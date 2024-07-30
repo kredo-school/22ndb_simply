@@ -1,3 +1,5 @@
+{{-- Temporary Page until Donation-item Page creates --}}
+
 @extends('layouts.app')
 
 @section('title', 'Show Donation Item')
@@ -91,5 +93,5 @@
                 </div>
             </div>
         </div>
-@include('users.donations.modal.delete', )
+@include('users.donations.modal.delete')
 @endsection

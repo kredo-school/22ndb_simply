@@ -11,7 +11,7 @@
                 {{ $body }}
             </div>
             {{-- Footer --}}
-            <div class="modal-footer w-100 mb-3 border-0 d-flex justify-content-around">
+            <div class="modal-footer w-100 mb-3 border-0 d-flex justify-content-center">
                 <form action="{{ $r2 }}" method="post">
                     @csrf
                     @method('DELETE')

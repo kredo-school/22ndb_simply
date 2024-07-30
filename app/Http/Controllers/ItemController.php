@@ -40,7 +40,7 @@ class ItemController extends Controller
             'category' => 'required',
             'name' => 'required|max:30',
             'description' => 'max:1000',
-            'image' => 'required|mimes:jpeg,jpg,png,gif|max:1048'
+            'image' => 'required|mimes:jpeg,jpg,png,gif|max:5120'
         ]);
 
         $this->item->category    = $request->category;
@@ -89,8 +89,8 @@ class ItemController extends Controller
 
     public function destroy($id)
     {
-        $item = $this->item->findOrFail($id);
-        $item->delete();
+        $this->item->findOrFail($id)->delete();
+
         return redirect()->route('homepage');
     }
 }

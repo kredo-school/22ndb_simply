@@ -16,7 +16,7 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
-Route::get('/homepage/{id}', [App\Http\Controllers\HomepageController::class, 'homepage'])->name('homepage');
+Route::get('/homepage', [App\Http\Controllers\HomepageController::class, 'homepage'])->name('homepage');
 
 Route::get('/reset-successful', [HomeController::class, 'resetSuccess'])->name('password.reset.success');
 
@@ -45,6 +45,7 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
 
  Route::group(["prefix" => "donation", "as" => "donation."], function(){
     Route::get('/show', [DonationController::class, 'show'])->name('show');
+    Route::delete('/destroy/{id}', [DonationController::class, 'destroy'])->name('destroy');
  });
 
 //  homepage

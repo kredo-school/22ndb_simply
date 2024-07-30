@@ -19,13 +19,10 @@ class DonationController extends Controller
         return view('users.donations.show');
     }
 
+    public function destroy($id)
+    {
+        $this->item->findOrFail($id)->delete();
+        return redirect()->route('homepage');
+    }
 
-    //After creating donation-item-page, need to activate "destroy function"
-
-    // public function destroy($id)
-    // {
-    //     $item = $this->item->findOrFail($id);
-    //     $item->delete();
-    //     return redirect()->route('homepage');
-    // }
 }

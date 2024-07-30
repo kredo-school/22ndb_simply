@@ -71,7 +71,7 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                <a href="{{ route('item.add', $id) }}" class="nav-link">
+                                <a href="{{ route('item.add') }}" class="nav-link">
                                     <p class="mt-3 text-dark">+ Add item</p>
                                 </a>
                             </li>

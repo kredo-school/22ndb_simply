@@ -9,7 +9,7 @@
 @section('content')
 <div class="container">
     <h2 class="text-center">
-        <i class="fa-solid fa-pen me-2"></i>  Edit Item
+        <i class="fa-solid fa-pen me-2"></i> Edit Item
     </h2>
     <div class="container-fluid">
         <div class="row justify-content-center">
@@ -21,7 +21,7 @@
                     <div id="image-info" class="form-text">
                         <p class="text-center">
                             Acceptable formats: jpeg, jpg, png, gif only.
-                        <br>
+                            <br>
                             Maximum file size is 1048kb.
                         </p>
                     </div>
@@ -74,14 +74,14 @@
                     <div class="row">
                         <div class="col-3 mt-3">
                             <div class="form-group mt-3">
-                                <label for="item-name">Item name</label>
+                                <label for="item_name">Item name</label>
                             </div>
                         </div>
                         <div class="col-9 mt-3">
                             <div class="form-group mt-3">
-                                <input type="text" name="item-name" class="form-control" id="item-name" value="{{ old('item-name', $item->name) }}">
+                                <input type="text" name="item_name" class="form-control" id="item_name" value="{{ old('item_name', $item->name) }}">
                             </div>
-                            @error('item-name')
+                            @error('item_name')
                                 <div class="text-danger small">{{ $message }}</div>
                             @enderror
                         </div>
@@ -111,9 +111,9 @@
                         </div>
                         <div class="col-9 mt-3">
                             <div class="form-group mt-3 d-flex align-items-center">
-                                <input type="checkbox" class="form-check-input checkbox-size" id="donation">
+                                <input type="checkbox" class="form-check-input checkbox-size" name="donation" id="donation" {{ $item->category_id == $category->id ? "checked" : " " }}>
                             </div>
-                            <p class="text-muted mt-2">
+                            <p class="text-muted mt-2 nowrap">
                                 If you want to donate your item, please check it! <br>
                                 You can see your checked item at Donation page.
                             </p>
@@ -124,9 +124,12 @@
                         <div class="col-3">
                         </div>
                         <div class="col-9">
-                            <div class="row d-flex justify-content-between">
-                                <button type="button" class="col-5 btn btn-outline-dark custom-btn mt-1 mx-1">Cancel</button>
-                                <button type="submit" class="col-5 btn btn-dark custom-btn mt-1 mx-1">Update</button>
+                            <div class="mb-3 d-flex justify-content-around">
+                                @include('users.components.btn', [
+                                    'r' => route('my_item'),
+                                    'color' => 'dark',
+                                    'name' => 'Update'
+                                ])
                             </div>
                         </div>
                     </div>
