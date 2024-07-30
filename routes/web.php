@@ -81,6 +81,6 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
 
     Route::post('/create/category', [CategoryController::class, 'createCategory'])->name('create.category');
 
-
+// donated-item
 Route::get('/donated-items', [DonationController::class, 'indexDonatedItems'])->name('donated.items.index');
 Route::get('/donated-items/{id}', [DonationController::class, 'showDonatedItem'])->name('donated.item.show');

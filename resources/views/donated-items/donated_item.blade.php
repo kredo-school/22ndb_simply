@@ -6,7 +6,7 @@
 @yield('css')
 
 @section('content')
-<div class="container-fluid d-flex justify-content-center align-items-center">
+<div class="container-fluid d-flex justify-content-center align-items-center mt-4">
     <div class="row justify-content-center w-100">
         <div class="col-9">
             <div class="mt-3 text-center">
