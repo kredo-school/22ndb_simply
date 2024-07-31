@@ -71,6 +71,7 @@ class CategoryController extends Controller
     public function showCategoryItem($id)
     {
         $category_items = Category::find($id)->item;
+        $category_items = Item::paginate(15);
         $category = Category::find($id);
     
         return view('users.categories.each_category')
