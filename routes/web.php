@@ -10,8 +10,9 @@ use App\Http\Controllers\DonationController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FavoriteItemController;
 use App\Http\Controllers\UserController;
-
+use App\Models\DonationItem;
 
 Auth::routes();
 
@@ -81,6 +82,10 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
 
     Route::post('/create/category', [CategoryController::class, 'createCategory'])->name('create.category');
 
-// donated-item
+#Donated-item
 Route::get('/donated-items', [DonationController::class, 'indexDonatedItems'])->name('donated.items.index');
 Route::get('/donated-items/{id}', [DonationController::class, 'showDonatedItem'])->name('donated.item.show');
+
+#Favorite
+Route::post('/favorite/{donationItem_id}/store', [FavoriteItemController::class,'store'])->name('favorite.store');
+Route::delete('/favorite/{donationItem_id}/destroy', [FavoriteItemController::class, 'destroy'])->name('favorite.destroy');

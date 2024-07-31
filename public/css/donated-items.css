@@ -2,6 +2,7 @@
 .grid-text{
   font-size: 12px; 
   text-align: left;
+  margin-left: 5px;
 }
 
 .item-container {
@@ -16,7 +17,7 @@
   cursor: pointer;
   color: #000;
   position: absolute;
-  top: 150px; 
+  top: 155px; 
   right: 0px;
 }
 
@@ -39,8 +40,9 @@
 }
 
 .title-donation{
+  margin-top: 0px;
   font-size: 36px; 
-  font-weight: bold; 
+  font-weight: 600 !important; 
 } @media screen and (min-width: 1025px) {
   .title-donation {
       font-size: 36px;
@@ -155,25 +157,31 @@
   width: 70px;
 }
 
-.custom-pagination .page-link {
-  color: #050606; 
-  border-color: #ffffff; 
-  background-color: #ffffff;
+.pagination {
+  justify-content: center;
 }
 
-.custom-pagination .page-link:hover {
-  color: #050606; 
-  background-color: #ffffff;
-  border-color: #ffffff;
+.pagination a {
+  color: #9EA6A6 !important;
+  margin: 0px 10px;
+  font-weight: 600 !important;
+  font-size: 18px;
+  text-decoration: none;
 }
 
-.custom-pagination .page-item.active .page-link {
-  color: #050606;
-  background-color: #ffffff;
-  border-color: #050606;
+.pagination span {
+  color: #9EA6A6 !important;
+  margin: 0px 10px;
+  font-weight: 600 !important;
+  font-size: 18px;
+  text-decoration: none;
 }
 
-.custom-pagination .page-item .page-link {
-  color: #9EA6A6; 
+.pagination a:hover {
+  color: #050606 !important;
+}
+
+.pagination span:hover {
+  color: #050606 !important;
 }
 

@@ -17,10 +17,23 @@
                     <a href="{{ route('donated.item.show', $donationItem->id) }}">
                         <img class="image-md-lg" src="{{ asset($donationItem->item->image) }}" alt="{{ $donationItem->item->name }}"/>
                     </a>
-                    <button class="bookmark"><i class="fa-solid fa-bookmark"></i></button>
+
+                    @if($donationItem->isFavorited())
+                        <form action="{{ route('favorite.destroy', ['donationItem_id' => $donationItem->id]) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="bookmark"><i class="fa-solid fa-bookmark text-dark"></i></button>
+                        </form>
+                    @else
+                        <form action="{{ route('favorite.store', ['donationItem_id' => $donationItem->id]) }}" method="post">
+                            @csrf
+                            <button type="submit" class="bookmark"><i class="fa-regular fa-bookmark"></i></button>
+                        </form>
+                    @endif
+
                     <div class="row">
                         <div class="col">
-                            <p class="grid-text mb-0 mt-2 text-start">{{ $donationItem->created_at->format('Y/m/d') }}</p>
+                            <p class="grid-text mb-0 text-start">{{ $donationItem->created_at->format('Y/m/d') }}</p>
                             <p class="grid-text">{{ $donationItem->user->address }}</p>
                         </div>
                     </div>
