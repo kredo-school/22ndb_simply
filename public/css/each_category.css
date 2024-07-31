@@ -27,23 +27,27 @@ body {
     padding: 10px;
 }
 
-.pagination p, 
+.pagination a {
+    color: #9EA6A6 !important;
+    margin: 0px 10px;
+    font-weight: 600 !important;
+    font-size: 18px;
+    text-decoration: none;
+}
+
 .pagination span {
     color: #9EA6A6 !important;
     margin: 0px 10px;
     font-weight: 600 !important;
     font-size: 18px;
-}
-
-.pagination a {
     text-decoration: none;
 }
 
-p:hover {
+.pagination a:hover {
     color: #050606 !important;
 }
 
-span:hover {
+.pagination span:hover {
     color: #050606 !important;
 }
 
