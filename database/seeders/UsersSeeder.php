@@ -15,7 +15,8 @@ class UsersSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('users')->insert([
+        DB::table('users')->insert(
+            [
             'avatar'=>'/images/avatar1.jpg',
             'username'=>'Ami',
             'email'=>'ami@gmail.com',
@@ -24,6 +25,8 @@ class UsersSeeder extends Seeder
             'password'=>Hash::make('password'),
             'created_at'=>now(),
             'updated_at'=>now(),
-        ]);
+            ]
+
+    );
     }
 }

@@ -53,12 +53,14 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
 //  Route::get('homepage/{id}', [HomepageController::class, 'homepage'])->name('homepage');
 
 //  category
- Route::get('each_category/{id}', [CategoryController::class, 'eachCategory'])->name('each_category');
+ Route::get('each_category/{id}', [CategoryController::class, 'showCategoryItem'])->name('each_category');
 
  Route::get('my_item/{id}', [ItemController::class, 'myItemPage'])->name('my_item');
 
  Route::patch('/edit/category/{id}', [CategoryController::class, 'editCategory'])->name('edit.category');
 
  Route::post('/create/category', [CategoryController::class, 'createCategory'])->name('create.category');
+
+ Route::delete('/delete/category/{id}', [CategoryController::class, 'deleteCategory'])->name('delete.category');
 
 
