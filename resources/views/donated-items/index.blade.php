@@ -14,7 +14,7 @@
         @foreach ($donationItems as $donationItem)
             <div class="col grid-item">
                 <div class="item-container">
-                    <a href="{{ route('donated-items.show', ['id' => $donationItem->id, 'user_id' => $donationItem->user->id]) }}">
+                    <a href="{{ route('donated.item.show', $donationItem->id) }}">
                         <img class="image-md-lg" src="{{ asset($donationItem->item->image) }}" alt="{{ $donationItem->item->name }}"/>
                     </a>
 

@@ -28,10 +28,11 @@ class DonationController extends Controller
     public function showDonatedItem($id)
     {
         $donationItem = DonationItem::with('user')->findOrFail($id);
+        $user = $donationItem->user;
 
         return view('donated-items.donated_item', [
             'donationItem' => $donationItem,
-            'user' => $donationItem->user,
+            'user' => $user,
         ]);
     }
 
