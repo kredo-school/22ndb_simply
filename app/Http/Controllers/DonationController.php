@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DonationItem;
+use App\Models\User;
 
 class DonationController extends Controller
 {
@@ -28,7 +29,10 @@ class DonationController extends Controller
     {
         $donationItem = DonationItem::with('user')->findOrFail($id);
 
-        return view('donated-items.donated_item', ['donationItem' => $donationItem]);
+        return view('donated-items.donated_item', [
+            'donationItem' => $donationItem,
+            'user' => $donationItem->user,
+        ]);
     }
 
 }

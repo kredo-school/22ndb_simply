@@ -15,23 +15,27 @@
                         <div class="d-flex justify-content-center align-items-center">
                             <i class="fa-solid fa-circle-info ps-1"></i>
                             <p class="mb-0 ms-4">Item's information</p>
+
+                            @if(Auth::user()->id === $user->id) 
                             <a href="#" class="btn ms-5 pe-0">
                                 <i class="fa-solid fa-pen gray"></i>
                             </a>
                             <button class="btn ms-2 ps-1" data-bs-toggle="modal" data-bs-target="#delete-modal">
                                 <i class="fa-solid fa-trash-can gray"></i>
                             </button>
+                            {{--Component Delete Modal --}}
+                            @component('users.components.deletemodal', [
+                                'id' => 'delete-modal',
+                                'title' => 'Delete Account',
+                                'r2' => '#'
+                            ])
+                            @slot('body')
+                            <p class="h5 mb-2 text-danger">Don't delete this item during dealing.</p>
+                            @endslot
+                            @endcomponent
+                            @endif
                         </div>
-                        {{--Component Delete Modal --}}
-                        @component('users.components.deletemodal', [
-                            'id' => 'delete-modal',
-                            'title' => 'Delete Account',
-                            'r2' => '#'
-                        ])
-                        @slot('body')
-                        <p class="h5 mb-2 text-danger">Don't delete this item during dealing.</p>
-                        @endslot
-                        @endcomponent
+                        
                     </div>
                 </div>
 
