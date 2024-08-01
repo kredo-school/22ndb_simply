@@ -31,7 +31,7 @@ class CategoryController extends Controller
 
          // 1. Validate new category name
         $request->validate([
-            'name' => 'required|max:255|unique:categories,name'
+            'name' => 'required|max:255|unique:categories,name,NULL,id,user_id,' . Auth::id(),
         ]);
 
         // 2. Save new category name
@@ -41,6 +41,7 @@ class CategoryController extends Controller
 
         $category = new Category;
         $category->name = $request->input('name');
+        $category->user_id = Auth::user()->id;
         $category->save();
 
         return redirect()->route('homepage', ['id' => Auth::user()->id]);
