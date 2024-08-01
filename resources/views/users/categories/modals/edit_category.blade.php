@@ -10,16 +10,15 @@
                 <h4 class="modal-title"><i class="fa-solid fa-pen"></i> Edit Category</h4>
             </div>
             <div class="modal-body">
-                <label for="edit_category_name" class="form-label">Category Name</label>
-                <input type="text" name="edit_category_name" id="edit_category_name" class="form-control" placeholder="{{ $category->name }}">
-            </div>
-            <div class="modal-footer border-0 m-auto p-4">
                 <form method="POST" action="{{ route('edit.category', $category->id) }}">
                     @csrf
                     @method('PATCH')
-
-                    <button type="button" class="sbm_btn btn btn-outline-dark p-2 px-5 rounded-5 me-1"  data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" class="sbm_btn btn btn-dark p-2 px-5 rounded-5 ms-1">Update</button>
+                    <label for="edit_category_name" class="form-label">Category Name</label>
+                    <input type="text" name="edit_category_name" id="edit_category_name" class="form-control" placeholder="{{ $category->name }}">
+            </div>
+            <div class="modal-footer border-0 m-auto p-4">
+                <button type="button" class="sbm_btn btn btn-outline-dark p-2 px-5 rounded-5 me-1"  data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="sbm_btn btn btn-dark p-2 px-5 rounded-5 ms-1">Update</button>
                 </form>
             </div>
         </div>

@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Item;
+use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
 {
     private $category;
+    private $item;
 
     public function __construct(Category $category, Item $item){
         $this->category = $category;
@@ -25,36 +27,59 @@ class CategoryController extends Controller
     }
 
     public function createCategory(Request $request)
-    {
-        // 1. Validate new category name
+    {  
+       
+         // 1. Validate new category name
         $request->validate([
-            'name' => 'required|array|max:255'
+            'name' => 'required|max:255|unique:categories,name,NULL,id,user_id,' . Auth::id(),
         ]);
 
         // 2. Save new category name
         
-        $this->category->name = $request->category_name;
-        $this->category->save();
+        $category = new Category;
+        $category->name = $request->input('name');
+        $category->user_id = Auth::user()->id;
+        $category->save();
 
-        return redirect()->route('homepage');
+        return redirect()->route('homepage', ['id' => Auth::user()->id]);
     }
 
-    public function editCategory(Request $request, $id)
+    public function editCategory(Request $request)
     {
-        // 1. Validate the data from the form
+        
+       // Validate the request data
         $request->validate([
-            'name' => 'required|array|max:255'
-        ]);
+        'edit_category_name' => 'required|max:255',
+    ]);
 
-        // 2. Update the category name
-        $category = $this->category->findOrFail($id);
-        $category->name = $request->edit_category_name;
+        $category = $this->category->findOrFail($request->id);  
+        $category->name = $request->input('edit_category_name');
+        $category->save();
 
-        // 3. Save the new category name
-            $category->save();
-
-        // 4. Redirect to homepage
-        return redirect()->route('homepage');
+        // Redirect to homepage
+        return redirect()->route('homepage', ['id' => Auth::user()->id]);
     }
     
+    public function deleteCategory($id)
+    {
+       $category = Category::findOrFail($id);
+       $category->delete();
+
+        return redirect()->back();
+    }
+
+    public function showCategoryItem($id)
+    {
+        $category_items = Category::find($id)->item;
+        $category = Category::find($id);
+    
+        return view('users.categories.each_category')
+                ->with('category_items', $category_items)
+                ->with('category', $category);
+    
+    }
+
+
+
+
 }
