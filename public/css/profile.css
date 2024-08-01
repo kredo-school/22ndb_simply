@@ -22,4 +22,17 @@ textarea{
     height: 150px !important;
 }
 
+/* My items page */
+.nav-tab-link{
+    color:black;
+    display: block;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.nav-tab-link.active{
+    color:white;
+    background-color: black;
+    border-radius: 20px 20px 0px 0px;
+}
+
 

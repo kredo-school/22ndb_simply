@@ -2,5 +2,12 @@
 
 @section('items-content')
     {{-- Table  --}}
-    favorites
+    <table class="table">
+        <tbody>
+            <tr>
+                
+            </tr>
+
+        </tbody>
+    </table>
 @endsection

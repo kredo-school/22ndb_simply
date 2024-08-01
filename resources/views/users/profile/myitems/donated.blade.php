@@ -2,5 +2,5 @@
 
 @section('items-content')
     {{-- Table  --}}
-    donated
+    donated...
 @endsection
