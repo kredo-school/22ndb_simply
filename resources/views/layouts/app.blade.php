@@ -77,7 +77,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{ route('donated.items.index')}}" class="nav-link">
                                     <p class="mt-3 text-dark">Donation</p>
                                 </a>
                             </li>
@@ -85,25 +85,25 @@
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     @if (Auth::user()->avatar)
-                                        <img src="#" alt="" class="rounded-circle">
+                                       <img src="#" alt="" class="rounded-circle">
                                     @else
-                                        <i class="fa-solid fa-circle-user text-dark mt-3 icon"></i>
+                                       <i class="fa-solid fa-circle-user mt-3 text-dark icon"></i>
                                     @endif
                                 </a>
 
-                                    <ul class="dropdown-menu dropdown-menu-end text-center navbar-list" aria-labelledby="navbarDropdown">
-                                        <li><a href="#">Profile</a></li>
+                                <ul class="dropdown-menu dropdown-menu-end text-center navbar-list" aria-labelledby="navbarDropdown">
+                                    <li><a href="#">Profile</a></li>
 
-                                        <li><a href="#">User Guide</a></li>
+                                    <li><a href="#">User Guide</a></li>
 
-                                        <li><a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                        </a>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                        </form>
-                                        </li>
-                                    </ul>
+                                    <li><a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                    </form>
+                                    </li>
+                                </ul>
                             </li>
                         @endguest
                     </ul>

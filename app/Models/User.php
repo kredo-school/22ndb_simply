@@ -50,6 +50,16 @@ class User extends Authenticatable
         ];
     }
 
+    public function donationItems()
+    {
+        return $this->hasMany(DonationItem::class);
+    }
+
+    public function favoriteItems() {
+        return $this->hasMany(FavoriteItem::class);
+    }
+
+
     public function item()
     {
         return $this->hasMany(Item::class);

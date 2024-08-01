@@ -6,86 +6,82 @@
 @yield('css')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-10">
-            <div class="mt-5 text-center">
+<div class="container-fluid d-flex justify-content-center align-items-center mt-4">
+    <div class="row justify-content-center w-100">
+        <div class="col-9">
+            <div class="mt-3 text-center">
                 <div class="row h1 align-items-center">
                     <div class="col">
-                        <p class="text-center"><i class="fa-solid fa-circle-info"></i> Item's information 
-                            <span>
-                                {{-- @if(Auth::user()->id === $user->id)  --}}
-                                    {{-- <p class="d-inline-block ps-4" style="color: #9EA6A6;"> --}}
-                                        <a href="{{ route('donated.item.show') }}" class="btn btn-lg">
-                                            <i class="fa-solid fa-pen gray"></i>  
-                                        </a>
-                                        <button class="btn btn-lg" data-bs-toggle="modal" data-bs-target = "#delete-modal">
-                                            <i class="fa-solid fa-trash-can gray"></i>
-                                        </button>
-                                    {{-- </p> --}}
-                                {{--Component Delete Modal --}}
-                                @component('users.components.deletemodal', [
-                                    'id' => 'delete-modal',
-                                'title' => 'Delete Account',
-                                'r2' => '#'             
-                                ])
-                                @slot('body')
-                                <p class="h5 mb-2 text-danger">Don’t delete this item during dealing.</p>
-                                
-                                @endslot
-                                @endcomponent
-                                {{-- @endif      --}}
-                            </span>
-                        </p> 
+                        <div class="d-flex justify-content-center align-items-center">
+                            <i class="fa-solid fa-circle-info ps-1"></i>
+                            <p class="mb-0 ms-4">Item's information</p>
+                            <a href="#" class="btn ms-5 pe-0">
+                                <i class="fa-solid fa-pen gray"></i>
+                            </a>
+                            <button class="btn ms-2 ps-1" data-bs-toggle="modal" data-bs-target="#delete-modal">
+                                <i class="fa-solid fa-trash-can gray"></i>
+                            </button>
+                        </div>
+                        {{--Component Delete Modal --}}
+                        @component('users.components.deletemodal', [
+                            'id' => 'delete-modal',
+                            'title' => 'Delete Account',
+                            'r2' => '#'
+                        ])
+                        @slot('body')
+                        <p class="h5 mb-2 text-danger">Don't delete this item during dealing.</p>
+                        @endslot
+                        @endcomponent
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-5">
-                        <div class="mt-5">
-                            <img class="image-md-ss" src="{{ asset('images/donation-items closet.jpg') }}" />
+
+                <div class="row mt-5">
+                    <div class="col-4">
+                        <div class="mt-3 mb-3 image-container">
+                            <img class="image-md-ss" src="{{ asset($donationItem->item->image) }}" alt="{{ $donationItem->item->name }}"/>
                         </div>
                     </div>
-                    <div class="col-7 h5 my-auto">
-                        <div class="mt-5">
+                    <div class="col-8 h5 my-auto scrollable">
+                        <div class="mt-3 mb-3">
                             <div class="row">
-                                <div class="col-5 text-start ms-5">
+                                <div class="col-4 text-start ms-5">
                                     <p class="font-big">Donated Date</p>
                                 </div>
                                 <div class="col-auto text-start font-big">
-                                    <p>xxxx/xx/xx</p>
+                                    <p>{{ $donationItem->created_at->format('Y/m/d') }}</p>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-5 text-start ms-5">
+                                <div class="col-4 text-start ms-5">
                                     <p class="font-big">Category</p>
                                 </div>
                                 <div class="col-auto text-start font-big">
-                                    <p>Closet</p>
+                                    <p>{{ $donationItem->item->category->name }}</p>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-5 text-start ms-5">
+                                <div class="col-4 text-start ms-5">
                                     <p class="font-big">Item Name</p>
                                 </div>
                                 <div class="col-auto text-start font-big">
-                                    <p>Sweatshirt</p>
+                                    <p>{{ $donationItem->item->name }}</p>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-5 text-start ms-5">
+                                <div class="col-4 text-start ms-5">
                                     <p class="font-big">Username</p>
                                 </div>
                                 <div class="col-6 text-start font-big">
-                                    <p><a href="#" class="text-dark">Sally</a> (Los Angels)</p>
-                                    <p class="font-small mb-2">You can see donated user's profile!</p>
+                                    <p class="mb-1"><a href="#" class="text-dark">{{ $donationItem->user->username }}</a> ( {{$donationItem->user->address }} )</p>
+                                    <p class="font-small mb-3">You can see donated user's profile!</p>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-5 text-start ms-5">
+                                <div class="col-4 text-start ms-5">
                                     <p class="font-big">Description</p>
                                 </div>
                                 <div class="col-6 text-start font-big mb-5">
-                                    <p>I wore this shirt only one time. It's almost new!</p>
+                                    <p>{{ $donationItem->item->description }}</p>
                                 </div>
                             </div>
                         </div>
@@ -95,4 +91,5 @@
         </div>
     </div>
 </div>
+
 @endsection
