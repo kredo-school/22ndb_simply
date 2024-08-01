@@ -8,18 +8,6 @@ use App\Models\DonationItem;
 
 class DonationController extends Controller
 {
-    private $item;
-
-    public function __construct(Item $item)
-    {
-        $this->item = $item;
-    }
-
-    public function show()
-
-
-class DonationController extends Controller
-{
     protected $donationItem;
     protected $category;
     protected $user;
@@ -28,12 +16,6 @@ class DonationController extends Controller
     {
         $this->donationItem = $donationItem;
 
-    }
-
-    public function destroy($id)
-    {
-        $this->item->findOrFail($id)->delete();
-        return redirect()->route('homepage');
     }
 
     public function indexDonatedItems() {
@@ -48,6 +30,12 @@ class DonationController extends Controller
         $donationItem = DonationItem::with('user')->findOrFail($id);
 
         return view('donated-items.donated_item', ['donationItem' => $donationItem]);
+    }
+
+    public function destroy($id)
+    {
+        $this->donationItem->findOrFail($id)->delete();
+        return redirect()->route('homepage');
     }
 
 }

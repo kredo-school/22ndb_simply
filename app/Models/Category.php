@@ -13,6 +13,7 @@ class Category extends Model
 
     protected $fillable = ['name', 'user_id'];
 
+    // need to decide to use "item" or "items"
     public function item()
     {
         return $this->hasMany(Item::class);
