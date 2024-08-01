@@ -31,16 +31,15 @@ Route::group(['middleware' => 'auth'], function(){
     Route::patch('profile/update', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('users/{id}', [UserController::class, 'destroy'])->name('profile.destroy');
 
-
 });
 
 Route::group(["prefix" => "item", "as" => "item."], function(){
     Route::get('/show', [ItemController::class, 'show'])->name('show');
-    Route::get('/add', [ItemController::class, 'add'])->name('add');
+    Route::get('/add/{category}', [ItemController::class, 'add'])->name('add');
     Route::post('/store', [ItemController::class, 'store'])->name('store');
     Route::get('/{id}/edit', [ItemController::class, 'edit'])->name('edit');
     Route::patch('/{id}/update', [ItemController::class, 'update'])->name('update');
-
+    Route::delete('/{id}/destroy', [ItemController::class, 'destroy'])->name('destroy');
  });
 
  Route::group(["prefix" => "donation", "as" => "donation."], function(){

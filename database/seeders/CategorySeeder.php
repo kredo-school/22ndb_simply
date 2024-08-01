@@ -9,18 +9,18 @@ use App\Models\Category;
 
 class CategorySeeder extends Seeder
 {
-    // private $category;
+    private $category;
 
-    // public function __construct(Category $category){
-    //     $this->category = $category;
-    // }
+    public function __construct(Category $category){
+        $this->category = $category;
+    }
 
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        // $category = [
+        $category =
         DB::table('categories')->insert([
             [
                 "name" => "Clothes",
@@ -45,7 +45,7 @@ class CategorySeeder extends Seeder
                 "created_at" => NOW(),
                 "updated_at" => NOW(),
             ]
-            // $this->category->insert($category);
+            $this->category->insert($category);
         ]);
 
     }

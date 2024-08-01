@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-<div class="container-fluid align-items-center">
+<div class="container align-items-center py-3">
     <h2 class="text-center">
         <i class="fa-solid fa-circle-plus"></i> Add Item
     </h2>
@@ -15,10 +15,10 @@
         @csrf
 
         <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-4 d-flex flex-column align-items-center">
+            <div class="row justify-content-center align-items-start">
+                <div class="col-12 col-md-4 d-flex flex-column align-items-center">
                     <div class="icon-wrapper border border-dark d-inline-flex justify-content-center align-items-center custom-mt">
-                        <i class="fa-solid fa-image image-icon"></i>
+                        <i class="fa-solid fa-image image-icon image-fluid"></i>
                     </div>
                     <input type="file" name="image" id="image" class="form-control mt-3 justify-content-center" style="width: 15rem;" aria-describedby="image-info">
                     <div id="image-info" class="form-text">
@@ -33,7 +33,7 @@
                     @enderror
                 </div>
 
-                <div class="col-auto">
+                <div class="col-auto p-0">
                     <div class="row">
                         <div class="col-3">
                             <div class="form-group custom-mt">
@@ -42,12 +42,12 @@
                         </div>
                         <div class="col-auto">
                             <div class="form-group custom-mt">
-                                <select class="form-control" id="category">
+                                <select class="form-control" name="category" id="category">
                                     @foreach ($all_categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        <option value="{{ $category->id }}" {{ $selected_category == $category->id ? "selected" : "" }}>{{ $category->name }}</option>
                                     @endforeach
                                 </select>
-                                <a href="{{ route('create.category') }}" class="add-category-link text-muted">+ Add category</a>
+                                <a href="#" class="add-category-link text-muted" data-bs-toggle="modal" data-bs-target="#create-category">+ Add category</a>
                             </div>
                         </div>
 
@@ -81,9 +81,9 @@
                         </div>
                         <div class="col-9 mt-3">
                             <div class="form-group mt-3">
-                                <input type="text" name="item_name" class="form-control" id="item_name" value="{{ old('item_name') }}">
+                                <input type="text" name="name" class="form-control" id="name" value="{{ old('name') }}">
                             </div>
-                            @error('item_name')
+                            @error('name')
                                 <div class="text-danger small">{{ $message }}</div>
                             @enderror
                         </div>
@@ -139,5 +139,6 @@
             </div>
         </div>
     </form>
+    @include('users.categories.modals.create_category')
 </div>
 @endsection

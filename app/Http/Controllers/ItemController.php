@@ -7,14 +7,17 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Item;
 use App\Models\Category;
+use App\Models\DonationItem;
 
 class ItemController extends Controller
 {
     private $item;
+    private $donation_item;
 
-    public function __construct(Item $item)
+    public function __construct(Item $item, DonationItem $donation_item)
     {
         $this->item = $item;
+        $this->donation_item = $donation_item;
     }
 
     public function myItemPage()
@@ -27,27 +30,37 @@ class ItemController extends Controller
         return view('users.items.show');
     }
 
-    public function add()
+    public function add($category = null)
     {
         $all_categories = Category::all();
+
         return view('users.items.add')
-                ->with('all_categories', $all_categories);
+                ->with('all_categories', $all_categories)
+                ->with('selected_category', $category);
     }
 
     public function store(Request $request)
     {
+
         $request->validate([
             'category' => 'required',
             'name' => 'required|max:30',
             'description' => 'max:1000',
-            'image' => 'required|mimes:jpeg,jpg,png,gif|max:5120'
+            'image' => 'required|mimes:jpeg,jpg,png,gif|max:1048'
         ]);
 
-        $this->item->category    = $request->category;
         $this->item->name        = $request->name;
         $this->item->description = $request->description;
         $this->item->image       = 'data:image/'.$request->image->extension().';base64,'.base64_encode(file_get_contents($request->image));
+        $this->item->user_id     = Auth::id();
+        $this->item->category_id = $request->category;
         $this->item->save();
+
+        if ($request->has('donation')) {
+            $this->donation_item->user_id = Auth::id();
+            $this->donation_item->item_id = $this->item->id;
+            $this->donation_item->save();
+        }
 
         return redirect()->route('homepage');
     }
@@ -70,19 +83,26 @@ class ItemController extends Controller
         $request->validate([
             'category' => 'required',
             'name' => 'required|max:30',
-            'description' => 'required|max:1000',
+            'description' => 'max:1000',
             'image' => 'required|mimes:jpeg,jpg,png,gif|max:1048'
         ]);
 
         $item = $this->item->findOrFail($id);
 
-        $item->category    = $request->category;
         $item->name        = $request->name;
         $item->description = $request->description;
         if($request->image) {
             $item->image =  'data:image/'.$request->image->extension().';base64,'.base64_encode(file_get_contents($request->image));
         }
+        $item->user_id     = Auth::id();
+        $item->category_id = $request->category;
         $item->save();
+
+        if ($request->has('donation')) {
+            $this->donation_item->user_id = Auth::id();
+            $this->donation_item->item_id = $this->item->id;
+            $this->donation_item->save();
+        }
 
         return redirect()->route('my_item');
     }

@@ -27,7 +27,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/homepage') }}">
                     <img src="{{ asset('/images/appicon.png') }}" alt="icon" class="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -71,7 +71,7 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                <a href="{{ route('item.add') }}" class="nav-link">
+                                <a href="{{ route('item.add', ['category' => $category->id]) }}" class="nav-link">
                                     <p class="mt-3 text-dark">+ Add item</p>
                                 </a>
                             </li>

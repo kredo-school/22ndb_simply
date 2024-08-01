@@ -26,7 +26,7 @@
                     <div class="item-box rounded-4 me-3">
                         <a href="#">
                             <img class="img-item" src="{{ $item->image }}" />
-                            </a>
+                        </a>
                     </div>
                 @empty
                     <div class="no-item-box ms-2 me-3 rounded-3">
@@ -35,7 +35,7 @@
                 @endforelse
 
                 <div class="item-box rounded-3 p-3">
-                    <a href="#" class="add-item text-decoration-none text-center my-4 me-0">+</a>
+                    <a href="{{ route('item.add', ['category' => $category->id]) }}" class="add-item text-decoration-none text-center my-4 me-0">+</a>
                 </div>
                 @if($category->item->isNotEmpty())
                     <div class="my-5">
@@ -52,8 +52,8 @@
     <div>
             <div class="d-flex flex-row justify-content-center me-4 mt-0">
                     <button type="button" data-bs-toggle="modal" data-bs-target="#create-category" class="btn category-btn rounded-3 text-center">+ Add category</button>
-
-                    <button typle="button" data-bs-toggle="modal" data-bs-target="#"class="btn item-btn ms-5">+ Add item</button>
+                    <a href="{{ route('item.add', ['category' => $category->id]) }}" class="btn item-btn ms-5">+ Add item</a>
+                    {{-- <button typle="button" data-bs-toggle="modal" data-bs-target="#"class="btn item-btn ms-5">+ Add item</button> --}}
                 </div>
             </div>
         </div>

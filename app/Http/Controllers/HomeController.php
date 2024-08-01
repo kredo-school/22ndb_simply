@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class HomeController extends Controller
 {
@@ -22,6 +23,12 @@ class HomeController extends Controller
     public function resetSuccess()
     {
         return view('auth.passwords.password_reset_success');
+    }
+
+    public function passVariable()
+    {
+        $all_categories = Category::all();
+        return view('layouts.app')->with('category', $all_categories);
     }
 }
 

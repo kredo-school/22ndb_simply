@@ -29,10 +29,6 @@ class HomepageController extends Controller
             'categories' => $categories,
             'user' => $user
         ]);
-
-        // return view('users.homepage')
-        //         ->with('categories', $categories)
-        //         ->with('user', $user);
     }
 
 

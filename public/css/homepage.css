@@ -105,6 +105,8 @@ body {
     height: 150px;
     font-size: 25px;
     font-weight: 600;
+    line-height: 150px;
+    text-align: center;
 }
 
 i:hover,
