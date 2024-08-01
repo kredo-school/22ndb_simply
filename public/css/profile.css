@@ -35,4 +35,15 @@ textarea{
     border-radius: 20px 20px 0px 0px;
 }
 
+.tab-content{
+    height: 550px;
+}
+
+.img-item {
+    width: 150px;
+    height: 150px;
+    border: solid 1px #050606;
+    border-radius: 20px;
+    padding: 10px;
+}
 
