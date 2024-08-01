@@ -59,20 +59,15 @@ class User extends Authenticatable
         return $this->hasMany(FavoriteItem::class);
     }
 
-
     public function item()
     {
         return $this->hasMany(Item::class);
     }
 
+    // need to decide to use "category" or "categories"
     public function category()
     {
         return $this->hasMany(Category::class);
-    }
-
-    public function mycategories()
-    {
-        return $this->category()->where('user_id', Auth::user()->id)->exists();
     }
 
     public function categories()
@@ -80,5 +75,9 @@ class User extends Authenticatable
         $this->hasMany(Category::class);
     }
 
+    public function mycategories()
+    {
+        return $this->category()->where('user_id', Auth::user()->id)->exists();
+    }
 
 }

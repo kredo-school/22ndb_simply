@@ -20,8 +20,7 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        $category =
-        DB::table('categories')->insert([
+        $category =[
             [
                 "name" => "Clothes",
                 "created_at" => NOW(),
@@ -45,8 +44,7 @@ class CategorySeeder extends Seeder
                 "created_at" => NOW(),
                 "updated_at" => NOW(),
             ]
+        ];
             $this->category->insert($category);
-        ]);
-
     }
 }

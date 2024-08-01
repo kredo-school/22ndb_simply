@@ -35,7 +35,7 @@ Route::group(['middleware' => 'auth'], function(){
 
 });
 
-
+// Item
 Route::group(["prefix" => "item", "as" => "item."], function(){
     Route::get('/show', [ItemController::class, 'show'])->name('show');
     Route::get('/add/{category}', [ItemController::class, 'add'])->name('add');
@@ -43,11 +43,6 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
     Route::get('/{id}/edit', [ItemController::class, 'edit'])->name('edit');
     Route::patch('/{id}/update', [ItemController::class, 'update'])->name('update');
     Route::delete('/{id}/destroy', [ItemController::class, 'destroy'])->name('destroy');
- });
-
- Route::group(["prefix" => "donation", "as" => "donation."], function(){
-    Route::get('/show', [DonationController::class, 'show'])->name('show');
-    Route::delete('/destroy/{id}', [DonationController::class, 'destroy'])->name('destroy');
  });
 
 //  homepage
@@ -64,31 +59,10 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
 
  Route::delete('/delete/category/{id}', [CategoryController::class, 'deleteCategory'])->name('delete.category');
 
-
-Route::group(["prefix" => "item", "as" => "item."], function(){
-    Route::get('/show', [ItemController::class, 'show'])->name('show');
-    Route::get('/add', [ItemController::class, 'add'])->name('add');
-    Route::get('/edit', [ItemController::class, 'edit'])->name('edit');
-    
- });
-
- Route::group(["prefix" => "donation", "as" => "donation."], function(){
-    Route::get('/show', [DonationController::class, 'show'])->name('show');
- });
-
- Route::get('homepage/{id}', [HomepageController::class, 'homepage'])->name('homepage');
-
-    Route::get('each_category/{id}', [CategoryController::class, 'eachCategory'])->name('each_category');
-
-    Route::get('my_item/{id}', [ItemController::class, 'myItemPage'])->name('my_item');
-
-    Route::patch('/edit/category/{id}', [CategoryController::class, 'editCategory'])->name('edit.category');
-
-    Route::post('/create/category', [CategoryController::class, 'createCategory'])->name('create.category');
-
 #Donated-item
 Route::get('/donated-items', [DonationController::class, 'indexDonatedItems'])->name('donated.items.index');
 Route::get('/donated-items/{id}', [DonationController::class, 'showDonatedItem'])->name('donated.item.show');
+Route::delete('donated-items/destroy/{id}', [DonationController::class, 'destroy'])->name('donated.item.destroy');
 
 #Favorite
 Route::post('/favorite/{donationItem_id}/store', [FavoriteItemController::class,'store'])->name('favorite.store');
