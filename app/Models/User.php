@@ -59,12 +59,12 @@ class User extends Authenticatable
         return $this->hasMany(FavoriteItem::class);
     }
 
-
+// items
     public function item()
     {
         return $this->hasMany(Item::class);
     }
-
+// categories
     public function category()
     {
         return $this->hasMany(Category::class);
