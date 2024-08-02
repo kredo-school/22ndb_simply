@@ -1,3 +1,5 @@
+{{-- Temporary Page until Donation-item Page creates --}}
+
 @extends('layouts.app')
 
 @section('title', 'Show Donation Item')
@@ -8,8 +10,8 @@
     <h3 class="text-center">
         <i class="fas fa-info-circle"></i> Item's information
         <span>
-            <button class="btn border-0 ms-3"><i class="fas fa-pen text-secondary pen-icon"></i></button>
-            <button class="btn border-0 m-0"><i class="fas fa-trash-alt text-secondary trash-icon"></i></button>
+            <button class="btn border-0 ms-3"><i class="fas fa-pen text-secondary"></i></button>
+            <button class="btn border-0 m-0"><i class="fas fa-trash-alt text-secondary"></i></button>
         </span>
     </h3>
 
@@ -19,7 +21,7 @@
                 {{-- @if($user->item->image)
                     <img src="#" alt="itemImage">
                 @else --}}
-                    <i class="fa-solid fa-image itemImage mt-4"></i>
+                    <i class="fa-solid fa-image mt-4"></i>
                 {{-- @endif --}}
             </div>
         </div>
