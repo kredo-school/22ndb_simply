@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DonationItem;
-use App\Models\User;
 
 class DonationController extends Controller
 {
