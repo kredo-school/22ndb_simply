@@ -13,6 +13,8 @@ class Item extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $fillable = ['name', 'category_id'];
+    
 
     public function user()
     {
@@ -34,4 +36,8 @@ class Item extends Model
         return $this->donation()->where('item_id', $this->id)->exists();
     }
 
+    public function donationItems()
+    {
+        return $this->hasMany(DonationItem::class);
+    }
 }
