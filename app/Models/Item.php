@@ -5,11 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
+
 
 class Item extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
 
     public function user()
     {
@@ -23,12 +26,12 @@ class Item extends Model
 
     public function donation()
     {
-        return $this->belongsTo(DonationItem::class, 'item_id');
+        return $this->hasOne(DonationItem::class);
     }
 
     public function isDonated()
     {
-        return $this->donation()->where('id', DonationItem::class)->exists();
+        return $this->donation()->where('item_id', $this->id)->exists();
     }
 
 }

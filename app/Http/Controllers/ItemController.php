@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
+
+
     public function show()
     {
         return view('users.items.show');

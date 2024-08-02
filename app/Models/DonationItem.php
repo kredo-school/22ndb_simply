@@ -11,6 +11,8 @@ class DonationItem extends Model
     use HasFactory;
     use SoftDeletes;
 
+    public $timestamps = false;
+
     public function item()
     {
         return $this->hasMany(Item::class);

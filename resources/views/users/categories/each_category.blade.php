@@ -20,20 +20,14 @@
             <div class="container-small">
                 <div class="row row-cols-5">
                 @foreach($category_items as $item)
-                @if($item->isDonated())
                 <div class="item-box mb-3">
-                    <a href="#"><img class="img-item" src="{{ $item->image }}" /></a> 
-                    
-                    <h6 class="mt-3">{{ $item->name }} <i class="fa-solid fa-hand-holding-heart"></i></h6>
+                    <a href="{{ route('my_item', $item->id) }}"><img class="img-item" src="{{ $item->image }}" /></a> 
+                    <h6 class="mt-3">{{ $item->name }} 
+                        @if($item->isDonated())
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                        @endif
+                    </h6>
                 </div>
-
-                @else
-                <div class="item-box mb-3">
-                    <a href="#"><img class="img-item" src="{{ $item->image }}" /></a> 
-                    
-                    <h6 class="mt-3">{{ $item->name }}</h6>
-                </div>
-                @endif
                 @endforeach 
             </div>
         <div class="pagination">   
