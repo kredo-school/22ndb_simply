@@ -30,9 +30,10 @@ class ItemController extends Controller
         return view('users.items.show');
     }
 
-    public function add($category = null)
+    public function add(Request $request)
     {
         $all_categories = Category::all();
+        $category = $request->query('category', null);
 
         return view('users.items.add')
                 ->with('all_categories', $all_categories)

@@ -1,6 +1,4 @@
-{{-- Please activate after creating "Donation items Page" and need to add #name --}}
-
-{{-- @include('users.components.deletemodal', [
+@include('users.components.deletemodal', [
     'id' => 'delete-item',
     'title' => 'Delete Item',
     'body' =>
@@ -10,4 +8,4 @@
             This cannot be undone.
          </p>',
     'r2' => route('item.destroy', $item->id)
-]) --}}
+])

@@ -25,10 +25,5 @@ class HomeController extends Controller
         return view('auth.passwords.password_reset_success');
     }
 
-    public function passVariable()
-    {
-        $all_categories = Category::all();
-        return view('layouts.app')->with('category', $all_categories);
-    }
 }
 

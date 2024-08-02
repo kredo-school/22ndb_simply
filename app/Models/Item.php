@@ -19,15 +19,9 @@ class Item extends Model
         return $this->belongsTo(User::class);
     }
 
-    // need to decide to use "category" or "categories"
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
-
     public function categories()
     {
-        $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function donationItems()

@@ -48,27 +48,6 @@
                                 <a href="#" class="add-category-link text-muted" data-bs-toggle="modal" data-bs-target="#create-category">+ Add category</a>
                             </div>
                         </div>
-
-                        {{-- optional --}}
-                        {{-- <div class="col-2 mt-3">
-                            <div class="form-group mt-3">
-                                <label for="icon">Icon</label>
-                            </div>
-                        </div>
-                        <div class="col-3 mt-3">
-                            <div class="form-group mt-3">
-                                <select class="form-control" id="icon">
-                                    <option value="closet">Closet</option>
-                                    <option value="garage">Garage</option>
-                                    <option value="kitchen">Kitchen</option>
-                                    <option value="entrance">Entrance</option>
-                                    <option value="living">Living</option>
-                                    <option value="shelf">Shelf</option>
-                                    <option value="toilet">Toilet</option>
-                                    <option value="bathroom">Bathroom</option>
-                                </select>
-                            </div>
-                        </div> --}}
                     </div>
 
                     <div class="row">

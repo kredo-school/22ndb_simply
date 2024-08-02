@@ -38,7 +38,7 @@ Route::group(['middleware' => 'auth'], function(){
 // Item
 Route::group(["prefix" => "item", "as" => "item."], function(){
     Route::get('/show', [ItemController::class, 'show'])->name('show');
-    Route::get('/add/{category}', [ItemController::class, 'add'])->name('add');
+    Route::get('/add', [ItemController::class, 'add'])->name('add');
     Route::post('/store', [ItemController::class, 'store'])->name('store');
     Route::get('/{id}/edit', [ItemController::class, 'edit'])->name('edit');
     Route::patch('/{id}/update', [ItemController::class, 'update'])->name('update');

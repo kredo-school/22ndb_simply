@@ -21,7 +21,7 @@ class DonationController extends Controller
     public function indexDonatedItems() {
         $donationItems = DonationItem::with('user')->paginate(15);
         return view('donated-items.index', [
-            'donationItems' => $donationItems,
+            'donationItems' => $donationItems
         ]);
     }
 
