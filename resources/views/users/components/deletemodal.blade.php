@@ -3,14 +3,14 @@
         <div class="modal-content p-4 d-flex align-items-center">
             <div class="modal-header h4 border-0">
                 <div class="modal-title text-danger">
-                    <i class="fa-solid fa-trash-can icon-md me-3 text-danger"></i>{{$title}}
+                    <i class="fa-solid fa-trash-can icon-md me-3 text-danger align-middle"></i>{{ $title }}
                 </div>
             </div>
-{{-- Body --}}
+            {{-- Body --}}
             <div class="modal-body text-center ">
-                {{ $body}}
+                {{ $body }}
             </div>
-{{-- Footer --}}
+            {{-- Footer --}}
             <div class="modal-footer w-100 mb-3 border-0 d-flex justify-content-center">
                 <form action="{{ $r2 }}" method="post">
                     @csrf
@@ -19,16 +19,12 @@
                     {{-- Btn --}}
                     @include('users.components.btn', [
                         'r' => '#',
-                        'color' => 'danger', 
+                        'color' => 'danger',
                         'name' => 'Delete',
                         'modal' => true
                     ])
                 </form>
-
             </div>
         </div>
     </div>
 </div>
-
-
-        
