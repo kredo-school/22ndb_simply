@@ -145,6 +145,7 @@
 .fa-trash-can{
   font-size: 40px;
   color: #9EA6A6;
+  display: inline;
 }
 
 .scrollable{
@@ -185,3 +186,32 @@
   color: #050606 !important;
 }
 
+.add {
+  position: absolute;
+  display: none;
+  padding: 20px;
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+  border-radius: 5px;
+  width: auto;
+  font-size: 20px;
+  z-index: 10;
+}
+.add:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent rgba(255, 0, 0, 0.8) transparent transparent;
+}
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.tooltip-container:hover .add {
+  display: block;
+}
