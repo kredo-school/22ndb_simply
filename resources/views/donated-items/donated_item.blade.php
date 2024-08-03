@@ -17,11 +17,11 @@
                             <p class="mb-0 ms-4">Item's information</p>
 
                             @if(Auth::user()->id === $user->id) 
-                            <a href="{{ route('item.edit', ['id' => $donationItem->item->id]) }}" class="btn ms-5 ">
+                            <a href="{{ route('item.edit', ['id' => $donationItem->id]) }}" class="btn ms-5 ">
                                 <i class="fa-solid fa-pen gray" ></i>
                             </a>
                             <div class="tooltip-container">
-                                <button class="btn  ps-1" data-bs-toggle="modal" data-bs-target="#delete-modal">
+                                <button class="btn ps-1" data-bs-toggle="modal" data-bs-target="#delete-modal">
                                     <i class="fa fa-trash-can"></i>
                                     <span class="h5 mb-2 text-danger add">Don't delete this item during dealing.</span>
                                 </button>
@@ -30,7 +30,7 @@
                             @component('users.components.deletemodal', [
                             'id' => 'delete-modal',
                             'title' => 'Delete Item',
-                            'r2' => route('item.destroy', $donationItem->id)
+                            'r2' => route('donated.item.destroy', $donationItem->id)
                             ])
                             @slot('body')
                             <p class="h5 text-center">Are you sure you want to delete this item?</p>
@@ -40,6 +40,7 @@
                             </p>
                             @endslot
                             @endcomponent
+
                             @endif
                         </div> 
                     </div>
@@ -82,7 +83,7 @@
                                     <p class="font-big">Username</p>
                                 </div>
                                 <div class="col-6 text-start font-big">
-                                    <p class="mb-1"><a href="#" class="text-dark">{{ $donationItem->user->username }}</a> ( {{$donationItem->user->address }} )</p>
+                                    <p class="mb-1"><a href="{{ route('profile.show', ['id' => $donationItem->user->id]) }}" class="text-dark">{{ $donationItem->user->username }}</a> ( {{$donationItem->user->address }} )</p>
                                     <p class="font-small mb-3">You can see donated user's profile!</p>
                                 </div>
                             </div>

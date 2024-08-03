@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Item;
 use App\Models\DonationItem;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Category;
+
 
 class DonationController extends Controller
 {
@@ -25,17 +28,6 @@ class DonationController extends Controller
         ]);
     }
 
-    // public function showDonatedItem($id)
-    // {
-    //     $donationItem = DonationItem::with('user')->findOrFail($id);
-    //     $user = $donationItem->user;
-
-    //     return view('donated-items.donated_item', [
-    //         'donationItem' => $donationItem,
-    //         'user' => $user,
-    //     ]);
-    // }
-
 
     public function showDonatedItem($id) {
          $donationItem = DonationItem::with('user', 'item')
@@ -47,12 +39,18 @@ class DonationController extends Controller
          ]); 
         
     }
-
     
     
-         public function destroy($id)
+    public function destroy($id)
     {
-        $this->donationItem->findOrFail($id)->delete();
+        $donationItem = $this->donationItem->findOrFail($id);
+        $donationItem->delete();
+
+        if ($donationItem->item) {
+            $donationItem->item->delete();
+        }
+
+
         return redirect()->route('donated.items.index');
     }
 
