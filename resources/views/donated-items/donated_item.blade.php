@@ -17,7 +17,7 @@
                             <p class="mb-0 ms-4">Item's information</p>
 
                             @if(Auth::user()->id === $user->id) 
-                            <a href="{{ route('') }}" class="btn ms-5 ">
+                            <a href="{{ route('item.edit', ['id' => $donationItem->item->id]) }}" class="btn ms-5 ">
                                 <i class="fa-solid fa-pen gray" ></i>
                             </a>
                             <div class="tooltip-container">
@@ -26,19 +26,22 @@
                                     <span class="h5 mb-2 text-danger add">Don't delete this item during dealing.</span>
                                 </button>
                             </div>
-                            {{--Component Delete Modal --}}
+                            {{-- Component Delete Modal --}}
                             @component('users.components.deletemodal', [
-                                'id' => 'delete-modal',
-                                'title' => 'Delete Account',
-                                'r2' => '#'
+                            'id' => 'delete-modal',
+                            'title' => 'Delete Item',
+                            'r2' => route('item.destroy', $donationItem->id)
                             ])
                             @slot('body')
-                            <p class="h5 mb-2 text-danger">Don't delete this item during dealing.</p>
+                            <p class="h5 text-center">Are you sure you want to delete this item?</p>
+                            <p class="h6 text-center" style="color: #9EA6A6;">
+                            This item will be permanently deleted from all pages! <br>
+                            This cannot be undone.
+                            </p>
                             @endslot
                             @endcomponent
                             @endif
-                        </div>
-                        
+                        </div> 
                     </div>
                 </div>
 

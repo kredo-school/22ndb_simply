@@ -26,21 +26,35 @@ class DonationController extends Controller
         ]);
     }
 
-    public function showDonatedItem($id)
-    {
-        $donationItem = DonationItem::with('user')->findOrFail($id);
-        $user = $donationItem->user;
+    // public function showDonatedItem($id)
+    // {
+    //     $donationItem = DonationItem::with('user')->findOrFail($id);
+    //     $user = $donationItem->user;
 
-        return view('donated-items.donated_item', [
-            'donationItem' => $donationItem,
-            'user' => $user,
-        ]);
+    //     return view('donated-items.donated_item', [
+    //         'donationItem' => $donationItem,
+    //         'user' => $user,
+    //     ]);
+    // }
+
+
+    public function showDonatedItem($id) {
+         $donationItem = DonationItem::with('user', 'item')
+         ->findOrFail($id); 
+         $user = $donationItem->user;
+         
+         return view('donated-items.donated_item', [ 
+            'donationItem' => $donationItem, 'user' => $user,
+         ]); 
+        
     }
 
-    public function destroy($id)
+    
+    
+         public function destroy($id)
     {
         $this->donationItem->findOrFail($id)->delete();
-        return redirect()->route('homepage');
+        return redirect()->route('donated.items.index');
     }
 
 }
