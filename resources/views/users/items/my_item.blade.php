@@ -12,8 +12,8 @@
                 <div class="row h1 align-items-center">
                     <div class="col">
                         <p class="d-inline-block me-3"><i class="fa-solid fa-circle-info"></i> Item's information</p>
-                        <span><a data-bs-toggle="modal" data-bs-target="#" class="btn text-decoration-none"><i class="fa-solid fa-pen e-d-icon"></i></a></span>
-                        <span><a data-bs-toggle="modal" data-bs-target="#" class="btn text-decoration-none"><i class="fa-solid fa-trash-can e-d-icon"></i></a></span>
+                        <span><a href="{{ route('edit.item', $item->id) }}" class="btn text-decoration-none"><i class="fa-solid fa-pen e-d-icon"></i></a></span>
+                        <span><a data-bs-toggle="modal" data-bs-target="#delete-item" class="btn text-decoration-none"><i class="fa-solid fa-trash-can e-d-icon"></i></a></span>
                     </div>
                 </div>
                 <div class="row">
@@ -67,8 +67,9 @@
                         </div>
                     </div>
                 </div>
-            </div>   
+            </div>
         </div>
     </div>
+    @include('users.items.modal.delete')
 </div>
 @endsection

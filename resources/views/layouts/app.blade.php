@@ -15,8 +15,8 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    {{-- Custom CSS --}}
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     @yield('css')
 
     <!-- Scripts -->
@@ -27,7 +27,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/homepage') }}">
                     <img src="{{ asset('/images/appicon.png') }}" alt="icon" class="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -71,7 +71,7 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{ route('item.add') }}" class="nav-link">
                                     <p class="mt-3 text-dark">+ Add item</p>
                                 </a>
                             </li>
@@ -127,7 +127,6 @@
             </footer>
         @endguest
     @endif
-
 
     <script src="path/to/bootstrap.js"></script>
 </body>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class HomeController extends Controller
 {
@@ -16,12 +17,13 @@ class HomeController extends Controller
     }
 
     public function home(){
-        return view('home');
+        return view('users.homepage');
     }
 
     public function resetSuccess()
     {
         return view('auth.passwords.password_reset_success');
     }
+
 }
 
