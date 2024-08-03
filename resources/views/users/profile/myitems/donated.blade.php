@@ -1,6 +1,5 @@
 @extends('users.profile.myitems.myitems')
 
 @section('items-content')
-    {{-- Table  --}}
-    donated...
+    donated items here...
 @endsection

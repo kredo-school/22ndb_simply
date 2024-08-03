@@ -12,15 +12,15 @@
     <div class="container my-2">
         <h4 class="mb-2 color-gray-1">My items</h4>
         {{-- Tab --}}
-        <ul class="nav nav-tabs border-bottom-0">
+        <ul class="nav nav-tabs border-bottom-0 border-dark">
             <li class="nav-item">
-                <a href="{{route('profile.favorites')}}" class="nav-tab-link text-decoration-none border py-2 px-5 active {{request()->is('profile/myitems/favorites') ? 'active' : ''}}">My favorite items</a>
+                <a href="{{route('profile.favorites')}}" class="nav-tab-link text-decoration-none border border-dark border-bottom-0 py-2 px-5 active {{request()->is('profile/myitems/favorites') ? 'active' : ''}}">My favorite items</a>
             </li>
             <li class="nav-item">
-                <a href="{{route('profile.donated')}}" class="nav-tab-link border text-decoration-none py-2 px-5 {{request()->is('profile/myitems/donated') ? 'active' : ''}}">My donated items</a>
+                <a href="{{route('profile.donated')}}" class="nav-tab-link border border-dark border-bottom-0 text-decoration-none py-2 px-5 {{request()->is('profile/myitems/donated') ? 'active' : ''}}">My donated items</a>
             </li>
         </ul>
-        <div class="tab-content border p-3 w-100">
+        <div class="tab-content border border-dark p-3">
             @yield('items-content')
         </div>
     </div>
