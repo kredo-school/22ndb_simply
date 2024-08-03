@@ -122,6 +122,6 @@ class DonationItemSeeder extends Seeder
         ];
 
         $this->donation_item->insert($donation_item);
-    } 
+    }
 }
 

@@ -74,4 +74,5 @@ class User extends Authenticatable
     {
         return $this->categories()->where('user_id', Auth::user()->id)->exists();
     }
+
 }
