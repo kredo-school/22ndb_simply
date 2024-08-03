@@ -27,6 +27,10 @@ body {
     padding: 10px;
 }
 
+.pagination {
+    justify-content: center;
+}
+
 .pagination a {
     color: #9EA6A6 !important;
     margin: 0px 10px;

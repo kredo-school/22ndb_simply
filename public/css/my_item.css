@@ -11,12 +11,6 @@
 }
 
 
-.e-d-icon {
-    color: #9EA6A6;
-    font-size: 1.5rem;
-
-}
-
 .item-img-box {
     border-radius: 30px; 
     height: 300px; 
@@ -51,6 +45,166 @@
     color: #9EA6A6;
 }
 
-.e-d-icon:hover {
-    color: #050606;
+a:hover {
+    color: #050606 !important;
 }
+
+.grid-text{
+    font-size: 12px; 
+    text-align: left;
+    margin-left: 5px;
+  }
+  
+  .item-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .bookmark {
+    text-align: right;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    position: absolute;
+    top: 155px; 
+    right: 0px;
+  }
+  
+  @media screen and (min-width: 1025px) {
+    .bookmark {
+        font-size: 1.5em;
+    }
+  }
+  
+  @media screen and (min-width: 600px) and (max-width: 1024px) {
+    .bookmark {
+        font-size: 1.5em;
+    }
+  }
+  
+  @media screen and (max-width: 599px) {
+    .bookmark {
+        font-size: 1em; /* Adjust for smaller screens */
+    }
+  }
+  
+  .title-donation{
+    margin-top: 0px;
+    font-size: 36px; 
+    font-weight: 600 !important; 
+  } @media screen and (min-width: 1025px) {
+    .title-donation {
+        font-size: 36px;
+     }
+  } @media screen and (min-width: 600px) {
+     .title-donation {
+       font-size: 25px;
+     }
+  }
+  
+  .image-md-lg {
+    border: solid 1px #050606;
+    padding: 10px;
+    object-fit: cover;
+  }
+  
+  .grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    object-fit: cover; 
+  }
+  
+  @media screen and (min-width: 1025px) {
+    .grid-item img {
+        width: 140px; 
+        height: 140px; 
+    }
+  }
+  
+  @media screen and (min-width: 600px) and (max-width: 1024px) {
+    .grid-item img {
+        width: 135px; 
+        height: 135px; 
+    }
+  }
+  
+  @media screen and (max-width: 599px) {
+    .grid-item img {
+        width: 100px; 
+        height: 100px;
+    }
+  }
+  
+  @media screen and (min-width: 1025px) {
+    .row {
+        font-size: 15px;
+    }
+  }
+  
+  @media screen and (min-width: 600px) and (max-width: 1024px) {
+    .row {
+        font-size: 10px;
+    }
+  }
+  
+  
+  .image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    overflow: hidden;
+    border: solid 1px #050606;
+    border-radius: 40px;
+  }
+  
+  .image-md-ss {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+    padding: 10px;
+  
+  }
+  
+  
+  
+  .font-big{
+    font-size: 24px;
+    color: #9EA6A6;
+    margin-bottom: 14px;
+  }
+  
+  .font-small{
+    font-size: 18px;
+    color: #9EA6A6;
+    
+  
+  }
+  
+  .fa-pen, .fa-trash-can {
+    font-size: 30px;
+    color: #9EA6A6;
+  }
+  
+  .fa-pen:hover, .fa-trash-can:hover {
+    color: #050606;
+  }
+  
+  .scrollable{
+    overflow-y: auto;
+    max-height: 400px;
+  }
+  
+  .info-icon{
+    height: 70px;
+    width: 70px;
+  }
+
+
+  
