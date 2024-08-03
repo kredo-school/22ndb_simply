@@ -17,8 +17,8 @@
                             <p class="mb-0 ms-4">Item's information</p>
 
                             @if(Auth::user()->id === $user->id) 
-                            <a href="#" class="btn ms-5 ">
-                                <i class="fa-solid fa-pen gray " ></i>
+                            <a href="{{ route('') }}" class="btn ms-5 ">
+                                <i class="fa-solid fa-pen gray" ></i>
                             </a>
                             <div class="tooltip-container">
                                 <button class="btn  ps-1" data-bs-toggle="modal" data-bs-target="#delete-modal">
