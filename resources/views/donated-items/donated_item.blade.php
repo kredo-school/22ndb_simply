@@ -17,22 +17,15 @@
                             <p class="mb-0 ms-4">Item's information</p>
 
                             @if(Auth::user()->id === $user->id) 
-                            <a href="#" class="btn ms-5 pe-0">
+                            <a href="#" class="btn ms-5 ">
                                 <i class="fa-solid fa-pen gray " ></i>
                             </a>
                             <div class="tooltip-container">
-                                <i class="fa fa-trash-can"></i>
-                                <span class="add">Don't delete this item during dealing.</span>
-                              </div>
-                              <button class="btn ms-2 ps-1" data-bs-toggle="modal" data-bs-target="#delete-modal">
-                                <span class="h5 mb-2 text-danger add">Don't delete this item during dealing.</span>
-                            </button>
-                            {{-- <button class="btn ms-2 ps-1" data-bs-toggle="modal" data-bs-target="#delete-modal">
-                                <i class="fa-solid fa-trash-can gray"></i>
-                                <span class="h5 mb-2 text-danger add">Don't delete this item during dealing.</span>
-                                
-                                
-                            </button> --}}
+                                <button class="btn  ps-1" data-bs-toggle="modal" data-bs-target="#delete-modal">
+                                    <i class="fa fa-trash-can"></i>
+                                    <span class="h5 mb-2 text-danger add">Don't delete this item during dealing.</span>
+                                </button>
+                            </div>
                             {{--Component Delete Modal --}}
                             @component('users.components.deletemodal', [
                                 'id' => 'delete-modal',

@@ -190,27 +190,23 @@
   position: absolute;
   display: none;
   padding: 20px;
-  background-color: rgba(255, 0, 0, 0.8);
-  color: white;
-  border-radius: 5px;
-  width: auto;
-  font-size: 20px;
-  z-index: 10;
+  color: #da0000;
+  border-radius: 10px;
+  width: 260px;
+  height: auto;
+  font-size: 20px !important;
+  left : 120%; 
+  top:-50%;
+  font-weight: 800 !important;
+  text-align: left;
+  border: 1px solid #da0000;
 }
-.add:after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  margin-top: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent rgba(255, 0, 0, 0.8) transparent transparent;
-}
+
 .tooltip-container {
   position: relative;
   display: inline-block;
   cursor: pointer;
+
 }
 .tooltip-container:hover .add {
   display: block;
