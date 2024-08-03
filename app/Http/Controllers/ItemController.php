@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Item;
 
 class ItemController extends Controller
 {
@@ -23,8 +24,10 @@ class ItemController extends Controller
         return view('users.items.edit');
     }
 
-    public function myItemPage()
+    public function myItemPage($id)
     {
-        return view('users.items.my_item');
+        $item = Item::find($id);
+        return view('users.items.my_item')
+                ->with('item', $item);
     }
 }
