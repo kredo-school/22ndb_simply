@@ -69,6 +69,12 @@ body {
     width: 740px;
 }
 
+.no-otherItem-box {
+    border: solid 1px #050606;
+    height: 150px;
+    width: 950px;
+}
+
 .item-box {
     border: solid 1px #050606;
     width: 150px;

@@ -25,7 +25,7 @@ Route::get('/contact-us', [ContactController::class, 'contact'])->name('contact'
 Route::post('/contact-us/store', [ContactController::class, 'store'])->name('contact.store');
 
 // homepage
-Route::get('/homepage/{id}', [App\Http\Controllers\HomepageController::class, 'homepage'])->name('homepage');
+Route::get('/homepage', [App\Http\Controllers\HomepageController::class, 'homepage'])->name('homepage');
 
 // ＃Profile
 Route::group(['middleware' => 'auth'], function(){
@@ -51,6 +51,8 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
  Route::get('each_category/{id}', [CategoryController::class, 'showCategoryItem'])->name('each_category');
 
  Route::get('my_item/{id}', [ItemController::class, 'myItemPage'])->name('my_item');
+
+ Route::get('other_items/{id}', [ItemController::class, 'otherItemPage'])->name('other_items');
 
  Route::patch('/edit/category/{id}', [CategoryController::class, 'editCategory'])->name('edit.category');
 

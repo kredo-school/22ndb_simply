@@ -36,8 +36,8 @@ class CategoryController extends Controller
 
         // 2. Save new category name
 
-        $this->category->name = $request->category_name;
-        $this->category->save();
+        // $this->category->name = $request->category_name;
+        // $this->category->save();
 
         $category = new Category;
         $category->name = $request->input('name');
@@ -62,6 +62,14 @@ class CategoryController extends Controller
         // Redirect to homepage
         return redirect()->route('homepage', ['id' => Auth::user()->id]);
     
+
+        return redirect()->back();
+    }
+
+    public function deleteCategory($id)
+    {
+       $category = Category::findOrFail($id);
+       $category->delete();
 
         return redirect()->back();
     }
