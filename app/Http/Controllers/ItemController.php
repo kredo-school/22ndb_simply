@@ -3,26 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Item;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
-use App\Models\Item;
 use App\Models\Category;
 use App\Models\DonationItem;
 
 class ItemController extends Controller
 {
-    private $item;
+    private $item; 
     private $donation_item;
 
     public function __construct(Item $item, DonationItem $donation_item)
     {
         $this->item = $item;
         $this->donation_item = $donation_item;
-    }
-
-    public function myItemPage()
-    {
-        return view('users.items.my_item');
     }
 
     // Profile items
@@ -40,6 +35,16 @@ class ItemController extends Controller
     {
         return view('users.items.show');
     }
+
+    
+    public function myItemPage($id)
+    {
+       $item = Item::find($id);
+
+        return view('users.items.my_item')
+                ->with('item', $item);
+    }
+
 
     public function add(Request $request)
     {

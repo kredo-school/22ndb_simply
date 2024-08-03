@@ -299,6 +299,206 @@ class ItemSeeder extends Seeder
                 "category_id" =>"14",
                 "created_at" => NOW(),
                 "updated_at" => NOW(),
+            ],
+
+            [
+                "name" => "Knitsweater",
+                "description" => "present from Mom",
+                "image" => "/storage/assets/knitsweater.jpg",
+                "user_id" => "2",
+                "category_id" =>"2",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+
+            [
+                "name" => "Blue Tie",
+                "description" => "From high school uniform",
+                "image" => "/storage/assets/blue-tie.jpg",
+                "user_id" => "2",
+                "category_id" =>"2",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+
+            [
+                "name" => "Shiny Short Pants",
+                "description" => "Never worn",
+                "image" => "/storage/assets/shiny-shortpants.jpg",
+                "user_id" => "2",
+                "category_id" =>"2",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+
+            [
+                "name" => "Denim Pants",
+                "description" => "My favorite",
+                "image" => "/storage/assets/denim-pants.jpg",
+                "user_id" => "2",
+                "category_id" =>"2",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+
+            [
+                "name" => "Knitsweater",
+                "description" => "present from Mom",
+                "image" => "/storage/assets/knitsweater.jpg",
+                "user_id" => "2",
+                "category_id" =>"2",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+
+            [
+                "name" => "Blue Tie",
+                "description" => "From high school uniform",
+                "image" => "/storage/assets/blue-tie.jpg",
+                "user_id" => "2",
+                "category_id" =>"2",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+
+            [
+                "name" => "Shiny Short Pants",
+                "description" => "Never worn",
+                "image" => "/storage/assets/shiny-shortpants.jpg",
+                "user_id" => "2",
+                "category_id" =>"2",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+
+            [
+                "name" => "Denim Pants",
+                "description" => "My favorite",
+                "image" => "/storage/assets/denim-pants.jpg",
+                "user_id" => "2",
+                "category_id" =>"2",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+
+            [
+                "name" => "Knitsweater",
+                "description" => "present from Mom",
+                "image" => "/storage/assets/knitsweater.jpg",
+                "user_id" => "2",
+                "category_id" =>"2",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+
+            [
+                "name" => "Blue Tie",
+                "description" => "From high school uniform",
+                "image" => "/storage/assets/blue-tie.jpg",
+                "user_id" => "2",
+                "category_id" =>"2",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+
+            [
+                "name" => "Shiny Short Pants",
+                "description" => "Never worn",
+                "image" => "/storage/assets/shiny-shortpants.jpg",
+                "user_id" => "2",
+                "category_id" =>"2",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+
+            [
+                "name" => "Denim Pants",
+                "description" => "My favorite",
+                "image" => "/storage/assets/denim-pants.jpg",
+                "user_id" => "2",
+                "category_id" =>"2",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+
+            [
+                "name" => "Knitsweater",
+                "description" => "present from Mom",
+                "image" => "/storage/assets/knitsweater.jpg",
+                "user_id" => "2",
+                "category_id" =>"2",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+
+            [
+                "name" => "Blue Tie",
+                "description" => "From high school uniform",
+                "image" => "/storage/assets/blue-tie.jpg",
+                "user_id" => "2",
+                "category_id" =>"2",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+
+            [
+                "name" => "Shiny Short Pants",
+                "description" => "Never worn",
+                "image" => "/storage/assets/shiny-shortpants.jpg",
+                "user_id" => "2",
+                "category_id" =>"2",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+
+            [
+                "name" => "Denim Pants",
+                "description" => "My favorite",
+                "image" => "/storage/assets/denim-pants.jpg",
+                "user_id" => "2",
+                "category_id" =>"2",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+
+            [
+                "name" => "Knitsweater",
+                "description" => "present from Mom",
+                "image" => "/storage/assets/knitsweater.jpg",
+                "user_id" => "2",
+                "category_id" =>"2",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+
+            [
+                "name" => "Blue Tie",
+                "description" => "From high school uniform",
+                "image" => "/storage/assets/blue-tie.jpg",
+                "user_id" => "2",
+                "category_id" =>"2",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+
+            [
+                "name" => "Shiny Short Pants",
+                "description" => "Never worn",
+                "image" => "/storage/assets/shiny-shortpants.jpg",
+                "user_id" => "2",
+                "category_id" =>"2",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+
+            [
+                "name" => "Denim Pants",
+                "description" => "My favorite",
+                "image" => "/storage/assets/denim-pants.jpg",
+                "user_id" => "2",
+                "category_id" =>"2",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
             ]
 
         ];

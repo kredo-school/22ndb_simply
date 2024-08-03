@@ -14,10 +14,10 @@
         {{-- Tab --}}
         <ul class="nav nav-tabs border-bottom-0 border-dark">
             <li class="nav-item">
-                <a href="{{route('profile.favorites')}}" class="nav-tab-link text-decoration-none border border-dark border-bottom-0 py-2 px-4 active {{request()->is('profile/myitems/favorites') ? 'active' : ''}}">My favorite items</a>
+                <a href="{{route('profile.favorites')}}" class="nav-tab-link text-decoration-none border border-dark border-bottom-0 py-2 px-4  {{ request()->is('profile/favorites') ? 'active' : '' }}">My favorite items</a>
             </li>
             <li class="nav-item">
-                <a href="{{route('profile.donated')}}" class="nav-tab-link border border-dark border-bottom-0 text-decoration-none py-2 px-4 {{request()->is('profile/myitems/donated') ? 'active' : ''}}">My donated items</a>
+                <a href="{{route('profile.donated')}}" class="nav-tab-link border border-dark border-bottom-0 text-decoration-none py-2 px-4 {{ request()->is('profile/donated') ? 'active' : '' }}">My donated items</a>
             </li>
         </ul>
         <div class="tab-content border border-dark p-3">
@@ -25,4 +25,9 @@
         </div>
     </div>
 </div>
+
+{{-- add Pagination link--}}
+{{-- <div class="pagination">   
+    {{ $category_items->links('users.categories.pagination_each_category') }}
+</div> --}}
 @endsection
