@@ -36,8 +36,8 @@ class CategoryController extends Controller
 
         // 2. Save new category name
 
-        $this->category->name = $request->category_name;
-        $this->category->save();
+        // $this->category->name = $request->category_name;
+        // $this->category->save();
 
         $category = new Category;
         $category->name = $request->input('name');

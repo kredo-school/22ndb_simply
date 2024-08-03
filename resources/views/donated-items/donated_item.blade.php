@@ -17,7 +17,7 @@
                             <p class="mb-0 ms-4">Item's information</p>
 
                             @if(Auth::user()->id === $user->id) 
-                            <a href="{{ route('item.edit', ['id' => $donationItem->id]) }}" class="btn ms-5 ">
+                            <a href="{{ route('donated.item.edit', $donationItem->id) }}" class="btn ms-5 ">
                                 <i class="fa-solid fa-pen gray" ></i>
                             </a>
                             <div class="tooltip-container">
@@ -49,7 +49,7 @@
                 <div class="row mt-5">
                     <div class="col-4">
                         <div class="mt-3 mb-3 image-container">
-                            <img class="image-md-ss" src="{{ asset($donationItem->item->image) }}" alt="{{ $donationItem->item->name }}"/>
+                            <img class="image-md-ss" src="{{ $donationItem->item->image }}" alt="{{ $donationItem->item->name }}"/>
                         </div>
                     </div>
                     <div class="col-8 h5 my-auto scrollable">
