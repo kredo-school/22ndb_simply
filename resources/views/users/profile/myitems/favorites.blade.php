@@ -2,9 +2,9 @@
 
 @section('items-content')
     <div class="container">
-        <div class="row row-cols-md-3 row-cols-lg-5">
+        <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-5">
+
             {{-- @foreach --}}
-            
             <div class="col d-flex flex-column border ">
                 <img src="{{asset('images/tshirt-img.jpg')}}" alt="favorite-item-img1" class="img-item-md">
                 <div class="catename-icon">
