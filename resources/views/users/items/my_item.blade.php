@@ -5,64 +5,77 @@
 <link rel="stylesheet" href="{{ asset('/css/my_item.css') }}">
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-7">
-            <div class="mt-5 text-center">
+<div class="container-fluid d-flex justify-content-center align-items-center mt-4">
+    <div class="row justify-content-center w-100">
+        <div class="col-9">
+            <div class="mt-3 text-center">
                 <div class="row h1 align-items-center">
                     <div class="col">
-                        <p class="d-inline-block me-3"><i class="fa-solid fa-circle-info"></i> Item's information</p>
-                        <span><a href="{{ route('edit.item', $item->id) }}" class="btn text-decoration-none"><i class="fa-solid fa-pen e-d-icon"></i></a></span>
-                        <span><a data-bs-toggle="modal" data-bs-target="#delete-item" class="btn text-decoration-none"><i class="fa-solid fa-trash-can e-d-icon"></i></a></span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3">
-                        <div class="item-img-box border border-dark mt-5">
-                        <img class="item-img" src="{{ asset('/storage/assets/denim-pants.jpg') }}" alt="">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <i class="fa-solid fa-circle-info ps-1"></i>
+                            <p class="mb-0 ms-4">Item's information</p>
+                            <a href="{{ route('item.edit') }}" class="btn ms-5 pe-0">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+                            <button class="btn ms-2 ps-1" data-bs-toggle="modal" data-bs-target="#delete-item">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
                         </div>
                     </div>
-                    <div class="col-9 h5 my-auto">
-                        <div class="mt-5">
+                </div>
+                @include('users.items.modal.delete')
+
+                <div class="row mt-5">
+                    <div class="col-4">
+                        <div class="mt-3 mb-3 image-container">
+                            <img class="image-md-ss" src="{{ $item->image }}" alt="{{ $item->name }}"/>
+                        </div>
+                    </div>
+                    <div class="col-8 h5 my-auto scrollable">
+                        <div class="mt-3 mb-3">
                             <div class="row">
-                                <div class="col text-end">
-                                    <p class="r-date">Registered Date</p>
+                                <div class="col-4 text-start ms-5">
+                                    <p class="font-big">Donated Date</p>
                                 </div>
-                                <div class="col text-start">
-                                    <p>xxxx/xx/xx</p>
+                                <div class="col-auto text-start font-big">
+                                    <p>{{ $item->created_at->format('Y/m/d') }}</p>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col text-end">
-                                    <p class="category-name">Category</p>
+                                <div class="col-4 text-start ms-5">
+                                    <p class="font-big">Category</p>
                                 </div>
-                                <div class="col text-start">
-                                    <p>Closet</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col text-end">
-                                    <p class="item-name">Item Name</p>
-                                </div>
-                                <div class="col text-start">
-                                    <p>Denim Pants</p>
+                                <div class="col-auto text-start font-big">
+                                    <p>{{ $item->category->name }}</p>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col text-end">
-                                    <p class="description">Description</p>
+                                <div class="col-4 text-start ms-5">
+                                    <p class="font-big">Item Name</p>
                                 </div>
-                                <div class="col text-start">
-                                    <p>I wore this shirt only one time. It's almost new!</p>
+                                <div class="col-auto text-start font-big">
+                                    <p>{{ $item->name }}</p>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col text-end">
-                                    <p class="donation">Donation</p>
+                                <div class="col-4 text-start ms-5">
+                                    <p class="font-big">Description</p>
                                 </div>
-                                <div class="col text-start">
+                                @if($item->description)
+                                <div class="col-6 text-start font-big">
+                                    <p>{{ $item->description }}</p>
+                                </div>
+                                @endif
+                            </div>
+                            <div class="row">
+                                <div class="col-4 text-start ms-5">
+                                    <p class="font-big">Donation</p>
+                                </div>
+                                @if($item->isDonated())
+                                <div class="col-auto text-start font-big">
                                     <i class="fa-regular fa-square-check"></i>
                                 </div>
+                                @endif
                             </div>
                         </div>
                     </div>

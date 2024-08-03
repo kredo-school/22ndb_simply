@@ -71,7 +71,7 @@ class User extends Authenticatable
 
     public function mycategories()
     {
-        return $this->category()->where('user_id', Auth::user()->id)->exists();
+        return $this->categories()->where('user_id', Auth::user()->id)->exists();
     }
 
 }
