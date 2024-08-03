@@ -60,18 +60,18 @@ class User extends Authenticatable
     }
 
 
-    public function item()
+    public function items()
     {
         return $this->hasMany(Item::class);
     }
 
-    public function category()
+    public function categories()
     {
         return $this->hasMany(Category::class);
     }
 
     public function mycategories()
     {
-        return $this->category()->where('user_id', Auth::user()->id)->exists();
+        return $this->categories()->where('user_id', Auth::user()->id)->exists();
     }
 }

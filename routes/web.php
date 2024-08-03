@@ -18,13 +18,14 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
-Route::get('/homepage/{id}', [App\Http\Controllers\HomepageController::class, 'homepage'])->name('homepage');
 
 Route::get('/reset-successful', [HomeController::class, 'resetSuccess'])->name('password.reset.success');
 
 Route::get('/contact-us', [ContactController::class, 'contact'])->name('contact');
 Route::post('/contact-us/store', [ContactController::class, 'store'])->name('contact.store');
 
+// homepage
+Route::get('/homepage/{id}', [App\Http\Controllers\HomepageController::class, 'homepage'])->name('homepage');
 
 // ＃Profile
 Route::group(['middleware' => 'auth'], function(){
@@ -48,8 +49,6 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
     Route::get('/show', [DonationController::class, 'show'])->name('show');
  });
 
-//  homepage
-//  Route::get('homepage/{id}', [HomepageController::class, 'homepage'])->name('homepage');
 
 //  category
  Route::get('each_category/{id}', [CategoryController::class, 'showCategoryItem'])->name('each_category');
@@ -73,16 +72,6 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
  Route::group(["prefix" => "donation", "as" => "donation."], function(){
     Route::get('/show', [DonationController::class, 'show'])->name('show');
  });
-
-//  Route::get('homepage/{id}', [HomepageController::class, 'homepage'])->name('homepage');
-
-//     Route::get('each_category/{id}', [CategoryController::class, 'eachCategory'])->name('each_category');
-
-//     Route::get('my_item/{id}', [ItemController::class, 'myItemPage'])->name('my_item');
-
-//     Route::patch('/edit/category/{id}', [CategoryController::class, 'editCategory'])->name('edit.category');
-
-//     Route::post('/create/category', [CategoryController::class, 'createCategory'])->name('create.category');
 
 #Donated-item
 Route::get('/donated-items', [DonationController::class, 'indexDonatedItems'])->name('donated.items.index');
