@@ -59,7 +59,6 @@ class User extends Authenticatable
         return $this->hasMany(FavoriteItem::class);
     }
 
-
     public function items()
     {
         return $this->hasMany(Item::class);
@@ -74,4 +73,5 @@ class User extends Authenticatable
     {
         return $this->categories()->where('user_id', Auth::user()->id)->exists();
     }
+
 }

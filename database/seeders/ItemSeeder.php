@@ -8,7 +8,7 @@ use App\Models\Item;
 
 class ItemSeeder extends Seeder
 {
-    
+
     /**
      * Run the database seeds.
      */
@@ -290,7 +290,7 @@ class ItemSeeder extends Seeder
                 "created_at" => NOW(),
                 "updated_at" => NOW(),
             ],
-            
+
             [
                 "name" => "White Plate",
                 "description" => "My favorite one",
@@ -642,7 +642,7 @@ class ItemSeeder extends Seeder
     //             'user_id' => '5',
     //             'category_id' => '1',
     //             'created_at' => NOW(),
-    //             'updated_at' => NOW(), 
+    //             'updated_at' => NOW(),
     //         ],
     //         [
     //             'name' => 'Umbrella',
@@ -665,7 +665,7 @@ class ItemSeeder extends Seeder
     //     ];
 
     //     $this->item->insert($item);
-    // } 
+    // }
 
     }
 }
