@@ -72,10 +72,6 @@ class DonationController extends Controller
 
         $item = Item::findOrFail($id);
 
-        if (Auth::user()->id != $item->user_id) {
-            return redirect()->back()->withErrors('Unauthorized action.');
-        }
-
         $item->name = $request->name;
         $item->description = $request->description;
         $item->category_id = $request->category;
@@ -87,29 +83,24 @@ class DonationController extends Controller
 
         $item->save();
 
-         
-
         $donationItem = DonationItem::where('item_id', $item->id)->first();
 
     if ($request->has('donation')) {
         if (!$donationItem) {
-            // Create a new DonationItem instance if not found
             $donationItem = new DonationItem();
             $donationItem->item_id = $item->id;
         }
         $donationItem->user_id = Auth::id();
         $donationItem->save();
     } else {
-        // If donation is not present, delete the DonationItem if it exists
+        
         if ($donationItem) {
             $donationItem->delete();
         }
     }
 
-
         return redirect()->route('donated.items.index');
 
-       
     }
     
     
@@ -121,7 +112,6 @@ class DonationController extends Controller
         if ($donationItem->item) {
             $donationItem->item->delete();
         }
-
 
         return redirect()->route('donated.items.index');
     }

@@ -59,17 +59,6 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
  Route::delete('/delete/category/{id}', [CategoryController::class, 'deleteCategory'])->name('delete.category');
 
 
-Route::group(["prefix" => "item", "as" => "item."], function(){
-    Route::get('/show', [ItemController::class, 'show'])->name('show');
-    Route::get('/add', [ItemController::class, 'add'])->name('add');
-    Route::get('/edit', [ItemController::class, 'edit'])->name('edit');
-    
- });
-
- Route::group(["prefix" => "donation", "as" => "donation."], function(){
-    Route::get('/show', [DonationController::class, 'show'])->name('show');
- });
-
 #Donated-item
 Route::get('/donated-items', [DonationController::class, 'indexDonatedItems'])->name('donated.items.index');
 Route::get('/donated-items/{id}', [DonationController::class, 'showDonatedItem'])->name('donated.item.show');
