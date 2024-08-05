@@ -11,7 +11,7 @@ use App\Models\DonationItem;
 
 class ItemController extends Controller
 {
-    private $item; 
+    private $item;
     private $donation_item;
 
     public function __construct(Item $item, DonationItem $donation_item)
@@ -24,8 +24,8 @@ class ItemController extends Controller
     {
         return view('users.items.show');
     }
-   
-    
+
+
     public function myItemPage($id)
     {
        $item = Item::find($id);
@@ -71,11 +71,11 @@ class ItemController extends Controller
         return redirect()->route('homepage');
     }
 
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
         $all_categories = Category::all();
         $item = $this->item->findOrFail($id);
-        if(Auth::user()->id != $item->user->id) {
+        if(Auth::user()->id !== $item->user->id) {
             return redirect()->back();
         }
 
@@ -93,6 +93,7 @@ class ItemController extends Controller
             'image' => 'required|mimes:jpeg,jpg,png,gif|max:1048'
         ]);
 
+        $category = $request->query('category', null);
         $item = $this->item->findOrFail($id);
 
         $item->name        = $request->name;
