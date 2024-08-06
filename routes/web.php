@@ -28,18 +28,20 @@ Route::post('/contact-us/store', [ContactController::class, 'store'])->name('con
 Route::get('/homepage/{id}', [App\Http\Controllers\HomepageController::class, 'homepage'])->name('homepage');
 
 // Profile
-Route::group(['middleware' => 'auth'], function(){
+// Route::group(['middleware' => 'auth'], function(){
     Route::get('profile/{id}/show', [ProfileController::class, 'show'])->name('profile.show');
     Route::get('profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('profile/update', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('users/{id}', [UserController::class, 'destroy'])->name('profile.destroy');
-});
 
-    // Myitems
-        Route::get('profile/myitems', function(){
-            return redirect()->route('profile.favorites');})->name('profile.myitems');
-        Route::get('profile/favorites', [ItemController::class, 'favorites'])->name('profile.favorites');
-        Route::get('profile/donated', [ItemController::class, 'donated'])->name('profile.donated');
+// Myitems
+    Route::get('profile/myitems', function(){
+    return redirect()->route('myitems.favorites');})->name('profile.myitems');
+    // Route::get('profile/favorites', [ItemController::class, 'favorites'])->name('profile.favorites');
+    // Route::get('profile/donated', [ItemController::class, 'donated'])->name('profile.donated');
+// });
+
+
 
 
 // Item
@@ -80,7 +82,9 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
 Route::get('/donated-items', [DonationController::class, 'indexDonatedItems'])->name('donated.items.index');
 Route::get('/donated-items/{id}', [DonationController::class, 'showDonatedItem'])->name('donated.item.show');
 Route::delete('donated-items/destroy/{id}', [DonationController::class, 'destroy'])->name('donated.item.destroy');
+Route::get('myitems/donated', [DonationController::class, 'donated'])->name('myitems.donated');
 
 #Favorite
 Route::post('/favorite/{donationItem_id}/store', [FavoriteItemController::class,'store'])->name('favorite.store');
 Route::delete('/favorite/{donationItem_id}/destroy', [FavoriteItemController::class, 'destroy'])->name('favorite.destroy');
+Route::get('myitems/favorites', [FavoriteItemController::class,'favorites'])->name('myitems.favorites');

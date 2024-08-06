@@ -3,13 +3,15 @@
 @section('items-content')
     <div class="container">
         <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-5">
-            {{-- add @foreach --}}
-            <div class="col d-flex flex-column align-items-center border mb-3 h6">
+            @foreach($donatedItems as $donatedItem)
+            <div class="col d-flex flex-column align-items-center mb-3 h6">
+{{-- Add image link --}}
                     <a href="">
-                        <img src="{{asset('images/tshirt-img.jpg')}}" alt="favorite-item-img1" class="img-item-md mb-3">
+                        <img src="{{$donatedItem->item->image}}" alt="{{$donatedItem->item->name}}" class="img-item-md mb-3">
                     </a>
-                    <span>item name</span>
+                    <span>{{$donatedItem->item->name}}</span>
             </div>
+            @endforeach
         </div>
     </div>
 @endsection
