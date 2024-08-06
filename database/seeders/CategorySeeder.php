@@ -22,28 +22,96 @@ class CategorySeeder extends Seeder
     {
         $category =[
             [
-                "name" => "Clothes",
+                "name" => "Closet",
+                "user_id" => "1",
                 "created_at" => NOW(),
                 "updated_at" => NOW(),
             ],
-
-            [
-                "name" => "Kitchen",
-                "created_at" => NOW(),
-                "updated_at" => NOW(),
-            ],
-
             [
                 "name" => "Garage",
+                "user_id" => "1",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+            [
+                "name" => "Kitchen",
+                "user_id" => "1",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+            [
+                "name" => "Living room",
+                "user_id" => "1",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+            [
+                "name" => "Room1",
+                "user_id" => "1",
                 "created_at" => NOW(),
                 "updated_at" => NOW(),
             ],
 
             [
-                "name" => "Hobby",
+                "name" => "Closet",
+                "user_id" => "2",
                 "created_at" => NOW(),
                 "updated_at" => NOW(),
-            ]
+            ],
+            [
+                "name" => "Garage",
+                "user_id" => "2",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+            [
+                "name" => "Kitchen",
+                "user_id" => "2",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+            [
+                "name" => "Living room",
+                "user_id" => "2",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+            [
+                "name" => "Room1",
+                "user_id" => "2",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+            [
+                "name" => "Closet",
+                "user_id" => "3",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+            [
+                "name" => "Garage",
+                "user_id" => "3",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+            [
+                "name" => "Kitchen",
+                "user_id" => "3",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+            [
+                "name" => "Living room",
+                "user_id" => "3",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
+            [
+                "name" => "Room1",
+                "user_id" => "3",
+                "created_at" => NOW(),
+                "updated_at" => NOW(),
+            ],
         ];
             $this->category->insert($category);
     }

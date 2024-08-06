@@ -506,32 +506,7 @@ class ItemSeeder extends Seeder
         $this->item->insert($items);
 
 
-    // private $item;
-
-    // public function __construct(Item $item)
-    // {
-    //     $this->item = $item;
-    // }
-    // /**
-    //  * Run the database seeds.
-    //  */
-    // public function run(): void
-    // {
-    //     $item = [
-    //         [
-    //             'name' => 'perfume',
-    //             'description' => 'I just used one time. So it is almost new!',
-    //             'image' => 'images/perfume.jpg',
-    //             'user_id' => '1',
-    //             'category_id' => '1',
-    //             'created_at' => NOW(),
-    //             'updated_at' => NOW(),
-    //         ],
-    //         [
-    //             'name' => 'cup',
-    //             'description' => 'I bought it in Spain.',
-    //             'image' => 'images/cup.jpg',
-    //             'user_id' => '2',
+       //             'user_id' => '2',
     //             'category_id' => '2',
     //             'created_at' => NOW(),
     //             'updated_at' => NOW(),
