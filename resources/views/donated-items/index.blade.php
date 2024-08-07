@@ -15,8 +15,8 @@
             <div class="col grid-item">
                 <div class="item-container">
                     <a href="{{ route('donated.item.show', $donationItem->id) }}">
-                        <img class="image-md-lg" src="{{ asset($donationItem->item->image) }}" alt="{{ $donationItem->item->name }}"/>
-                    </a>
+                        <img class="image-md-lg" src="{{ $donationItem->item->image }}" alt="{{ $donationItem->item->name }}">                  
+                     </a>
 
                     @if($donationItem->isFavorited())
                         <form action="{{ route('favorite.destroy', ['donationItem_id' => $donationItem->id]) }}" method="post">

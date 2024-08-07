@@ -14,7 +14,7 @@
                         <div class="d-flex justify-content-center align-items-center">
                             <i class="fa-solid fa-circle-info ps-1"></i>
                             <p class="mb-0 ms-4">Item's information</p>
-                            <a href="{{ route('item.edit') }}" class="btn ms-5 pe-0">
+                            <a href="{{ route('item.edit', $item->id) }}" class="btn ms-5 pe-0">
                                 <i class="fa-solid fa-pen"></i>
                             </a>
                             <button class="btn ms-2 ps-1" data-bs-toggle="modal" data-bs-target="#delete-item">
