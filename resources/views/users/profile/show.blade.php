@@ -41,11 +41,11 @@
                         </div>
                         <div>
                             {{--If ur the profile owner, can see items link --}}
-                            {{-- @if(Auth::user()->id === $user->id)  --}}
-                                <a href="" class='text-dark text-decoration-none'>
+                            @if(Auth::user()->id === $user->id) 
+                                <a href="{{route('profile.myitems')}}" class='text-dark text-decoration-none'>
                                     <i class="fa-solid fa-hand-holding-heart me-2"></i> My items
                                 </a>
-                            {{-- @endif --}}
+                            @endif
                         </div>
                     </div>
                 </div>

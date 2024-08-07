@@ -37,8 +37,6 @@ Route::get('/homepage/{id}', [App\Http\Controllers\HomepageController::class, 'h
 // Myitems
     Route::get('profile/myitems', function(){
     return redirect()->route('myitems.favorites');})->name('profile.myitems');
-    // Route::get('profile/favorites', [ItemController::class, 'favorites'])->name('profile.favorites');
-    // Route::get('profile/donated', [ItemController::class, 'donated'])->name('profile.donated');
 // });
 
 
