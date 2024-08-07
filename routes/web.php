@@ -16,7 +16,6 @@ use App\Models\DonationItem;
 
 Auth::routes();
 
-Route::get('/user-guide', [App\Http\Controllers\HomeController::class, 'guide1'])->name('guide1');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
 
@@ -79,3 +78,17 @@ Route::delete('donated-items/destroy/{id}', [DonationController::class, 'destroy
 #Favorite
 Route::post('/favorite/{donationItem_id}/store', [FavoriteItemController::class,'store'])->name('favorite.store');
 Route::delete('/favorite/{donationItem_id}/destroy', [FavoriteItemController::class, 'destroy'])->name('favorite.destroy');
+
+#User Guide
+Route::prefix('user-guide')->group(function () {
+    Route::view('/register', 'user-guide.register')->name('user-guide.register');
+    Route::view('/login', 'user-guide.login')->name('user-guide.login');
+    Route::view('/password-reset', 'user-guide.password-reset')->name('user-guide.password-reset');
+    Route::view('/register-item', 'user-guide.register-item')->name('user-guide.register-item');
+    Route::view('/add-category', 'user-guide.add-category')->name('user-guide.add-category');
+    Route::view('/donated-item', 'user-guide.donated-item')->name('user-guide.donated-item');
+    Route::view('/edit-item', 'user-guide.edit-item')->name('user-guide.edit-item');
+    Route::view('/delete-item', 'user-guide.delete-item')->name('user-guide.delete-item');
+    Route::view('/other-users-items', 'user-guide.other-users-items')->name('user-guide.other-users-items');
+    Route::view('/favorite-item', 'user-guide.favorite-item')->name('user-guide.favorite-item');
+});

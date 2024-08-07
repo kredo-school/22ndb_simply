@@ -46,21 +46,21 @@
                         @guest
                             @if (Route::currentRouteName() == 'login')
                                 <li class="nav-item">
-                                    <a class="nav-link me-4" href="#">User Guide</a>
+                                    <a class="nav-link me-4" href="{{ route('user-guide.register')}}">User Guide</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @elseif (Route::currentRouteName() == 'register' || Route::currentRouteName() == 'password.request' || Route::currentRouteName() == 'password.reset' || Route::currentRouteName() == 'password.reset.success')
                                 <li class="nav-item">
-                                    <a class="nav-link me-4" href="#">User Guide</a>
+                                    <a class="nav-link me-4" href="{{ route('user-guide.register')}}">User Guide</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
-                            @elseif (Route::currentRouteName() == 'contact' || Route::currentRouteName() == 'index')
+                            @elseif (Route::currentRouteName() == 'contact' || Route::currentRouteName() == 'index' || Route::currentRouteName() == 'guide1')
                                 <li class="nav-item">
-                                    <a class="nav-link me-4" href="#">User Guide</a>
+                                    <a class="nav-link me-4" href="{{ route('user-guide.register')}}">User Guide</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link me-4" href="{{ route('login') }}">{{ __('Login') }}</a>

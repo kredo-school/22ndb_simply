@@ -1,14 +1,17 @@
-
 .menu-item {
     margin: 10px 0;
     padding: 5px;
     color: #050606;
 }
 
+.menu-item.active {
+    background-color: black; /* Background color for the active item */
+    color: white; /* Text color for the active item */
+}
+
 .border-bottom {
     border-bottom: solid #050606 !important;
 }
-
 
 .border-menu-table {
     width: 100%;
@@ -17,14 +20,24 @@
     border: solid;
     margin-bottom: 20px;
     border-collapse: separate;
-
 }
 
-.border{
+.border-menu-table a {
+    text-decoration: none;
+    color: inherit; /* Inherit color from .menu-item */
+}
+
+.content-border {
     border-radius: 15px;
-    border: solid 1px #050606 !important;
+    border: solid 2px #050606 !important;
     height: 470px;
     margin-left: 100px;
 }
 
-
+.image-border {
+    border-radius: 15px;
+    border: solid 1px #050606 !important;
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+}

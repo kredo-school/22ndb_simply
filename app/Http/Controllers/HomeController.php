@@ -25,10 +25,6 @@ class HomeController extends Controller
         return view('auth.passwords.password_reset_success');
     }
 
-    public function guide1()
-    {
-        return view('guide.guide1');
-    }
 
 }
 

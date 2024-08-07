@@ -69,8 +69,8 @@
             @include('users.categories.modals.edit_category')
             @include('users.categories.modals.delete_category')
         @endforeach
-        </div>
         @endif
+        </div>
     </div>
 
     <div>
