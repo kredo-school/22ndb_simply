@@ -1,0 +1,45 @@
+.icon-wrapper {
+    width: 16rem;
+    height: 16rem;
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+
+.image-icon {
+    font-size: 15rem;
+    transform: scale(1, 1.15);
+}
+
+select.form-control:focus,
+input.form-control:focus,
+textarea.form-control:focus,
+input.form-check-input:focus {
+    box-shadow: none;
+    border: none;
+}
+
+.custom-mt {
+    margin-top: 4rem;
+}
+
+a.custom-btn,
+button.custom-btn {
+    border-radius: 25px;
+    padding: 5px;
+    font-size: 1rem;
+    width: 48%;
+}
+
+input.form-check-input:checked {
+    background-color: black;
+    color: white;
+}
+
+input.form-check-input.checkbox-size {
+    width: 25px;
+    height: 25px;
+}
+
+p.nowrap {
+    white-space: nowrap;
+}
