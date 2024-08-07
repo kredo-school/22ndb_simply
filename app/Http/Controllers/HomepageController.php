@@ -26,13 +26,11 @@ class HomepageController extends Controller
 
         $categories = Category::all();
         $user = User::findOrFail(Auth::id());
-        $otherItems = Item::onlyTrashed()->get();
 
 
         return view('users.homepage', [
             'categories' => $categories,
-            'user' => $user,
-            'otherItems' => $otherItems
+            'user' => $user
         ]);
     }
 

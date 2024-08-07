@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Item;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
@@ -31,7 +32,7 @@ class CategoryController extends Controller
 
          // 1. Validate new category name
         $request->validate([
-            'name' => 'required|max:255|unique:categories,name,NULL,id,user_id,' . Auth::id(),
+            'name' => 'required|max:255'
         ]);
 
         // 2. Save new category name
@@ -66,13 +67,29 @@ class CategoryController extends Controller
         return redirect()->back();
     }
 
-    public function deleteCategory($id)
-    {
-       $category = Category::findOrFail($id);
-       $category->delete();
+    
 
-        return redirect()->back();
-    }
+
+
+public function destroy($id)
+{
+    DB::transaction(function () use ($id) {
+        $category = Category::findOrFail($id);
+        $othersCategory = Category::firstOrCreate([
+                'name' => 'Others',
+                'user_id' => auth()->id(),
+            ]);
+            
+        $updatedRows = Item::where('category_id', $category->id)->update(['category_id' => $othersCategory->id]);
+            
+        $category->delete();
+            
+    });
+
+    return redirect()->route('homepage');
+}
+
+
 
     public function showCategoryItem($id)
     {

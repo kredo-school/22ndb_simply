@@ -35,7 +35,7 @@
                         <div class="mt-3 mb-3">
                             <div class="row">
                                 <div class="col-4 text-start ms-5">
-                                    <p class="font-big">Donated Date</p>
+                                    <p class="font-big">Registered Date</p>
                                 </div>
                                 <div class="col-auto text-start font-big">
                                     <p>{{ $item->created_at->format('Y/m/d') }}</p>
@@ -74,6 +74,15 @@
                                 @if($item->isDonated())
                                 <div class="col-auto text-start font-big">
                                     <i class="fa-regular fa-square-check"></i>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-4 text-start ms-5">
+                                        <p class="font-big">ID</p>
+                                    </div>
+                                    <div class="col-auto text-start font-big">
+                                        <p class="ms-2">{{ $item->donation->id }}</p>
+                                    </div>
                                 </div>
                                 @endif
                             </div>

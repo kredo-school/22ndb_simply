@@ -19,7 +19,7 @@
             
             <div class="container-small">
                 <div class="row row-cols-5">
-                @foreach($category_items as $item)
+                @foreach($category->items as $item)
                 <div class="item-box mb-3">
                     <a href="{{ route('my_item', $item->id) }}"><img class="img-item" src="{{ $item->image }}" /></a> 
                     <h6 class="mt-3">{{ $item->name }} 

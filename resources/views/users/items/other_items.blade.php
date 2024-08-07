@@ -28,17 +28,17 @@
                 <div class="row mt-5">
                     <div class="col-4">
                         <div class="mt-3 mb-3 image-container">
-                            <img class="image-md-ss" src="{{ $item->image }}" alt="{{ $item->name }}"/>
+                            <img class="image-md-ss" src="{{ $oterItem->image }}" alt="{{ $otheItem->name }}"/>
                         </div>
                     </div>
                     <div class="col-8 h5 my-auto scrollable">
                         <div class="mt-3 mb-3">
                             <div class="row">
                                 <div class="col-4 text-start ms-5">
-                                    <p class="font-big">Donated Date</p>
+                                    <p class="font-big">Registered Date</p>
                                 </div>
                                 <div class="col-auto text-start font-big">
-                                    <p>{{ $item->created_at->format('Y/m/d') }}</p>
+                                    <p>{{ $otherItem->created_at->format('Y/m/d') }}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -46,7 +46,7 @@
                                     <p class="font-big">Category</p>
                                 </div>
                                 <div class="col-auto text-start font-big">
-                                    <p>{{ $item->category->name }}</p>
+                                    <p>{{ $otherItem->category->name }}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -54,16 +54,16 @@
                                     <p class="font-big">Item Name</p>
                                 </div>
                                 <div class="col-auto text-start font-big">
-                                    <p>{{ $item->name }}</p>
+                                    <p>{{ $otherItem->name }}</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-4 text-start ms-5">
                                     <p class="font-big">Description</p>
                                 </div>
-                                @if($item->description)
+                                @if($otherItem->description)
                                 <div class="col-6 text-start font-big">
-                                    <p>{{ $item->description }}</p>
+                                    <p>{{ $otherItem->description }}</p>
                                 </div>
                                 @endif
                             </div>
@@ -71,7 +71,7 @@
                                 <div class="col-4 text-start ms-5">
                                     <p class="font-big">Donation</p>
                                 </div>
-                                @if($item->isDonated())
+                                @if($otherItem->isDonated())
                                 <div class="col-auto text-start font-big">
                                     <i class="fa-regular fa-square-check"></i>
                                 </div>
