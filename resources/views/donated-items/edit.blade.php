@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Add Item')
+@section('title', 'Edit Item')
 
 @section('css')
-    <link rel="stylesheet" href={{ asset('css/item.css')}}>
+    <link rel="stylesheet" href="{{ asset('css/item.css') }}">
 @endsection
 
 @section('content')
@@ -13,13 +13,13 @@
     </h2>
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <form action="{{ route('item.update', $item->id) }}" method="post">
+            <form action="{{ route('donated.item.update', $donationItem->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PATCH')
 
                 <div class="col-12 col-md-4 d-flex flex-column align-items-center">
                     <div class="icon-wrapper border border-dark d-inline-flex justify-content-center align-items-center custom-mt">
-                        <img src="{{ $item->image }}" alt="{{ $item->image }}">
+                        <img src="{{ $donationItem->item->image }}" alt="{{ $donationItem->item->name }}" style="max-width: 100%; height: auto;">
                     </div>
                     <input type="file" name="image" id="image" class="form-control mt-3 justify-content-center" style="width: 15rem;" aria-describedby="image-info">
                     <div id="image-info" class="form-text">
@@ -40,9 +40,11 @@
                         </div>
                         <div class="col-auto">
                             <div class="form-group custom-mt">
-                                <select class="form-control" id="category">
+                                <select class="form-control" id="category" name="category">
                                     @foreach ($all_categories as $category)
-                                        <option value="{{ $category->id }}" {{ $item->category_id == $category->id ? "selected" : " " }}>{{ $category->name }}</option>
+                                        <option value="{{ $category->id }}" {{ $donationItem->category_id == $category->id ? 'selected' : '' }}>
+                                            {{ $category->name }}
+                                        </option>
                                     @endforeach
                                 </select>
                                 <a href="#" class="add-category-link text-muted" data-bs-toggle="modal" data-bs-target="#create-category">+ Add category</a>
@@ -53,12 +55,12 @@
                     <div class="row">
                         <div class="col-3 mt-3">
                             <div class="form-group mt-3">
-                                <label for="item_name">Item name</label>
+                                <label for="name">Item Name</label>
                             </div>
                         </div>
                         <div class="col-9 mt-3">
                             <div class="form-group mt-3">
-                                <input type="text" name="name" class="form-control" id="name" value="{{ old('name', $item->name) }}">
+                                <input type="text" name="name" class="form-control" id="name" value="{{ old('name', $donationItem->item->name) }}">
                             </div>
                             @error('name')
                                 <div class="text-danger small">{{ $message }}</div>
@@ -74,7 +76,7 @@
                         </div>
                         <div class="col-9 mt-3">
                             <div class="form-group mt-3">
-                                <textarea class="form-control" name="description" id="description" rows="4">{{ old('description', $item->description) }}</textarea>
+                                <textarea class="form-control" name="description" id="description" rows="4">{{ old('description', $donationItem->item->description) }}</textarea>
                             </div>
                             @error('description')
                                 <div class="text-danger small">{{ $message }}</div>
@@ -90,11 +92,11 @@
                         </div>
                         <div class="col-9 mt-3">
                             <div class="form-group mt-3 d-flex align-items-center">
-                                <input type="checkbox" class="form-check-input checkbox-size" name="donation" id="donation" {{ $item->category_id == $category->id ? "checked" : " " }}>
+                            <input type="checkbox" class="form-check-input checkbox-size" name="donation" id="donation" {{ $isDonated ? 'checked' : '' }}>
                             </div>
                             <p class="text-muted mt-2 nowrap">
                                 If you want to donate your item, please check it! <br>
-                                You can see your checked item at Donation page.
+                                You can see your checked item on the Donation page.
                             </p>
                         </div>
                     </div>
@@ -105,7 +107,7 @@
                         <div class="col-9">
                             <div class="mb-3 d-flex justify-content-around">
                                 @include('users.components.btn', [
-                                    'r' => route('my_item', $item->id),
+                                    'r' => route('donated.item.show', $donationItem->id),
                                     'color' => 'dark',
                                     'name' => 'Update'
                                 ])
