@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\FavoriteItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 
 class FavoriteItemController extends Controller
 {
     private $favorite_item;
+
 
     public function __construct(FavoriteItem $favorite_item)
     {
@@ -33,4 +35,16 @@ class FavoriteItemController extends Controller
         return redirect()->back();
 
     }
+
+//Myitems page (favorite items)
+    public function favorites(){
+        $user = Auth::user();
+        $favoriteItems = $this->favorite_item
+                        ->where('user_id',$user->id)
+                        ->with('donationItem.item')
+                        ->paginate(15);
+
+        return view('users.profile.myitems.favorites', ['favoriteItems' => $favoriteItems]);
+    }
 }
+
