@@ -36,7 +36,7 @@
                     @endforelse
                     
                     <div class="item-box rounded-3 p-3">
-                        <a href="#" class="add-item text-decoration-none text-center my-4 me-0">+</a>
+                        <a href="{{ route('item.add') }}" class="add-item text-decoration-none text-center my-4 me-0">+</a>
                     </div>
                     @if($category->items->isNotEmpty())
                         <div class="my-5">
@@ -44,47 +44,24 @@
                         </div> 
                     @endif 
                 </div>
+                @include('users.categories.modals.edit_category')
+                @include('users.categories.modals.delete_category') 
+            @endforeach
+        
+            @endif    
+            <div>
+                <div class="d-flex flex-row justify-content-center ms-4 ps-3 mt-0">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#create-category" class="btn category-btn rounded-3 text-center">+ Add category</button>
 
-                @forelse($category->items->take(4) as $item)
-                    <div class="item-box rounded-4 me-3">
-                        <a href="#">
-                            <img class="img-item" src="{{ $item->image }}" />
-                            </a>
-                    </div>
-                @empty
-                    <div class="no-item-box ms-2 me-3 rounded-3">
-                        <h1 class="no-item text-center my-5">No item</h1>
-                    </div>
-                @endforelse
-
-                <div class="item-box rounded-3 p-3">
-                    <a href="{{ route('item.add', ['category' => $category->id]) }}" class="add-item text-decoration-none text-center my-4 me-0">+</a>
+                    <a href="{{ route('item.add') }}"class="btn item-btn ms-5">+ Add item</a>
                 </div>
-                @if($category->items->isNotEmpty())
-                    <div class="my-5">
-                        <a href="#" class="see-all text-decoration-none text-center ms-2">>></a>
-                    </div>
-                @endif
             </div>
-            @include('users.categories.modals.edit_category')
-            @include('users.categories.modals.delete_category')
-        @endforeach
-        @endif
         </div>
-        @endif
-    </div>
-
-    <div>
-        <div class="d-flex flex-row justify-content-center me-4 mt-0">
-            <button type="button" data-bs-toggle="modal" data-bs-target="#create-category" class="btn category-btn rounded-3 text-center">+ Add category</button>
-            <a href="{{ route('item.add') }}" class="btn item-btn ms-5">+ Add item</a>
-        </div>
-    </div>
+    </div>    
 </div>
 
-@include('users.categories.modals.create_category')
+@include('users.categories.modals.create_category') 
 
 @endsection
 
-
-
+   
