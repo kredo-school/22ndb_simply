@@ -45,10 +45,6 @@
     color: #9EA6A6;
 }
 
-a:hover {
-    color: #050606 !important;
-}
-
 .grid-text{
     font-size: 12px; 
     text-align: left;
@@ -205,6 +201,4 @@ a:hover {
     height: 70px;
     width: 70px;
   }
-
-
   

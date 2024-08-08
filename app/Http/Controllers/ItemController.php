@@ -45,6 +45,16 @@ class ItemController extends Controller
                 ->with('item', $item);
     }
 
+     
+    // public function otherItemPage($id)
+    // {
+    //     Item::onlyTrashed()->whereNotNull('id')->restore();
+    //     $otherItem = Item::onlyTrashed()->get();
+
+    //     return view('users.items.other_items')
+    //             ->with('otherItem', $otherItem);
+    // }
+
 
     public function add(Request $request)
     {
@@ -130,4 +140,5 @@ class ItemController extends Controller
 
         return redirect()->route('homepage');
     }
+
 }
