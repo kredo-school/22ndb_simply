@@ -12,6 +12,7 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FavoriteItemController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DirectMessageController;
 use App\Models\DonationItem;
 
 Auth::routes();
@@ -67,3 +68,9 @@ Route::delete('donated-items/destroy/{id}', [DonationController::class, 'destroy
 #Favorite
 Route::post('/favorite/{donationItem_id}/store', [FavoriteItemController::class,'store'])->name('favorite.store');
 Route::delete('/favorite/{donationItem_id}/destroy', [FavoriteItemController::class, 'destroy'])->name('favorite.destroy');
+
+#Direct-Message
+Route::group(["prefix" => "directMessage", "as" => "directMessage."], function(){
+    Route::get('/{id}/show', [DirectMessageController::class, 'show'])->name('show');
+    Route::post('/{recipient_id}/store', [DirectMessageController::class, 'store'])->name('store');
+ });

@@ -60,7 +60,7 @@ class CategoryController extends Controller
         $category->save();
 
         // Redirect to homepage
-        return redirect()->route('homepage', ['id' => Auth::user()->id]);
+        // return redirect()->route('homepage', ['id' => Auth::user()->id]);
 
 
         return redirect()->back();

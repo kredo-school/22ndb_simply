@@ -20,12 +20,6 @@ class ItemController extends Controller
         $this->donation_item = $donation_item;
     }
 
-    public function show()
-    {
-        return view('users.items.show');
-    }
-
-
     public function myItemPage($id)
     {
        $item = Item::find($id);

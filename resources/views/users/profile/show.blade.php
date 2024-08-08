@@ -35,9 +35,9 @@
                     </div>
                     <div class="col-auto">
                         <div>
-                            <a href="" class='text-dark text-decoration-none mb-3'>
+                            <a href="{{ route('directMessage.show', $user->id) }}" class='text-dark text-decoration-none mb-3'>
                                 <i class="fa-solid fa-envelope me-2 mb-3 fa"></i> Direct message
-                            </a> 
+                            </a>
                         </div>
                         <div>
                             {{--If ur the profile owner, can see items link --}}
@@ -54,21 +54,21 @@
                 <div class="col p-5">
                     {{--If ur the profile owner, can see edit delete icons --}}
 
-                    @if(Auth::user()->id === $user->id) 
+                    @if(Auth::user()->id === $user->id)
                         <div class="d-flex justify-content-end">
                             <a href="{{route('profile.edit')}}" class="btn btn-lg">
                                 <i class="fa-solid fa-pen gray"></i>
                             </a>
-                            
+
                             <button class="btn btn-lg" data-bs-toggle="modal" data-bs-target = "#delete-modal">
                                 <i class="fa-solid fa-trash-can gray"></i>
                             </button>
-                            
+
                             {{--Component Delete Modal --}}
                             @component('users.components.deletemodal', [
                                 'id' => 'delete-modal',
                                 'title' => 'Delete Account',
-                                'r2' => route('profile.destroy', $user->id)         
+                                'r2' => route('profile.destroy', $user->id)
                                 ])
                                 @slot('body')
                                     <p class="h5 mb-2">Are you sure you want to delete this account?</p>
@@ -85,7 +85,7 @@
                                 <td>Username</td>
                                 <td>{{$user->username}}</td>
                             </tr>
-                        @if(Auth::user()->id === $user->id) 
+                        @if(Auth::user()->id === $user->id)
                             <tr>
                                 <td>Email</td>
                                 <td>{{$user->email}}</td>

@@ -92,7 +92,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-menu-end text-center navbar-list" aria-labelledby="navbarDropdown">
-                                    <li><a href="#">Profile</a></li>
+                                    <li><a href="{{ route('profile.show', $user->id) }}">Profile</a></li>
 
                                     <li><a href="#">User Guide</a></li>
 

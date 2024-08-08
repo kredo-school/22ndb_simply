@@ -16,7 +16,7 @@
         @if($user->mycategories())
             @foreach($user->categories as $category)
                 <div class="d-flex flex-row">
-                    <div class="category-box my-3 mx-5 text-center">
+                    <div class="category-box my-3 text-center">
                         <h1 class="category-name">{{ $category->name }}</h1>
                         <h4 class="number-item">{{ $category->items->count()}}items</h4>
                         <a data-bs-toggle="modal" data-bs-target="#edit_category-{{ $category['id'] }}" class="btn text-decoration-none"><i class="icon fa-solid fa-pen"></i></a>

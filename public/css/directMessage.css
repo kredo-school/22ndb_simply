@@ -1,0 +1,16 @@
+.scrollable {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.file-upload {
+    cursor: pointer;
+}
+
+.comment-input {
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+    padding: 1rem;
+    z-index: 1;
+}
