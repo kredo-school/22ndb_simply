@@ -12,6 +12,7 @@ class FavoriteItemController extends Controller
 {
     private $favorite_item;
 
+
     public function __construct(FavoriteItem $favorite_item)
     {
         $this->favorite_item = $favorite_item;
@@ -41,7 +42,7 @@ class FavoriteItemController extends Controller
         $favoriteItems = $this->favorite_item
                         ->where('user_id',$user->id)
                         ->with('donationItem.item')
-                        ->get();
+                        ->paginate(15);
 
         return view('users.profile.myitems.favorites', ['favoriteItems' => $favoriteItems]);
     }

@@ -37,10 +37,8 @@ Route::get('/homepage', [App\Http\Controllers\HomepageController::class, 'homepa
 // Myitems
     Route::get('profile/myitems', function(){
     return redirect()->route('myitems.favorites');})->name('profile.myitems');
+
 // });
-
-
-
 
 // Item
 Route::group(["prefix" => "item", "as" => "item."], function(){

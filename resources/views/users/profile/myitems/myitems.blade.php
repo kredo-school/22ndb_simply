@@ -7,10 +7,9 @@
 @endsection
 
 @section('content')
-
+<h4 class="ms-5 color-gray-1">My items</h4>
 <div class="col-md-8 mx-auto">
-    <div class="container my-2">
-        <h4 class="mb-2 color-gray-1">My items</h4>
+    <div class="container">
         {{-- Tab --}}
         <ul class="nav nav-tabs border-bottom-0 border-dark">
             <li class="nav-item">
@@ -20,7 +19,7 @@
                 <a href="{{route('myitems.donated')}}" class="nav-tab-link border border-dark border-bottom-0 text-decoration-none py-2 px-4 {{ request()->is('myitems/donated') ? 'active' : '' }}">My donated items</a>
             </li>
         </ul>
-        <div class="tab-content border border-dark p-3">
+        <div class="tab-content pt-2">
             @yield('items-content')
         </div>
     </div>

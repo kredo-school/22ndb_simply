@@ -122,7 +122,7 @@ class DonationController extends Controller
         $donatedItems = $this->donationItem
                         ->where('user_id',$user->id)
                         ->with('item')
-                        ->get();
+                        ->paginate(15);
 
         return view('users.profile.myitems.donated', ['donatedItems' => $donatedItems]);
     }

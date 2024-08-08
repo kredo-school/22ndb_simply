@@ -22,6 +22,7 @@ class CategorySeeder extends Seeder
     {
         $category =[
             [
+                
                 "name" => "Closet",
                 "user_id" => "1",
                 "created_at" => NOW(),
