@@ -1,6 +1,6 @@
 <table class="border-menu-table">
     <tr>
-        <td class="menu-item border-bottom {{ request()->routeIs('user-guide.register') ? 'active' : '' }}">
+        <td class="menu-item-t border-bottom {{ request()->routeIs('user-guide.register') ? 'active' : '' }}">
             <a href="{{ route('user-guide.register') }}">◎ Register (account)</a>
         </td>
     </tr>
@@ -10,7 +10,7 @@
         </td>
     </tr>
     <tr>
-        <td class="menu-item {{ request()->routeIs('user-guide.password-reset') ? 'active' : '' }}">
+        <td class="menu-item-b {{ request()->routeIs('user-guide.password-reset') ? 'active' : '' }}">
             <a href="{{ route('user-guide.password-reset') }}">◎ Reset Password</a>
         </td>
     </tr>
@@ -18,7 +18,7 @@
 
 <table class="border-menu-table">
     <tr>
-        <td class="menu-item border-bottom {{ request()->routeIs('user-guide.register-item') ? 'active' : '' }}">
+        <td class="menu-item-t border-bottom {{ request()->routeIs('user-guide.register-item') ? 'active' : '' }}">
             <a href="{{ route('user-guide.register-item') }}">◎ Register item</a>
         </td>
     </tr>
@@ -29,7 +29,7 @@
     </tr>
     <tr>
         <td class="menu-item border-bottom {{ request()->routeIs('user-guide.donated-item') ? 'active' : '' }}">
-            <a href="{{ route('user-guide.donated-item') }}">◎ Donated item</a>
+            <a href="{{ route('user-guide.donate-item') }}">◎ Donate item</a>
         </td>
     </tr>
     <tr>
@@ -38,7 +38,7 @@
         </td>
     </tr>
     <tr>
-        <td class="menu-item {{ request()->routeIs('user-guide.delete-item') ? 'active' : '' }}">
+        <td class="menu-item-b {{ request()->routeIs('user-guide.delete-item') ? 'active' : '' }}">
             <a href="{{ route('user-guide.delete-item') }}">◎ Delete item</a>
         </td>
     </tr>
@@ -46,12 +46,12 @@
 
 <table class="border-menu-table">
     <tr>
-        <td class="menu-item border-bottom {{ request()->routeIs('user-guide.other-users-items') ? 'active' : '' }}">
+        <td class="menu-item-t border-bottom {{ request()->routeIs('user-guide.other-users-items') ? 'active' : '' }}">
             <a href="{{ route('user-guide.other-users-items') }}">◎ See other user's donation items</a>
         </td>
     </tr>
     <tr>
-        <td class="menu-item {{ request()->routeIs('user-guide.favorite-item') ? 'active' : '' }}">
+        <td class="menu-item-b {{ request()->routeIs('user-guide.favorite-item') ? 'active' : '' }}">
             <a href="{{ route('user-guide.favorite-item') }}">◎ Favorite Donation item</a>
         </td>
     </tr>

@@ -77,7 +77,7 @@ Route::prefix('user-guide')->group(function () {
     Route::view('/password-reset', 'user-guide.password-reset')->name('user-guide.password-reset');
     Route::view('/register-item', 'user-guide.register-item')->name('user-guide.register-item');
     Route::view('/add-category', 'user-guide.add-category')->name('user-guide.add-category');
-    Route::view('/donated-item', 'user-guide.donated-item')->name('user-guide.donated-item');
+    Route::view('/donate-item', 'user-guide.donate-item')->name('user-guide.donate-item');
     Route::view('/edit-item', 'user-guide.edit-item')->name('user-guide.edit-item');
     Route::view('/delete-item', 'user-guide.delete-item')->name('user-guide.delete-item');
     Route::view('/other-users-items', 'user-guide.other-users-items')->name('user-guide.other-users-items');

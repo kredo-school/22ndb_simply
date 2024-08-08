@@ -31,9 +31,9 @@ class UserGuideController extends Controller
         return view('user-guide.add-category');
     }
 
-    public function donatedItem()
+    public function donateItem()
     {
-        return view('user-guide.donated-item');
+        return view('user-guide.donate-item');
     }
 
     public function editItem()

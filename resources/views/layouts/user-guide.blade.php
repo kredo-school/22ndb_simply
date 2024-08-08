@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-md navbar-light bg-white">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/homepage') }}">
-                    <img src="{{ asset('/images/appicon.png') }}" alt="icon" class="logo">
+                    <img src="{{ asset('/images/app_logo.png') }}" alt="icon" class="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
