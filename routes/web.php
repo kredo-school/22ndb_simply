@@ -25,7 +25,7 @@ Route::get('/contact-us', [ContactController::class, 'contact'])->name('contact'
 Route::post('/contact-us/store', [ContactController::class, 'store'])->name('contact.store');
 
 // homepage
-Route::get('/homepage/{id}', [App\Http\Controllers\HomepageController::class, 'homepage'])->name('homepage');
+Route::get('/homepage', [App\Http\Controllers\HomepageController::class, 'homepage'])->name('homepage');
 
 // Profile
 // Route::group(['middleware' => 'auth'], function(){
@@ -65,20 +65,11 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
  Route::delete('/delete/category/{id}', [CategoryController::class, 'deleteCategory'])->name('delete.category');
 
 
-Route::group(["prefix" => "item", "as" => "item."], function(){
-    Route::get('/show', [ItemController::class, 'show'])->name('show');
-    Route::get('/add', [ItemController::class, 'add'])->name('add');
-    Route::get('/edit', [ItemController::class, 'edit'])->name('edit');
-    
- });
-
- Route::group(["prefix" => "donation", "as" => "donation."], function(){
-    Route::get('/show', [DonationController::class, 'show'])->name('show');
- });
-
 #Donated-item
 Route::get('/donated-items', [DonationController::class, 'indexDonatedItems'])->name('donated.items.index');
 Route::get('/donated-items/{id}', [DonationController::class, 'showDonatedItem'])->name('donated.item.show');
+Route::get('/donated-items/{id}/edit', [DonationController::class, 'edit'])->name('donated.item.edit');
+Route::patch('/donated-items/{id}/update', [DonationController::class, 'update'])->name('donated.item.update');
 Route::delete('donated-items/destroy/{id}', [DonationController::class, 'destroy'])->name('donated.item.destroy');
 Route::get('myitems/donated', [DonationController::class, 'donated'])->name('myitems.donated');
 
