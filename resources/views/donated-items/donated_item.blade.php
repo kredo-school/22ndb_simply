@@ -56,6 +56,13 @@
                         <div class="mt-3 mb-3">
                             <div class="row">
                                 <div class="col-4 text-start ms-5">
+                                    <p class="font-big">ID</p>
+                                </div>
+                                <div class="col-auto text-start font-big">
+                                    <p>{{ $donationItem->user_id = Auth::id(); }}</p>
+                                </div>
+                            <div class="row">
+                                <div class="col-4 text-start ms-5">
                                     <p class="font-big">Donated Date</p>
                                 </div>
                                 <div class="col-auto text-start font-big">
