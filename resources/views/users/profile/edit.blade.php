@@ -13,7 +13,7 @@
         @method('PATCH')
 
         <div class="container my-5">
-            <p class="gray">Edit Profile</p>
+            <p class="color-gray-1">Edit Profile</p>
             {{-- Left side --}}
             <div class="row">
                 <div class="col-md-6 d-flex align-items-center flex-column my-auto ">
@@ -27,8 +27,8 @@
                     <div class="col-auto">
                         <input type="file" name="avatar" id="avatar" value="" class="form-control form-control-sm mt-1" aria-describedby="avatar-info">
                         <div id="avatar-info" class="form-text xsmall">
-                            <p class="mb-0 gray">Acceptable formats are jpeg, jpg, png and gif only.</p>
-                            <p class="mt-0 gray">Maximum file size is 1048kb.</p>
+                            <p class="mb-0 color-gray-1">Acceptable formats are jpeg, jpg, png and gif only.</p>
+                            <p class="mt-0 color-gray-1">Maximum file size is 1048kb.</p>
                         </div>
                         <!-- Error -->
                         @error('avatar')
