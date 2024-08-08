@@ -77,7 +77,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="{{ route('donated.items.index')}}" class="nav-link">
+                                <a href="{{ route('donated.items.index') }}" class="nav-link">
                                     <p class="mt-3 text-dark">Donation</p>
                                 </a>
                             </li>
@@ -92,7 +92,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-menu-end text-center navbar-list" aria-labelledby="navbarDropdown">
-                                    <li><a href="#">Profile</a></li>
+                                    <li><a href="{{ route('profile.show',Auth::user()->id) }}">Profile</a></li>
 
                                     <li><a href="#">User Guide</a></li>
 
