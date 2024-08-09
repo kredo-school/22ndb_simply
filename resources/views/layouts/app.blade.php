@@ -28,7 +28,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/homepage') }}">
-                    <img src="{{ asset('/images/appicon.png') }}" alt="icon" class="logo">
+                    <img src="{{ asset('/images/app_logo.png') }}" alt="icon" class="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -77,7 +77,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="{{ route('donated.items.index')}}" class="nav-link">
+                                <a href="{{ route('donated.items.index') }}" class="nav-link">
                                     <p class="mt-3 text-dark">Donation</p>
                                 </a>
                             </li>
@@ -92,7 +92,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-menu-end text-center navbar-list" aria-labelledby="navbarDropdown">
-                                    <li><a href="{{ route('profile.show', $user->id) }}">Profile</a></li>
+                                    <li><a href="{{ route('profile.show',Auth::user()->id) }}">Profile</a></li>
 
                                     <li><a href="#">User Guide</a></li>
 

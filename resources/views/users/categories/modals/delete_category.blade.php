@@ -8,7 +8,7 @@
             </div>
             <div class="modal-body text-center">
                 <h4>Are you sure you want to delete “{{ $category->name }}”?</h4>
-                <h5 class="delete-text">The items in “Kitchen” will go into “Others”.</h5>
+                <h5 class="delete-text">The items in {{ $category->name }} will go into “Others”.</h5>
             </div>
             <div class="modal-footer border-0 m-auto p-4">
                 <form method="POST" action="{{ route('delete.category', $category->id) }}">

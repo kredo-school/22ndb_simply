@@ -145,6 +145,7 @@
 .fa-trash-can{
   font-size: 40px;
   color: #9EA6A6;
+  display: inline;
 }
 
 .scrollable{
@@ -183,5 +184,31 @@
 
 .pagination span:hover {
   color: #050606 !important;
+}
+
+.add {
+  position: absolute;
+  display: none;
+  padding: 20px;
+  color: #da0000;
+  border-radius: 10px;
+  width: 260px;
+  height: auto;
+  font-size: 20px !important;
+  left : 120%; 
+  top:-50%;
+  font-weight: 800 !important;
+  text-align: left;
+  border: 1px solid #da0000;
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+
+}
+.tooltip-container:hover .add {
+  display: block;
 }
 

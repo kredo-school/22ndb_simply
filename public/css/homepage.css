@@ -9,6 +9,7 @@
 
 body {
     font-family: "Poppins", sans-serif;
+    
 }
 
 .container-box {
@@ -67,6 +68,12 @@ body {
     border: solid 1px #050606;
     height: 150px;
     width: 740px;
+}
+
+.no-otherItem-box {
+    border: solid 1px #050606;
+    height: 150px;
+    width: 950px;
 }
 
 .item-box {
