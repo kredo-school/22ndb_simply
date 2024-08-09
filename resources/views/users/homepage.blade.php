@@ -78,16 +78,6 @@
             <a href="{{ route('item.add') }}" class="btn item-btn ms-5">+ Add item</a>
         </div>
     </div>
-
-        @else
-        <div>
-            <div class="d-flex flex-row justify-content-center me-4 mt-0">
-                <button type="button" data-bs-toggle="modal" data-bs-target="#create-category" class="btn category-btn rounded-3 text-center">+ Add category</button>
-
-                <a href="{{ route('item.add') }}" class="btn item-btn ms-5">+ Add item</a>
-            </div>
-        </div>
-        @endif
 </div>
 
 @include('users.categories.modals.create_category')

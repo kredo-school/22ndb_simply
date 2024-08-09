@@ -20,11 +20,16 @@ class ItemController extends Controller
         $this->donation_item = $donation_item;
     }
 
-    public function show()
-    {
-        return view('users.items.show');
+    // Profile items
+    public function myitems(){
+        return view('users.profile.myitems.myitems');
     }
-
+    public function favorites(){
+        return view('users.profile.myitems.favorites');
+    }
+    public function donated(){
+        return view('users.profile.myitems.donated');
+    }
 
     public function myItemPage($id)
     {

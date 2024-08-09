@@ -105,27 +105,12 @@ public function destroy($id)
 
     public function showCategoryItem($id)
     {
-        $category_items = Category::find($id)->item;
-        $category_items = Item::paginate(15);
+        $category_items = Item::where('category_id', $id)->paginate(15);
         $category = Category::find($id);
 
         return view('users.categories.each_category')
-                ->with('category_items', $category_items)
-                ->with('category', $category);
-
-    }
-{
-
-    $category_items = Item::where('category_id', $id)->paginate(15);
-    $category = Category::find($id);
-
-    return view('users.categories.each_category')
             ->with('category_items', $category_items)
             ->with('category', $category);
-}
-
-
-
-
+    }
 
 }
