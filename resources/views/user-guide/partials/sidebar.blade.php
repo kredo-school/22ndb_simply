@@ -46,8 +46,8 @@
 
 <table class="border-menu-table">
     <tr>
-        <td class="menu-item-t border-bottom {{ request()->routeIs('user-guide.other-users-items') ? 'active' : '' }}">
-            <a href="{{ route('user-guide.other-users-items') }}">◎ See other user's donation items</a>
+        <td class="menu-item-t border-bottom {{ request()->routeIs('user-guide.how-to-get-item') ? 'active' : '' }}">
+            <a href="{{ route('user-guide.how-to-get-item') }}">◎ How to get the donation item</a>
         </td>
     </tr>
     <tr>

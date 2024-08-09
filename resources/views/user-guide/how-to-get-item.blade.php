@@ -1,9 +1,9 @@
 @extends('layouts.user-guide')
 
-@section('title', 'User Guide Register Account')
+@section('title', 'User Guide How to get donation item')
 
 @section('content')
-<h2 class="mt-4 ms-3 fw-bold">Let's register your account !</h2>
+<h2 class="mt-4 ms-3 fw-bold">Steps to get the donation items</h2>
 
 <div class="conatiner">
     <div class="row">
@@ -23,7 +23,7 @@
 
         </div>
         <div class="col d-flex align-items-center">
-            <img src="#" alt="To Get Donation Image" class="image-border mx-auto mt-5">
+            <img src="{{ asset('images/user-guide/how-to-get-item.png') }}" alt="To Get Donation Image" class="image-border mx-auto mt-2 p-2">
         </div>
     </div>
 </div>

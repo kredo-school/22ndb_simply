@@ -46,9 +46,9 @@ class UserGuideController extends Controller
         return view('user-guide.delete-item');
     }
 
-    public function otherUsersItems()
+    public function howToGet()
     {
-        return view('user-guide.other-users-items');
+        return view('user-guide.how-to-get-item');
     }
 
     public function favoriteItem()

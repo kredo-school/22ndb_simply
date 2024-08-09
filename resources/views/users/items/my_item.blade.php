@@ -78,7 +78,7 @@
 
                                 <div class="row">
                                     <div class="col-4 text-start ms-5">
-                                        <p class="font-big">ID</p>
+                                        <p class="font-big">Donation Item ID</p>
                                     </div>
                                     <div class="col-auto text-start font-big">
                                         <p class="ms-2">{{ $item->donation->id }}</p>

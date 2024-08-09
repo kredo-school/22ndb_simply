@@ -8,7 +8,7 @@
 <div class="conatiner">
     <div class="row">
         <div class="col">
-            <div class="col d-flex flex-column justify-content-center" style="margin-top: 80px; margin-left:80px;">                
+            <div class="col d-flex flex-column justify-content-center" style="margin-top: 50px; margin-left:80px;">                
                 <p>1. Click the Trash can icon from each <br>&emsp;item page.</p>
                 <p>2. Click the DELETE button.</p>
             </div>
@@ -21,7 +21,7 @@
 
         </div>
         <div class="col d-flex align-items-center">
-            <img src="#" alt="Delete Item Image" class="image-border mx-auto mt-5">
+            <img src="{{ asset('images/user-guide/delete-item.png') }}" alt="Delete Item Image" class="image-border mx-auto mt-2 p-2">
         </div>
     </div>
 </div>

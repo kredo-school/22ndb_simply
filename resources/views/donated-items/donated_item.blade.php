@@ -91,7 +91,7 @@
                                 <div class="col-4 text-start ms-5">
                                     <p class="font-big">Description</p>
                                 </div>
-                                <div class="col-6 text-start font-big mb-5">
+                                <div class="col-6 text-start font-big mb-5" style="line-height: 1.5;">
                                     <p>{{ $donationItem->item->description }}</p>
                                 </div>
                             </div>

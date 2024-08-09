@@ -20,7 +20,7 @@
 
         </div>
         <div class="col d-flex flex-column align-items-center mt-3">
-            <img src="{{ asset('images/user-guide/add-category.png') }}" alt="Add category Image" class="image-border mt-4 p-3">
+            <img src="{{ asset('images/user-guide/create-category.png') }}" alt="Add category Image" class="image-border mt-4 p-3">
         </div>
 
     </div>

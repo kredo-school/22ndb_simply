@@ -89,7 +89,7 @@ Route::prefix('user-guide')->group(function () {
     Route::view('/donate-item', 'user-guide.donate-item')->name('user-guide.donate-item');
     Route::view('/edit-item', 'user-guide.edit-item')->name('user-guide.edit-item');
     Route::view('/delete-item', 'user-guide.delete-item')->name('user-guide.delete-item');
-    Route::view('/other-users-items', 'user-guide.other-users-items')->name('user-guide.other-users-items');
+    Route::view('/how-to-get-items', 'user-guide.how-to-get-item')->name('user-guide.how-to-get-item');
     Route::view('/favorite-item', 'user-guide.favorite-item')->name('user-guide.favorite-item');
 });
 Route::get('myitems/favorites', [FavoriteItemController::class,'favorites'])->name('myitems.favorites');

@@ -8,7 +8,7 @@
 <div class="conatiner">
     <div class="row">
         <div class="col">
-            <div class="col d-flex flex-column justify-content-center" style="margin-top: 80px; margin-left:80px;">                
+            <div class="col d-flex flex-column justify-content-center" style="margin-top: 50px; margin-left:80px;">                
                 <p>1. Go to the Donation page.</p>
                 <p>2. Click the Bookmark icon.</p>
                 <p class="mb-1">3. The item will be added to your <br>&emsp;favorite list.</p>
@@ -21,7 +21,7 @@
 
         </div>
         <div class="col d-flex align-items-center">
-            <img src="#" alt="favorite donation item Image" class="image-border mx-auto mt-5">
+            <img src="{{ asset('images/user-guide/favorite-item.png') }}" alt="favorite donation item Image" class="image-border mx-auto mt-2 p-2">
         </div>
     </div>
 </div>
