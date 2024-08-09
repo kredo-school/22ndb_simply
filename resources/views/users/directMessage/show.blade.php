@@ -70,6 +70,7 @@
                             </div>
                         @endforeach
                     @endif
+
                     <div class="comment-input d-flex justify-content-around mx-5">
                         <div class="input-group mt-3 align-items-center">
                             <label for="file-upload" class="me-2 file-upload">
