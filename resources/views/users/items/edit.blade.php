@@ -13,6 +13,7 @@
     </h2>
     <form action="{{ route('item.update', $item->id) }}" method="post" enctype="multipart/form-data">
         @csrf
+        @method('PATCH')
 
         <div class="row justify-content-center align-items-start">
             <div class="col-12 col-md-4 d-flex flex-column align-items-center">
