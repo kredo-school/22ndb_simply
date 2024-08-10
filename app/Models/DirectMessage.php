@@ -20,4 +20,12 @@ class DirectMessage extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public static function unreadCount($sender_id, $recipient_id)
+    {
+        return self::where('user_id', $sender_id)
+                        ->where('destination_user_id', $recipient_id)
+                        ->where('seen', false)
+                        ->count();
+    }
 }

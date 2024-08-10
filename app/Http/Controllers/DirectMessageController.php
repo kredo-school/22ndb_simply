@@ -18,11 +18,19 @@ class DirectMessageController extends Controller
 
     public function show($id)
     {
-        $all_users       = User::all();
-        $sender_id       = Auth::id();
-        $sender          = User::findOrFail($sender_id);
-        $recipient       = User::findOrFail($id);
-        $messages        = DirectMessage::with('user')->where(function($query) use ($sender_id, $id) {
+        $sender_id = Auth::id();
+        $sender    = User::findOrFail($sender_id);
+        $recipient = User::findOrFail($id);
+        $all_users = User::whereHas('directMessages', function($query) use ($sender_id) {
+            $query->where('user_id', $sender_id)
+                  ->orWhere('destination_user_id', $sender_id);
+        })->get()->except(Auth::id());
+
+        foreach ($all_users as $user) {
+            $user->unread_count = DirectMessage::unreadCount($user->id, $sender_id);
+        }
+
+        $messages  = DirectMessage::with('user')->where(function($query) use ($sender_id, $id) {
             $query->where([
                 ['user_id', $sender_id],
                 ['destination_user_id', $id]
@@ -31,6 +39,11 @@ class DirectMessageController extends Controller
                 ['destination_user_id', $sender_id]
             ]);
         })->orderBy('created_at', 'asc')->get();
+
+        DirectMessage::where('user_id', $id)
+                        ->where('destination_user_id', $sender_id)
+                        ->where('seen', false)
+                        ->update(['seen' => true]);
 
         return view('users.directMessage.show')
                 ->with('all_users', $all_users)
