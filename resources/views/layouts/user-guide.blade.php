@@ -22,9 +22,15 @@
     <div id="app">
     <nav class="navbar navbar-expand-md navbar-light bg-white">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/homepage') }}">
-                    <img src="{{ asset('/images/app_logo.png') }}" alt="icon" class="logo">
-                </a>
+                @guest
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        <img src="{{ asset('/images/app_logo.png') }}" alt="icon" class="logo">
+                    </a>
+                @else
+                    <a class="navbar-brand" href="{{ url('/homepage') }}">
+                        <img src="{{ asset('/images/app_logo.png') }}" alt="icon" class="logo">
+                    </a>
+                @endguest
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -32,15 +38,54 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto  mb-2">
-                        <li class="nav-item">
-                            <a class="nav-link me-4" href="{{ route('user-guide.register')}}">User Guide</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link me-4" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
+                        <!-- Authentication Links -->
+                        @guest                               
+                            <li class="nav-item">
+                                <a class="nav-link me-4" href="{{ route('user-guide.register')}}">User Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link me-4" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </li>
+                        @else
+                            <li class="nav-item">
+                                <a href="{{ route('item.add') }}" class="nav-link">
+                                    <p class="mt-3 text-dark">+ Add item</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{ route('donated.items.index') }}" class="nav-link">
+                                    <p class="mt-3 text-dark">Donation</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    @if (Auth::user()->avatar)
+                                       <img src="#" alt="" class="rounded-circle">
+                                    @else
+                                       <i class="fa-solid fa-circle-user mt-3 text-dark icon"></i>
+                                    @endif
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-menu-end text-center navbar-list" aria-labelledby="navbarDropdown">
+                                    <li><a href="{{ route('profile.show',Auth::user()->id) }}">Profile</a></li>
+
+                                    <li><a href="{{ route('user-guide.register')}}">User Guide</a></li>
+
+                                    <li><a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                    </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endguest
                     </ul>
                 </div>
             </div>

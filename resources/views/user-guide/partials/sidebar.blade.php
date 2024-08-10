@@ -28,14 +28,14 @@
         </td>
     </tr>
     <tr>
-        <td class="menu-item border-bottom {{ request()->routeIs('user-guide.donated-item') ? 'active' : '' }}">
-            <a href="{{ route('user-guide.donate-item') }}">◎ Donate item</a>
-        </td>
-    </tr>
-    <tr>
         <td class="menu-item border-bottom {{ request()->routeIs('user-guide.edit-item') ? 'active' : '' }}">
             <a href="{{ route('user-guide.edit-item') }}">◎ Edit item</a>
-        </td>
+        </td>   
+    </tr>
+    <tr>
+        <td class="menu-item border-bottom {{ request()->routeIs('user-guide.donated-item') ? 'active' : '' }}">
+            <a href="{{ route('user-guide.donate-item') }}">◎ Donate item</a>
+        </td>   
     </tr>
     <tr>
         <td class="menu-item-b {{ request()->routeIs('user-guide.delete-item') ? 'active' : '' }}">

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('last_name', 50);
             $table->string('email', 255);
             $table->string('subject', 50);
-            $table->string('message');
+            $table->text('message');
             $table->timestamps();
         });
     }
@@ -30,3 +30,4 @@ return new class extends Migration
         Schema::dropIfExists('contacts');
     }
 };
+

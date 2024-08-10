@@ -27,9 +27,15 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/homepage') }}">
-                    <img src="{{ asset('/images/app_logo.png') }}" alt="icon" class="logo">
-                </a>
+                @guest
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        <img src="{{ asset('/images/app_logo.png') }}" alt="icon" class="logo">
+                    </a>
+                @else
+                    <a class="navbar-brand" href="{{ url('/homepage') }}">
+                        <img src="{{ asset('/images/app_logo.png') }}" alt="icon" class="logo">
+                    </a>
+                @endguest
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -94,7 +100,7 @@
                                 <ul class="dropdown-menu dropdown-menu-end text-center navbar-list" aria-labelledby="navbarDropdown">
                                     <li><a href="{{ route('profile.show',Auth::user()->id) }}">Profile</a></li>
 
-                                    <li><a href="#">User Guide</a></li>
+                                    <li><a href="{{ route('user-guide.register')}}">User Guide</a></li>
 
                                     <li><a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}

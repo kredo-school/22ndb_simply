@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['text', 'user_id', 'item_id'];
+
+    public function user(){
+        return $this->belongsTo(User::class)->withTrashed();
+    }
+
+    public function item(){
+        return $this->belongsTo(DonationItem::class, 'item_id'); 
+    }
 }

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DonatedItemController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProfileController;
@@ -93,3 +94,8 @@ Route::prefix('user-guide')->group(function () {
     Route::view('/favorite-item', 'user-guide.favorite-item')->name('user-guide.favorite-item');
 });
 Route::get('myitems/favorites', [FavoriteItemController::class,'favorites'])->name('myitems.favorites');
+
+#COMMENT
+Route::post('/comment/{donationItem_id}/store', [CommentController::class, 'store'])->name('comment.store');
+Route::delete('/comment/{id}/destroy', [CommentController::class, 'destroy'])->name('comment.destroy');
+

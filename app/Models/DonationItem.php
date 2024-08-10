@@ -36,4 +36,9 @@ class DonationItem extends Model
     {
         return $this->favorites()->where('user_id', Auth::user()->id)->exists();
     }
+
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
+
 }
