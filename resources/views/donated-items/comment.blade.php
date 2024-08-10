@@ -1,7 +1,6 @@
 <div class="mt-3">
     <!-- Show all comments here -->
     @if($donationItem->comments->isNotEmpty())
-    <hr>
     <ul class="list-group">
         @foreach($donationItem->comments->take(3) as $comment)
         <li class="list-group-item border-0 p-0 mb-2">

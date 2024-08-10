@@ -40,23 +40,23 @@ class CommentController extends Controller
         // The information inside this array will be used in the email body.
 
 
-        $user = DonationItem::findOrFail($donationItem_id)->user;
+        // $user = DonationItem::findOrFail($donationItem_id)->user;
 
-        $details = ['name' => $user->name,
-                    'commented_user' =>  Auth::user()->name,
-                    'comment_body'=> $this->comment->body,
-                    'donagionItem_url' => route('donated.item.show', $donationItem_id) 
-                ];
+        // $details = ['name' => $user->name,
+        //             'commented_user' =>  Auth::user()->name,
+        //             'comment_body'=> $this->comment->body,
+        //             'donagionItem_url' => route('donated.item.show', $donationItem_id) 
+        //         ];
 
         // Send an email to the user.
 
 
-        Mail::send('users.emails.comment', $details, function($message) use ($user){
-            $message
-                ->from(config('mail.from.address'), config('app.name'))
-                ->to($user->email, $user->name)
-                ->subject('You got a comment!');
-        });
+        // Mail::send('users.emails.comment', $details, function($message) use ($user){
+        //     $message
+        //         ->from(config('mail.from.address'), config('app.name'))
+        //         ->to($user->email, $user->name)
+        //         ->subject('You got a comment!');
+        // });
 
         return redirect()->back();
     }

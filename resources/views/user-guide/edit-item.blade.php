@@ -16,7 +16,7 @@
 
         </div>
         <div class="col d-flex align-items-center">
-            <img src="#" alt="Edit Item Image" class="image-border mx-auto mt-5">
+            <img src="{{ asset('images/user-guide/edit.png')}}" alt="Edit Item Image" class="image-border mx-auto mt-5">
         </div>
     </div>
 </div>
