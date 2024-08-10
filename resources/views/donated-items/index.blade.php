@@ -15,7 +15,7 @@
             <div class="col grid-item">
                 <div class="item-container">
                     <a href="{{ route('donated.item.show', $donationItem->id) }}">
-                        <img class="image-md-lg" src="{{ $donationItem->item->image }}" alt="{{ $donationItem->item->name }}">                  
+                        <img class="image-md-lg" src="{{ $donationItem->item->image }}" alt="{{ $donationItem->item->name }}">
                      </a>
 
                     @if($donationItem->isFavorited())
@@ -49,8 +49,6 @@
     <div class="d-flex justify-content-center">
         {{ $donationItems->links('pagination.pagination') }}
     </div>
-    
+
 </div>
 @endsection
-
-

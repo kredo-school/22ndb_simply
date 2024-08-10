@@ -75,4 +75,9 @@ class User extends Authenticatable
         return $this->categories()->where('user_id', Auth::user()->id)->exists();
     }
 
+    public function directMessages()
+    {
+        return $this->hasMany(DirectMessage::class);
+    }
+
 }

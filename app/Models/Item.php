@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Auth;
 class Item extends Model
 {
     use HasFactory;
-    use SoftDeletes;
 
     protected $fillable = ['name', 'category_id'];
 
@@ -41,5 +40,5 @@ class Item extends Model
         return $this->hasMany(DonationItem::class);
     }
 
-    
+
 }
