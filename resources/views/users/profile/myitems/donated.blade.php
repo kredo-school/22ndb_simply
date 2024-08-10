@@ -7,7 +7,7 @@
                 <div class="col d-flex flex-column align-items-center h6 item-box">
     {{-- Add image link --}}
                     @if($donatedItem->item->image)
-                        <a href="">
+                        <a href="{{route('donated.item.show',$donatedItem->id)}}">
                             <img src="{{$donatedItem->item->image}}" alt="{{$donatedItem->item->name}}" class="img-item-md">
                         </a>
                     @else

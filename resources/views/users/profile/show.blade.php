@@ -9,6 +9,7 @@
     @section('content')
     <div class="col-md-8 mx-auto h4 ">
         <div class="container my-5">
+            
     {{-- Frash message --}}
         @if(session('success'))
             <div class="alert alert-dark">

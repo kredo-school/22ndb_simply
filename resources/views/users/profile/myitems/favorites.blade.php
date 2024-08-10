@@ -10,7 +10,7 @@
                     <div class="align-items-start ">
     {{-- Add image link --}}
                         @if($favoriteItem->donationItem->item->image)
-                            <a href="">
+                            <a href="{{route('donated.item.show',$favoriteItem->donationItem->id)}}">
                                 <img src="{{$favoriteItem->donationItem->item->image}}" alt="{{$favoriteItem->donationItem->item->name}}" class="img-item-md">
                             </a>
                         @else
@@ -33,8 +33,8 @@
                         </div>
                         <span>{{$favoriteItem->donationItem->item->name}}</span>
     {{-- Add username link --}}
-                        <div class="">
-                            <a href="" class="text-dark">{{$favoriteItem->donationItem->item->user->username}}</a>
+                        <div class="text-starts">
+                            <a href="{{route('profile.show', $favoriteItem->donationItem->item->user->id)}}" class="text-dark">{{$favoriteItem->donationItem->item->user->username}}</a>
                         </div>
                     </div>
                 </div>
