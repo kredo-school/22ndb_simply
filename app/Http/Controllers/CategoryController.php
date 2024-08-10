@@ -61,13 +61,13 @@ class CategoryController extends Controller
         $category->save();
 
         // Redirect to homepage
-        return redirect()->route('homepage', ['id' => Auth::user()->id]);
-    
+        // return redirect()->route('homepage', ['id' => Auth::user()->id]);
+
 
         return redirect()->back();
     }
 
-    
+
 
 
 
@@ -79,11 +79,11 @@ public function destroy($id)
                 'name' => 'Others',
                 'user_id' => auth()->id(),
             ]);
-            
+
         $updatedRows = Item::where('category_id', $category->id)->update(['category_id' => $othersCategory->id]);
-            
+
         $category->delete();
-            
+
     });
 
     return redirect()->route('homepage');
@@ -96,26 +96,21 @@ public function destroy($id)
     //     $category_items = Category::find($id)->item;
     //     $category_items = Item::paginate(15);
     //     $category = Category::find($id);
-        
+
     //     return view('users.categories.each_category')
     //             ->with('category_items', $category_items)
     //             ->with('category', $category);
-    
+
     // }
 
     public function showCategoryItem($id)
-{
-    
-    $category_items = Item::where('category_id', $id)->paginate(15);
-    $category = Category::find($id);
+    {
+        $category_items = Item::where('category_id', $id)->paginate(15);
+        $category = Category::find($id);
 
-    return view('users.categories.each_category')
+        return view('users.categories.each_category')
             ->with('category_items', $category_items)
             ->with('category', $category);
-}
-
-
-
-
+    }
 
 }

@@ -12,11 +12,11 @@
         <i class="fa-solid fa-pen me-2"></i> Edit Item
     </h2>
     <div class="container-fluid">
-        <div class="row justify-content-center">
-            <form action="{{ route('donated.item.update', $donationItem->id) }}" method="post" enctype="multipart/form-data">
-                @csrf
-                @method('PATCH')
+        <form action="{{ route('donated.item.update', $donationItem->item->id) }}" method="post" enctype="multipart/form-data">
+            @csrf
+            @method('PATCH')
 
+            <div class="row justify-content-center">
                 <div class="col-12 col-md-4 d-flex flex-column align-items-center">
                     <div class="icon-wrapper border border-dark d-inline-flex justify-content-center align-items-center custom-mt">
                         <img src="{{ $donationItem->item->image }}" alt="{{ $donationItem->item->name }}" style="max-width: 100%; height: auto;">
@@ -115,8 +115,8 @@
                         </div>
                     </div>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 </div>
 @endsection
