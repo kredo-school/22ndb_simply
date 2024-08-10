@@ -11,6 +11,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -41,7 +42,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto  mb-2">
+                    <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::currentRouteName() == 'login')
@@ -70,24 +71,24 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item">
+                            <li class="nav-item mt-1 me-4">
                                 <a href="{{ route('item.add') }}" class="nav-link">
-                                    <p class="mt-3 text-dark">+ Add item</p>
+                                    <p class="text-dark">+ Add item</p>
                                 </a>
                             </li>
 
-                            <li class="nav-item">
+                            <li class="nav-item mt-1 me-4">
                                 <a href="{{ route('donated.items.index') }}" class="nav-link">
-                                    <p class="mt-3 text-dark">Donation</p>
+                                    <p class="text-dark">Donation</p>
                                 </a>
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link mt-2" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     @if (Auth::user()->avatar)
                                        <img src="#" alt="" class="rounded-circle">
                                     @else
-                                       <i class="fa-solid fa-circle-user mt-3 text-dark icon"></i>
+                                       <i class="fa-solid fa-circle-user text-dark icon"></i>
                                     @endif
                                 </a>
 

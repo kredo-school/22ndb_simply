@@ -21,11 +21,12 @@ body {
 
 .pagename {
     color: #9EA6A6;
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 28px !important;
 }
 
 .category-name {
-    font-weight: 800;
+    font-weight: 800 !important;
 }
 
 .icon {
@@ -65,19 +66,19 @@ body {
 }
 
 .no-item-box {
-    border: solid 1px #050606;
+    border: solid 1px black;
     height: 150px;
     width: 740px;
 }
 
 .no-otherItem-box {
-    border: solid 1px #050606;
+    border: solid 1px black;
     height: 150px;
     width: 950px;
 }
 
 .item-box {
-    border: solid 1px #050606;
+    border: solid 1px black;
     width: 150px;
     height: 150px;
     display: flex;
@@ -98,7 +99,7 @@ body {
 }
 
 .category-btn {
-    border: solid 1px #050606;
+    border: solid 1px black;
     width: 150px;
     height: 150px;
     font-size: 25px;
@@ -107,7 +108,7 @@ body {
 }
 
 .item-btn {
-    border: solid 1px #050606;
+    border: solid 1px black;
     width: 860px;
     height: 150px;
     font-size: 25px;
@@ -118,15 +119,15 @@ body {
 
 i:hover,
 a:hover {
-    color: #050606;
+    color: black;
 }
 
 .category-btn:hover,
 .item-btn:hover {
-    background-color: #050606;
+    background-color: black;
     color: white;
 }
 
 .fa-trash-can:hover {
-    color:red;
+    color:#DA0000;
 }
