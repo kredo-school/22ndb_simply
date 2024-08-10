@@ -22,7 +22,7 @@
             </div>
         @endif
 
-            <p class='gray'>Profile</p>
+            <p class='color-gray-1'>Profile</p>
             {{-- Left side --}}
             <div class="row">
                 <div class="col-md-6 d-flex align-items-center flex-column my-auto ">
@@ -41,11 +41,11 @@
                         </div>
                         <div>
                             {{--If ur the profile owner, can see items link --}}
-                            {{-- @if(Auth::user()->id === $user->id)  --}}
-                                <a href="" class='text-dark text-decoration-none'>
+                            @if(Auth::user()->id === $user->id) 
+                                <a href="{{route('profile.myitems')}}" class='text-dark text-decoration-none'>
                                     <i class="fa-solid fa-hand-holding-heart me-2"></i> My items
                                 </a>
-                            {{-- @endif --}}
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -57,11 +57,11 @@
                     @if(Auth::user()->id === $user->id) 
                         <div class="d-flex justify-content-end">
                             <a href="{{route('profile.edit')}}" class="btn btn-lg">
-                                <i class="fa-solid fa-pen gray"></i>
+                                <i class="fa-solid fa-pen color-gray-1"></i>
                             </a>
                             
                             <button class="btn btn-lg" data-bs-toggle="modal" data-bs-target = "#delete-modal">
-                                <i class="fa-solid fa-trash-can gray"></i>
+                                <i class="fa-solid fa-trash-can color-gray-1"></i>
                             </button>
                             
                             {{--Component Delete Modal --}}

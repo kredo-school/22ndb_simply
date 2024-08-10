@@ -116,5 +116,16 @@ class DonationController extends Controller
         return redirect()->route('donated.items.index');
     }
 
+    //Myitems page (donated items)
+    public function donated(){
+        $user = Auth::user();
+        $donatedItems = $this->donationItem
+                        ->where('user_id',$user->id)
+                        ->with('item')
+                        ->paginate(15);
+
+        return view('users.profile.myitems.donated', ['donatedItems' => $donatedItems]);
+    }
+
 }
 
