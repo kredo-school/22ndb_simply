@@ -20,11 +20,22 @@ class ItemController extends Controller
         $this->donation_item = $donation_item;
     }
 
+    // Profile items
+    public function myitems(){
+        return view('users.profile.myitems.myitems');
+    }
+    public function favorites(){
+        return view('users.profile.myitems.favorites');
+    }
+    public function donated(){
+        return view('users.profile.myitems.donated');
+    }
+    
     public function show()
     {
         return view('users.items.show');
     }
-   
+
     
     public function myItemPage($id)
     {
@@ -33,6 +44,16 @@ class ItemController extends Controller
         return view('users.items.my_item')
                 ->with('item', $item);
     }
+
+     
+    // public function otherItemPage($id)
+    // {
+    //     Item::onlyTrashed()->whereNotNull('id')->restore();
+    //     $otherItem = Item::onlyTrashed()->get();
+
+    //     return view('users.items.other_items')
+    //             ->with('otherItem', $otherItem);
+    // }
 
 
     public function add(Request $request)
@@ -119,4 +140,5 @@ class ItemController extends Controller
 
         return redirect()->route('homepage');
     }
+
 }

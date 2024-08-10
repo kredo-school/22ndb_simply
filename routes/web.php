@@ -27,14 +27,18 @@ Route::post('/contact-us/store', [ContactController::class, 'store'])->name('con
 // homepage
 Route::get('/homepage', [App\Http\Controllers\HomepageController::class, 'homepage'])->name('homepage');
 
-// ＃Profile
-Route::group(['middleware' => 'auth'], function(){
+// Profile
+// Route::group(['middleware' => 'auth'], function(){
     Route::get('profile/{id}/show', [ProfileController::class, 'show'])->name('profile.show');
     Route::get('profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('profile/update', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('users/{id}', [UserController::class, 'destroy'])->name('profile.destroy');
 
-});
+// Myitems
+    Route::get('profile/myitems', function(){
+    return redirect()->route('myitems.favorites');})->name('profile.myitems');
+
+// });
 
 // Item
 Route::group(["prefix" => "item", "as" => "item."], function(){
@@ -52,11 +56,15 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
 
  Route::get('my_item/{id}', [ItemController::class, 'myItemPage'])->name('my_item');
 
+ Route::get('other_item/{id}', [ItemController::class, 'otherItemPage'])->name('other_item');
+
+ Route::get('other_items/{id}', [ItemController::class, 'otherItemPage'])->name('other_items');
+
  Route::patch('/edit/category/{id}', [CategoryController::class, 'editCategory'])->name('edit.category');
 
  Route::post('/create/category', [CategoryController::class, 'createCategory'])->name('create.category');
 
- Route::delete('/delete/category/{id}', [CategoryController::class, 'deleteCategory'])->name('delete.category');
+ Route::delete('/delete/category/{id}', [CategoryController::class, 'destroy'])->name('delete.category');
 
 
 #Donated-item
@@ -65,7 +73,9 @@ Route::get('/donated-items/{id}', [DonationController::class, 'showDonatedItem']
 Route::get('/donated-items/{id}/edit', [DonationController::class, 'edit'])->name('donated.item.edit');
 Route::patch('/donated-items/{id}/update', [DonationController::class, 'update'])->name('donated.item.update');
 Route::delete('donated-items/destroy/{id}', [DonationController::class, 'destroy'])->name('donated.item.destroy');
+Route::get('myitems/donated', [DonationController::class, 'donated'])->name('myitems.donated');
 
 #Favorite
 Route::post('/favorite/{donationItem_id}/store', [FavoriteItemController::class,'store'])->name('favorite.store');
 Route::delete('/favorite/{donationItem_id}/destroy', [FavoriteItemController::class, 'destroy'])->name('favorite.destroy');
+Route::get('myitems/favorites', [FavoriteItemController::class,'favorites'])->name('myitems.favorites');
