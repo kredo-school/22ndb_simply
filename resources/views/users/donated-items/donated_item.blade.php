@@ -12,16 +12,31 @@
             <div class="mt-3 text-center">
                 <div class="row h1 align-items-center">
                     <div class="col">
-                        <div class="d-flex justify-content-center align-items-center">
+                        <div class="d-flex justify-content-center align-items-center title-container">
                             <i class="fa-solid fa-circle-info ps-1"></i>
-                            <p class="mb-0 ms-4">Item's information</p>
+                            <p class="mb-0 mx-4">Item's information</p>
+                            <div>
+                                @if($donationItem->isFavorited())
+                            <form action="{{ route('favorite.destroy', ['donationItem_id' => $donationItem->id]) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="new-bookmark"><i class="fa-solid fa-bookmark text-dark"></i></button>
+                            </form>
+                        @else
+                            <form action="{{ route('favorite.store', ['donationItem_id' => $donationItem->id]) }}" method="post">
+                                @csrf
+                                <button type="submit" class="new-bookmark"><i class="fa-regular fa-bookmark"></i></button>
+                            </form>
+                        @endif
+                            </div>
+                            
 
                             @if(Auth::user()->id === $user->id) 
-                            <a href="{{ route('donated.item.edit', $donationItem->id) }}" class="btn ms-5 ">
+                            <a href="{{ route('donated.item.edit', $donationItem->id) }}" class="btn">
                                 <i class="fa-solid fa-pen gray" ></i>
                             </a>
                             <div class="tooltip-container">
-                                <button class="btn ps-1" data-bs-toggle="modal" data-bs-target="#delete-modal">
+                                <button class="btn" data-bs-toggle="modal" data-bs-target="#delete-modal">
                                     <i class="fa fa-trash-can"></i>
                                     <span class="h5 mb-2 text-danger add">Don't delete this item during dealing.</span>
                                 </button>
@@ -42,6 +57,7 @@
                             @endcomponent
 
                             @endif
+                           
                         </div> 
                     </div>
                 </div>

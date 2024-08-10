@@ -24,7 +24,7 @@ class DonationController extends Controller
 
     public function indexDonatedItems() {
         $donationItems = DonationItem::with('item')->paginate(15);
-        return view('users.donated-items.index', [
+        return view('donated-items.index', [
             'donationItems' => $donationItems
         ]);
     }
@@ -35,9 +35,9 @@ class DonationController extends Controller
         ->findOrFail($id);
 
         $user = $donationItem->user;
-    
-        return view('users.donated-items.donated_item', [ 
-        'donationItem' => $donationItem, 
+
+        return view('donated-items.donated_item', [
+        'donationItem' => $donationItem,
         'user' => $user,
         ]);
 
@@ -54,7 +54,7 @@ class DonationController extends Controller
             return redirect()->back();
         }
 
-        return view('users.donated-items.edit', [
+        return view('donated-items.edit', [
             'all_categories' => $all_categories,
             'donationItem' => $donationItem,
             'isDonated' => $isDonated

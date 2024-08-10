@@ -133,10 +133,24 @@
 .font-small{
   font-size: 18px;
   color: #9EA6A6;
-  
-
 }
 
+.title-container{
+  position: relative;
+  width: 100%; 
+}
+
+.new-bookmark{
+  text-align: right;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  position: absolute;
+  right: 0px;
+  font-size: 40px;
+  
+}
 .fa-pen {
   font-size: 40px;
   color: #9EA6A6;
@@ -145,7 +159,6 @@
 .fa-trash-can{
   font-size: 40px;
   color: #9EA6A6;
-  display: inline;
 }
 
 .scrollable{
@@ -192,10 +205,10 @@
   padding: 20px;
   color: #da0000;
   border-radius: 10px;
-  width: 260px;
+  width: 210px;
   height: auto;
-  font-size: 20px !important;
-  left : 120%; 
+  font-size: 16px !important;
+  left : 105%; 
   top:-50%;
   font-weight: 800 !important;
   text-align: left;
