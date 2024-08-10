@@ -28,19 +28,19 @@ class DonationController extends Controller
             'donationItems' => $donationItems
         ]);
     }
-    
+
 
     public function showDonatedItem($id) {
         $donationItem = DonationItem::with('user', 'item')
-        ->findOrFail($id); 
-    
+        ->findOrFail($id);
+
         $user = $donationItem->user;
     
         return view('users.donated-items.donated_item', [ 
         'donationItem' => $donationItem, 
         'user' => $user,
-        ]);  
-        
+        ]);
+
     }
 
     public function edit($id)
@@ -48,7 +48,7 @@ class DonationController extends Controller
         $all_categories = Category::all();
         $donationItem = DonationItem::findOrFail($id);
 
-        $isDonated = DonationItem::where('item_id', $donationItem->id)->exists();
+        $isDonated = DonationItem::where('item_id', $donationItem->item->id)->exists();
 
         if(Auth::user()->id != $donationItem->user->id) {
             return redirect()->back();
@@ -93,7 +93,7 @@ class DonationController extends Controller
         $donationItem->user_id = Auth::id();
         $donationItem->save();
     } else {
-        
+
         if ($donationItem) {
             $donationItem->delete();
         }
@@ -102,8 +102,8 @@ class DonationController extends Controller
         return redirect()->route('donated.items.index');
 
     }
-    
-    
+
+
     public function destroy($id)
     {
         $donationItem = $this->donationItem->findOrFail($id);
