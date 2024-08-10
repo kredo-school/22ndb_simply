@@ -9,7 +9,7 @@
     @section('content')
     <div class="col-md-8 mx-auto h4 ">
         <div class="container my-5">
-            
+
     {{-- Frash message --}}
         @if(session('success'))
             <div class="alert alert-dark">
@@ -29,7 +29,7 @@
                 <div class="col-md-6 d-flex align-items-center flex-column my-auto ">
                     <div class="mb-5 ">
                         @if($user->avatar)
-                            <img src="{{$user->avatar}}" alt="{{$user->name}}" class="rounded-circle avatar-lg">
+                            <img src="{{$user->avatar}}" alt="{{$user->username}}" class="rounded-circle avatar-lg">
                         @else
                             <i class="fa-solid fa-circle-user icon-lg"></i>
                         @endif
@@ -43,7 +43,7 @@
                         <div>
                             {{--If ur the profile owner, can see items link --}}
                             @if(Auth::user()->id === $user->id) 
-                                <a href="{{route('profile.myitems')}}" class='text-dark text-decoration-none'>
+                                <a href="{{route('profile.myitems',['id'=>$user->id])}}" class='text-dark text-decoration-none'>
                                     <i class="fa-solid fa-hand-holding-heart me-2"></i> My items
                                 </a>
                             @endif

@@ -17,7 +17,7 @@
                             <div class="no-image"></div>
                         @endif
                         <div class="d-flex justify-content-between">
-                            <span class="color-gray-1 my-auto">{{$favoriteItem->donationItem->item->category->name}}</span>
+                            <span class="color-gray-1 my-auto">Donation ID  {{$favoriteItem->donationItem->id}}</span>
                                 @if($favoriteItem->donationItem->isFavorited())
                                     <form action="{{ route('favorite.destroy', ['donationItem_id' => $favoriteItem->donationItem->id]) }}" method="post">
                                         @csrf
@@ -34,8 +34,10 @@
                         <span>{{$favoriteItem->donationItem->item->name}}</span>
     {{-- Add username link --}}
                         <div class="text-starts">
-                            <a href="{{route('profile.show', $favoriteItem->donationItem->item->user->id)}}" class="text-dark">{{$favoriteItem->donationItem->item->user->username}}</a>
+                            <a href="{{route('profile.show', ['id'=>$favoriteItem->donationItem->item->user->id])}}" class="text-dark">{{$favoriteItem->donationItem->item->user->username}}</a>
                         </div>
+                        <p>Favorite Item User ID: {{ $favoriteItem->donationItem->item->user->id }}</p>
+
                     </div>
                 </div>
             @empty
