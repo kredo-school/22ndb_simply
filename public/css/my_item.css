@@ -188,8 +188,12 @@
     color: #9EA6A6;
   }
   
-  .fa-pen:hover, .fa-trash-can:hover {
+  .fa-pen:hover {
     color: #050606;
+  }
+
+  .fa-trash-can:hover {
+    color: red;
   }
   
   .scrollable{
