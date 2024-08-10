@@ -13,6 +13,7 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FavoriteItemController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DirectMessageController;
 use App\Models\DonationItem;
 
 Auth::routes();
@@ -67,7 +68,6 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
 
  Route::delete('/delete/category/{id}', [CategoryController::class, 'destroy'])->name('delete.category');
 
-
 #Donated-item
 Route::get('/donated-items', [DonationController::class, 'indexDonatedItems'])->name('donated.items.index');
 Route::get('/donated-items/{id}', [DonationController::class, 'showDonatedItem'])->name('donated.item.show');
@@ -99,3 +99,8 @@ Route::get('myitems/favorites', [FavoriteItemController::class,'favorites'])->na
 Route::post('/comment/{donationItem_id}/store', [CommentController::class, 'store'])->name('comment.store');
 Route::delete('/comment/{id}/destroy', [CommentController::class, 'destroy'])->name('comment.destroy');
 
+#Direct-Message
+Route::group(["prefix" => "directMessage", "as" => "directMessage."], function(){
+    Route::get('/{id}/show', [DirectMessageController::class, 'show'])->name('show');
+    Route::post('/{recipient_id}/store', [DirectMessageController::class, 'store'])->name('store');
+ });
