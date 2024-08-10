@@ -23,6 +23,10 @@
                                 <i class="fa-solid fa-circle-user"></i>
                             @endif
                             <span class="ms-3">{{ $user->username }}</span>
+
+                            @if($user->unread_count > 0)
+                                <span class="badge bg-danger ms-4">{{ $user->unread_count }}</span>
+                            @endif
                         </li>
                     </a>
                 @endforeach
