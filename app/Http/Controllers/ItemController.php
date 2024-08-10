@@ -11,7 +11,7 @@ use App\Models\DonationItem;
 
 class ItemController extends Controller
 {
-    private $item; 
+    private $item;
     private $donation_item;
 
     public function __construct(Item $item, DonationItem $donation_item)
@@ -30,13 +30,7 @@ class ItemController extends Controller
     public function donated(){
         return view('users.profile.myitems.donated');
     }
-    
-    public function show()
-    {
-        return view('users.items.show');
-    }
 
-    
     public function myItemPage($id)
     {
        $item = Item::find($id);
@@ -45,7 +39,7 @@ class ItemController extends Controller
                 ->with('item', $item);
     }
 
-     
+
     // public function otherItemPage($id)
     // {
     //     Item::onlyTrashed()->whereNotNull('id')->restore();
@@ -92,11 +86,11 @@ class ItemController extends Controller
         return redirect()->route('homepage');
     }
 
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
         $all_categories = Category::all();
         $item = $this->item->findOrFail($id);
-        if(Auth::user()->id != $item->user->id) {
+        if(Auth::user()->id !== $item->user->id) {
             return redirect()->back();
         }
 
@@ -111,9 +105,10 @@ class ItemController extends Controller
             'category' => 'required',
             'name' => 'required|max:30',
             'description' => 'max:1000',
-            'image' => 'required|mimes:jpeg,jpg,png,gif|max:1048'
+            'image' => 'mimes:jpeg,jpg,png,gif|max:1048'
         ]);
 
+        $category = $request->query('category', null);
         $item = $this->item->findOrFail($id);
 
         $item->name        = $request->name;
@@ -125,13 +120,26 @@ class ItemController extends Controller
         $item->category_id = $request->category;
         $item->save();
 
+        $donationItem = $this->donation_item->withTrashed()->where('item_id', $item->id)->first();
+
         if ($request->has('donation')) {
-            $this->donation_item->user_id = Auth::id();
-            $this->donation_item->item_id = $this->item->id;
-            $this->donation_item->save();
+
+            if ($donationItem) {
+                $donationItem->restore();
+                $donationItem->user_id = Auth::id();
+                $donationItem->save();
+            } else {
+                $this->donation_item->user_id = Auth::id();
+                $this->donation_item->item_id = $item->id;
+                $this->donation_item->save();
+            }
+        } else {
+            if ($donationItem) {
+                $donationItem->delete();
+            }
         }
 
-        return redirect()->route('my_item');
+        return redirect()->route('my_item', $item->id);
     }
 
     public function destroy($id)
