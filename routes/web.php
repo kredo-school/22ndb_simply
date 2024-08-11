@@ -52,6 +52,9 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
  });
 
 
+//  homepage
+//  Route::get('homepage/{id}', [HomepageController::class, 'homepage'])->name('homepage');
+
 //  category
  Route::get('each_category/{id}', [CategoryController::class, 'showCategoryItem'])->name('each_category');
 
@@ -65,7 +68,7 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
 
  Route::post('/create/category', [CategoryController::class, 'createCategory'])->name('create.category');
 
- Route::delete('/delete/category/{id}', [CategoryController::class, 'destroy'])->name('delete.category');
+ Route::delete('/delete/category/{id}', [CategoryController::class, 'deleteCategory'])->name('delete.category');
 
 #Donated-item
 Route::get('/donated-items', [DonationController::class, 'indexDonatedItems'])->name('donated.items.index');
