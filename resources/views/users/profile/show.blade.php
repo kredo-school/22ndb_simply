@@ -7,9 +7,9 @@
     @endsection
 
     @section('content')
-    <div class="col-md-8 mx-auto h4 ">
-        <div class="container my-5">
-
+<div class="container h2 border">
+    <p class='color-gray-1 mb-0 border'>Profile</p>
+    <div class="col-md-8 mx-auto h2 border">
     {{-- Frash message --}}
         @if(session('success'))
             <div class="alert alert-dark">
@@ -22,47 +22,40 @@
                 {{session('error')}}
             </div>
         @endif
-
-            <p class='color-gray-1'>Profile</p>
             {{-- Left side --}}
-            <div class="row">
+            <div class="row border">
                 <div class="col-md-6 d-flex align-items-center flex-column my-auto ">
-                    <div class="mb-5 ">
+                    <div class="mb-5 border">
                         @if($user->avatar)
                             <img src="{{$user->avatar}}" alt="{{$user->username}}" class="rounded-circle avatar-lg">
                         @else
                             <i class="fa-solid fa-circle-user icon-lg"></i>
                         @endif
                     </div>
-                    <div class="col-auto">
-                        <div>
-                            <a href="{{ route('directMessage.show', $user->id) }}" class='text-dark text-decoration-none mb-3'>
-                                <i class="fa-solid fa-envelope me-2 mb-3 fa"></i> Direct message
+                    <div class="col-auto border">
+                        <a href="{{ route('directMessage.show', $user->id) }}" class='text-dark text-decoration-none mb-3'>
+                            <i class="fa-solid fa-envelope me-2 mb-3 fa"></i> Direct message
+                        </a><br>
+                        {{--If ur the profile owner, can see items link --}}
+                        @if(Auth::user()->id === $user->id) 
+                            <a href="{{route('profile.myitems',['id'=>$user->id])}}" class='text-dark text-decoration-none'>
+                                <i class="fa-solid fa-hand-holding-heart me-2"></i> My items
                             </a>
-                        </div>
-                        <div>
-                            {{--If ur the profile owner, can see items link --}}
-                            @if(Auth::user()->id === $user->id) 
-                                <a href="{{route('profile.myitems',['id'=>$user->id])}}" class='text-dark text-decoration-none'>
-                                    <i class="fa-solid fa-hand-holding-heart me-2"></i> My items
-                                </a>
-                            @endif
-                        </div>
+                        @endif
                     </div>
                 </div>
 
                 {{-- Right side --}}
-                <div class="col p-5">
+                <div class="col-md border">
                     {{--If ur the profile owner, can see edit delete icons --}}
 
                     @if(Auth::user()->id === $user->id)
-                        <div class="d-flex justify-content-end">
-                            <a href="{{route('profile.edit')}}" class="btn btn-lg">
-                                <i class="fa-solid fa-pen color-gray-1"></i>
+                        <div class="d-flex justify-content-end border">
+                            <a href="{{route('profile.edit')}}" class="btn">
+                                <i class="icon fa-solid fa-pen color-gray-1"></i>
                             </a>
-
-                            <button class="btn btn-lg" data-bs-toggle="modal" data-bs-target = "#delete-modal">
-                                <i class="fa-solid fa-trash-can color-gray-1"></i>
+                            <button class="btn" data-bs-toggle="modal" data-bs-target = "#delete-modal">
+                                <i class="icon fa-solid fa-trash-can color-gray-1"></i>
                             </button>
 
                             {{--Component Delete Modal --}}
@@ -98,12 +91,12 @@
                             </tr>
                             <tr>
                                 <td class>Introduction</td>
-                                <td class="h5">{{$user->introduction}}</td>
+                                <td class="h4">{{$user->introduction}}</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-        </div>
     </div>
-    @endsection
+</div>
+@endsection

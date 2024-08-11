@@ -1,6 +1,6 @@
 *{
     font-weight: 600;
-    color: #050606;
+    color:black;
 }
 
 .logo{
@@ -26,10 +26,6 @@ body {
 
 
 /* text color */
-.letter-color{
-    color: #050606;
-}
-
 .muted-color{
     color: #D9D9D9;
 }
@@ -146,7 +142,7 @@ footer {
 }
 
 .footer-link:hover {
-    color: #050606 !important;
+    color: black !important;
 }
 
 /* need? */
@@ -163,7 +159,7 @@ nav {
     margin-top: auto;
 }
 .nav-link {
-    color: #050606 !important;
+    color: black !important;
 }
 .nav-link:hover {
     color: #9EA6A6 !important;
@@ -173,12 +169,12 @@ nav {
 .navbar-list a,
 .dropdown-item {
     text-decoration: none;
-    background-color: #050606 !important;
+    background-color: black !important;
     color: white;
 }
 
 .dropdown-menu {
-    background-color: #050606 !important;
+    background-color: black !important;
     border-radius: 0% !important;
 }
 

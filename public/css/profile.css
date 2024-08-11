@@ -1,21 +1,31 @@
+.icon{
+    color: #9EA6A6;
+    font-size: 1.5rem !important;
+    display: inline-flex;
+}
 .bordered-table{
     border-collapse: separate;
     border-spacing: 0 30px;
 }
 .bordered-table td{
-    border-bottom: 2px solid !important;
+    border-bottom: 2px solid #9EA6A6!important;
     background-color: white !important;
 }
 
 .xsmall{
     font-size: 0.65rem !important;
 }
-
+.small{
+    font-size: 12px;
+}
+.form-label{
+    font-size: 18px;
+}
 textarea{
     resize: none !important;
     height: 30px;
-    font-size: 20px !important;
-    color: #9ea6a6 !important;
+    font-size: 28px !important;
+    color: black;
 }
 
 .text-intro{
@@ -26,6 +36,7 @@ textarea{
 .tab-content{
     border: solid 2px black;
 }
+
 .nav-tab-link{
     color:black;
     display: block;
@@ -38,9 +49,6 @@ textarea{
     border-radius: 20px 20px 0px 0px;
 }
 
-/* .tab-content{
-    height: 550px;
-} */
 .item-box{
     height: 160px;
 }
@@ -86,11 +94,11 @@ font-weight: 600 !important;
 font-size: 18px;
 text-decoration: none;
 }
-.pagination a:hover {
-color: #050606 !important;
-}
 
-.pagination span:hover {
-color: #050606 !important;
+.pagination .active span,
+.pagination span:hover,
+.pagination a:hover,
+.icon:hover{
+color: black!important;
 }
 
