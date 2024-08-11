@@ -147,8 +147,9 @@
   cursor: pointer;
   color: #000;
   position: absolute;
-  right: 0px;
+  right: 760px;
   font-size: 40px;
+  top: 465px;
   
 }
 .fa-pen {
