@@ -23,7 +23,9 @@ class DonationController extends Controller
     }
 
     public function indexDonatedItems() {
-        $donationItems = DonationItem::with('item')->paginate(15);
+        $donationItems = DonationItem::with('item')
+        ->orderBy('created_at', 'desc')
+        ->paginate(15);
         return view('users.donated-items.index', [
             'donationItems' => $donationItems
         ]);

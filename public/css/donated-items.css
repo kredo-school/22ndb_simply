@@ -157,9 +157,17 @@
   color: #9EA6A6;
 }
 
+.fa-pen:hover{
+  color: #000;
+}
+
 .fa-trash-can{
   font-size: 40px;
   color: #9EA6A6;
+}
+
+.fa-trash-can:hover{
+  color: #da0000
 }
 
 .scrollable{
