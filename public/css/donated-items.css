@@ -15,10 +15,11 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: #000;
+  color: black;
   position: absolute;
-  top: 155px; 
-  right: 0px;
+  top: 145px; 
+  right: 10px;
+
 }
 
 @media screen and (min-width: 1025px) {
@@ -54,7 +55,7 @@
 }
 
 .image-md-lg {
-  border: solid 1px #050606;
+  border: solid 1px black;
   padding: 10px;
   object-fit: cover;
 }
@@ -106,7 +107,7 @@
   width: 100%;
   padding-top: 100%;
   overflow: hidden;
-  border: solid 1px #050606;
+  border: solid 1px black;
   border-radius: 40px;
 }
 
@@ -145,7 +146,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: #000;
+  color: black;
   position: absolute;
   right: 760px;
   font-size: 40px;
@@ -167,7 +168,7 @@
 }
 
 .fa-trash-can:hover{
-  color: #da0000
+  color: red;
 }
 
 .scrollable{
@@ -201,18 +202,18 @@
 }
 
 .pagination a:hover {
-  color: #050606 !important;
+  color: black !important;
 }
 
 .pagination span:hover {
-  color: #050606 !important;
+  color: black !important;
 }
 
 .add {
   position: absolute;
   display: none;
   padding: 20px;
-  color: #da0000;
+  color: red;
   border-radius: 10px;
   width: 210px;
   height: auto;
@@ -221,7 +222,7 @@
   top:-50%;
   font-weight: 800 !important;
   text-align: left;
-  border: 1px solid #da0000;
+  border: 1px solid red;
 }
 
 .tooltip-container {
@@ -234,3 +235,6 @@
   display: block;
 }
 
+form {
+  display: inline-block;
+}
