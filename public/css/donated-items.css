@@ -212,3 +212,14 @@
   display: block;
 }
 
+
+/* comment */
+.custom-hr{
+  border: none;
+  border-top: 3px solid black;
+}
+
+.icon-xsmall{
+  width: 1.5rem;
+  height: auto;
+}

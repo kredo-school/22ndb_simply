@@ -1,6 +1,6 @@
 *{
-    font-weight: 600;
-    color: #050606;
+    font-weight: 500;
+    color: black;
 }
 
 .logo{
@@ -19,15 +19,19 @@ body {
     min-height: 100vh;
 }
 
+label{
+    font-weight: 600;
+}
+
 .title{
     font-size: 40px !important;
-    font-weight: 900 !important;
+    font-weight: 600 !important;
 }
 
 
 /* text color */
 .letter-color{
-    color: #050606;
+    color: black;
 }
 
 .muted-color{
@@ -114,6 +118,7 @@ body {
 .button{
     letter-spacing: 3px;
     border-radius: 40px !important;
+    font-weight: 700;
 }
 
 .button2{
@@ -142,11 +147,12 @@ footer {
     text-align: right;
     padding: 20px;
     background: linear-gradient(to bottom, #ffffff, #7A95B4);
-    font-size: 30px;
+    font-size: 18px;
+    
 }
 
 .footer-link:hover {
-    color: #050606 !important;
+    color: black !important;
 }
 
 /* need? */
@@ -158,12 +164,13 @@ footer {
 /* navbar before logged */
 nav {
     font-family: 'Poppins', sans-serif !important;
-    font-size: 28px;
+    font-size: 18px;
     text-align: center;
     margin-top: auto;
 }
 .nav-link {
-    color: #050606 !important;
+    color: black !important;
+    font-weight: 600;
 }
 .nav-link:hover {
     color: #9EA6A6 !important;

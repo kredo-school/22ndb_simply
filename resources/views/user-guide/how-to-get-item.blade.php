@@ -14,7 +14,7 @@
                 <p>3. Click username to jump to the <br>&emsp;owner's profile page.</p>
                 <p>4. Click the Envelope icon.</p>
                 <p class="mb-2">5. Ask your questions or arrange  how <br>&emsp;to give/get the item through direct <br>&emsp;message.</p>
-                <p class="text-danger" style="line-height: 1.3;">&emsp;Please include "Donation Item ID" <br>&emsp;when sending a message to the <br>&emsp;owner for the first time.</p>
+                <p class="text-danger" style="line-height: 1.3;">&emsp;Please include "Donation ID" <br>&emsp;when sending a message to the <br>&emsp;owner for the first time.</p>
             </div>
             
             <div>

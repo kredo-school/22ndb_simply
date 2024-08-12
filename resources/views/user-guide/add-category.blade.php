@@ -8,9 +8,9 @@
 <div class="conatiner">
     <div class="row">
         <div class="col">
-            <div class="col d-flex flex-column justify-content-center" style="margin-top: 80px; margin-left:100px;">                
-                <p>1. Go to the Add category page.</p>
-                <p>2. Fill in new category name.</p>
+            <div class="col d-flex flex-column justify-content-center" style="margin-top: 60px; margin-left:100px;">                
+                <p class="mb-4">1. Go to the Add category page.</p>
+                <p class="mb-4">2. Fill in new category name.</p>
                 <p>3. Click the SAVE button.</p>
             </div>
             

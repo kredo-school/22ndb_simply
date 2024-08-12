@@ -34,7 +34,7 @@ class CommentController extends Controller
     
         $this->comment->body = $request->input('comment_body' . $donationItem_id);
         $this->comment->user_id = Auth::user()->id;
-        $this->comment->item_id = $donationItem_id; // Updated to use item_id
+        $this->comment->donation_item_id = $donationItem_id; // Updated to use item_id
         $this->comment->save();
 
         // The information inside this array will be used in the email body.

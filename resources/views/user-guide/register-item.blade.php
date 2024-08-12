@@ -9,8 +9,8 @@
     <div class="row">
         <div class="col">
             <div class="col d-flex flex-column justify-content-center" style="margin-top: 50px; margin-left:100px;">                
-                <p>1. Go to the Add item page.</p>
-                <p>2. Fill in your item information.</p>
+                <p class="mb-4">1. Go to the Add item page.</p>
+                <p class="mb-4">2. Fill in your item information.</p>
                 <p>3. Click the SAVE button.</p>
             </div>
             

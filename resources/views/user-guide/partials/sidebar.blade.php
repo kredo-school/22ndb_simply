@@ -33,7 +33,7 @@
         </td>   
     </tr>
     <tr>
-        <td class="menu-item border-bottom {{ request()->routeIs('user-guide.donated-item') ? 'active' : '' }}">
+        <td class="menu-item border-bottom {{ request()->routeIs('user-guide.donate-item') ? 'active' : '' }}">
             <a href="{{ route('user-guide.donate-item') }}">◎ Donate item</a>
         </td>   
     </tr>

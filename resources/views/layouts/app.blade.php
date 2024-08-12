@@ -91,7 +91,7 @@
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     @if (Auth::user()->avatar)
-                                       <img src="#" alt="" class="rounded-circle">
+                                       <img src="#" alt="#" class="rounded-circle">
                                     @else
                                        <i class="fa-solid fa-circle-user mt-3 text-dark icon"></i>
                                     @endif
