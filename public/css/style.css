@@ -173,12 +173,12 @@ nav {
 .navbar-list a,
 .dropdown-item {
     text-decoration: none;
-    background-color: #050606 !important;
+    background-color: black !important;
     color: white;
 }
 
 .dropdown-menu {
-    background-color: #050606 !important;
+    background-color: black !important;
     border-radius: 0% !important;
 }
 

@@ -30,8 +30,10 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/homepage/{id}';
 
+
+
     protected function redirectTo() {
-       
+
         return route('homepage', ['id' => Auth::user()->id]);
      }
 
@@ -42,7 +44,8 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+       
+         $this->middleware('guest')->except('logout');
         $this->middleware('auth')->only('logout');
     }
 

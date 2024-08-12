@@ -88,7 +88,7 @@
                                     <i class="fa-regular fa-square-check"></i>
                                 </div>
 
-                                <div class="row">
+                                <div class="row mt-3">
                                     <div class="col-4 text-start ms-5">
                                         <p class="font-big">Donation ID</p>
                                     </div>

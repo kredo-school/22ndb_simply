@@ -12,7 +12,7 @@
     </div>
 
     <div class="container d-flex justify-content-start">
-        <div class="container-box pt-5">
+        <div class="container-box pt-5 ms-2">
         @if($user->mycategories())
             @foreach($user->categories as $category)
                 <div class="d-flex flex-row">
@@ -58,13 +58,13 @@
             @endforeach
             @endif
             
-            <div>
-                <div class="d-flex flex-row justify-content-center ms-4 ps-3 mt-0">
-                    <button type="button" data-bs-toggle="modal" data-bs-target="#create-category" class="btn category-btn rounded-3 text-center">+ Add category</button>
+        </div>
+    </div>
+    <div>
+        <div class="d-flex flex-row justify-content-center ms-0 mt-0">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#create-category" class="btn category-btn rounded-3 text-center">+ Add category</button>
 
-                    <a href="{{ route('item.add') }}"class="btn item-btn ms-5">+ Add item</a>
-                </div>
-            </div>
+            <a href="{{ route('item.add') }}"class="btn item-btn ms-5">+ Add item</a>
         </div>
     </div>
 </div>
