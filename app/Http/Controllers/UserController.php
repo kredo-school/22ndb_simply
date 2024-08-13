@@ -20,11 +20,11 @@ class UserController extends Controller
         $user = $this->user->findOrFail($id);
 
         if(Auth::id() !== $user->id){
-            return redirect()->route('home')
+            return redirect()->route('index')
                 ->with('error', 'You do not have permission to delete this account.');
         }
         $user->delete();
-        return redirect()->route('home')
+        return redirect()->route('index')
             ->with('success', 'Your account has been deleted.');
 
     }
