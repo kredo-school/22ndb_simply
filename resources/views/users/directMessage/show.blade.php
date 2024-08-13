@@ -44,7 +44,7 @@
 
        {{-- message --}}
         <div class="col-8">
-            <form action="{{ route('directMessage.store', $recipient->id) }}" method="post" enctype="multipart/form-data" id="messageForm">
+            <form action="{{ route('directMessage.store', $recipient->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
 
                 <div class="container border rounded p-3 scrollable">
@@ -121,56 +121,16 @@
 
                         <div class="input-group justify-content-center align-items-center">
                             <label for="image">
-                                <i class="fas fa-image icon-sm" style="cursor:pointer;" onclick="document.getElementById('image').click();"></i>
+                                <i class="fas fa-image icon-sm" style="cursor: pointer;"></i>
                             </label>
-                            <input type="file" id="image" name="image" accept="image/*" style="display:none;">
+                            <input type="file" id="image" name="image" accept="image/*" style="display: none;">
                             <input type="text" name="text" class="form-control rounded mx-2" placeholder="Input your message">
                             <button type="submit" class="btn btn-dark rounded">Sent</button>
                         </div>
-
-                        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title" id="imageModalLabel">Confirm Image</h5>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                  <img id="previewImage" src="" alt="Preview" style="max-width: 100%;">
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                  <button type="button" class="btn btn-primary" id="sendImageBtn">Send</button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
-@endsection
-
-@section('script')
-
-<script>
-$(document).ready(function() {
-    $('#image').change(function(e) {
-        var file = e.target.files[0];
-        var reader = new FileReader();
-        reader.onload = function(e) {
-            $('#previewImage').attr('src', e.target.result);
-            $('#imageModal').modal('show');
-        }
-        reader.readAsDataURL(file);
-    });
-
-    $('#sendImageBtn').click(function() {
-        $('#imageModal').modal('hide');
-        $('#messageForm').submit();
-    });
-});
-</script>
 @endsection
