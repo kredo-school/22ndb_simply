@@ -42,8 +42,8 @@ class CommentController extends Controller
 
         // $user = DonationItem::findOrFail($donationItem_id)->user;
 
-        // $details = ['name' => $user->name,
-        //             'commented_user' =>  Auth::user()->name,
+        // $details = ['name' => $user->username,
+        //             'commented_user' =>  Auth::user()->username,
         //             'comment_body'=> $this->comment->body,
         //             'donagionItem_url' => route('donated.item.show', $donationItem_id) 
         //         ];
@@ -54,7 +54,7 @@ class CommentController extends Controller
         // Mail::send('users.emails.comment', $details, function($message) use ($user){
         //     $message
         //         ->from(config('mail.from.address'), config('app.name'))
-        //         ->to($user->email, $user->name)
+        //         ->to($user->email, $user->username)
         //         ->subject('You got a comment!');
         // });
 
