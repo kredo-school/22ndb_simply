@@ -21,10 +21,17 @@ class DirectMessageController extends Controller
         $sender_id = Auth::id();
         $sender    = User::findOrFail($sender_id);
         $recipient = User::findOrFail($id);
-        $all_users = User::whereHas('directMessages', function($query) use ($sender_id) {
-            $query->where('user_id', $sender_id)
-                  ->orWhere('destination_user_id', $sender_id);
-        })->get()->except(Auth::id());
+        $all_users = User::where('id', '!=', $sender_id)
+                        ->where(function($query) use ($sender_id) {
+                            $query->whereHas('directMessages', function($query) use ($sender_id) {
+                            $query->where('user_id', $sender_id)
+                        ->orWhere('destination_user_id', $sender_id);
+                        })
+                        ->orWhereHas('receivedMessages', function($query) use ($sender_id) {
+                            $query->where('user_id', $sender_id)
+                        ->orWhere('destination_user_id', $sender_id);
+                        });
+                    })->get();
 
         foreach ($all_users as $user) {
             $user->unread_count = DirectMessage::unreadCount($user->id, $sender_id);
@@ -54,11 +61,12 @@ class DirectMessageController extends Controller
 
     public function store(Request $request, $recipient_id)
     {
-        $this->DirectMessage->text                = $request->text;
-        $this->DirectMessage->user_id             = Auth::id() ;
-        $this->DirectMessage->destination_user_id = $recipient_id;
-        $this->DirectMessage->seen                = false;
-        $this->DirectMessage->save();
+        $directMessage = new DirectMessage;
+        $directMessage->text                = $request->text;
+        $directMessage->user_id             = Auth::id() ;
+        $directMessage->destination_user_id = $recipient_id;
+        $directMessage->seen                = false;
+        $directMessage->save();
 
         return redirect()->route('directMessage.show', ['id' => $recipient_id]);
     }
