@@ -3,6 +3,7 @@
   font-size: 12px; 
   text-align: left;
   margin-left: 5px;
+  margin-top: 0
 }
 
 .item-container {
@@ -148,7 +149,7 @@
   cursor: pointer;
   color: black;
   position: absolute;
-  right: 760px;
+  right: 770px;
   font-size: 40px;
   top: 465px;
   
@@ -235,6 +236,6 @@
   display: block;
 }
 
-form {
+/* form {
   display: inline-block;
-}
+} */
