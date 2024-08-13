@@ -19,11 +19,11 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-md-4 d-flex flex-column align-items-center">
                     <div class="icon-wrapper border border-dark d-inline-flex justify-content-center align-items-center custom-mt">
-                        <img src="{{ $donationItem->item->image }}" alt="{{ $donationItem->item->name }}" style="max-width: 100%; height: auto;">
+                        <img src="{{ $donationItem->item->image }}" alt="{{ $donationItem->item->name }}"  class="custom-image-size">
                     </div>
                     <input type="file" name="image" id="image" class="form-control mt-3 justify-content-center" style="width: 15rem;" aria-describedby="image-info">
                     <div id="image-info" class="form-text">
-                        <p class="text-center">
+                        <p class="text-center text-grey">
                             Acceptable formats: jpeg, jpg, png, gif only.
                             <br>
                             Maximum file size is 1048kb.
@@ -42,12 +42,14 @@
                             <div class="form-group custom-mt">
                                 <select class="form-control" id="category" name="category">
                                     @foreach ($all_categories as $category)
-                                        <option value="{{ $category->id }}" {{ $donationItem->category_id == $category->id ? 'selected' : '' }}>
+                                        @if ($category->user->id === Auth::id())
+                                            <option value="{{ $category->id }}" {{ $donationItem->category_id == $category->id ? 'selected' : '' }}>
                                             {{ $category->name }}
-                                        </option>
+                                            </option>
+                                        @endif
                                     @endforeach
                                 </select>
-                                <a href="#" class="add-category-link text-muted" data-bs-toggle="modal" data-bs-target="#create-category">+ Add category</a>
+                                <a href="#" class="edit-category-link" data-bs-toggle="modal" data-bs-target="#create-category">+ Add category</a>
                             </div>
                         </div>
                     </div>
@@ -94,7 +96,7 @@
                             <div class="form-group mt-3 d-flex align-items-center">
                             <input type="checkbox" class="form-check-input checkbox-size" name="donation" id="donation" {{ $isDonated ? 'checked' : '' }}>
                             </div>
-                            <p class="text-muted mt-2 nowrap">
+                            <p class="grey-text mt-2 nowrap">
                                 If you want to donate your item, please check it! <br>
                                 You can see your checked item on the Donation page.
                             </p>
@@ -118,5 +120,6 @@
             </div>
         </form>
     </div>
+    @include('users.categories.modals.create_category')
 </div>
 @endsection

@@ -21,7 +21,7 @@
                 </div>
                 <input type="file" name="image" id="image" class="form-control mt-3 justify-content-center" style="width: 15rem;" aria-describedby="image-info">
                 <div id="image-info" class="form-text">
-                    <p class="text-center">
+                    <p class="text-center text-grey">
                         Acceptable formats: jpeg, jpg, png, gif only.
                     <br>
                         Maximum file size is 1048kb.
@@ -43,10 +43,12 @@
                         <div class="form-group custom-mt">
                             <select class="form-control" name="category" id="category">
                                 @foreach ($all_categories as $category)
-                                    <option value="{{ $category->id }}" {{ $selected_category == $category->id ? "selected" : "" }}>{{ $category->name }}</option>
+                                    @if ($category->user->id === Auth::id())
+                                        <option value="{{ $category->id }}" {{ $selected_category == $category->id ? "selected" : "" }}>{{ $category->name }}</option>
+                                    @endif
                                 @endforeach
                             </select>
-                            <a href="#" class="add-category-link text-muted" data-bs-toggle="modal" data-bs-target="#create-category">+ Add category</a>
+                            <a href="#" class="add-category-link" data-bs-toggle="modal" data-bs-target="#create-category">+ Add category</a>
                         </div>
                     </div>
                 </div>
@@ -54,7 +56,7 @@
                 <div class="row">
                     <div class="col-3 mt-3">
                         <div class="form-group mt-3">
-                            <label for="item_name">Item name</label>
+                            <label for="name">Item name</label>
                         </div>
                     </div>
                     <div class="col-9 mt-3">
@@ -93,7 +95,7 @@
                         <div class="form-group mt-3 d-flex align-items-center">
                             <input type="checkbox" class="form-check-input checkbox-size" name="donation" id="donation" {{ old('donation') ? "selected" : " " }}>
                         </div>
-                        <p class="text-muted mt-2 nowrap">
+                        <p class="grey-text mt-2 nowrap">
                             If you want to donate your item, please check it! <br>
                             You can see your checked item at Donation page.
                         </p>

@@ -13,6 +13,7 @@ class HomepageController extends Controller
 
     private $category;
     private $user;
+    private $item;
 
     public function __construct(Category $category, User $user, Item $item){
         $this->category = $category;
@@ -23,10 +24,9 @@ class HomepageController extends Controller
 
     public function homepage()
     {
-        
+
         $user = User::findOrFail(Auth::id());
         $categories = $user->categories;
-
 
         return view('users.homepage', [
             'categories' => $categories,

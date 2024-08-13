@@ -1,16 +1,65 @@
+ul a li.list-group-item.custom-active-class {
+    background-color: black;
+    border-color: none;
+}
+
+ul a li.list-group-item.custom-active-class i,
+ul a li.list-group-item.custom-active-class span {
+    color: white;
+}
+
+ul a li.list-group-item {
+    color: black;
+    &:hover {
+        background-color: grey;
+        color: white;
+    }
+}
+
 .scrollable {
     max-height: 70vh;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
-.file-upload {
-    cursor: pointer;
-}
-
-.comment-input {
+div.input-group {
     position: sticky;
     bottom: 0;
     background-color: white;
     padding: 1rem;
     z-index: 1;
+    width: 100%;
+}
+
+.message-border {
+    border: 0.5px solid black;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: white;
+    max-width: 500px;
+    display: block;
+    word-wrap: break-word;
+ }
+
+.input-group {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+}
+
+p.text-grey {
+    color: #CDCECE;
+}
+
+.grey-text {
+    color: #9EA6A6;
+}
+
+span.bg-grey {
+    background-color: #9EA6A6;
+}
+
+.modal-body img {
+    max-width: 100%;
+    height: auto;
 }
