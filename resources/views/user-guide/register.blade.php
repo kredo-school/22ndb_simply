@@ -8,7 +8,7 @@
 <div class="conatiner">
     <div class="row">
         <div class="col">
-            <div class="col d-flex flex-column justify-content-center" style="margin-top: 80px; margin-left:100px;">                
+            <div class="d-flex flex-column justify-content-center" style="margin-top: 80px; margin-left:100px;">                
                 <p class="mb-4">1. Go to the <a href="{{ route('register') }}" class="text-dark fw-bold">Register</a> page.</p>
                 <p class="mb-4">2. Fill in your information.</p>
                 <p>3. Click the REGISTER button.</p>

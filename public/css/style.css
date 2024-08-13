@@ -3,6 +3,7 @@
     color: black;
 }
 
+
 .logo{
     width: 55px !important;
     height: auto !important;
@@ -166,7 +167,6 @@ nav {
     font-family: 'Poppins', sans-serif !important;
     font-size: 18px;
     text-align: center;
-    margin-top: auto;
 }
 .nav-link {
     color: black !important;
@@ -180,15 +180,60 @@ nav {
 .navbar-list a,
 .dropdown-item {
     text-decoration: none;
-    background-color: #050606 !important;
+    background-color: black !important;
     color: white;
 }
 
 .dropdown-menu {
-    background-color: #050606 !important;
+    background-color: black !important;
     border-radius: 0% !important;
 }
 
 .navbar-list a:hover {
     color: #9EA6A6 !important;
 }
+
+.navbar {
+    padding: 0 !important;
+}
+/* responsive */
+
+@media (max-width: 575.98px) { 
+
+    .navbar-nav {
+        background-color: black;
+        width: 30%;
+        font-size: 16px !important;
+    }
+    .navbar-nav .nav-link {
+        color: white !important; 
+        text-align: center;
+        margin: 0 !important;
+    }
+    
+    .navbar-nav .nav-link:hover {
+        color: #9EA6A6 !important; 
+    }
+
+}
+
+@media (max-width: 767.98px) { 
+
+    .navbar-nav {
+        background-color: black;
+        width: 30%;
+        font-size: 16px !important;
+    }
+    .navbar-nav .nav-link {
+        color: white !important; 
+        text-align: center;
+        margin: 0 !important;
+    }
+    
+    .navbar-nav .nav-link:hover {
+        color: #9EA6A6 !important; 
+    }
+
+}
+
+

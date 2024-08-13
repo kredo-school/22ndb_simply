@@ -142,26 +142,34 @@
                             <li class="list-group-item border-0 bg-white">
                                 <div class="d-flex">
                                     <div>
-                                        <i class="fa-solid fa-circle-user"></i>
-                                        <!-- <img src="#" alt=""> -->
-                                        <a href="#" class="text-decoration-none text-dark fw-bold">username</a>
-                                        <span class="text-secondary small ms-2">{{ date('Y/m/d, h:m', strtotime($comment->created_at)) }}</span>
+                                        @if($comment->user->avatar)
+                                            <img src="{{ $comment->user->avatar }}" alt="User Avatar" class="rounded-circle" width="30" height="30">
+                                        @else
+                                            <i class="fa-solid fa-circle-user"></i>
+                                        @endif
+                                        <a href="{{ route('profile.show', $user->id)}}" class="text-decoration-none text-dark fw-bold">
+                                            {{ $comment->user->name }}
+                                        </a>
+                                        
+                                        <span class="text-secondary small ms-2">{{ $comment->created_at->format('Y/m/d, h:i A') }}</span>
                                     
-                                    @if(Auth::user()->id === $comment->user_id)
-                                    <form action="{{ route('comment.destroy', $comment->id)}}" method="post" class="d-inline">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn"><i class="fa-solid fa-trash-can"></i></button>
-                                    </form>
-                                    @endif
-
+                                        @auth
+                                            @if(Auth::id() === $comment->user_id)
+                                            <form action="{{ route('comment.destroy', $comment->id) }}" method="post" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this comment?');">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn" aria-label="Delete Comment"><i class="fa-solid fa-trash-can fa-sm"></i></button>
+                                            </form>
+                                            @endif
+                                        @endauth
                                     </div>
                                 </div>
                                 <p class="mb-0 text-start">{{ $comment->body }}</p>
                             </li>
                             @endforeach
-                        </ul>
+                            </ul>
                         @endif
+
                     </div>
                 </div>
             </div>   

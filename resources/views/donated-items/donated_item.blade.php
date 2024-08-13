@@ -35,17 +35,14 @@
                             <a href="{{ route('donated.item.edit', $donationItem->id) }}" class="btn ms-5 ">
                                 <i class="fa-solid fa-pen gray" ></i>
                             </a>
-                            <div class="tooltip-container">
-                                <button class="btn ps-1" data-bs-toggle="modal" data-bs-target="#delete-modal">
-                                    <i class="fa fa-trash-can"></i>
-                                    <span class="h5 mb-2 text-danger add">Don't delete this item during dealing.</span>
-                                </button>
-                            </div>
+                            <button class="btn ms-2 ps-1" data-bs-toggle="modal" data-bs-target="#delete-modal">
+                                <i class="fa-solid fa-trash-can gray"></i>
+                            </button>
                             {{-- Component Delete Modal --}}
                             @component('users.components.deletemodal', [
-                            'id' => 'delete-modal',
-                            'title' => 'Delete Item',
-                            'r2' => route('donated.item.destroy', $donationItem->id)
+                                'id' => 'delete-modal',
+                                'title' => 'Delete Item',
+                                'r2' => route('item.destroy', $donationItem->id)
                             ])
                             @slot('body')
                             <p class="h5 text-center">Are you sure you want to delete this item?</p>
