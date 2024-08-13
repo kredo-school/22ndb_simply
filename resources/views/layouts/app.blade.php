@@ -26,7 +26,7 @@
 </head>
 <body class="bg-white">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white">
+        <nav class="navbar navbar-expand-md navbar-light bg-white p-0">
             <div class="container">
                 @guest
                     <a class="navbar-brand" href="{{ url('/') }}">

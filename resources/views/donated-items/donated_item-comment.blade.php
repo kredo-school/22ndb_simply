@@ -31,7 +31,7 @@
                                 @endif
                             </div>
 
-                            @if(Auth::user()->id === $user->id) 
+                            @if(Auth::user()->id === $donationItem->user->id) 
                             <a href="{{ route('donated.item.edit', $donationItem->id) }}" class="btn ms-5 ">
                                 <i class="fa-solid fa-pen gray" ></i>
                             </a>
@@ -95,6 +95,7 @@
                                     <p>{{ $donationItem->item->name }}</p>
                                 </div>
                             </div>
+                            @if(Auth::user()->id !== $donationItem->user->id) 
                             <div class="row">
                                 <div class="col-4 text-start ms-5">
                                     <p class="font-big">Username</p>
@@ -104,6 +105,7 @@
                                     <p class="font-small mb-3">You can see donated user's profile!</p>
                                 </div>
                             </div>
+                            @endif
                             <div class="row">
                                 <div class="col-4 text-start ms-5">
                                     <p class="font-big">Description</p>
@@ -119,16 +121,18 @@
                 <div class="row mt-3">
                     <hr class="custom-hr">
                     <!--Comments -->
-                    <div class="mt-4">
+                    <div class="mt-1">
                         <form action="{{ route('comment.store', $donationItem->id) }}" method="post">
                             @csrf
+                           <div class="comment-container">
+                                <input type="text" name="comment_body{{ $donationItem->id }}" class="form-control form-control-md comment-box" placeholder="Input your comment here..."  value="{{ old('comment_body' . $donationItem->id) }}">
 
-                            <div class="input-group">
-                                <textarea name="comment_body{{ $donationItem->id }}" cols="20" rows="1" class="form-control form-control-sm comment-box" placeholder="Input your comment here...">{{ old('comment_body' . $donationItem->id) }}</textarea>
-                                <button type="submit" class="btn btn-dark btn-md">
+                                <button type="submit" class="btn btn-dark btn-md inline">
                                     Submit
                                 </button>
-                            </div>
+                           </div>
+                            
+                           
                             <!-- Error -->
                             @error('comment_body' . $donationItem->id)
                             <div class="text-danger small">{{ $message }}</div>
@@ -136,6 +140,7 @@
 
                         </form>
                         <!-- Show all comments here -->
+                        <div class="comment-scrollable">
                         @if($donationItem->comments->isNotEmpty())
                         <ul class="list-group mt-2">
                             @foreach($donationItem->comments as $comment)
@@ -147,28 +152,39 @@
                                         @else
                                             <i class="fa-solid fa-circle-user"></i>
                                         @endif
-                                        <a href="{{ route('profile.show', $user->id)}}" class="text-decoration-none text-dark fw-bold">
-                                            {{ $comment->user->name }}
+                                        <a href="{{ route('profile.show', $user->id)}}" class="text-dark ms-2">
+                                            {{ $comment->user->username }}
                                         </a>
                                         
-                                        <span class="text-secondary small ms-2">{{ $comment->created_at->format('Y/m/d, h:i A') }}</span>
+                                        <span class="text-secondary small ms-2">{{ $comment->created_at->format('Y/m/d H:i') }}</span>
                                     
                                         @auth
                                             @if(Auth::id() === $comment->user_id)
-                                            <form action="{{ route('comment.destroy', $comment->id) }}" method="post" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this comment?');">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn" aria-label="Delete Comment"><i class="fa-solid fa-trash-can fa-sm"></i></button>
-                                            </form>
+                                    
+                                            <button class="btn ps-1" data-bs-toggle="modal" data-bs-target="#delete-modal">
+                                                <i class="fa fa-trash-can fa-sm"></i>
+                                            </button>
+
+                                            {{-- Component Delete Modal --}}
+                                                @component('users.components.deletemodal', [
+                                                'id' => 'delete-modal',
+                                                'title' => 'Delete Comment',
+                                                'r2' => route('comment.destroy', $comment->id)
+                                                ])
+                                                @slot('body')
+                                                <p class="h5 text-center">Are you sure you want to delete this comment?</p>
+                                                @endslot
+                                                @endcomponent
                                             @endif
                                         @endauth
                                     </div>
                                 </div>
-                                <p class="mb-0 text-start">{{ $comment->body }}</p>
+                                <p class="mb-0 ms-5 mt-2 text-start">{{ $comment->body }}</p>
                             </li>
                             @endforeach
                             </ul>
                         @endif
+                        </div>
 
                     </div>
                 </div>

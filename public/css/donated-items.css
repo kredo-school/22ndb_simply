@@ -223,3 +223,14 @@
   width: 1.5rem;
   height: auto;
 }
+
+.comment-scrollable {
+  max-height: 100px; 
+  overflow-y: auto;
+}
+
+.comment-container {
+  display: flex;
+  align-items: center; 
+  gap: 10px; 
+}
