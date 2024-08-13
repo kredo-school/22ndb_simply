@@ -10,7 +10,7 @@
 <div class="container h2 border">
     <p class="color-gray-1 border mb-0">Edit Profile</p>
 
-    <form action="{{route('profile.update')}}" method="post" class="" enctype="multipart/form-data">
+    <form action="{{route('profile.update')}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
 

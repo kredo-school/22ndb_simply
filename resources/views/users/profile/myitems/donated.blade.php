@@ -13,8 +13,8 @@
                         <div class="no-image"></div>
                     @endif
                     <div class="text-start">
-                        <span class="pt-0">Donated ID {{$donatedItem->item->id}}</span><br>
-                        <span class="">{{$donatedItem->item->name}}</span>
+                        <span class="pt-0">Donation ID {{$donatedItem->item->id}}</span><br>
+                        <span>{{$donatedItem->item->name}}</span>
                     </div>
                 </div>
             @empty

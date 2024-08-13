@@ -48,16 +48,15 @@ textarea{
     background-color: black;
     border-radius: 20px 20px 0px 0px;
 }
-
 .item-box{
-    height: 160px;
+    height: 165px;
 }
 .img-item-md{
-    width: 6rem;
-    height: 6rem;
-    border: solid 1px black;
-    border-radius: 20px;
-    padding: 5px;
+    width: 100px;
+    height: 100px;
+    border: solid 1px #000000;
+    border-radius: 16px;
+    padding: 8px;
 }
 
 .no-image{
@@ -98,7 +97,8 @@ text-decoration: none;
 .pagination .active span,
 .pagination span:hover,
 .pagination a:hover,
-.icon:hover{
+.icon:hover,
+.item-username:hover{
 color: black!important;
 }
 

@@ -53,8 +53,7 @@ class ProfileController extends Controller
 
         #3: Save 
         $user->save();
-        return view('users.profile.show')
-        ->with('user', $user);      
+        return redirect()->route('profile.show',Auth::user()->id);      
     }
 
     
