@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-<div class="container">
+<div class="container mt-3">
     <div class="row">
         <div class="col-4">
             <h4 class="grey-text">Direct Message</h4>
@@ -27,9 +27,9 @@
                     <a href="{{ route('directMessage.show', $user->id) }}" class="text-decoration-none">
                         <li class="list-group-item d-flex align-items-center {{ $recipient->id == $user->id ? 'active' : '' }} custom-active-class">
                             @if ($user->avatar)
-                                <img src="{{ $user->avatar }}" class="avatar-sm rounded-circle fs-sm-6">
+                                <img src="{{ $user->avatar }}" class="avatar-sm rounded-circle">
                             @else
-                                <i class="fa-solid fa-circle-user fs-sm-6"></i>
+                                <i class="fa-solid fa-circle-user"></i>
                             @endif
                             <span class="ms-3 fs-6">{{ $user->username }}</span>
 
