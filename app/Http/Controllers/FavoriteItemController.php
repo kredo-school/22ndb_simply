@@ -42,7 +42,7 @@ class FavoriteItemController extends Controller
                         ->where('user_id',$id)
                         ->with('donationItem.item')
                         ->paginate(15);
-
+// dd($favoriteItems);
         return view('users.profile.myitems.favorites', ['favoriteItems' => $favoriteItems]);
     }
 }

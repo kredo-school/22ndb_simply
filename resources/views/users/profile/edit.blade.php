@@ -7,18 +7,18 @@
 @endsection
 
 @section('content')
-<div class="container h2 border">
-    <p class="color-gray-1 border mb-0">Edit Profile</p>
+<div class="container h2 ">
+    <p class="color-gray-1  mb-0">Edit Profile</p>
 
     <form action="{{route('profile.update')}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
 
-        <div class="col-md-8 mx-auto border">
+        <div class="col-md-8 mx-auto ">
             {{-- Left side --}}
-            <div class="row border">
+            <div class="row ">
                 <div class="col-md-6 d-flex align-items-center flex-column my-auto ">
-                    <div class="mb-5 border">
+                    <div class="mb-5 ">
                         @if($user->avatar)
                             <img src="{{$user->avatar}}" alt="{{$user->name}}" class="rounded-circle avatar-lg">
                         @else
@@ -40,7 +40,7 @@
                 
 
                 {{-- Right side --}}
-                <div class="col-md border">
+                <div class="col-md ">
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
                         <textarea name="username" id="username" class="form-control">{{ old('username', $user->username) }}</textarea>

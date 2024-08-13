@@ -27,19 +27,19 @@
                 <div class="col-md-6 d-flex align-items-center flex-column my-auto ">
                     <div class="text-center">
                         <div class="mb-5">
-                            @if($user->avatar)
-                                <img src="{{$user->avatar}}" alt="{{$user->username}}" class="rounded-circle avatar-lg">
+                            @if($item_user->avatar)
+                                <img src="{{$item_user->avatar}}" alt="{{$item_user->username}}" class="rounded-circle avatar-lg">
                             @else
                                 <i class="fa-solid fa-circle-user icon-lg"></i>
                             @endif
                         </div>
                         <div class="col-auto text-start">
-                            <a href="{{ route('directMessage.show', $user->id) }}" class='text-dark text-decoration-none mb-3'>
+                            <a href="{{ route('directMessage.show', $item_user->id) }}" class='text-dark text-decoration-none mb-3'>
                                 <i class="fa-solid fa-envelope me-2 mb-3 fa"></i> Direct message
                             </a><br>
                             {{--If ur the profile owner, can see items link --}}
-                            @if(Auth::user()->id === $user->id) 
-                                <a href="{{route('profile.myitems',['id'=>$user->id])}}" class='text-dark text-decoration-none'>
+                            @if(Auth::user()->id === $item_user->id) 
+                                <a href="{{route('profile.myitems',['id'=>$item_user->id])}}" class='text-dark text-decoration-none'>
                                     <i class="fa-solid fa-hand-holding-heart me-2"></i> My items
                                 </a>
                             @endif
@@ -50,7 +50,7 @@
                 {{-- Right side --}}
                 <div class="col-md">
                     {{--If ur the profile owner, can see edit delete icons --}}
-                    @if(Auth::user()->id === $user->id)
+                    @if(Auth::user()->id === $item_user->id)
                         <div class="d-flex justify-content-end">
                             <a href="{{route('profile.edit')}}" class="btn">
                                 <i class="icon fa-solid fa-pen color-gray-1"></i>
@@ -63,7 +63,7 @@
                             @component('users.components.deletemodal', [
                                 'id' => 'delete-modal',
                                 'title' => 'Delete Account',
-                                'r2' => route('profile.destroy', $user->id)
+                                'r2' => route('profile.destroy', $item_user->id)
                                 ])
                                 @slot('body')
                                     <p class="h5 mb-2">Are you sure you want to delete this account?</p>
@@ -78,21 +78,21 @@
                         <tbody>
                             <tr>
                                 <td>Username</td>
-                                <td>{{$user->username}}</td>
+                                <td>{{$item_user->username}}</td>
                             </tr>
-                        @if(Auth::user()->id === $user->id)
+                        @if(Auth::user()->id === $item_user->id)
                             <tr>
                                 <td>Email</td>
-                                <td>{{$user->email}}</td>
+                                <td>{{$item_user->email}}</td>
                             </tr>
                         @endif
                             <tr>
                                 <td >Address</td>
-                                <td>{{$user->address}}</td>
+                                <td>{{$item_user->address}}</td>
                             </tr>
                             <tr>
                                 <td class>Introduction</td>
-                                <td class="h4">{{$user->introduction}}</td>
+                                <td class="h4">{{$item_user->introduction}}</td>
                             </tr>
                         </tbody>
                     </table>
