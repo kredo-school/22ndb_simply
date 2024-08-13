@@ -23,9 +23,9 @@ class HomepageController extends Controller
 
     public function homepage()
     {
-
-        $categories = Category::all();
+        
         $user = User::findOrFail(Auth::id());
+        $categories = $user->categories;
 
 
         return view('users.homepage', [

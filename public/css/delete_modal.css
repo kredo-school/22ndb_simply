@@ -8,7 +8,8 @@
     font-family: "Poppins", sans-serif;
 */
 
-.delete-modal-title {
+.delete-modal-title,
+.delete-others {
     font-family: "Poppins", sans-serif;
     color: #DA0000;
 }

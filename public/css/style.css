@@ -1,7 +1,8 @@
 *{
-    font-weight: 600;
-    color:black;
+    font-weight: 500;
+    color: #050606;
 }
+
 
 .logo{
     width: 55px !important;
@@ -154,9 +155,8 @@ footer {
 /* navbar before logged */
 nav {
     font-family: 'Poppins', sans-serif !important;
-    font-size: 28px;
+    font-size: 18px;
     text-align: center;
-    margin-top: auto;
 }
 .nav-link {
     color: black !important;
@@ -180,4 +180,8 @@ nav {
 
 .navbar-list a:hover {
     color: #9EA6A6 !important;
+}
+
+.navbar {
+    padding: 0 !important;
 }
