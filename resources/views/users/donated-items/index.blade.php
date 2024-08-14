@@ -9,7 +9,6 @@
 
 <div class="container-fluid" style="width: 950px;">
     <h1 class="title-donation mb-3">Donated Items</h1>
-
     <div class="row row-cols-5 d-flex">
         @foreach ($donationItems as $donationItem)
             <div class="col grid-item">
@@ -17,20 +16,22 @@
                     <a href="{{ route('donated.item.show', $donationItem->id) }}">
                         <img class="image-md-lg" src="{{ $donationItem->item->image }}" alt="{{ $donationItem->item->name }}">
                      </a>
+                     @if(Auth::user()->id !== $donationItem->user->id)
 
                     @if($donationItem->isFavorited())
-                        <form action="{{ route('favorite.destroy', ['donationItem_id' => $donationItem->id]) }}" method="post" class="m-1">
+                        <form action="{{ route('favorite.destroy', ['donationItem_id' => $donationItem->id]) }}" method="post" class="m-0">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="bookmark"><i class="fa-solid fa-bookmark text-dark"></i></button>
                         </form>
                     @else
-                        <form action="{{ route('favorite.store', ['donationItem_id' => $donationItem->id]) }}" method="post" class="m-1">
+                        <form action="{{ route('favorite.store', ['donationItem_id' => $donationItem->id]) }}" method="post" class="m-0">
                             @csrf
                             <button type="submit" class="bookmark"><i class="fa-regular fa-bookmark"></i></button>
                         </form>
                     @endif
-
+                    
+                     @endif
                     <div class="row">
                         <div class="col">
                             <p class="grid-text mb-0 text-start">{{ $donationItem->created_at->format('Y/m/d') }}</p>
@@ -44,11 +45,9 @@
             @endif
         @endforeach
     </div>
-
     <!-- Pagination Controls -->
     <div class="d-flex justify-content-center">
         {{ $donationItems->links('pagination.pagination') }}
     </div>
-
 </div>
 @endsection

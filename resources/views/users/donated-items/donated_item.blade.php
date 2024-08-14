@@ -16,6 +16,7 @@
                             <i class="fa-solid fa-circle-info ps-1"></i>
                             <p class="mb-0 mx-4">Item's information</p>
                             <div>
+                            @if(Auth::user()->id !== $donationItem->user->id)
                                 @if($donationItem->isFavorited())
                             <form action="{{ route('favorite.destroy', ['donationItem_id' => $donationItem->id]) }}" method="post">
                                 @csrf
@@ -27,10 +28,9 @@
                                 @csrf
                                 <button type="submit" class="new-bookmark"><i class="fa-regular fa-bookmark"></i></button>
                             </form>
-                        @endif
+                                 @endif
+                            @endif
                             </div>
-                            
-
                             @if(Auth::user()->id === $donationItem->user->id)
                             <a href="{{ route('donated.item.edit', $donationItem->id) }}" class="btn">
                                 <i class="fa-solid fa-pen gray" ></i>
@@ -55,13 +55,10 @@
                             </p>
                             @endslot
                             @endcomponent
-
-                            @endif
-                           
+                            @endif 
                         </div> 
                     </div>
                 </div>
-
                 <div class="row mt-5">
                     <div class="col-4">
                         <div class="mt-3 mb-3 image-container">

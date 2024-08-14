@@ -3,7 +3,7 @@
   font-size: 12px; 
   text-align: left;
   margin-left: 5px;
-  margin-top: 0
+  margin-top: 0.25rem;
 }
 
 .item-container {
@@ -149,7 +149,7 @@
   cursor: pointer;
   color: black;
   position: absolute;
-  right: 380px;
+  right: 290px;
   font-size: 40px;
   bottom: 5px;
   
