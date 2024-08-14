@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Category;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -51,8 +52,13 @@ class RegisterController extends Controller
     {
         $this->validator($request->all())->validate();
 
-        $this->create($request->all());
+        $user = $this->create($request->all());
 
+        $categories = ['Closet', 'Kitchen', 'Garage'];
+        foreach ($categories as $categoryName) {
+            $category = new Category(['name' => $categoryName]);
+            $user->categories()->save($category);
+        }
         return redirect($this->redirectTo);
     }
 

@@ -36,8 +36,8 @@ Route::get('/homepage', [App\Http\Controllers\HomepageController::class, 'homepa
     Route::delete('users/{id}', [UserController::class, 'destroy'])->name('profile.destroy');
 
 // Myitems
-    Route::get('profile/myitems', function(){
-    return redirect()->route('myitems.favorites');})->name('profile.myitems');
+    Route::get('profile/{id}/myitems', function($id){
+    return redirect()->route('myitems.favorites',['id'=>$id]);})->name('profile.myitems');
 
 // });
 
@@ -76,12 +76,12 @@ Route::get('/donated-items/{id}', [DonationController::class, 'showDonatedItem']
 Route::get('/donated-items/{id}/edit', [DonationController::class, 'edit'])->name('donated.item.edit');
 Route::patch('/donated-items/{id}/update', [DonationController::class, 'update'])->name('donated.item.update');
 Route::delete('donated-items/destroy/{id}', [DonationController::class, 'destroy'])->name('donated.item.destroy');
-Route::get('myitems/donated', [DonationController::class, 'donated'])->name('myitems.donated');
+Route::get('myitems/{id}/donated', [DonationController::class, 'donated'])->name('myitems.donated');
 
 #Favorite
 Route::post('/favorite/{donationItem_id}/store', [FavoriteItemController::class,'store'])->name('favorite.store');
 Route::delete('/favorite/{donationItem_id}/destroy', [FavoriteItemController::class, 'destroy'])->name('favorite.destroy');
-Route::get('myitems/favorites', [FavoriteItemController::class,'favorites'])->name('myitems.favorites');
+Route::get('myitems/{id}/favorites', [FavoriteItemController::class,'favorites'])->name('myitems.favorites');
 
 #Direct-Message
 Route::group(["prefix" => "directMessage", "as" => "directMessage."], function(){

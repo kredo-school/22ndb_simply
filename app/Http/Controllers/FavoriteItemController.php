@@ -37,13 +37,12 @@ class FavoriteItemController extends Controller
     }
 
 //Myitems page (favorite items)
-    public function favorites(){
-        $user = Auth::user();
+    public function favorites($id){
         $favoriteItems = $this->favorite_item
-                        ->where('user_id',$user->id)
+                        ->where('user_id',$id)
                         ->with('donationItem.item')
                         ->paginate(15);
-
+// dd($favoriteItems);
         return view('users.profile.myitems.favorites', ['favoriteItems' => $favoriteItems]);
     }
 }
