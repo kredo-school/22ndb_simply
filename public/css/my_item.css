@@ -206,3 +206,33 @@
     width: 70px;
   }
   
+  @media screen and (max-width: 540px) {
+    /* 480px以下に適用されるCSS（スマホ用） */
+
+
+    .image-container {
+      width: 130px;
+      height: 130px;
+      border-radius: 15px;
+      margin-left: 0 !important;
+    }
+
+
+    .image-md-ss {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+      padding: 7px;
+    
+    }
+
+    
+  .font-big{
+    font-size: 15px;
+    color: #9EA6A6;
+    margin-bottom: 10px;
+  }
+  
+
+  }
