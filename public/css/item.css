@@ -1,13 +1,27 @@
 .icon-wrapper {
     width: 16rem;
     height: 16rem;
-    border-radius: 30px;
+    border-radius: 20px;
     box-sizing: border-box;
 }
 
 .image-icon {
     font-size: 15rem;
     transform: scale(1, 1.15);
+}
+
+div a.add-category-link {
+    color: #9EA6A6;
+    &:hover {
+        color: black;
+    }
+}
+
+div a.edit-category-link {
+    color: #9EA6A6;
+    &:hover {
+        color: black;
+    }
 }
 
 select.form-control:focus,
@@ -24,20 +38,20 @@ input.form-check-input:focus {
 
 .image-wrapper {
     position: relative;
-    width: 260px;
-    height: 260px;
+    width: 16rem;
+    height: 16rem;
     overflow: hidden;
-    border: solid 1px #050606;
-    border-radius: 40px;
+    border: solid 1px black;
+    border-radius: 20px;
     display: inline-block;
 }
 
 .custom-image-size {
-    width: 250px;
-    height: 250px;
+    width: 16rem;
+    height: 16rem;
     object-fit: cover;
-    border-radius: 40px;
-    padding: 5px;
+    border-radius: 20px;
+    padding: 10px;
 }
 
 a.custom-btn,
@@ -54,10 +68,18 @@ input.form-check-input:checked {
 }
 
 input.form-check-input.checkbox-size {
-    width: 25px;
-    height: 25px;
+    width: 2rem;
+    height: 2rem;
 }
 
 p.nowrap {
     white-space: nowrap;
+}
+
+p.text-grey {
+    color: #CDCECE;
+}
+
+p.grey-text {
+    color: #9EA6A6;
 }
