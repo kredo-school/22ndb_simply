@@ -30,8 +30,8 @@
                         {{ __('Here to Register') }}
                         </a>
 
-                        <p class="text-center mt-1" style="font-weight: 600;">
-                            Already have an account?<a class="btn btn-link text-dark" href="{{ route('login') }}" style="font-weight: 600;">
+                        <p class="text-center mt-1 semi-bold">
+                            Already have an account?<a class="btn btn-link text-dark semi-bold" href="{{ route('login') }}">
                             {{ __('Login') }}</a>
                         </p>
                         

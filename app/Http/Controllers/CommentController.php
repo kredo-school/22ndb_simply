@@ -12,12 +12,10 @@ use Illuminate\Support\Facades\Mail;
 class CommentController extends Controller
 {
     private $comment;
-    private $user;
 
-    public function __construct(Comment $comment, User $user)
+    public function __construct(Comment $comment)
     {
         $this->comment = $comment;
-        $this->user = $user;
     }
 
     public function store(Request $request, $donationItem_id){
