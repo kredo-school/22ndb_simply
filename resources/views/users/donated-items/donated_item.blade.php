@@ -31,7 +31,7 @@
                             </div>
                             
 
-                            @if(Auth::user()->id === $user->id) 
+                            @if(Auth::user()->id === $donationItem->user->id)
                             <a href="{{ route('donated.item.edit', $donationItem->id) }}" class="btn">
                                 <i class="fa-solid fa-pen gray" ></i>
                             </a>
@@ -101,6 +101,7 @@
                                     <p>{{ $donationItem->item->name }}</p>
                                 </div>
                             </div>
+                            @if(Auth::user()->id !== $donationItem->user->id)
                             <div class="row">
                                 <div class="col-4 text-start ms-5">
                                     <p class="font-big">Username</p>
@@ -110,6 +111,7 @@
                                     <p class="font-small mb-3">You can see donated user's profile!</p>
                                 </div>
                             </div>
+                            @endif
                             <div class="row">
                                 <div class="col-4 text-start ms-5">
                                     <p class="font-big">Description</p>

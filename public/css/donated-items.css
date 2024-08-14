@@ -149,14 +149,15 @@
   cursor: pointer;
   color: black;
   position: absolute;
-  right: 770px;
+  right: 380px;
   font-size: 40px;
-  top: 465px;
+  bottom: 5px;
   
 }
 .fa-pen {
   font-size: 40px;
   color: #9EA6A6;
+  margin-left: 35px;
 }
 
 .fa-pen:hover{
