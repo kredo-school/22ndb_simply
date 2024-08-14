@@ -2,9 +2,9 @@
 
 @section('items-content')
     <div class="container">
-        <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-5 border">
+        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-5">
             @forelse($donatedItems as $donatedItem)
-                <div class="col d-flex flex-column align-items-center item-box border">
+                <div class="col d-flex flex-column align-items-center item-box">
                     @if($donatedItem->item->image)
                         <a href="{{route('donated.item.show',$donatedItem->id)}}">
                             <img src="{{$donatedItem->item->image}}" alt="{{$donatedItem->item->name}}" class="img-item-md">

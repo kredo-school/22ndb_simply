@@ -6,6 +6,10 @@
 .bordered-table{
     border-collapse: separate;
     border-spacing: 0 30px;
+    width: 100%;
+    max-width: 100%;
+    table-layout: fixed;
+    word-wrap: break-word;
 }
 .bordered-table td{
     border-bottom: 2px solid #9EA6A6!important;
@@ -49,7 +53,7 @@ textarea{
     border-radius: 20px 20px 0px 0px;
 }
 .item-box{
-    height: 165px;
+    min-height: 170px;
 }
 .img-item-md{
     width: 100px;
