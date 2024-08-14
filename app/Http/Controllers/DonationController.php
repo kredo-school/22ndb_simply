@@ -36,7 +36,7 @@ class DonationController extends Controller
 
         $user = $donationItem->user;
     
-        return view('donated-items.donated_item-comment', [ 
+        return view('donated-items.donated_item', [ 
         'donationItem' => $donationItem, 
         'user' => $user,
         ]);

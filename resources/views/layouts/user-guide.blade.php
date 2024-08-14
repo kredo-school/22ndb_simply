@@ -3,108 +3,113 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name') }} | @yield('title')</title>
 
-    <!-- Fonts and CSS -->
+    <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/user-guide.css') }}"> 
     @yield('css')
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
 </head>
 <body class="bg-white">
     <div id="app">
     <nav class="navbar navbar-expand-md navbar-light bg-white">
-            <div class="container">
-                @guest
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="{{ asset('/images/app_logo.png') }}" alt="icon" class="logo">
-                    </a>
-                @else
-                    <a class="navbar-brand" href="{{ url('/homepage') }}">
-                        <img src="{{ asset('/images/app_logo.png') }}" alt="icon" class="logo">
-                    </a>
-                @endguest
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <div class="container">
+            @guest
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    <img src="{{ asset('/images/app_logo.png') }}" alt="icon" class="logo">
+                </a>
+            @else
+                <a class="navbar-brand" href="{{ url('/homepage') }}">
+                    <img src="{{ asset('/images/app_logo.png') }}" alt="icon" class="logo">
+                </a>
+            @endguest
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto  mb-2">
-                        <!-- Authentication Links -->
-                        @guest                               
-                            <li class="nav-item">
-                                <a class="nav-link me-4" href="{{ route('user-guide.register')}}">User Guide</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link me-4" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @else
-                            <li class="nav-item">
-                                <a href="{{ route('item.add') }}" class="nav-link">
-                                    <p class="mt-3 text-dark">+ Add item</p>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Right Side Of Navbar -->
+                <ul class="navbar-nav ms-auto  mb-2">
+                    <!-- Authentication Links -->
+                    @guest                               
+                        <li class="nav-item">
+                            <a class="nav-link me-4" href="{{ route('user-guide.register')}}">User Guide</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link me-4" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                    @else
+                        <li class="nav-item me-4">
+                            <a href="{{ route('item.add') }}" class="nav-link">
+                                + Add item
+                            </a>
+                        </li>
+
+                        <li class="nav-item me-4">
+                            <a href="{{ route('donated.items.index') }}" class="nav-link">
+                                Donation
+                            </a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                @if (Auth::user()->avatar)
+                                    <img src="{{ $user->avatar }}" alt="{{ $user->avatar }}" class="rounded-circle avatar-sm">
+                                @else
+                                    <i class="fa-solid fa-circle-user text-dark icon"></i>
+                                @endif
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-end text-center navbar-list" aria-labelledby="navbarDropdown">
+                                <li><a href="{{ route('profile.show',Auth::user()->id) }}">Profile</a></li>
+
+                                <li><a href="{{ route('user-guide.register')}}">User Guide</a></li>
+
+                                <li><a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
                                 </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="{{ route('donated.items.index') }}" class="nav-link">
-                                    <p class="mt-3 text-dark">Donation</p>
-                                </a>
-                            </li>
-
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    @if (Auth::user()->avatar)
-                                       <img src="#" alt="" class="rounded-circle">
-                                    @else
-                                       <i class="fa-solid fa-circle-user mt-3 text-dark icon"></i>
-                                    @endif
-                                </a>
-
-                                <ul class="dropdown-menu dropdown-menu-end text-center navbar-list" aria-labelledby="navbarDropdown">
-                                    <li><a href="{{ route('profile.show',Auth::user()->id) }}">Profile</a></li>
-
-                                    <li><a href="{{ route('user-guide.register')}}">User Guide</a></li>
-
-                                    <li><a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                    </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                                </form>
+                                </li>
+                            </ul>
+                        </li>
+                    @endguest
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <div class="row">
-                        <div class="col-3 mt-5">
-                            @include('user-guide.partials.sidebar') <!-- User Guide Sidebar -->
-                        </div>
-                        <div class="col-8 content-border mt-4">
-                            @yield('content') <!-- Content specific to each page -->
-                        </div>
-                    </div>
+    <main class="container">
+        <div class="row justify-content-center">
+            <div class="row p-0">
+                <div class="col-xxl-3 mt-5 p-0">
+                    @include('user-guide.partials.sidebar') 
+                </div>
+                <div class="col-xxl-8 content-border mt-4">
+                    @yield('content') 
                 </div>
             </div>
         </div>
+    </main>
     </div>
 
     <footer>

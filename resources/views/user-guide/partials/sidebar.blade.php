@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-<div class="d-none d-md-block">
+<div class="d-none d-xxl-block">
     <table class="border-menu-table">
         <tr>
             <td class="menu-item-t border-bottom {{ request()->routeIs('user-guide.register') ? 'active' : '' }}">
@@ -61,7 +61,7 @@
 </div>
 
 <!-- For small screens, display the sidebar as a dropdown or stacked menu -->
-<div class="d-md-none">
+<div class="d-xxl-none">
     <div class="dropdown">
         <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="sidebarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             Menu
@@ -80,3 +80,4 @@
         </ul>
     </div>
 </div>
+

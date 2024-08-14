@@ -9,13 +9,13 @@
     <div class="row">
         <div class="col">
             <div class="col d-flex flex-column justify-content-center" style="margin-top: 60px; margin-left:100px;">                
-                <p class="mb-4">1. Go to the Add category page.</p>
-                <p class="mb-4">2. Fill in new category name.</p>
+                <p class="mb-5">1. Go to the Add category page.</p>
+                <p class="mb-5">2. Fill in new category name.</p>
                 <p>3. Click the SAVE button.</p>
             </div>
             
             <div>
-                <p class="h4 fw-bold mt-4" style="margin-left:70px; line-height: 1.6;">Also you can edit and <br>delete your categories here!</p>
+                <p class="h4 semi-bold mt-4" style="margin-left:70px; line-height: 1.6;">Also you can edit and <br>delete your categories here!</p>
             </div>
 
         </div>

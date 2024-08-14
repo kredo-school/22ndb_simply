@@ -26,7 +26,7 @@
 </head>
 <body class="bg-white">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white p-0">
+        <nav class="navbar navbar-expand-md navbar-light bg-white">
             <div class="container">
                 @guest
                     <a class="navbar-brand" href="{{ url('/') }}">
@@ -77,20 +77,20 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item mt-1 me-4">
+                            <li class="nav-item me-4">
                                 <a href="{{ route('item.add') }}" class="nav-link">
-                                    <p class="text-dark">+ Add item</p>
+                                    + Add item
                                 </a>
                             </li>
 
-                            <li class="nav-item mt-1 me-4">
+                            <li class="nav-item me-4">
                                 <a href="{{ route('donated.items.index') }}" class="nav-link">
-                                    <p class="text-dark">Donation</p>
+                                    Donation
                                 </a>
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link mt-2" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     @if (Auth::user()->avatar)
                                        <img src="{{ $user->avatar }}" alt="{{ $user->avatar }}" class="rounded-circle avatar-sm">
                                     @else

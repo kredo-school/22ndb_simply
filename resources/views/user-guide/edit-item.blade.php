@@ -9,8 +9,8 @@
     <div class="row">
         <div class="col">
             <div class="col d-flex flex-column justify-content-center" style="margin-top: 60px; margin-left:100px;">                
-                <p class="mb-4">1. Go to the Edit item page from <br>&emsp;each item page.</p>
-                <p class="mb-4">2. Modify your item's information.</p>
+                <p class="mb-5">1. Go to the Edit item page from <br>&emsp;each item page.</p>
+                <p class="mb-5">2. Modify your item's information.</p>
                 <p>3. Click the UPDATE button.</p>
             </div>
 

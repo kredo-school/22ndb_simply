@@ -9,8 +9,8 @@
     <div class="row">
         <div class="col">
             <div class="col d-flex flex-column justify-content-center" style="margin-top: 80px; margin-left:100px;">                
-                <p class="mb-4">1. Go to the <a href="{{ route('login') }}" class="text-dark fw-bold">Login</a> page.</p>
-                <p class="mb-4">2. Fill in username and password.</p>
+                <p class="mb-5">1. Go to the <a href="{{ route('login') }}" class="text-dark">Login</a> page.</p>
+                <p class="mb-5">2. Fill in username and password.</p>
                 <p>3. Click the LOGIN button.</p>
             </div>
         </div>

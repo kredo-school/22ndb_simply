@@ -3,7 +3,7 @@
         <div class="modal-content p-4 d-flex align-items-center">
             <div class="modal-header h4 border-0">
                 <div class="modal-title text-danger">
-                    <i class="fa-solid fa-trash-can icon-md me-3 text-danger align-middle"></i>{{$title}}
+                    <i class="fa-solid fa-trash-can me-3 text-danger align-middle"></i>{{$title}}
                 </div>
             </div>
             {{-- Body --}}

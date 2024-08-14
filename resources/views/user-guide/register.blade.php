@@ -9,13 +9,13 @@
     <div class="row">
         <div class="col">
             <div class="d-flex flex-column justify-content-center" style="margin-top: 80px; margin-left:100px;">                
-                <p class="mb-4">1. Go to the <a href="{{ route('register') }}" class="text-dark fw-bold">Register</a> page.</p>
-                <p class="mb-4">2. Fill in your information.</p>
+                <p class="mb-5">1. Go to the <a href="{{ route('register') }}" class="text-dark">Register</a> page.</p>
+                <p class="mb-5">2. Fill in your information.</p>
                 <p>3. Click the REGISTER button.</p>
             </div>
             
             <div>
-                <p class="h4 fw-bold mt-4" style="margin-left:50px;">Now you are ready to login.</p>
+                <p class="h4 semi-bold mt-4" style="margin-left:50px;">Now you are ready to login.</p>
             </div>
 
         </div>

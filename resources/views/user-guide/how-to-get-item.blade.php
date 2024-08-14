@@ -8,11 +8,11 @@
 <div class="conatiner">
     <div class="row">
         <div class="col">
-            <div class="col d-flex flex-column justify-content-center" style="margin-top: 20px; margin-left:100px;">                
-                <p>1. Go to the Donation page</p>
-                <p>2. You can find other user's donated <br>&emsp;items here.</p>
-                <p>3. Click username to jump to the <br>&emsp;owner's profile page.</p>
-                <p>4. Click the Envelope icon.</p>
+            <div class="col d-flex flex-column justify-content-center" style="margin-top: 40px; margin-left:100px;">                
+                <p class="mb-3">1. Go to the Donation page</p>
+                <p class="mb-3">2. You can find other user's donated <br>&emsp;items here.</p>
+                <p class="mb-3">3. Click username to jump to the <br>&emsp;owner's profile page.</p>
+                <p class="mb-3">4. Click the Envelope icon.</p>
                 <p class="mb-2">5. Ask your questions or arrange  how <br>&emsp;to give/get the item through direct <br>&emsp;message.</p>
                 <p class="text-danger" style="line-height: 1.3;">&emsp;Please include "Donation ID" <br>&emsp;when sending a message to the <br>&emsp;owner for the first time.</p>
             </div>

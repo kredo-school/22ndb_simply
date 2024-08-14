@@ -1,4 +1,6 @@
-
+.semi-bold{
+    font-weight: 600 !important;
+}
 .menu-item {
     margin: 10px 0;
     padding: 5px;
@@ -58,7 +60,7 @@
 .content-border {
     border-radius: 15px;
     border: solid 2px black !important;
-    height: 470px;
+    height: 530px;
     margin-left: 100px;
 }
 

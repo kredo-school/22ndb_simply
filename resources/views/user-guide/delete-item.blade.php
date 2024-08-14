@@ -9,19 +9,19 @@
     <div class="row">
         <div class="col">
             <div class="col d-flex flex-column justify-content-center" style="margin-top: 50px; margin-left:80px;">                
-                <p>1. Click the Trash can icon from each <br>&emsp;item page.</p>
-                <p>2. Click the DELETE button.</p>
+                <p class="mb-5">1. Click the Trash can icon from each <br>&emsp;item page.</p>
+                <p class="mb-5">2. Click the DELETE button.</p>
             </div>
             
             <div>
-                <p class="h4 fw-bold mt-4 text-danger" style="margin-left:65px; line-height: 1.6;">
+                <p class="h4 semi-bold mt-4 text-danger" style="margin-left:65px; line-height: 1.6;">
                     If you delete the item, it will be deleted permanently. <br>Be careful !
                 </p>
             </div>
 
         </div>
         <div class="col d-flex align-items-center">
-            <img src="{{ asset('images/user-guide/delete-item.png') }}" alt="Delete Item Image" class="image-border mx-auto mt-2 p-2">
+            <img src="{{ asset('images/user-guide/delete-item.png') }}" alt="Delete Item Image" class="image-border mx-auto p-2">
         </div>
     </div>
 </div>
