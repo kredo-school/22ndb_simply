@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('direct_messages', function (Blueprint $table) {
             $table->id();
             $table->string('text');
+            $table->string('image')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('destination_user_id');
             $table->boolean('seen')->default(false);
