@@ -52,13 +52,17 @@
                     </div>
                 </div>
             </div>
-            <div class="modal-footer border-0 d-flex justify-content-center mb-5">
-                <button type="button" class="btn btn-outline-dark w-25 button-modal" data-bs-dismiss="modal">
+            <div class="row mb-5">
+                <div class="col">
+                    <button type="button" class="btn btn-outline-dark button-modal btn-md w-100" data-bs-dismiss="modal">
                     Cancel
-                </button>
-                <button type="submit" class="btn btn-dark w-25 button-modal">
-                    Send
-                </button>
+                    </button>
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-dark button-modal btn-md w-100">
+                        Send
+                    </button> 
+                </div>
             </div>
         </div>
     </div>

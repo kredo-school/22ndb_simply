@@ -35,9 +35,9 @@ class DonationController extends Controller
         ->findOrFail($id);
 
         $user = $donationItem->user;
-
-        return view('donated-items.donated_item', [
-        'donationItem' => $donationItem,
+    
+        return view('donated-items.donated_item', [ 
+        'donationItem' => $donationItem, 
         'user' => $user,
         ]);
 
