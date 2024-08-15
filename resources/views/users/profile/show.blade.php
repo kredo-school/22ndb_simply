@@ -10,18 +10,6 @@
 <div class="container h2 ">
     <p class='color-gray-1'>Profile</p>
     <div class="col-md-8 mx-auto">
-    {{-- Frash message --}}
-        @if(session('success'))
-            <div class="alert alert-dark">
-                {{session('success')}}
-            </div>
-        @endif
-
-        @if(session('error'))
-            <div class="alert alert-danger">
-                {{session('error')}}
-            </div>
-        @endif
         <div class="row">
             {{-- Left side --}}
                 <div class="col-md-5 d-flex align-items-center flex-column my-auto mx-auto">
