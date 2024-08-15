@@ -1,19 +1,12 @@
-ul a li.list-group-item.custom-active-class {
+ul.list-group li.list-group-item.active {
     background-color: black;
-    border-color: none;
-}
-
-ul a li.list-group-item.custom-active-class i,
-ul a li.list-group-item.custom-active-class span {
     color: white;
+    border: none;
 }
 
-ul a li.list-group-item {
-    color: black;
-    &:hover {
-        background-color: grey;
-        color: white;
-    }
+ul.list-group li.list-group-item.active i,
+ul.list-group li.list-group-item.active span {
+    color: white;
 }
 
 .scrollable {
@@ -26,7 +19,8 @@ div.input-group {
     position: sticky;
     bottom: 0;
     background-color: white;
-    padding: 1rem;
+    padding: 10px;
+    padding-inline: 3rem;
     z-index: 1;
     width: 100%;
 }
@@ -47,19 +41,20 @@ div.input-group {
     border-radius: 15px;
 }
 
-p.text-grey {
-    color: #CDCECE;
-}
-
-.grey-text {
-    color: #9EA6A6;
-}
-
 span.bg-grey {
     background-color: #9EA6A6;
 }
 
-.modal-body img {
-    max-width: 100%;
-    height: auto;
+div img.img-fluid {
+    max-height: 16rem;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+div input.image {
+    display: none;
+}
+
+label i {
+    cursor: pointer;
 }
