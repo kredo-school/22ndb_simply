@@ -90,6 +90,78 @@
     height: auto;
 }
 
+.category-spacing{
+    margin-top: 60px; 
+    margin-left:120px;
+}
+
+.register-spacing{
+    margin-top: 80px; 
+    margin-left:100px;
+}
+
+.login-spacing{
+    margin-top: 80px; 
+    margin-left:100px;
+}
+
+.reset-spacing{
+    margin-top: 50px; 
+    margin-left: 60px;
+}
+
+.register-item-spacing{
+    margin-top: 70px; 
+    margin-left:130px;
+}
+
+.edit-spacing{
+    margin-top: 60px; 
+    margin-left:120px;
+}
+
+.delete-spacing{
+    margin-top: 80px; 
+    margin-left: 100px;
+}
+
+.get-item-spacing{
+    margin-top: 40px; 
+    margin-left:120px;
+}
+
+.favorite-item-spacing{
+    margin-top: 50px; 
+    margin-left:110px;
+}
+
+
+.ms-54{
+    margin-left: 54px;
+}
+
+.ms-70{
+    margin-left: 70px;
+}
+
+.ms-80{
+    margin-left: 80px;
+}
+
+.ms-100{
+    margin-left: 100px;
+}
+
+.line-height{
+    line-height: 1.6 !important;
+}
+
+.line-height2{
+    line-height: 1.3 !important;
+}
+
+
+
 /* responsive */
 
 @media (max-width: 575.98px) {

@@ -8,7 +8,7 @@
 <div class="conatiner">
     <div class="row">
         <div class="col">
-            <div class="col d-flex flex-column justify-content-center" style="margin-top: 40px; margin-left:40px;">                
+            <div class="col d-flex flex-column justify-content-center reset-spacing">                
                 <p>1. Click the  “<a href="{{ route('password.request') }}" class="text-dark">Forgot Password?</a>” in Login page.</p>
                 <p>2. Enter the registered email address and click the Send Reset Link button.</p>
                 <p>3. Check your emailbox. The email is from Simply (noreply@simply.com).</p>
@@ -18,7 +18,7 @@
             </div>
             
             <div>
-                <p class="h4 semi-bold mt-3" style="margin-left:80px;">Now try to login again!</p>
+                <p class="h4 semi-bold mt-3 ms-100">Now try to login again!</p>
             </div>
 
         </div>

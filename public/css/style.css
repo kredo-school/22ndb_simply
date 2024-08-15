@@ -1,3 +1,4 @@
+
 *{
     font-weight: 500;
     color: black;
@@ -151,7 +152,6 @@ label{
 /* footer before logged*/
 
 footer {
-    font-family: 'Poppins', sans-serif !important;
     background-color: #7A95B4;
     height: 150px;
     line-height: 130px;
@@ -174,7 +174,6 @@ footer {
 
 /* navbar before logged */
 nav {
-    font-family: 'Poppins', sans-serif !important;
     font-size: 18px;
     text-align: center;
 }
@@ -203,9 +202,7 @@ nav {
     color: #9EA6A6 !important;
 }
 
-/* .navbar {
-    padding: 0 !important;
-} */
+
 /* responsive */
 
 @media (max-width: 575.98px) { 

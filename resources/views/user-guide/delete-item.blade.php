@@ -8,13 +8,13 @@
 <div class="conatiner">
     <div class="row">
         <div class="col">
-            <div class="col d-flex flex-column justify-content-center" style="margin-top: 50px; margin-left:80px;">                
+            <div class="col d-flex flex-column justify-content-center delete-spacing">                
                 <p class="mb-5">1. Click the Trash can icon from each <br>&emsp;item page.</p>
                 <p class="mb-5">2. Click the DELETE button.</p>
             </div>
             
             <div>
-                <p class="h4 semi-bold mt-4 text-danger" style="margin-left:65px; line-height: 1.6;">
+                <p class="h4 semi-bold text-danger line-height ms-80">
                     If you delete the item, it will be deleted permanently. <br>Be careful !
                 </p>
             </div>

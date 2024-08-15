@@ -8,7 +8,7 @@
 <div class="conatiner">
     <div class="row">
         <div class="col">
-            <div class="col d-flex flex-column justify-content-center" style="margin-top: 50px; margin-left:80px;">                
+            <div class="col d-flex flex-column justify-content-center favorite-item-spacing">                
                 <p class="mb-4">1. Go to the Donation page.</p>
                 <p class="mb-4">2. Click the Bookmark icon.</p>
                 <p class="mb-1">3. The item will be added to your <br>&emsp;favorite list.</p>
@@ -16,7 +16,7 @@
             </div>
             
             <div>
-                <p class="h4 semi-bold mt-3" style="margin-left:70px; line-height: 1.6;">You can see your favorite items on your profile page.</p>
+                <p class="h4 semi-bold mt-3 line-height ms-70">You can see your favorite items on your profile page.</p>
             </div>
 
         </div>
