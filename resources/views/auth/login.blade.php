@@ -51,7 +51,7 @@
 
                         <div class="row mb-0 mt-4">
                             @if (Route::has('password.request'))
-                                <a class="btn btn-link color-gray-1" href="{{ route('password.request') }}">
+                                <a class="btn btn-link color-gray-1 semi-bold" href="{{ route('password.request') }}">
                                     {{ __('Forgot Password?') }}
                                 </a>
                             @endif
@@ -59,9 +59,9 @@
 
                         <div class="row mb-0">
                             @if (Route::has('register'))
-                                <p class="text-center color-gray-1">
+                                <p class="text-center color-gray-1 semi-bold">
                                     Don't have an account?
-                                    <a class="btn btn-link color-gray-1" href="{{ route('register') }}">
+                                    <a class="btn btn-link color-gray-1 semi-bold" href="{{ route('register') }}">
                                    {{ __('Register') }}</a>
                                 </p>
                             @endif

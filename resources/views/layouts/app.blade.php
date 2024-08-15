@@ -10,15 +10,15 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     @yield('css')
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/font.css') }}"> 
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -32,9 +32,15 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/homepage') }}">
-                    <img src="{{ asset('/images/app_logo.png') }}" alt="icon" class="logo">
-                </a>
+                @guest
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        <img src="{{ asset('/images/app_logo.png') }}" alt="icon" class="logo">
+                    </a>
+                @else
+                    <a class="navbar-brand" href="{{ url('/homepage') }}">
+                        <img src="{{ asset('/images/app_logo.png') }}" alt="icon" class="logo">
+                    </a>
+                @endguest
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -51,21 +57,21 @@
                         @guest
                             @if (Route::currentRouteName() == 'login')
                                 <li class="nav-item">
-                                    <a class="nav-link me-4" href="#">User Guide</a>
+                                    <a class="nav-link me-4" href="{{ route('user-guide.register')}}">User Guide</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @elseif (Route::currentRouteName() == 'register' || Route::currentRouteName() == 'password.request' || Route::currentRouteName() == 'password.reset' || Route::currentRouteName() == 'password.reset.success')
                                 <li class="nav-item">
-                                    <a class="nav-link me-4" href="#">User Guide</a>
+                                    <a class="nav-link me-4" href="{{ route('user-guide.register')}}">User Guide</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
-                            @elseif (Route::currentRouteName() == 'contact' || Route::currentRouteName() == 'index')
+                            @elseif (Route::currentRouteName() == 'contact' || Route::currentRouteName() == 'index' || Route::currentRouteName() == 'guide1')
                                 <li class="nav-item">
-                                    <a class="nav-link me-4" href="#">User Guide</a>
+                                    <a class="nav-link me-4" href="{{ route('user-guide.register')}}">User Guide</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link me-4" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -75,20 +81,20 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item mt-1 me-4">
+                            <li class="nav-item me-4">
                                 <a href="{{ route('item.add') }}" class="nav-link">
-                                    <p class="text-dark">+ Add item</p>
+                                    + Add item
                                 </a>
                             </li>
 
-                            <li class="nav-item mt-1 me-4">
+                            <li class="nav-item me-4">
                                 <a href="{{ route('donated.items.index') }}" class="nav-link">
-                                    <p class="text-dark">Donation</p>
+                                    Donation
                                 </a>
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link mt-2" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     @if (Auth::user()->avatar)
                                        <img src="{{ $user->avatar }}" alt="{{ $user->avatar }}" class="rounded-circle avatar-sm">
                                     @else
@@ -99,7 +105,7 @@
                                 <ul class="dropdown-menu dropdown-menu-end text-center navbar-list" aria-labelledby="navbarDropdown">
                                     <li><a href="{{ route('profile.show',Auth::user()->id) }}">Profile</a></li>
 
-                                    <li><a href="#">User Guide</a></li>
+                                    <li><a href="{{ route('user-guide.register')}}">User Guide</a></li>
 
                                     <li><a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}

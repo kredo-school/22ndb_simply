@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -12,7 +11,6 @@ use Illuminate\Support\Facades\Auth;
 class DonationItem extends Model
 {
     use HasFactory;
-    use SoftDeletes;
 
     protected $fillable = ['user_id', 'item_id'];
 
@@ -36,4 +34,9 @@ class DonationItem extends Model
     {
         return $this->favorites()->where('user_id', Auth::user()->id)->exists();
     }
+
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
+
 }

@@ -24,9 +24,9 @@
                         <i class="fa-solid fa-image image-icon image-fluid"></i>
                     @endif
                 </div>
-                <input type="file" name="image" id="image" class="form-control mt-3 justify-content-center" style="width: 15rem;" aria-describedby="image-info">
+                <input type="file" name="image" id="image" class="form-control mt-3 file-width" aria-describedby="image-info">
                 <div id="image-info" class="form-text">
-                    <p class="text-center text-grey">
+                    <p class="text-center color-gray-2">
                         Acceptable formats: jpeg, jpg, png, gif only.
                     <br>
                         Maximum file size is 1048kb.
@@ -100,7 +100,7 @@
                         <div class="form-group mt-3 d-flex align-items-center">
                             <input type="checkbox" class="form-check-input checkbox-size" name="donation" id="donation" {{ $item->donation ? "checked" : "" }}>
                         </div>
-                        <p class="grey-text mt-2 nowrap">
+                        <p class="color-gray-1 mt-2 nowrap">
                             If you want to donate your item, please check it! <br>
                             You can see your checked item at Donation page.
                         </p>
