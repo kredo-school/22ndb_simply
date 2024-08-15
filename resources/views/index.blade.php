@@ -6,11 +6,14 @@
 
 <link href="{{ asset('css/index.css') }}" rel="stylesheet">
 {{-- Flash message for delete acocunt --}}
-@if(session('message'))
-    <div class="alart alart-success text-primary text-center h3">
-        {{session('message')}}
-    </div>
-@endif
+<script>
+    @if (session('message'))
+        $(function () {
+                toastr.success('{{ session('message') }}');
+        });
+    @endif
+</script>
+
 
 <div class="container">
     <div class="row justify-content-center">

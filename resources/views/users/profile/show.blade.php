@@ -13,7 +13,6 @@
         <div class="row">
             {{-- Left side --}}
                 <div class="col-md-5 d-flex align-items-center flex-column my-auto mx-auto">
-                    {{-- <div class="text-center"> --}}
                         <div class="mb-5">
                             @if($item_user->avatar)
                                 <img src="{{$item_user->avatar}}" alt="{{$item_user->username}}" class="rounded-circle avatar-lg">
@@ -32,7 +31,6 @@
                                 </a>
                             @endif
                         </div>
-                    {{-- </div> --}}
                 </div>
 
                 {{-- Right side --}}
