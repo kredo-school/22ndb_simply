@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DonatedItemController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProfileController;
@@ -81,7 +82,25 @@ Route::get('myitems/{id}/donated', [DonationController::class, 'donated'])->name
 #Favorite
 Route::post('/favorite/{donationItem_id}/store', [FavoriteItemController::class,'store'])->name('favorite.store');
 Route::delete('/favorite/{donationItem_id}/destroy', [FavoriteItemController::class, 'destroy'])->name('favorite.destroy');
-Route::get('myitems/{id}/favorites', [FavoriteItemController::class,'favorites'])->name('myitems.favorites');
+
+#User Guide
+Route::prefix('user-guide')->group(function () {
+    Route::view('/register', 'user-guide.register')->name('user-guide.register');
+    Route::view('/login', 'user-guide.login')->name('user-guide.login');
+    Route::view('/password-reset', 'user-guide.password-reset')->name('user-guide.password-reset');
+    Route::view('/register-item', 'user-guide.register-item')->name('user-guide.register-item');
+    Route::view('/add-category', 'user-guide.add-category')->name('user-guide.add-category');
+    Route::view('/donate-item', 'user-guide.donate-item')->name('user-guide.donate-item');
+    Route::view('/edit-item', 'user-guide.edit-item')->name('user-guide.edit-item');
+    Route::view('/delete-item', 'user-guide.delete-item')->name('user-guide.delete-item');
+    Route::view('/how-to-get-items', 'user-guide.how-to-get-item')->name('user-guide.how-to-get-item');
+    Route::view('/favorite-item', 'user-guide.favorite-item')->name('user-guide.favorite-item');
+});
+Route::get('myitems/favorites', [FavoriteItemController::class,'favorites'])->name('myitems.favorites');
+
+#COMMENT
+Route::post('/comment/{donationItem_id}/store', [CommentController::class, 'store'])->name('comment.store');
+Route::delete('/comment/{id}/destroy', [CommentController::class, 'destroy'])->name('comment.destroy');
 
 #Direct-Message
 Route::group(["prefix" => "directMessage", "as" => "directMessage."], function(){

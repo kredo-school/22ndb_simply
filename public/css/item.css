@@ -10,6 +10,10 @@
     transform: scale(1, 1.15);
 }
 
+input.file-width {
+    width: 15rem;
+}
+
 div a.add-category-link {
     color: #9EA6A6;
     &:hover {
@@ -68,18 +72,10 @@ input.form-check-input:checked {
 }
 
 input.form-check-input.checkbox-size {
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 p.nowrap {
     white-space: nowrap;
-}
-
-p.text-grey {
-    color: #CDCECE;
-}
-
-p.grey-text {
-    color: #9EA6A6;
 }

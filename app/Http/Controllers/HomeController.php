@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except('contact', 'resetSuccess','index');
+        $this->middleware('auth')->except('contact', 'resetSuccess','index','guide1');
     }
 
     public function index(){
@@ -24,6 +24,7 @@ class HomeController extends Controller
     {
         return view('auth.passwords.password_reset_success');
     }
+
 
 }
 

@@ -1,6 +1,7 @@
+
 *{
     font-weight: 500;
-    color: #050606;
+    color: black;
 }
 
 
@@ -20,13 +21,22 @@ body {
     min-height: 100vh;
 }
 
+label{
+    font-weight: 600;
+}
+
 .title{
+    margin-top: 20px;
     font-size: 40px !important;
-    font-weight: 900 !important;
+    font-weight: 600 !important;
 }
 
 
 /* text color */
+.letter-color{
+    color: black;
+}
+
 .muted-color{
     color: #D9D9D9;
 }
@@ -43,6 +53,15 @@ body {
     font-size: 1rem;
 }
 
+/* font-weight */
+.semi-bold{
+    font-weight: 600 !important;
+}
+
+.bold{
+    font-weight: 700 !important;
+}
+
 
 /* icon */
 .icon-sm{
@@ -57,6 +76,12 @@ body {
 
 
 /* avatar */
+.avatar-xs {
+    width: 1rem;
+    height: 1rem;
+    object-fit: cover;
+}
+
 .avatar-sm{
     width: 2rem;
     height: 2rem;
@@ -111,6 +136,7 @@ body {
 .button{
     letter-spacing: 3px;
     border-radius: 40px !important;
+    font-weight: 700;
 }
 
 .button2{
@@ -132,14 +158,14 @@ body {
 /* footer before logged*/
 
 footer {
-    font-family: 'Poppins', sans-serif !important;
     background-color: #7A95B4;
     height: 150px;
     line-height: 130px;
     text-align: right;
     padding: 20px;
     background: linear-gradient(to bottom, #ffffff, #7A95B4);
-    font-size: 30px;
+    font-size: 18px;
+    
 }
 
 .footer-link:hover {
@@ -154,14 +180,14 @@ footer {
 
 /* navbar before logged */
 nav {
-    font-family: 'Poppins', sans-serif !important;
     font-size: 18px;
     text-align: center;
 }
-.nav-link {
+.navbar-nav .nav-link {
     color: black !important;
+    font-weight: 500 !important;
 }
-.nav-link:hover {
+.navbar-nav .nav-link:hover {
     color: #9EA6A6 !important;
 }
 
@@ -182,6 +208,49 @@ nav {
     color: #9EA6A6 !important;
 }
 
-.navbar {
-    padding: 0 !important;
+.nav-item p:hover {
+    color: #9EA6A6 !important;
 }
+
+
+/* responsive */
+
+@media (max-width: 575.98px) { 
+
+    .navbar-nav {
+        background-color: black;
+        width: 30%;
+        font-size: 16px !important;
+    }
+    .navbar-nav .nav-link {
+        color: white !important; 
+        text-align: center;
+        margin: 0 !important;
+    }
+    
+    .navbar-nav .nav-link:hover {
+        color: #9EA6A6 !important; 
+    }
+
+}
+
+@media (max-width: 767.98px) { 
+
+    .navbar-nav {
+        background-color: black;
+        width: 30%;
+        font-size: 16px !important;
+    }
+    .navbar-nav .nav-link {
+        color: white !important; 
+        text-align: center;
+        margin: 0 !important;
+    }
+    
+    .navbar-nav .nav-link:hover {
+        color: #9EA6A6 !important; 
+    }
+
+}
+
+

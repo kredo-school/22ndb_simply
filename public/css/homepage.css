@@ -12,10 +12,14 @@ body {
     
 }
 
+.container-big {
+    margin-left: 160px;
+}
+
 .container-box {
     width: 100%;
     height: 600px;
-    max-width: 1100px;
+    max-width: 1430px;
     overflow: scroll;
 }
 
@@ -71,12 +75,6 @@ body {
     width: 740px;
 }
 
-.no-otherItem-box {
-    border: solid 1px black;
-    height: 150px;
-    width: 950px;
-}
-
 .item-box {
     border: solid 1px black;
     width: 150px;
@@ -129,5 +127,113 @@ a:hover {
 }
 
 .fa-trash-can:hover {
-    color:#DA0000;
+    color:red;
+}
+
+
+@media screen and (max-width: 540px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
+
+    .pagename {
+        font-size: 18px !important;
+    }
+
+    .home {
+        margin-left: 0 !important;
+    }
+
+    .container-box {
+        width: 100%;
+        height: 480px;
+        overflow: scroll;
+    }
+
+    .container-big {
+        width: 100%;
+        margin-left: 10px !important;
+        padding-left: 0 !important;
+    }
+
+    .category-box {
+        width: 100px;
+        height: 100px;
+        margin-left: 10px !important;
+        margin-top: 0 !important;
+        margin-right: 35px !important;
+    }
+
+    .no-item-box {
+        border: solid 1px black;
+        height: 100px;
+        width: 640px;
+    }
+
+
+    .item-box {
+        border: solid 1px black;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px !important;
+    }
+
+    .category-name {
+        font-size: 25px;
+    }
+
+    .icon-container {
+        display: flex;
+        justify-content: center; 
+    }
+    
+    .icon {
+        font-size: 20px;
+    }
+    
+    .img-item {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    .number-item {
+        font-size: 15px;
+    }
+
+    .add-item {
+        font-size: 25px;
+   }
+
+   .see-all {
+        font-size: 25px;
+        margin: 0 !important;
+        position: relative;
+        top: -20px;
+    }
+
+    .category-btn {
+        width: 100px;
+        height: 100px;
+        font-size: 15px;
+    }
+
+    .item-btn {
+        width: 360px;
+        height: 100px;
+        font-size: 15px;
+        line-height: 100px;
+        text-align: center;
+        margin-left: 30px !important;
+
+    }
+
+    .item-box:nth-of-type(n+5) {
+        display: none;
+    }
+
+
 }

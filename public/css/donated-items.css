@@ -171,7 +171,7 @@
 
 .scrollable{
   overflow-y: auto;
-  max-height: 400px;
+  max-height: 350px;
 }
 
 .info-icon{
@@ -233,6 +233,34 @@
   display: block;
 }
 
-/* form {
-  display: inline-block;
-} */
+
+/* comment */
+.custom-hr{
+  border: none;
+  border-top: 3px solid black;
+}
+
+.icon-xsmall{
+  width: 1.5rem;
+  height: auto;
+}
+
+.comment-scrollable {
+  max-height: 100px; 
+  overflow-y: auto;
+}
+
+.comment-container {
+  display: flex;
+  align-items: center; 
+  gap: 10px; 
+}
+
+.comment-username:hover {
+  color: #9EA6A6 !important;
+}
+
+
+.fa-trash-can:hover {
+  color:#DA0000;
+}
