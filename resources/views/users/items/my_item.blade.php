@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="container-fluid d-flex justify-content-center align-items-center mt-4">
-    <div class="row justify-content-center row-box">
+    <div class="row justify-content-center w-100">
         <div class="col-9">
             <div class="mt-3 text-center">
                 <div class="row h1 align-items-center">
@@ -45,7 +45,7 @@
                     </div>
                     <div class="col-8 h5 my-auto scrollable">
                         <div class="mt-3 mb-3">
-                            <div class="row text-row">
+                            <div class="row">
                                 <div class="col-4 text-start ms-5">
                                     <p class="font-big">Registered Date</p>
                                 </div>
@@ -53,7 +53,7 @@
                                     <p>{{ $item->created_at->format('Y/m/d') }}</p>
                                 </div>
                             </div>
-                            <div class="row text-row">
+                            <div class="row">
                                 <div class="col-4 text-start ms-5">
                                     <p class="font-big">Category</p>
                                 </div>
@@ -61,7 +61,7 @@
                                     <p>{{ $item->category->name }}</p>
                                 </div>
                             </div>
-                            <div class="row text-row">
+                            <div class="row">
                                 <div class="col-4 text-start ms-5">
                                     <p class="font-big">Item Name</p>
                                 </div>
@@ -69,7 +69,7 @@
                                     <p>{{ $item->name }}</p>
                                 </div>
                             </div>
-                            <div class="row text-row">
+                            <div class="row">
                                 <div class="col-4 text-start ms-5">
                                     <p class="font-big">Description</p>
                                 </div>
