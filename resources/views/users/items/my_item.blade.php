@@ -79,7 +79,7 @@
                                 </div>
                                 @endif
                             </div>
-                            <div class="row">
+                            <div class="row text-row">
                                 <div class="col-4 text-start ms-5">
                                     <p class="font-big">Donation</p>
                                 </div>
@@ -88,7 +88,7 @@
                                     <i class="fa-regular fa-square-check"></i>
                                 </div>
 
-                                <div class="row mt-3">
+                                <div class="row mt-3 text-row">
                                     <div class="col-4 text-start ms-5">
                                         <p class="font-big">Donation ID</p>
                                     </div>
