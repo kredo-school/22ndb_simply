@@ -104,24 +104,20 @@
 
 
 .image-container {
-  position: relative;
-  width: 100%;
-  padding-top: 100%;
+  width: 20rem;
+  height: 20rem;
   overflow: hidden;
   border: solid 1px black;
   border-radius: 40px;
+  
 }
 
 .image-md-ss {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 40px;
-  padding: 10px;
-
+  padding: 6%;
 }
 
 
@@ -137,21 +133,21 @@
   color: #9EA6A6;
 }
 
-.title-container{
+/* .title-container{
   position: relative;
   width: 100%; 
-}
+} */
 
 .new-bookmark{
-  text-align: right;
+  /* text-align: right; */
   background: none;
   border: none;
   cursor: pointer;
   color: black;
-  position: absolute;
-  right: 290px;
+  /* position: absolute; */
+  /* right: 290px; */
   font-size: 40px;
-  bottom: 5px;
+  /* bottom: 5px; */
   
 }
 .fa-pen {

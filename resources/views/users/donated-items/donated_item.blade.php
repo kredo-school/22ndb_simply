@@ -8,25 +8,25 @@
 @section('content')
 <div class="container-fluid d-flex justify-content-center align-items-center mt-4">
     <div class="row justify-content-center w-100">
-        <div class="col-9">
+        <div class="col-md-8 col-8">
             <div class="mt-3 text-center">
-                <div class="row h1 align-items-center">
+                <div class="row  align-items-center">
                     <div class="col">
-                        <div class="d-flex justify-content-center align-items-center title-container">
+                        <div class="d-flex justify-content-center align-items-center h1 mt-3 text-center">
                             <i class="fa-solid fa-circle-info ps-1"></i>
                             <p class="mb-0 mx-4">Item's information</p>
                             <div>
                             @if(Auth::user()->id !== $donationItem->user->id)
                                 @if($donationItem->isFavorited())
-                            <form action="{{ route('favorite.destroy', ['donationItem_id' => $donationItem->id]) }}" method="post">
+                            <form action="{{ route('favorite.destroy', ['donationItem_id' => $donationItem->id]) }}" method="post" class="mb-0">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="new-bookmark"><i class="fa-solid fa-bookmark text-dark"></i></button>
+                                <button type="submit" class="new-bookmark ms-3"><i class="fa-solid fa-bookmark text-dark"></i></button>
                             </form>
                         @else
-                            <form action="{{ route('favorite.store', ['donationItem_id' => $donationItem->id]) }}" method="post">
+                            <form action="{{ route('favorite.store', ['donationItem_id' => $donationItem->id]) }}" method="post" class="mb-0">
                                 @csrf
-                                <button type="submit" class="new-bookmark"><i class="fa-regular fa-bookmark"></i></button>
+                                <button type="submit" class="new-bookmark ms-3"><i class="fa-regular fa-bookmark"></i></button>
                             </form>
                                  @endif
                             @endif
@@ -59,13 +59,13 @@
                         </div> 
                     </div>
                 </div>
-                <div class="row mt-5">
+                <div class="row mt-5 d-flex justify-content-center">
                     <div class="col-4">
-                        <div class="mt-3 mb-3 image-container">
+                        <div class="mt-3 mb-3 image-container d-flex justify-content-center align-items-center">
                             <img class="image-md-ss" src="{{ $donationItem->item->image }}" alt="{{ $donationItem->item->name }}"/>
                         </div>
                     </div>
-                    <div class="col-8 h5 my-auto scrollable">
+                    <div class="col-8 h5 scrollable">
                         <div class="mt-3 mb-3">
                             <div class="row">
                                 <div class="col-4 text-start ms-5">
