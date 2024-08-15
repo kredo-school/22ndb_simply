@@ -188,6 +188,11 @@ nav {
     color: #9EA6A6 !important;
 }
 
-.navbar {
-    padding: 0 !important;
+.nav-item p:hover {
+    color: #9EA6A6 !important;
 }
+
+.navbar {
+    padding-top: 1px !important;
+}
+
