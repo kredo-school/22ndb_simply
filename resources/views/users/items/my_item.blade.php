@@ -11,9 +11,9 @@
             <div class="mt-3 text-center">
                 <div class="row h1 align-items-center">
                     <div class="col">
-                        <div class="d-flex justify-content-center align-items-center">
+                        <div class="d-flex justify-content-center align-items-center mt-3 mb-2">
                             <i class="fa-solid fa-circle-info ps-1"></i>
-                            <p class="mb-0 ms-4">Item's information</p>
+                            <p class="mb-0 ms-3">Item's information</p>
                             <a href="{{ route('item.edit', $item->id) }}" class="btn ms-5 pe-0">
                                 <i class="fa-solid fa-pen"></i>
                             </a>

@@ -213,3 +213,8 @@
     height: 70px;
     width: 70px;
   }
+
+  .col-9 {
+    padding-left: 10rem !important;
+  }
+

@@ -69,7 +69,7 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
 
  Route::post('/create/category', [CategoryController::class, 'createCategory'])->name('create.category');
 
- Route::delete('/delete/category/{id}', [CategoryController::class, 'deleteCategory'])->name('delete.category');
+ Route::delete('/delete/category/{id}', [CategoryController::class, 'destroy'])->name('delete.category');
 
 #Donated-item
 Route::get('/donated-items', [DonationController::class, 'indexDonatedItems'])->name('donated.items.index');
