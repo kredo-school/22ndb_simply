@@ -7,9 +7,9 @@
 @endsection
 
 @section('content')
-<div class="container border mt-0 d-flex justify-content-center">
-    <h4 class="color-gray-1 h2 mb-0 border">My items</h4>  
-    <div class="col-md-8 mx-auto border">   
+<div class="container mt-0 d-flex justify-content-center">
+    <h4 class="color-gray-1 h2 mb-0  col-md-2">My items</h4>  
+    <div class="col-md-8 mx-auto">   
         {{-- Tab --}}
         <ul class="nav nav-tabs border-bottom-0 border-dark">
             <li class="nav-item">
@@ -23,6 +23,7 @@
             @yield('items-content')
         </div>
     </div>
+    <div class="col-md-2"></div>
 </div>
 
 @endsection

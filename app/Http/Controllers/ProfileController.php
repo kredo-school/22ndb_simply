@@ -19,8 +19,6 @@ class ProfileController extends Controller
     public function show($id)
     {
         $user  = User::findOrFail($id);
-        // dump($user);
-        // dump($id);
         return view('users.profile.show')
             ->with('item_user', $user);
     }

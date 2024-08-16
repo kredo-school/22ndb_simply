@@ -18,16 +18,8 @@ class UserController extends Controller
 
     public function destroy($id){
         $user = $this->user->findOrFail($id);
-
-        if(Auth::id() !== $user->id){
-            return redirect()->route('index')
-                ->with('error', 'You do not have permission to delete this account.');
-        }
         $user->delete();
-        return redirect()->route('index')
-            ->with('success', 'Your account has been deleted.');
-
+        session()->flash('message', 'Your account has been deleted successfully!');
+        return redirect()->route('index');
     }
-
-
 }

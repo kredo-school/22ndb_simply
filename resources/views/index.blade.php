@@ -5,6 +5,15 @@
 @section('content')
 <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 <link href="{{ asset('css/index.css') }}" rel="stylesheet">
+{{-- Flash message for delete acocunt --}}
+<script>
+    @if (session('message'))
+        $(function () {
+                toastr.success('{{ session('message') }}');
+        });
+    @endif
+</script>
+
 
 <div class="container">
     <div class="row">
