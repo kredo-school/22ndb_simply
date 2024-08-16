@@ -3,6 +3,7 @@
   font-size: 12px; 
   text-align: left;
   margin-left: 5px;
+  margin-top: 0.25rem;
 }
 
 .item-container {
@@ -15,10 +16,11 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: #000;
+  color: black;
   position: absolute;
-  top: 155px; 
-  right: 0px;
+  top: 145px; 
+  right: 10px;
+
 }
 
 @media screen and (min-width: 1025px) {
@@ -54,7 +56,7 @@
 }
 
 .image-md-lg {
-  border: solid 1px #050606;
+  border: solid 1px black;
   padding: 10px;
   object-fit: cover;
 }
@@ -102,24 +104,20 @@
 
 
 .image-container {
-  position: relative;
-  width: 100%;
-  padding-top: 100%;
+  width: 20rem;
+  height: 20rem;
   overflow: hidden;
-  border: solid 1px #050606;
+  border: solid 1px black;
   border-radius: 40px;
+  
 }
 
 .image-md-ss {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 40px;
-  padding: 10px;
-
+  padding: 6%;
 }
 
 
@@ -133,19 +131,42 @@
 .font-small{
   font-size: 18px;
   color: #9EA6A6;
-  
-
 }
 
+/* .title-container{
+  position: relative;
+  width: 100%; 
+} */
+
+.new-bookmark{
+  /* text-align: right; */
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: black;
+  /* position: absolute; */
+  /* right: 290px; */
+  font-size: 40px;
+  /* bottom: 5px; */
+  
+}
 .fa-pen {
   font-size: 40px;
   color: #9EA6A6;
+  margin-left: 35px;
+}
+
+.fa-pen:hover{
+  color: #000;
 }
 
 .fa-trash-can{
   font-size: 40px;
   color: #9EA6A6;
-  display: inline;
+}
+
+.fa-trash-can:hover{
+  color: red;
 }
 
 .scrollable{
@@ -179,27 +200,27 @@
 }
 
 .pagination a:hover {
-  color: #050606 !important;
+  color: black !important;
 }
 
 .pagination span:hover {
-  color: #050606 !important;
+  color: black !important;
 }
 
 .add {
   position: absolute;
   display: none;
   padding: 20px;
-  color: #da0000;
+  color: red;
   border-radius: 10px;
-  width: 260px;
+  width: 210px;
   height: auto;
-  font-size: 20px !important;
-  left : 120%; 
+  font-size: 16px !important;
+  left : 105%; 
   top:-50%;
   font-weight: 800 !important;
   text-align: left;
-  border: 1px solid #da0000;
+  border: 1px solid red;
 }
 
 .tooltip-container {
