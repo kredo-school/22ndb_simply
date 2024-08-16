@@ -35,7 +35,7 @@
                     </div>
 
                     @forelse($category->items->take(4) as $item)
-                        <div class="item-box rounded-4 me-3">
+                        <div class="item-box rounded-4 me-3 ms-2">
                             <a href="{{ route('my_item', $item->id) }}">
                                 <img class="img-item" src="{{ $item->image }}" />
                                 </a>

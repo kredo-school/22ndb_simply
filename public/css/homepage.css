@@ -65,14 +65,14 @@ body {
 
 
 .category-box {
-    width: 150px;
+    width: 10%;
     height: 150px;
 }
 
 .no-item-box {
     border: solid 1px black;
     height: 150px;
-    width: 740px;
+    width: 680px;
 }
 
 .item-box {
@@ -98,7 +98,7 @@ body {
 
 .category-btn {
     border: solid 1px black;
-    width: 150px;
+    width: 11%;
     height: 150px;
     font-size: 25px;
     font-weight: 600;
