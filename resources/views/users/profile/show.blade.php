@@ -7,25 +7,12 @@
     @endsection
 
     @section('content')
-<div class="container h2">
-    <p class='color-gray-1 mb-0 '>Profile</p>
-    <div class="col-md-8 mx-auto h2 ">
-    {{-- Frash message --}}
-        @if(session('success'))
-            <div class="alert alert-dark">
-                {{session('success')}}
-            </div>
-        @endif
-
-        @if(session('error'))
-            <div class="alert alert-danger">
-                {{session('error')}}
-            </div>
-        @endif
+<div class="container h2 ">
+    <p class='color-gray-1'>Profile</p>
+    <div class="col-md-8 mx-auto">
+        <div class="row">
             {{-- Left side --}}
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-6 d-flex align-items-center flex-column my-auto ">
-                    <div class="text-center">
+                <div class="col-md-5 d-flex align-items-center flex-column my-auto mx-auto">
                         <div class="mb-5">
                             @if($item_user->avatar)
                                 <img src="{{$item_user->avatar}}" alt="{{$item_user->username}}" class="rounded-circle avatar-lg">
@@ -44,11 +31,10 @@
                                 </a>
                             @endif
                         </div>
-                    </div>
                 </div>
 
                 {{-- Right side --}}
-                <div class="col-md">
+                <div class="col-md-7">
                     {{--If ur the profile owner, can see edit delete icons --}}
                     @if(Auth::user()->id === $item_user->id)
                         <div class="d-flex justify-content-end">
@@ -73,8 +59,7 @@
                             @endcomponent
                         </div>
                     @endif
-
-                    <table class='table text-start bordered-table'>
+                    <table class='table text-start bordered-table p-1'>
                         <tbody>
                             <tr>
                                 <td>Username</td>
@@ -97,7 +82,7 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
+        </div>
     </div>
 </div>
 @endsection

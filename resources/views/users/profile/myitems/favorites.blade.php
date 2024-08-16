@@ -3,10 +3,10 @@
 @section('items-content')
     <div class="container">
 
-        <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-5 border">
+        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-5">
             @forelse($favoriteItems as $favoriteItem)
-                <div class="col d-flex flex-column align-items-center item-box border">
-                    <div class="border">
+                <div class="col d-flex flex-column align-items-center item-box">
+                    <div class="">
                         <div class="d-flex justify-content-center">
                         @if($favoriteItem->donationItem->item->image)
                             <a href="{{route('donated.item.show',$favoriteItem->donationItem->id)}}">

@@ -96,7 +96,7 @@ Route::prefix('user-guide')->group(function () {
     Route::view('/how-to-get-items', 'user-guide.how-to-get-item')->name('user-guide.how-to-get-item');
     Route::view('/favorite-item', 'user-guide.favorite-item')->name('user-guide.favorite-item');
 });
-Route::get('myitems/favorites', [FavoriteItemController::class,'favorites'])->name('myitems.favorites');
+Route::get('myitems/{id}/favorites', [FavoriteItemController::class,'favorites'])->name('myitems.favorites');
 
 #COMMENT
 Route::post('/comment/{donationItem_id}/store', [CommentController::class, 'store'])->name('comment.store');
