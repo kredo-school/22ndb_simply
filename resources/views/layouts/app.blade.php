@@ -138,7 +138,5 @@
             </footer>
         @endguest
     @endif
-
-    <script src="path/to/bootstrap.js"></script>
 </body>
 </html>

@@ -152,9 +152,9 @@
                                 <div class="d-flex">
                                     <div>
                                         @if($comment->user->avatar)
-                                            <img src="{{ $comment->user->avatar }}" alt="User Avatar" class="rounded-circle" width="30" height="30">
+                                            <img src="{{ $comment->user->avatar }}" alt="User Avatar" class="rounded-circle avatar-sm">
                                         @else
-                                            <i class="fa-solid fa-circle-user"></i>
+                                            <i class="fa-solid fa-circle-user icon-sm"></i>
                                         @endif
                                         <a href="{{ route('profile.show', ['id' => $comment->user->id]) }}" class="text-dark ms-2 comment-username">
                                             {{ $comment->user->username }}
