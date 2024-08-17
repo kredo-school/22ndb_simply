@@ -156,10 +156,6 @@
   margin-left: 35px;
 }
 
-.fa-pen:hover{
-  color: #000;
-}
-
 .fa-trash-can{
   font-size: 40px;
   color: #9EA6A6;
@@ -199,11 +195,10 @@
   text-decoration: none;
 }
 
-.pagination a:hover {
-  color: black !important;
-}
-
-.pagination span:hover {
+.pagination a:hover,
+.pagination .active span,
+.pagination span:hover,
+.fa-pen:hover {
   color: black !important;
 }
 

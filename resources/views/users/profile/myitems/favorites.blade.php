@@ -24,12 +24,12 @@
                                     @method('DELETE')
                                     <button type="submit" class="btn shadow-none p-0"><i class="fa-solid fa-bookmark text-dark"></i></button>
                                 </form>
-                                @else
-                                    <form action="{{ route('favorite.store', ['donationItem_id' => $favoriteItem->donationItem->id]) }}" method="post">
-                                        @csrf
-                                        <button type="submit" class="btn shadow-none p-0"><i class="fa-regular fa-bookmark"></i></button>
-                                    </form>
-                                @endif
+                            @else
+                                <form action="{{ route('favorite.store', ['donationItem_id' => $favoriteItem->donationItem->id]) }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn shadow-none p-0"><i class="fa-regular fa-bookmark"></i></button>
+                                </form>
+                            @endif
                             </div>
                             <div class="mb-3" style="line-height:1.3">
                                 <span>{{$favoriteItem->donationItem->item->name}}</span><br>
