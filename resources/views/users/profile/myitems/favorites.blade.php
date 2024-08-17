@@ -31,8 +31,10 @@
                                     </form>
                                 @endif
                             </div>
-                            <span>{{$favoriteItem->donationItem->item->name}}</span><br>
-                            <a href="{{route('profile.show', ['id'=>$favoriteItem->donationItem->item->user->id])}}" class="color-gray-1 item-username">{{$favoriteItem->donationItem->item->user->username}}</a>
+                            <div class="mb-3" style="line-height:1.3">
+                                <span>{{$favoriteItem->donationItem->item->name}}</span><br>
+                                <a href="{{route('profile.show', ['id'=>$favoriteItem->donationItem->item->user->id])}}" class="color-gray-1 item-username">{{$favoriteItem->donationItem->item->user->username}}</a>
+                            </div>
                     </div>
                 </div>
             @empty
