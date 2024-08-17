@@ -76,6 +76,11 @@ class DirectMessageController extends Controller
 
     public function store(Request $request, $recipient_id)
     {
+        $request->validate([
+            'text'  => 'required_without: image|string|max:1000',
+            'image' => 'required_without: text|image|max:1048',
+        ]);
+
         $directMessage = new DirectMessage();
 
         $directMessage->user_id             = Auth::id() ;

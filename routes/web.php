@@ -94,7 +94,6 @@ Route::get('myitems/{id}/favorites', [FavoriteItemController::class,'favorites']
 Route::post('/comment/{donationItem_id}/store', [CommentController::class, 'store'])->name('comment.store');
 Route::delete('/comment/{id}/destroy', [CommentController::class, 'destroy'])->name('comment.destroy');
 
-
 #Direct-Message
 Route::group(["prefix" => "directMessage", "as" => "directMessage."], function(){
     Route::get('/{id}/show', [DirectMessageController::class, 'show'])->name('show');
