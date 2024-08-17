@@ -41,7 +41,7 @@
                                 </a>
                         </div>
                     @empty
-                        <div class="no-item-box ms-2 me-3 rounded-3">
+                        <div class="no-item-box me-3 ms-2 rounded-3">
                             <h1 class="no-item text-center my-5">No item</h1>
                         </div>
                     @endforelse
@@ -62,6 +62,7 @@
             @endif
             
         </div>
+        
     </div>
     
     <div>
