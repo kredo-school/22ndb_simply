@@ -12,7 +12,7 @@ class Comment extends Model
     protected $fillable = ['text', 'user_id', 'item_id'];
 
     public function user(){
-        return $this->belongsTo(User::class)->withTrashed();
+        return $this->belongsTo(User::class);
     }
 
     public function item(){

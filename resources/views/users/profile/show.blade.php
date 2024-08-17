@@ -43,7 +43,7 @@
                                     <i class="icon fa-solid fa-pen color-gray-1"></i>
                                 </a>
                                 <button class="btn" data-bs-toggle="modal" data-bs-target = "#delete-modal">
-                                    <i class="icon fa-solid fa-trash-can color-gray-1"></i>
+                                    <i class="icon fa-solid fa-trash-can color-gray-1 profile-trash"></i>
                                 </button>
 
                                 {{--Component Delete Modal --}}
@@ -54,8 +54,8 @@
                                     ])
                                     @slot('body')
                                         <p class="h5 mb-2">Are you sure you want to delete this account?</p>
-                                        <p class="h6 text-danger">All your data will be permanently deleted!</p>
-                                        <p class="h6 text-danger">This cannnot be undone.</p>
+                                        <p class="h6 text-danger">All your data will be permanently deleted.   Donation items currently being dealt with will also be deleted!</p>
+                                        <p class="h6 text-danger">*This cannnot be undone.</p>
                                     @endslot
                                 @endcomponent
                             </div>
