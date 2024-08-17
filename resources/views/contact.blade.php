@@ -101,12 +101,6 @@
                             {{ __('Confirm') }}
                         </button>
                     </div>
-
-                        <input type="hidden" id="hiddenFirstname" name="hiddenFirstname">
-                        <input type="hidden" id="hiddenLastname" name="hiddenLastname">
-                        <input type="hidden" id="hiddenEmail" name="hiddenEmail">
-                        <input type="hidden" id="hiddenSubject" name="hiddenSubject">
-                        <input type="hidden" id="hiddenMessage" name="hiddenMessage">
                     @include('modal.contact_confirm')
                     </form>
                 </div>
