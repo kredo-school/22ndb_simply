@@ -31,7 +31,7 @@
                                 </form>
                             @endif
                             </div>
-                            <div class="mb-3" style="line-height:1.3">
+                            <div class="mb-3 donation-username">
                                 <span>{{$favoriteItem->donationItem->item->name}}</span><br>
                                 <a href="{{route('profile.show', ['id'=>$favoriteItem->donationItem->item->user->id])}}" class="color-gray-1 item-username">{{$favoriteItem->donationItem->item->user->username}}</a>
                             </div>

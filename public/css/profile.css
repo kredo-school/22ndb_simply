@@ -99,7 +99,9 @@ color: black!important;
 .profile-trash:hover {
 color: red !important;
 }
-
 .container-p{
 padding-top: 5%;
+}
+.donation-username{
+    line-height: 1.3;
 }
