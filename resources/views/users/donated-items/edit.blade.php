@@ -15,7 +15,6 @@
         <form action="{{ route('donated.item.update', $donationItem->item->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
-
             <div class="row justify-content-center">
                 <div class="col-12 col-md-4 d-flex flex-column align-items-center">
                     <div class="icon-wrapper border border-dark d-inline-flex justify-content-center align-items-center custom-mt">
@@ -30,7 +29,6 @@
                         </p>
                     </div>
                 </div>
-
                 <div class="col-auto">
                     <div class="row">
                         <div class="col-3">
@@ -53,7 +51,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-3 mt-3">
                             <div class="form-group mt-3">
@@ -69,7 +66,6 @@
                             @enderror
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-3 mt-3">
                             <div class="form-group mt-3">
@@ -85,7 +81,6 @@
                             @enderror
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-3 mt-3">
                             <div class="form-group mt-3 d-flex align-items-center">
@@ -102,7 +97,6 @@
                             </p>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-3">
                         </div>
