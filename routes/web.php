@@ -19,7 +19,6 @@ use App\Models\DonationItem;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
 
 Route::get('/reset-successful', [HomeController::class, 'resetSuccess'])->name('password.reset.success');
 

@@ -164,7 +164,7 @@
     padding-top: 100%;
     overflow: hidden;
     border: solid 1px black;
-    border-radius: 40px;
+    border-radius: 13%;
   }
 
   .image-md-ss {
@@ -174,8 +174,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 40px;
-    padding: 10px;
+    border-radius: 13.33%;
+    padding: 6%;
   }
   
   
@@ -213,3 +213,17 @@
     height: 70px;
     width: 70px;
   }
+
+ .parent {
+  position: relative;
+ }
+
+ .col-9 {
+  position: absolute;
+  left: 15%;
+ }
+
+ .child {
+  padding-left: 10%;
+ }
+

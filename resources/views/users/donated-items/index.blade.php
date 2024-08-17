@@ -16,8 +16,7 @@
                     <a href="{{ route('donated.item.show', $donationItem->id) }}">
                         <img class="image-md-lg" src="{{ $donationItem->item->image }}" alt="{{ $donationItem->item->name }}">
                      </a>
-                     @if(Auth::user()->id !== $donationItem->user->id)
-
+                @if(Auth::user()->id !== $donationItem->user->id)
                     @if($donationItem->isFavorited())
                         <form action="{{ route('favorite.destroy', ['donationItem_id' => $donationItem->id]) }}" method="post" class="m-0">
                             @csrf
@@ -30,8 +29,7 @@
                             <button type="submit" class="bookmark"><i class="fa-regular fa-bookmark"></i></button>
                         </form>
                     @endif
-                    
-                     @endif
+                @endif
                     <div class="row">
                         <div class="col">
                             <p class="grid-text mb-0 text-start">{{ $donationItem->created_at->format('Y/m/d') }}</p>
