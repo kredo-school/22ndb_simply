@@ -120,13 +120,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     const confirmButton = document.querySelector('.btn[data-bs-toggle="modal"]');
     confirmButton.addEventListener('click', function() {
-        // Populate hidden inputs with form data
-        document.getElementById('hiddenFirstname').value = document.getElementById('firstname').value;
-        document.getElementById('hiddenLastname').value = document.getElementById('lastname').value;
-        document.getElementById('hiddenEmail').value = document.getElementById('email').value;
-        document.getElementById('hiddenSubject').value = document.getElementById('subject').value;
-        document.getElementById('hiddenMessage').value = document.getElementById('message').value;
-
         // Populate modal fields with the same data
         document.getElementById('confirmFirstname').textContent = document.getElementById('firstname').value;
         document.getElementById('confirmLastname').textContent = document.getElementById('lastname').value;
