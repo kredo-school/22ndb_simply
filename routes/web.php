@@ -72,7 +72,7 @@ Route::get('other_item/{id}', [ItemController::class, 'otherItemPage'])->name('o
 Route::get('other_items/{id}', [ItemController::class, 'otherItemPage'])->name('other_items');
 Route::patch('/edit/category/{id}', [CategoryController::class, 'editCategory'])->name('edit.category');
 Route::post('/create/category', [CategoryController::class, 'createCategory'])->name('create.category');
-Route::delete('/delete/category/{id}', [CategoryController::class, 'deleteCategory'])->name('delete.category');
+Route::delete('/delete/category/{id}', [CategoryController::class, 'destroy'])->name('delete.category');
 
 
 #Donated-item
