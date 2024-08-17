@@ -19,7 +19,6 @@ use App\Models\DonationItem;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
 
 Route::get('/reset-successful', [HomeController::class, 'resetSuccess'])->name('password.reset.success');
 
@@ -30,7 +29,7 @@ Route::post('/contact-us/store', [ContactController::class, 'store'])->name('con
 Route::get('/homepage', [App\Http\Controllers\HomepageController::class, 'homepage'])->name('homepage');
 
 // Profile
-// Route::group(['middleware' => 'auth'], function(){
+Route::group(['middleware' => 'auth'], function(){
     Route::get('profile/{id}/show', [ProfileController::class, 'show'])->name('profile.show');
     Route::get('profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('profile/update', [ProfileController::class, 'update'])->name('profile.update');
@@ -40,7 +39,23 @@ Route::get('/homepage', [App\Http\Controllers\HomepageController::class, 'homepa
     Route::get('profile/{id}/myitems', function($id){
     return redirect()->route('myitems.favorites',['id'=>$id]);})->name('profile.myitems');
 
-// });
+//  category
+ Route::get('each_category/{id}', [CategoryController::class, 'showCategoryItem'])->name('each_category');
+ 
+ Route::get('my_item/{id}', [ItemController::class, 'myItemPage'])->name('my_item');
+
+ Route::get('other_item/{id}', [ItemController::class, 'otherItemPage'])->name('other_item');
+
+ Route::get('other_items/{id}', [ItemController::class, 'otherItemPage'])->name('other_items');
+
+ Route::patch('/edit/category/{id}', [CategoryController::class, 'editCategory'])->name('edit.category');
+
+ Route::post('/create/category', [CategoryController::class, 'createCategory'])->name('create.category');
+
+ Route::delete('/delete/category/{id}', [CategoryController::class, 'destroy'])->name('delete.category');
+
+
+});
 
 // Item
 Route::group(["prefix" => "item", "as" => "item."], function(){
@@ -53,23 +68,6 @@ Route::group(["prefix" => "item", "as" => "item."], function(){
  });
 
 
-//  homepage
-//  Route::get('homepage/{id}', [HomepageController::class, 'homepage'])->name('homepage');
-
-//  category
- Route::get('each_category/{id}', [CategoryController::class, 'showCategoryItem'])->name('each_category');
-
- Route::get('my_item/{id}', [ItemController::class, 'myItemPage'])->name('my_item');
-
- Route::get('other_item/{id}', [ItemController::class, 'otherItemPage'])->name('other_item');
-
- Route::get('other_items/{id}', [ItemController::class, 'otherItemPage'])->name('other_items');
-
- Route::patch('/edit/category/{id}', [CategoryController::class, 'editCategory'])->name('edit.category');
-
- Route::post('/create/category', [CategoryController::class, 'createCategory'])->name('create.category');
-
- Route::delete('/delete/category/{id}', [CategoryController::class, 'deleteCategory'])->name('delete.category');
 
 #Donated-item
 Route::get('/donated-items', [DonationController::class, 'indexDonatedItems'])->name('donated.items.index');
