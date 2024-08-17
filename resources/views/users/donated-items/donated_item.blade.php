@@ -45,7 +45,7 @@
                         ])
                     @slot('body')
                     <p class="h5 text-center">Are you sure you want to delete this item?</p>
-                    <p class="h6 text-center" style="color: red;">
+                    <p class="h6 text-center text-danger" >
                         This item will be permanently deleted from all pages! <br>
                         This cannot be undone.
                     </p>
