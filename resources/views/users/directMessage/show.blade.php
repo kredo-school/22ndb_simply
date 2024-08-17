@@ -23,7 +23,7 @@
 <div class="container mt-3">
     <div class="row align-items-start justify-content-center">
         <!-- name list -->
-        <div class="col-4">
+        <div class="col-3 col-sm-4">
             <ul class="list-group">
                 @foreach ($all_users as $user)
                     <li class="list-group-item {{ $recipient->id == $user->id ? 'active' : '' }}  py-3">
@@ -45,7 +45,7 @@
         </div>
 
         <!-- message -->
-        <div class="col-8">
+        <div class="col-9 col-sm-8">
             <form action="{{ route('directMessage.store', $recipient->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
 
