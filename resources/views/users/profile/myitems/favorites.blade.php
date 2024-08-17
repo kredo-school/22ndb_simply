@@ -24,15 +24,17 @@
                                     @method('DELETE')
                                     <button type="submit" class="btn shadow-none p-0"><i class="fa-solid fa-bookmark text-dark"></i></button>
                                 </form>
-                                @else
-                                    <form action="{{ route('favorite.store', ['donationItem_id' => $favoriteItem->donationItem->id]) }}" method="post">
-                                        @csrf
-                                        <button type="submit" class="btn shadow-none p-0"><i class="fa-regular fa-bookmark"></i></button>
-                                    </form>
-                                @endif
+                            @else
+                                <form action="{{ route('favorite.store', ['donationItem_id' => $favoriteItem->donationItem->id]) }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn shadow-none p-0"><i class="fa-regular fa-bookmark"></i></button>
+                                </form>
+                            @endif
                             </div>
-                            <span>{{$favoriteItem->donationItem->item->name}}</span><br>
-                            <a href="{{route('profile.show', ['id'=>$favoriteItem->donationItem->item->user->id])}}" class="color-gray-1 item-username">{{$favoriteItem->donationItem->item->user->username}}</a>
+                            <div class="mb-3 donation-username">
+                                <span>{{$favoriteItem->donationItem->item->name}}</span><br>
+                                <a href="{{route('profile.show', ['id'=>$favoriteItem->donationItem->item->user->id])}}" class="color-gray-1 item-username">{{$favoriteItem->donationItem->item->user->username}}</a>
+                            </div>
                     </div>
                 </div>
             @empty

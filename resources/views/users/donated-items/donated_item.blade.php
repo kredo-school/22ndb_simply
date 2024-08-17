@@ -49,7 +49,7 @@
                             ])
                             @slot('body')
                             <p class="h5 text-center">Are you sure you want to delete this item?</p>
-                            <p class="h6 text-center text-danger">
+                            <p class="h6 text-center" style="color: #9EA6A6;">
                             This item will be permanently deleted from all pages! <br>
                             This cannot be undone.
                             </p>
@@ -99,7 +99,7 @@
                                     <p>{{ $donationItem->item->name }}</p>
                                 </div>
                             </div>
-                            @if(Auth::user()->id !== $donationItem->user->id)
+                        @if(Auth::user()->id !== $donationItem->user->id)
                             <div class="row">
                                 <div class="col-4 text-start ms-5">
                                     <p class="font-big">Username</p>
@@ -109,7 +109,7 @@
                                     <p class="font-small mb-3">You can see donated user's profile!</p>
                                 </div>
                             </div>
-                            @endif
+                        @endif
                             <div class="row">
                                 <div class="col-4 text-start ms-5">
                                     <p class="font-big">Description</p>
@@ -121,7 +121,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row mt-2">
                     <hr class="custom-hr">
                     <!--Comments -->
@@ -129,11 +128,9 @@
                         <form action="{{ route('comment.store', $donationItem->id) }}" method="post">
                             @csrf
                            <div class="comment-container">
-                                <input type="text" name="comment_body{{ $donationItem->id }}" class="form-control form-control-md comment-box" placeholder="Input your comment here..."  value="{{ old('comment_body' . $donationItem->id) }}">
-
-                                <button type="submit" class="btn btn-dark btn-md inline">
-                                    Submit
-                                </button>
+                                <input type="text" name="comment_body{{ $donationItem->id }}" class="form-control form-control-md comment-box"
+                                 placeholder="Input your comment here..."  value="{{ old('comment_body' . $donationItem->id) }}">
+                                <button type="submit" class="btn btn-dark btn-md inline">Submit</button>
                            </div>
 
 
@@ -141,7 +138,6 @@
                             @error('comment_body' . $donationItem->id)
                             <div class="text-danger small">{{ $message }}</div>
                             @enderror
-
                         </form>
                         <!-- Show all comments here -->
                         <div class="comment-scrollable">
@@ -189,7 +185,6 @@
                             </ul>
                         @endif
                         </div>
-
                     </div>
                 </div>
             </div>

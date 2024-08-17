@@ -98,7 +98,7 @@
                                     @if (Auth::user()->avatar)
                                        <img src="{{ $user->avatar }}" alt="{{ $user->avatar }}" class="rounded-circle avatar-sm">
                                     @else
-                                       <i class="fa-solid fa-circle-user text-dark icon"></i>
+                                       <i class="fa-solid fa-circle-user text-dark icon-sm"></i>
                                     @endif
                                 </a>
 

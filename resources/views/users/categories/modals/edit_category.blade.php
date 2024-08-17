@@ -14,7 +14,7 @@
                     @csrf
                     @method('PATCH')
                     <label for="edit_category_name" class="form-label">Category Name</label>
-                    <input type="text" name="edit_category_name" id="edit_category_name" class="form-control" placeholder="{{ $category->name }}">
+                    <input type="text" name="edit_category_name" id="edit_category_name" class="form-control" value="{{ $category->name }}">
             </div>
             <div class="modal-footer border-0 m-auto p-4">
                 <button type="button" class="sbm_btn btn btn-outline-dark p-2 px-5 rounded-5 me-1"  data-bs-dismiss="modal">Cancel</button>
