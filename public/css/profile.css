@@ -69,15 +69,6 @@ textarea{
     border: solid 1px black;
 }
 
-/* Saya-san */
-/* .img-item {
-    width: 150px;
-    height: 150px;
-    border: solid 1px #050606;
-    border-radius: 20px;
-    padding: 10px;
-} */
-
 .pagination {
     justify-content: center;
 }
@@ -105,6 +96,12 @@ text-decoration: none;
 .item-username:hover{
 color: black!important;
 }
-.fa-trash-can:hover {
+.profile-trash:hover {
 color: red !important;
+}
+.container-p{
+padding-top: 5%;
+}
+.donation-username{
+    line-height: 1.3;
 }

@@ -123,7 +123,7 @@ class DonationController extends Controller
         $user = Auth::user();
         $donatedItems = $this->donationItem
                         ->where('user_id',$user->id)
-                        ->with('item')
+                        ->with('item')->latest()
                         ->paginate(15);
 
         return view('users.profile.myitems.donated', ['donatedItems' => $donatedItems]);
