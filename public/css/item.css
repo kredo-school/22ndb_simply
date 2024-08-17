@@ -1,17 +1,17 @@
 .icon-wrapper {
     width: 16rem;
     height: 16rem;
-    border-radius: 20px;
-    box-sizing: border-box;
+    border-radius: 40px;
 }
 
 .image-icon {
     font-size: 15rem;
-    transform: scale(1, 1.15);
+    transform: scale(0.95, 1.07);
+    border-radius: 40px;
 }
 
 input.file-width {
-    width: 15rem;
+    width: 16rem;
 }
 
 div a.add-category-link {
@@ -46,7 +46,7 @@ input.form-check-input:focus {
     height: 16rem;
     overflow: hidden;
     border: solid 1px black;
-    border-radius: 20px;
+    border-radius: 40px;
     display: inline-block;
 }
 
@@ -54,8 +54,8 @@ input.form-check-input:focus {
     width: 16rem;
     height: 16rem;
     object-fit: cover;
-    border-radius: 20px;
-    padding: 10px;
+    border-radius: 40px;
+    padding: 6%;
 }
 
 a.custom-btn,

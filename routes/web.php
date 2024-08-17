@@ -30,7 +30,7 @@ Route::post('/contact-us/store', [ContactController::class, 'store'])->name('con
 Route::get('/homepage', [App\Http\Controllers\HomepageController::class, 'homepage'])->name('homepage');
 
 // Profile
-// Route::group(['middleware' => 'auth'], function(){
+Route::group(['middleware' => 'auth'], function(){
     Route::get('profile/{id}/show', [ProfileController::class, 'show'])->name('profile.show');
     Route::get('profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('profile/update', [ProfileController::class, 'update'])->name('profile.update');
@@ -40,18 +40,22 @@ Route::get('/homepage', [App\Http\Controllers\HomepageController::class, 'homepa
     Route::get('profile/{id}/myitems', function($id){
     return redirect()->route('myitems.favorites',['id'=>$id]);})->name('profile.myitems');
 
-// });
+    // Item
+    Route::group(["prefix" => "item", "as" => "item."], function(){
+        Route::get('/show', [ItemController::class, 'show'])->name('show');
+        Route::get('/add', [ItemController::class, 'add'])->name('add');
+        Route::post('/store', [ItemController::class, 'store'])->name('store');
+        Route::get('/{id}/edit', [ItemController::class, 'edit'])->name('edit');
+        Route::patch('/{id}/update', [ItemController::class, 'update'])->name('update');
+        Route::delete('/{id}/destroy', [ItemController::class, 'destroy'])->name('destroy');
+    });
 
-// Item
-Route::group(["prefix" => "item", "as" => "item."], function(){
-    Route::get('/show', [ItemController::class, 'show'])->name('show');
-    Route::get('/add', [ItemController::class, 'add'])->name('add');
-    Route::post('/store', [ItemController::class, 'store'])->name('store');
-    Route::get('/{id}/edit', [ItemController::class, 'edit'])->name('edit');
-    Route::patch('/{id}/update', [ItemController::class, 'update'])->name('update');
-    Route::delete('/{id}/destroy', [ItemController::class, 'destroy'])->name('destroy');
- });
-
+    // Direct-Message
+    Route::group(["prefix" => "directMessage", "as" => "directMessage."], function(){
+        Route::get('/{id}/show', [DirectMessageController::class, 'show'])->name('show');
+        Route::post('/{recipient_id}/store', [DirectMessageController::class, 'store'])->name('store');
+    });
+});
 
 //  homepage
 //  Route::get('homepage/{id}', [HomepageController::class, 'homepage'])->name('homepage');
@@ -101,9 +105,3 @@ Route::get('myitems/{id}/favorites', [FavoriteItemController::class,'favorites']
 #COMMENT
 Route::post('/comment/{donationItem_id}/store', [CommentController::class, 'store'])->name('comment.store');
 Route::delete('/comment/{id}/destroy', [CommentController::class, 'destroy'])->name('comment.destroy');
-
-#Direct-Message
-Route::group(["prefix" => "directMessage", "as" => "directMessage."], function(){
-    Route::get('/{id}/show', [DirectMessageController::class, 'show'])->name('show');
-    Route::post('/{recipient_id}/store', [DirectMessageController::class, 'store'])->name('store');
- });

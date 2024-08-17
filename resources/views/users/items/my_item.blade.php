@@ -21,17 +21,17 @@
                                 <i class="fa-solid fa-trash-can"></i>
                             </button>
                             @component('users.components.deletemodal', [
-                            'id' => 'delete-item',
-                            'title' => 'Delete Item',
-                            'r2' => route('item.destroy', $item->id)
-                            ])
-                            @slot('body')
-                            <p class="h5 text-center">Are you sure you want to delete this item?</p>
-                            <p class="h6 text-center text-muted">
-                            This item will be permanently deleted from all pages! <br>
-                            This cannot be undone.
-                            </p>
-                            @endslot
+                                    'id' => 'delete-item',
+                                    'title' => 'Delete Item',
+                                    'r2' => route('item.destroy', $item->id)
+                                    ])
+                                @slot('body')
+                                    <p class="h5 text-center">Are you sure you want to delete this item?</p>
+                                    <p class="h6 text-center text-danger">
+                                        This item will be permanently deleted from all pages! <br>
+                                        This cannot be undone.
+                                    </p>
+                                @endslot
                             @endcomponent
                         </div>
                     </div>

@@ -49,14 +49,14 @@
                             ])
                             @slot('body')
                             <p class="h5 text-center">Are you sure you want to delete this item?</p>
-                            <p class="h6 text-center" style="color: #9EA6A6;">
+                            <p class="h6 text-center text-danger">
                             This item will be permanently deleted from all pages! <br>
                             This cannot be undone.
                             </p>
                             @endslot
                             @endcomponent
-                            @endif 
-                        </div> 
+                            @endif
+                        </div>
                     </div>
                 </div>
 
@@ -73,7 +73,7 @@
                                     <p class="font-big">Donation ID</p>
                                 </div>
                                 <div class="col-auto text-start font-big">
-                                    <p>{{ $donationItem->id; }}</p>
+                                    <p>{{ $donationItem->id }}</p>
                                 </div>
                             <div class="row">
                                 <div class="col-4 text-start ms-5">
@@ -135,8 +135,8 @@
                                     Submit
                                 </button>
                            </div>
-                            
-                           
+
+
                             <!-- Error -->
                             @error('comment_body' . $donationItem->id)
                             <div class="text-danger small">{{ $message }}</div>
@@ -159,12 +159,12 @@
                                         <a href="{{ route('profile.show', ['id' => $comment->user->id]) }}" class="text-dark ms-2 comment-username">
                                             {{ $comment->user->username }}
                                         </a>
-                                        
+
                                         <span class="text-secondary small ms-2">{{ $comment->created_at->format('Y/m/d H:i') }}</span>
-                                    
+
                                         @auth
                                             @if(Auth::id() === $comment->user_id)
-                                    
+
                                             <button class="btn ps-1" data-bs-toggle="modal" data-bs-target="#delete-comment-modal-{{ $comment->id }}">
                                                 <i class="fa fa-trash-can fa-sm"></i>
                                             </button>
@@ -192,7 +192,7 @@
 
                     </div>
                 </div>
-            </div>   
+            </div>
         </div>
     </div>
 </div>
