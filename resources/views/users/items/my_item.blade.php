@@ -6,12 +6,12 @@
 
 @section('content')
 <div class="container-fluid d-flex justify-content-center align-items-center mt-4">
-    <div class="row justify-content-center w-100">
+    <div class="row justify-content-center w-100 parent">
         <div class="col-9">
             <div class="mt-3 text-center">
-                <div class="row h1 align-items-center">
+                <div class="row h1 justify-content-center">
                     <div class="col">
-                        <div class="d-flex justify-content-center align-items-center mt-3 mb-2">
+                        <div class="d-flex justify-content-center mt-3 mb-2">
                             <i class="fa-solid fa-circle-info ps-1"></i>
                             <p class="mb-0 ms-3">Item's information</p>
                             <a href="{{ route('item.edit', $item->id) }}" class="btn ms-5 pe-0">
@@ -37,7 +37,7 @@
                     </div>
                 </div>
 
-                <div class="row mt-5">
+                <div class="row mt-5 child">
                     <div class="col-4">
                         <div class="mt-3 mb-3 image-container">
                             <img class="image-md-ss" src="{{ $item->image }}" alt="{{ $item->name }}"/>
