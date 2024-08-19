@@ -8,9 +8,9 @@
 
 @section('content')
 <div class="container">
-    <h2 class="text-center">
-        <i class="fa-solid fa-pen me-2"></i> Edit Item
-    </h2>
+    <h1 class="d-flex justify-content-center align-items-center">
+        <i class="fa-solid fa-pen fs-2 me-3"></i> Edit Item
+    </h1>
     <div class="container-fluid">
         <form action="{{ route('donated.item.update', $donationItem->item->id) }}" method="post" enctype="multipart/form-data">
             @csrf

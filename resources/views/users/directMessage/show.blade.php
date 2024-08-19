@@ -22,7 +22,7 @@
 
 <div class="container mt-3">
     <div class="row align-items-start justify-content-center">
-        <!-- name list -->
+        {{-- Name List --}}
         <div class="col-3 col-sm-4">
             <ul class="list-group">
                 @foreach ($all_users as $user)
@@ -44,13 +44,14 @@
             </ul>
         </div>
 
-        <!-- message -->
+        {{-- Message --}}
         <div class="col-9 col-sm-8">
             <form action="{{ route('directMessage.store', $recipient->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
 
                 <div class="container border rounded p-3 scrollable">
                     <div class="row">
+                        {{-- Date --}}
                         @php
                             $previousDate = null;
                         @endphp
@@ -65,7 +66,7 @@
                                     <span class="badge bg-grey px-3">{{ $currentDate }}</span>
                                 </div>
                             @endif
-
+                            {{-- Login User --}}
                             @if ($message->user_id == Auth::id())
                                 <div class="col-12 my-2">
                                     <div class="row justify-content-end align-items-center">
@@ -98,6 +99,7 @@
                                     </div>
                                 </div>
                             @else
+                                {{-- Recipient --}}
                                 <div class="col-12 my-2">
                                     <div class="row justify-content-start align-items-center">
                                         <div class="col-2 d-flex justify-content-center">
@@ -134,7 +136,7 @@
                                 $previousDate = $currentDate;
                             @endphp
                         @endforeach
-
+                        {{-- Input Field --}}
                         <div class="input-group-container">
                             <div class="input-group d-flex justify-content-center align-items-center mx-auto">
                                 <label for="image">
