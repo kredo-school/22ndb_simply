@@ -125,7 +125,6 @@ class ItemController extends Controller
         if ($request->has('donation')) {
 
             if ($donationItem) {
-                $donationItem->restore();
                 $donationItem->user_id = Auth::id();
                 $donationItem->save();
             } else {
