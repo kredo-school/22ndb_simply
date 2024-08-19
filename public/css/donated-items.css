@@ -1,5 +1,5 @@
 .grid-text{
-  font-size: 12px; 
+  font-size: 12px;
   text-align: left;
   margin-left: 5px;
   margin-top: 0.25rem;
@@ -17,7 +17,7 @@
   cursor: pointer;
   color: black;
   position: absolute;
-  top: 145px; 
+  top: 145px;
   right: 10px;
 }
 
@@ -41,8 +41,8 @@
 
 .title-donation{
   margin-top: 0px;
-  font-size: 36px; 
-  font-weight: 600 !important; 
+  font-size: 36px;
+  font-weight: 600 !important;
 } @media screen and (min-width: 1025px) {
   .title-donation {
       font-size: 36px;
@@ -64,26 +64,26 @@
   height: auto;
   border-radius: 20px;
   overflow: hidden;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
 @media screen and (min-width: 1025px) {
   .grid-item img {
-      width: 140px; 
-      height: 140px; 
+      width: 140px;
+      height: 140px;
   }
 }
 
 @media screen and (min-width: 600px) and (max-width: 1024px) {
   .grid-item img {
-      width: 135px; 
-      height: 135px; 
+      width: 135px;
+      height: 135px;
   }
 }
 
 @media screen and (max-width: 599px) {
   .grid-item img {
-      width: 100px; 
+      width: 100px;
       height: 100px;
   }
 }
@@ -101,8 +101,8 @@
 }
 
 .image-container {
-  width: 20rem;
-  height: 20rem;
+  width: 16rem;
+  height: 16rem;
   overflow: hidden;
   border: solid 1px black;
   border-radius: 13%;
@@ -195,7 +195,7 @@
   width: 230px;
   height: auto;
   font-size: 16px;
-  left : 105%; 
+  left : 105%;
   top:-50%;
   font-weight: 600 !important;
   text-align: left;
@@ -224,14 +224,14 @@
 }
 
 .comment-scrollable {
-  max-height: 100px; 
+  max-height: 100px;
   overflow-y: auto;
 }
 
 .comment-container {
   display: flex;
-  align-items: center; 
-  gap: 10px; 
+  align-items: center;
+  gap: 10px;
 }
 
 .comment-username:hover {
