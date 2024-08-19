@@ -138,6 +138,5 @@
             </footer>
         @endguest
     @endif
-
 </body>
 </html>
