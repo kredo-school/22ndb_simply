@@ -41,6 +41,7 @@ class FavoriteItemController extends Controller
         $favoriteItems = $this->favorite_item
                         ->where('user_id',$id)
                         ->with('donationItem.item')
+                        ->latest()
                         ->paginate(15);
         return view('users.profile.myitems.favorites', ['favoriteItems' => $favoriteItems]);
     }

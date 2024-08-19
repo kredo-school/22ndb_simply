@@ -15,15 +15,26 @@ ul.list-group li.list-group-item.active span {
     overflow-x: hidden;
 }
 
-div.input-group {
+.input-group-container {
     position: sticky;
     bottom: 0;
     background-color: white;
-    padding: 10px;
-    padding-inline: 3rem;
     z-index: 1;
     width: 100%;
 }
+
+div.input-group {
+    background-color: white;
+    z-index: 2;
+}
+
+p.caution {
+    font-size: 0.8rem;
+    margin-top: 5px;
+    padding: 0;
+    z-index: 1;
+}
+
 
 .message-border {
     border: 0.5px solid black;

@@ -21,9 +21,8 @@
                 </div>
                 <input type="file" name="image" id="image" class="form-control mt-3 file-width" aria-describedby="image-info">
                 <div id="image-info" class="form-text">
-                    <p class="text-center color-gray-2">
-                        Acceptable formats: jpeg, jpg, png, gif only.
-                    <br>
+                    <p class="color-gray-1 no-wrap">
+                        Acceptable formats: jpeg, jpg, png, gif only.<br>
                         Maximum file size is 1048kb.
                     </p>
                 </div>

@@ -10,10 +10,11 @@ class DirectMessage extends Model
     use HasFactory;
 
     protected $fillable = [
+        'text',
+        'image',
         'user_id',
         'destination_user_id',
-        'text',
-        'image'
+        'seen'
     ];
 
     public function user()
