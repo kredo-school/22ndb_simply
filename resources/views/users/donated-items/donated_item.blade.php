@@ -132,44 +132,49 @@
                         </form>
                         <!-- Show all comments here -->
                         <div class="comment-scrollable">
-                            @if($donationItem->comments->isNotEmpty())
-                                <ul class="list-group mt-2">
-                                    @foreach($donationItem->comments as $comment)
-                                        <li class="list-group-item border-0 bg-white">
-                                            <div class="d-flex">
-                                                <div>
-                                                    @if($comment->user->avatar)
-                                                        <img src="{{ $comment->user->avatar }}" alt="User Avatar" class="rounded-circle" width="30" height="30">
-                                                    @else
-                                                        <i class="fa-solid fa-circle-user"></i>
-                                                    @endif
-                                                        <a href="{{ route('profile.show', ['id' => $comment->user->id]) }}" class="text-dark ms-2 comment-username">
-                                                        {{ $comment->user->username }}</a>
-                                                        <span class="text-secondary small ms-2">{{ $comment->created_at->format('Y/m/d H:i') }}</span>
-                                                    @auth
-                                                        @if(Auth::id() === $comment->user_id)
-                                                                <button class="btn ps-1" data-bs-toggle="modal" data-bs-target="#delete-comment-modal-{{ $comment->id }}">
-                                                                <i class="fa fa-trash-can fa-sm"></i>
-                                                                </button>
-                                                                {{-- Component Delete Modal --}}
-                                                            @component('users.components.deletemodal', [
-                                                                    'id' => 'delete-comment-modal-' . $comment->id,
-                                                                    'title' => 'Delete Comment',
-                                                                    'r2' => route('comment.destroy', $comment->id)
-                                                                ])
-                                                                @slot('body')
-                                                                    <p class="h6 text-center">Are you sure you want to delete this comment?</p>
-                                                                @endslot
-                                                            @endcomponent
-                                                        @endif
-                                                    @endauth
-                                                </div>
-                                            </div>
-                                            <p class="mb-0 ms-5 mt-2 text-start">{{ $comment->body }}</p>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            @endif
+                        @if($donationItem->comments->isNotEmpty())
+                        <ul class="list-group mt-2">
+                            @foreach($donationItem->comments as $comment)
+                            <li class="list-group-item border-0 bg-white">
+                                <div class="d-flex">
+                                    <div>
+                                        @if($comment->user->avatar)
+                                            <img src="{{ $comment->user->avatar }}" alt="User Avatar" class="rounded-circle avatar-sm">
+                                        @else
+                                            <i class="fa-solid fa-circle-user icon-sm"></i>
+                                        @endif
+                                        <a href="{{ route('profile.show', ['id' => $comment->user->id]) }}" class="text-dark ms-2 comment-username">
+                                            {{ $comment->user->username }}
+                                        </a>
+                                        
+                                        <span class="text-secondary small ms-2">{{ $comment->created_at->format('Y/m/d H:i') }}</span>
+                                    
+                                        @auth
+                                            @if(Auth::id() === $comment->user_id)
+                                    
+                                            <button class="btn ps-1" data-bs-toggle="modal" data-bs-target="#delete-comment-modal-{{ $comment->id }}">
+                                                <i class="fa fa-trash-can fa-sm"></i>
+                                            </button>
+
+                                            {{-- Component Delete Modal --}}
+                                                @component('users.components.deletemodal', [
+                                                'id' => 'delete-comment-modal-' . $comment->id,
+                                                'title' => 'Delete Comment',
+                                                'r2' => route('comment.destroy', $comment->id)
+                                                ])
+                                                @slot('body')
+                                                <p class="h6 text-center">Are you sure you want to delete this comment?</p>
+                                                @endslot
+                                                @endcomponent
+                                            @endif
+                                        @endauth
+                                    </div>
+                                </div>
+                                <p class="mb-0 ms-5 mt-2 text-start">{{ $comment->body }}</p>
+                            </li>
+                            @endforeach
+                            </ul>
+                        @endif
                         </div>
                     </div>
                 </div>
