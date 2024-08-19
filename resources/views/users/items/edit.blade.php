@@ -7,15 +7,16 @@
 @endsection
 
 @section('content')
-<div class="container align-items-center py-3">
-    <h2 class="text-center">
-        <i class="fa-solid fa-circle-plus"></i> Edit Item
-    </h2>
+<div class="container my-4">
+    <h1 class="d-flex justify-content-center align-items-center">
+        <i class="fa-solid fa-pen fs-2 me-3"></i> Edit Item
+    </h1>
     <form action="{{ route('item.update', $item->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
 
         <div class="row justify-content-center align-items-start">
+            {{-- Image --}}
             <div class="col-12 col-md-4 d-flex flex-column align-items-center">
                 <div class="image-wrapper border border-dark d-inline-flex justify-content-center align-items-center custom-mt">
                     @if ($item->image)
@@ -35,7 +36,7 @@
                     <div class="text-danger small">{{ $message }}</div>
                 @enderror
             </div>
-
+            {{-- Category --}}
             <div class="col-auto p-0">
                 <div class="row">
                     <div class="col-3">
@@ -56,11 +57,11 @@
                         </div>
                     </div>
                 </div>
-
+                {{-- Item Name --}}
                 <div class="row">
                     <div class="col-3 mt-3">
                         <div class="form-group mt-3">
-                            <label for="name">Item name</label>
+                            <label for="name">Item Name</label>
                         </div>
                     </div>
                     <div class="col-9 mt-3">
@@ -72,7 +73,7 @@
                         @enderror
                     </div>
                 </div>
-
+                {{-- Description --}}
                 <div class="row">
                     <div class="col-3 mt-3">
                         <div class="form-group mt-3">
@@ -88,7 +89,7 @@
                         @enderror
                     </div>
                 </div>
-
+                {{-- Donation Checkbox --}}
                 <div class="row">
                     <div class="col-3 mt-3">
                         <div class="form-group mt-3 d-flex align-items-center">
@@ -105,7 +106,7 @@
                         </p>
                     </div>
                 </div>
-
+                {{-- Button --}}
                 <div class="row">
                     <div class="col-3">
                     </div>
