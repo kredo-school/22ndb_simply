@@ -120,7 +120,7 @@ class ItemController extends Controller
         $item->category_id = $request->category;
         $item->save();
 
-        $donationItem = $this->donation_item->withTrashed()->where('item_id', $item->id)->first();
+        $donationItem = $this->donation_item->where('item_id', $item->id)->first();
 
         if ($request->has('donation')) {
 
