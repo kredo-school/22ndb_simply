@@ -40,7 +40,6 @@ class DirectMessageController extends Controller
                     ->get();
 
         // count how many messages the user hasn't read yet
-        //
         foreach ($all_users as $user) {
             $user->unread_count = DirectMessage::unreadCount($user->id, $sender_id);
             $user->latest_message_date = max($user->direct_messages_max_created_at, $user->received_messages_max_created_at);
@@ -49,7 +48,7 @@ class DirectMessageController extends Controller
         // Sort users by the latest message date
         $all_users = $all_users->sortByDesc('latest_message_date');
 
-        //  get all messages sent between two specific people, from oldest to newest
+        // get all messages sent between two specific people, from oldest to newest
         $messages  = DirectMessage::with('user')->where(function($query) use ($sender_id, $id) {
             $query->where([
                         ['user_id', $sender_id],
@@ -77,12 +76,11 @@ class DirectMessageController extends Controller
     public function store(Request $request, $recipient_id)
     {
         $request->validate([
-            'text'  => 'required_without: image|string|max:1000',
-            'image' => 'required_without: text|image|max:1048',
+            'text'  => 'text|max:1000',
+            'image' => 'image|max:1048',
         ]);
 
         $directMessage = new DirectMessage();
-
         $directMessage->user_id             = Auth::id() ;
         $directMessage->destination_user_id = $recipient_id;
         $directMessage->seen                = false;
