@@ -12,11 +12,11 @@
     </div>
 
     
-    <div class="container-big d-flex justify-content-start p-0">
+    <div class="d-flex justify-content-center">
         <div class="container-box pt-5">
         @if($user->mycategories())
             @foreach($user->categories as $category)
-                <div class="d-flex flex-row">
+                <div class="d-flex flex-row mx-auto justify-content-center">
                     <div class="category-box my-3 mx-5 text-center">
                         <h1 class="category-name">{{ $category->name }}</h1>
                         @if($category->items->count() <= 1)
