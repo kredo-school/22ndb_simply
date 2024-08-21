@@ -146,12 +146,12 @@
                                         <a href="{{ route('profile.show', ['id' => $comment->user->id]) }}" class="text-dark ms-2 comment-username">
                                             {{ $comment->user->username }}
                                         </a>
-                                        
+
                                         <span class="text-secondary small ms-2">{{ $comment->created_at->format('Y/m/d H:i') }}</span>
-                                    
+
                                         @auth
                                             @if(Auth::id() === $comment->user_id)
-                                    
+
                                             <button class="btn ps-1" data-bs-toggle="modal" data-bs-target="#delete-comment-modal-{{ $comment->id }}">
                                                 <i class="fa fa-trash-can fa-sm"></i>
                                             </button>

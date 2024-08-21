@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-<div class="container my-4">
+<div class="container custom-container-size my-4">
     <h1 class="d-flex justify-content-center align-items-center">
         <i class="fa-solid fa-pen fs-2 me-3"></i> Edit Item
     </h1>
@@ -20,12 +20,13 @@
             <div class="col-12 col-md-4 d-flex flex-column align-items-center">
                 <div class="image-wrapper border border-dark d-inline-flex justify-content-center align-items-center custom-mt">
                     @if ($item->image)
-                        <img src="{{ $item->image }}" alt="" class="custom-image-size">
+                        <img src="{{ $item->image }}" alt="" class="custom-image-size" id="current-image">
                     @else
-                        <i class="fa-solid fa-image image-icon image-fluid"></i>
+                        <i class="fa-solid fa-image image-icon image-fluid" id="image-icon"></i>
                     @endif
+                    <img src="#" alt="image Preview" id="image-preview" class="image-preview">
                 </div>
-                <input type="file" name="image" id="image" class="form-control mt-3 file-width" aria-describedby="image-info">
+                <input type="file" name="image" id="image-upload" class="form-control mt-3 file-width" aria-describedby="image-info">
                 <div id="image-info" class="form-text">
                     <p class="color-gray-1 no-wrap">
                         Acceptable formats: jpeg, jpg, png, gif only.<br>
@@ -125,4 +126,9 @@
     </form>
     @include('users.categories.modals.create_category')
 </div>
+
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('js/upload_image_forEditItem.js') }}"></script>
 @endsection

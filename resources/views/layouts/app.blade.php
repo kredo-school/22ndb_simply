@@ -138,5 +138,6 @@
             </footer>
         @endguest
     @endif
+    @yield('scripts')
 </body>
 </html>
