@@ -6,12 +6,7 @@
 
     font-family: "Poppins", sans-serif;
  */
-
-body {
-    font-family: "Poppins", sans-serif;
-    
-}
-
+ 
 .container-big {
     margin-left: 160px;
 }
@@ -19,12 +14,12 @@ body {
 .container-box {
     width: 100%;
     height: 600px;
-    max-width: 1430px;
-    overflow: scroll;
+    /* max-width: 1430px; */
+    overflow: auto;
 }
 
 .pagename {
-    color: #9EA6A6;
+    color: #9ea6a6;
     font-weight: 500;
     font-size: 28px !important;
 }
@@ -34,7 +29,7 @@ body {
 }
 
 .icon {
-    color: #9EA6A6;
+    color: #9ea6a6;
     font-size: 1.5rem;
     display: inline-flex;
 }
@@ -54,7 +49,7 @@ body {
 
 .no-item {
     font-weight: 600;
-    color: #D9D9D9;
+    color: #d9d9d9;
 }
 
 .add {
@@ -62,7 +57,6 @@ body {
     font-size: 24px;
     font-weight: 600;
 }
-
 
 .category-box {
     width: 10%;
@@ -85,14 +79,14 @@ body {
 }
 
 .add-item {
-     color: #9EA6A6;
-     font-size: 40px;
-     font-weight: 600;
+    color: #9ea6a6;
+    font-size: 40px;
+    font-weight: 600;
 }
 
 .see-all {
     font-weight: 600;
-    color: #9EA6A6;
+    color: #9ea6a6;
     font-size: 32px;
 }
 
@@ -102,7 +96,6 @@ body {
     height: 150px;
     font-size: 25px;
     font-weight: 600;
-
 }
 
 .item-btn {
@@ -127,12 +120,11 @@ a:hover {
 }
 
 .fa-trash-can:hover {
-    color:red;
+    color: red;
 }
 
-
 @media screen and (max-width: 540px) {
-	/* 480px以下に適用されるCSS（スマホ用） */
+    /* 480px以下に適用されるCSS（スマホ用） */
 
     .pagename {
         font-size: 18px !important;
@@ -168,7 +160,6 @@ a:hover {
         width: 640px;
     }
 
-
     .item-box {
         border: solid 1px black;
         width: 100px;
@@ -185,13 +176,13 @@ a:hover {
 
     .icon-container {
         display: flex;
-        justify-content: center; 
+        justify-content: center;
     }
-    
+
     .icon {
         font-size: 20px;
     }
-    
+
     .img-item {
         width: 100px;
         height: 100px;
@@ -206,9 +197,9 @@ a:hover {
 
     .add-item {
         font-size: 25px;
-   }
+    }
 
-   .see-all {
+    .see-all {
         font-size: 25px;
         margin: 0 !important;
         position: relative;
@@ -228,12 +219,9 @@ a:hover {
         line-height: 100px;
         text-align: center;
         margin-left: 30px !important;
-
     }
 
-    .item-box:nth-of-type(n+5) {
+    .item-box:nth-of-type(n + 5) {
         display: none;
     }
-
-
 }
