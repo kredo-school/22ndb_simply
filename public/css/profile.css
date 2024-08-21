@@ -6,9 +6,6 @@
 .bordered-table{
     border-collapse: separate;
     border-spacing: 0 30px;
-    width: 100%;
-    max-width: 100%;
-    table-layout: fixed;
     word-wrap: break-word;
 }
 .bordered-table td{
