@@ -127,27 +127,8 @@
     @include('users.categories.modals.create_category')
 </div>
 
-<script>
-    $(document).ready(function() {
-        $("#image-upload").change(function() {
-            readURL(this);
-        });
-    });
+@endsection
 
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function(e) {
-                $("#image-icon").hide();
-                $("#current-image").hide();
-                $("#image-preview").attr("src", e.target.result);
-                $("#image-preview").show();
-            };
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-</script>
-
+@section('scripts')
+    <script src="{{ asset('js/upload_image_forEditItem.js') }}"></script>
 @endsection
