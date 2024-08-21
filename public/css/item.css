@@ -1,3 +1,7 @@
+.custom-container-size {
+    height: 100vh;
+}
+
 .icon-wrapper {
     width: 16rem;
     height: 16rem;
@@ -20,6 +24,15 @@
 }
 
 .custom-image-size {
+    width: 16rem;
+    height: 16rem;
+    object-fit: cover;
+    border-radius: 40px;
+    padding: 6%;
+}
+
+.image-preview {
+    display: none;
     width: 16rem;
     height: 16rem;
     object-fit: cover;
@@ -77,4 +90,10 @@ input.form-check-input.checkbox-size {
 
 p.nowrap {
     white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    p.nowrap {
+        white-space: normal;
+    }
 }
