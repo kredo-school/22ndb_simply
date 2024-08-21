@@ -85,7 +85,7 @@
                                 </div>
                                 @if($item->isDonated())
                                 <div class="col-auto text-start font-big">
-                                    <i class="fa-regular fa-square-check"></i>
+                                    <a href="{{ route('donated.item.show', $item->donation->id) }}"><i class="fa-regular fa-square-check"></i></a>
                                 </div>
 
                                 <div class="row mt-3 text-row">

@@ -32,7 +32,7 @@ class CategoryController extends Controller
 
          // 1. Validate new category name
         $request->validate([
-            'name' => 'required|max:255'
+            'name' => 'required|max:14'
         ]);
 
         // 2. Save new category name

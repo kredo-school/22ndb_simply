@@ -7,15 +7,12 @@
     font-family: "Poppins", sans-serif;
  */
  
-.container-big {
-    margin-left: 160px;
-}
 
 .container-box {
-    width: 100%;
+    width: calc(100% - 150px);;
     height: 600px;
-    /* max-width: 1430px; */
     overflow: auto;
+    margin-left: 6.5%;
 }
 
 .pagename {
@@ -26,6 +23,9 @@
 
 .category-name {
     font-weight: 800 !important;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word; 
 }
 
 .icon {
@@ -59,7 +59,7 @@
 }
 
 .category-box {
-    width: 10%;
+    width: 15%;
     height: 150px;
 }
 
@@ -96,6 +96,7 @@
     height: 150px;
     font-size: 25px;
     font-weight: 600;
+    margin-left: 6%;
 }
 
 .item-btn {
