@@ -29,10 +29,10 @@ class CategoryController extends Controller
 
     public function createCategory(Request $request)
     {
-
+ 
          // 1. Validate new category name
         $request->validate([
-            'name' => 'required|max:255'
+            'name' => 'required|max:14'
         ]);
 
         // 2. Save new category name
@@ -53,7 +53,7 @@ class CategoryController extends Controller
 
        // Validate the request data
         $request->validate([
-        'edit_category_name' => 'required|max:255',
+        'edit_category_name' => 'required|max:14',
     ]);
 
         $category = $this->category->findOrFail($request->id);

@@ -14,14 +14,16 @@
                 <form action="{{ route('create.category') }}" method="post">
                     @csrf
                     <label for="category_name" class="form-label">Category Name</label>
-                    <input type="text" name="name" id="category_name" class="form-control" placeholder="Add category name">
-                        </div>
-                    <div class="modal-footer border-0 m-auto p-4">
-
-                        <button type="button" data-bs-dismiss="modal" class="sbm_btn btn btn-outline-dark p-2 px-5 rounded-5 me-1">Cancel</button>
-                        <button type="submit" class="sbm_btn btn btn-dark p-2 px-5 rounded-5 ms-1">Save</button>
-                </form>
+                    <input type="text" name="name" id="category_name" class="form-control" placeholder="Add category name"> 
+                    <p class="text-danger">Please enter no more than 14 characters</p>
+                   
+            </div>
+                <div class="modal-footer border-0 m-auto p-4">
+                    <button type="button" data-bs-dismiss="modal" class="sbm_btn btn btn-outline-dark p-2 px-5 rounded-5 me-1">Cancel</button>
+                    <button type="submit" class="sbm_btn btn btn-dark p-2 px-5 rounded-5 ms-1">Save</button>
+                </div>
+                </form> 
             </div>
         </div>
     </div>
-</div>
+</div.
