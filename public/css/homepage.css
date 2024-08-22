@@ -23,9 +23,7 @@
 
 .category-name {
     font-weight: 800 !important;
-    white-space: normal;
     word-wrap: break-word;
-    overflow-wrap: break-word; 
 }
 
 .icon {
