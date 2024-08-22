@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-<div class="container my-4">
+<div class="container custom-container-size my-4">
     <h1 class="d-flex justify-content-center align-items-center">
         <i class="fa-solid fa-circle-plus fs-2 me-3"></i> Add Item
     </h1>
@@ -19,8 +19,10 @@
             <div class="col-12 col-md-4 d-flex flex-column align-items-center">
                 <div class="icon-wrapper border border-dark d-inline-flex justify-content-center align-items-center custom-mt">
                     <i class="fa-solid fa-image image-icon image-fluid"></i>
+                    <img src="#" alt="image Preview" id="image-preview" class="image-preview">
                 </div>
-                <input type="file" name="image" id="image" class="form-control mt-3 file-width" aria-describedby="image-info">
+                <input type="file" name="image" id="image-upload" class="form-control mt-3 file-width" aria-describedby="image-info">
+
                 <div id="image-info" class="form-text">
                     <p class="color-gray-1 no-wrap">
                         Acceptable formats: jpeg, jpg, png, gif only.<br>
@@ -103,7 +105,7 @@
                 </div>
                 {{-- Button --}}
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-md-3">
                     </div>
                     <div class="col-12 col-md-9">
                         <div class="mb-3 d-flex justify-content-around">
@@ -120,4 +122,8 @@
     </form>
     @include('users.categories.modals.create_category')
 </div>
+
+@endsection
+@section('scripts')
+    <script src="{{ asset('js/upload_image_forAddItem.js') }}"></script>
 @endsection
